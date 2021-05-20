@@ -1,3 +1,5 @@
+import './HomeStyles.css'
+
 import {
   Link
 } from "react-router-dom";

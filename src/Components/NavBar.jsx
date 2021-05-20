@@ -11,10 +11,10 @@ export default function NavBar(){
         <header className="header">
             <nav className="navbar">
             <ul className="menu" id="menu">
-                <li><Link to="#">Home</Link></li>
+                <li><Link to="/">Home</Link></li>
                 <li><Link to="#">Crea tu E-Vent</Link></li>
                 <li><Link to="/recomendations">Recomendaciones</Link></li>
-                <li><Link to="#">Contact</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
             </ul>
 
             <div className="menu-bar">

@@ -10,6 +10,7 @@ import {
   Link
 } from "react-router-dom";
 import Recomendaciones from './Components/Recomendaciones';
+import Contacto from './Components/Contacto';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
         </Route>
         <Route path="/recomendations">
           <Recomendaciones></Recomendaciones>
+        </Route>
+        <Route path="/contact">
+          <Contacto></Contacto>
         </Route>
       </Switch>
      
