@@ -1,7 +1,7 @@
 import './ContactoStyles.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDribbble} from '@fortawesome/free-solid-svg-icons'
-import { faFacebookF, faTwitter, faInstagram} from '@fortawesome/free-brands-svg-icons' 
+import { } from '@fortawesome/free-solid-svg-icons'
+import { faFacebookF, faTwitter, faInstagram, faDribbble, faWhatsapp} from '@fortawesome/free-brands-svg-icons' 
 
 
 export default function Contacto(){
@@ -28,15 +28,15 @@ export default function Contacto(){
                 </li>
                 <li>
                 <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-dribbble"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faWhatsapp} className="fab fa-dribbble"></FontAwesomeIcon>
                 </a>
                 </li>
             </ul>
 
             <div className="details">
-                <h2>John Smith
+                <h2>Luis Vargas
                 <br/>
-                <span className="job-title">UI Developer</span>
+                <span className="job-title">Front End</span>
                 </h2>
             </div>
             </div>
@@ -54,12 +54,12 @@ export default function Contacto(){
                 <ul className="social-icons">
                 <li>
                     <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-facebook-f"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faFacebookF} className="fab fa-facebook-f"></FontAwesomeIcon>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-instagram"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faInstagram} className="fab fa-instagram"></FontAwesomeIcon>
                     </a>
                 </li>
                 <li>
@@ -69,15 +69,15 @@ export default function Contacto(){
                 </li>
                 <li>
                     <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-dribbble"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faWhatsapp} className="fab fa-dribbble"></FontAwesomeIcon>
                     </a>
                 </li>
                 </ul>
 
                 <div className="details jane">
-                    <h2>Jane Doe
+                    <h2>Gustavo Toro
                     <br/>
-                    <span className="job-title">UI Designer</span>
+                    <span className="job-title">Back End</span>
                     </h2>
                 </div>
             </div>
@@ -93,12 +93,12 @@ export default function Contacto(){
                 <ul className="social-icons">
                 <li>
                     <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-facebook-f"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faFacebookF} className="fab fa-facebook-f"></FontAwesomeIcon>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-instagram"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faInstagram} className="fab fa-instagram"></FontAwesomeIcon>
                     </a>
                 </li>
                 <li>
@@ -108,15 +108,15 @@ export default function Contacto(){
                 </li>
                 <li>
                     <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-dribbble"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faWhatsapp} className="fab fa-dribbble"></FontAwesomeIcon>
                     </a>
                 </li>
                 </ul>
 
                 <div className="details jane">
-                    <h2>Jane Doe
+                    <h2>Marcos Rodriguez
                     <br/>
-                    <span className="job-title">UI Designer</span>
+                    <span className="job-title">Social Media</span>
                     </h2>
                 </div>
             </div>
@@ -132,12 +132,12 @@ export default function Contacto(){
                 <ul className="social-icons">
                 <li>
                     <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-facebook-f"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faFacebookF} className="fab fa-facebook-f"></FontAwesomeIcon>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-instagram"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faInstagram} className="fab fa-instagram"></FontAwesomeIcon>
                     </a>
                 </li>
                 <li>
@@ -147,13 +147,13 @@ export default function Contacto(){
                 </li>
                 <li>
                     <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-dribbble"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faWhatsapp} className="fab fa-dribbble"></FontAwesomeIcon>
                     </a>
                 </li>
                 </ul>
 
                 <div className="details jane">
-                    <h2>Jane Doe
+                    <h2>Barbara Alvarez
                     <br/>
                     <span className="job-title">UI Designer</span>
                     </h2>
@@ -171,12 +171,12 @@ export default function Contacto(){
                 <ul className="social-icons">
                 <li>
                     <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-facebook-f"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faFacebookF} className="fab fa-facebook-f"></FontAwesomeIcon>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-instagram"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faInstagram} className="fab fa-instagram"></FontAwesomeIcon>
                     </a>
                 </li>
                 <li>
@@ -186,13 +186,13 @@ export default function Contacto(){
                 </li>
                 <li>
                     <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-dribbble"></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faWhatsapp} className="fab fa-dribbble"></FontAwesomeIcon>
                     </a>
                 </li>
                 </ul>
 
                 <div className="details jane">
-                    <h2>Jane Doe
+                    <h2>Fernando Mejia
                     <br/>
                     <span className="job-title">UI Designer</span>
                     </h2>

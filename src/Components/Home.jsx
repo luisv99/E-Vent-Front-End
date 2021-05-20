@@ -15,7 +15,7 @@ export default function Home(){
             <p>Crea tu propio evento desde casa a tu gusto, y nosotros hacemos el resto por ti</p>
             <br />
             <Link to="/login" className="iniciar-sesion">Iniciar Sesion</Link>
-            <Link to="/register" className="registro">Registrarme</Link> {/*hola Marcos*/}   {/*hola*/}   
+            <Link to="/SignUp" className="registro">Registrarme</Link> {/*hola Marcos*/}   {/*hola*/}   
           </div>
       </main>
 
