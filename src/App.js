@@ -22,6 +22,9 @@ function App() {
         <Route path="/login">
           <Login></Login>
         </Route>
+        <Route path="/register">
+          <Login></Login>
+        </Route>
       </Switch>
      
     </>
