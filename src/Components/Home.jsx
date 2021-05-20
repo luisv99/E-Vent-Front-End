@@ -8,7 +8,7 @@ export default function Home(){
         <p>Crea tu propio evento desde casa a tu gusto, y nosotros hacemos el resto por ti</p>
         <br />
         <a href="www.google.com" className="iniciar-sesion">Iniciar Sesion</a>
-        <a href="www.google.com" className="registro">Registrarme</a>
+        <a href="www.google.com" className="registro">Registrarme</a>            {/*hola*/} 
       </div>
     </main>
 
