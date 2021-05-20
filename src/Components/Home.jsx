@@ -1,6 +1,10 @@
+import Slideshow from './Components/Slideshow';
+
 export default function Home(){
     return(
        <>
+
+
            <main className="hero">
       <div className="info-content" data-aos="fade-up" data-aos-duration="2000">
         <h3>Welcome To</h3>
