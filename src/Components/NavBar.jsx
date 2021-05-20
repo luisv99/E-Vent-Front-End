@@ -1,7 +1,9 @@
 import './NavBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBars,faShoppingCart} from '@fortawesome/free-solid-svg-icons'
-
+import {
+    Link
+  } from "react-router-dom";
 
 export default function NavBar(){
     return(
@@ -9,10 +11,10 @@ export default function NavBar(){
         <header className="header">
             <nav className="navbar">
             <ul className="menu" id="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Crea tu E-Vent</a></li>
-                <li><a href="#">Recomendaciones</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="#">Crea tu E-Vent</Link></li>
+                <li><Link to="/recomendations">Recomendaciones</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
             </ul>
 
             <div className="menu-bar">

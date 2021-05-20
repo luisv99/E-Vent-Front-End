@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .hero {
     height: 100vh;
     background-color: rgb(33, 30, 30);
@@ -17,15 +23,19 @@
   }
   .hero .info-content h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.8em;
+    font-size: 1.75em;
+    font-weight: 1000;
   }
   .hero .info-content h1 {
     font-weight: 900;
-    font-size: 5em;
+    font-size: 4em;
     color: whitesmoke;
+    margin-right: 200px;
+    margin-left: -30px;
   }
   .hero .info-content p {
     font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
   }
 
   .hero .info-content .btn {

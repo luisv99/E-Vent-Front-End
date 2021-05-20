@@ -9,6 +9,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Recomendaciones from './Components/Recomendaciones';
+import Contacto from './Components/Contacto';
+import SignUp from './Components/SignUp';
 
 function App() {
   return (
@@ -24,6 +27,15 @@ function App() {
         </Route>
         <Route path="/register">
           <Login></Login>
+        </Route>
+        <Route path="/recomendations">
+          <Recomendaciones></Recomendaciones>
+        </Route>
+        <Route path="/contact">
+          <Contacto></Contacto>
+        </Route>
+        <Route path="/SignUp">
+          <SignUp></SignUp>
         </Route>
       </Switch>
      
