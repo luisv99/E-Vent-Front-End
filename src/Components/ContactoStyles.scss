@@ -1,26 +1,52 @@
 /**** Sass Variables ****/
 $bodyFont: 'Open Sans', sans-serif;
 
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-body {
-  font-family: $bodyFont;
-  background: #333;
+  
 }
 
 .container {
   max-width: 1500px;
+  width: 100vw;
   display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
+  justify-content: space-around;
+  padding-bottom: 100px;
 }
 
 .card-wrapper {
+  margin-top: -100px;
+  margin-left: 0px;
+  width: 400px;
+  height: 500px;
+  position: relative;
+}
+.card-wrapper2 {
+  margin-top: -100px;
+  margin-left: 260px;
+  width: 400px;
+  height: 500px;
+  position: relative;
+}
+.card-wrapper3 {
+  margin-top: -100px;
+  margin-left: 260px;
+  width: 400px;
+  height: 500px;
+  position: relative;
+}
+.card-wrapper4 {
+  margin-top: -100px;
+  margin-left: 260px;
+  width: 400px;
+  height: 500px;
+  position: relative;
+}
+.card-wrapper5 {
+  margin-top: -100px;
+  margin-left: 260px;
   width: 400px;
   height: 500px;
   position: relative;
@@ -31,7 +57,7 @@ body {
   top: 50%;
   left: 50%;
   width: 250px;
-  height: 400px;
+  height: 350px;
   transform: translate(-50%, -50%);
   border-radius: 16px;
   overflow: hidden;
@@ -42,11 +68,22 @@ body {
   .card-image {
     position: absolute;
     top: 0px;
-    left: 0px;
     width: 100%;
     height: 100%;
     z-index: 2;
-    background-color: #000;
+    transition: .5s;
+  }
+
+  #card-imageLuiss{
+    width: 100%;
+    height: 100%;
+  }
+
+  .card-imageLuis {
+    position: absolute;
+    height: 100%;
+    width:  100%;
+    z-index: 2;
     transition: .5s;
   }
   
@@ -56,9 +93,9 @@ body {
   }
 }
 
-.card:hover .card-image {
-  transform: translateY(-100px);
-  transition: all .9s;
+.card:hover .card-imageLuis {
+  transform: translateY(-85px);
+  transition: all 2s;
 }
 
 /**** Social Icons *****/
