@@ -1,22 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './Components/NavBar';
 import Home from './Components/Home';
 import Login from './Components/Login';
+import Recomendaciones from './Components/Recomendaciones';
+import Contacto from './Components/Contacto';
+import SignUp from './Components/SignUp';
+import Footer from './Components/Footer';
+import Services from './Components/Services';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import Recomendaciones from './Components/Recomendaciones';
-import Contacto from './Components/Contacto';
-import SignUp from './Components/SignUp';
 
 function App() {
   return (
     <Router>
-    <>
+      <div className="App">
       <NavBar/>
       <Switch>
         <Route path="/" exact>
@@ -37,9 +38,12 @@ function App() {
         <Route path="/SignUp">
           <SignUp></SignUp>
         </Route>
+        <Route path="/Services">
+          <Services></Services>
+        </Route>
       </Switch>
-     
-    </>
+      <Footer/>
+    </div>
     </Router>
   );
 }

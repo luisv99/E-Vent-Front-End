@@ -3,7 +3,7 @@ import './SignUpStyles.scss'
 export default function (){
     return(
         <>
-
+            <div className="cont">
             <div className="signupSection">
                 <div className="info">
                     <h1>E-Vent</h1>
@@ -37,6 +37,7 @@ export default function (){
                 
                 </form>
                 
+            </div>
             </div>
         
         </>

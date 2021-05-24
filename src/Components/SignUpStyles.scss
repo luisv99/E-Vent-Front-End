@@ -3,13 +3,12 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background: #111;
-  background-repeat: no-repeat;
+.cont{
+  background-color: rgb(21, 20, 20);
+  z-index: 999;
+  height: 100vh;
 }
+
 
 .signupSection {
   margin-top: 2rem;
