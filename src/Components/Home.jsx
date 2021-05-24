@@ -1,17 +1,23 @@
 import './HomeStyles.css'
+import './Slideshow'
+import styled from 'styled-components';
 
 import {
   Link
 } from "react-router-dom";
+import Slideshow from './Slideshow';
 
 export default function Home(){
     return(
        <>
 
        
-        
+        <main className="slide">
+          <Titulo>productos destacados</Titulo>
+          <Slideshow/>
+        </main>
         <main className="hero">
-          <h1>hola mundo</h1>
+          
           <div className="info-content" data-aos="fade-up" data-aos-duration="2000">
 
 
@@ -27,3 +33,10 @@ export default function Home(){
        </>
     )
 }
+
+const Titulo = styled.p `
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: upercase;
+    margin-botto,: 10px
+`;
