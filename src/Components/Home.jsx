@@ -11,7 +11,6 @@ export default function Home(){
        
         
         <main className="hero">
-          <h1>hola mundo</h1>
           <div className="info-content" data-aos="fade-up" data-aos-duration="2000">
 
 

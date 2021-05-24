@@ -10,38 +10,34 @@ export default function Footer(){
                 <div className="container">
                     <div className="row">
                         <div className="footer-col">
-                            <h4>company</h4>
+                            <h4>Compania</h4>
                             <ul>
-                                <li><a href="#">about us</a></li>
-                                <li><a href="#">our services</a></li>
-                                <li><a href="#">privacy policy</a></li>
-                                <li><a href="#">affiliate program</a></li>
+                                <li><a href="#miModal">Quienes somos</a></li>
+                                <li><a href="#">Servicios</a></li>
+                                <li><a href="#">Como afiliar mi negocio</a></li>
                             </ul>
                         </div>
 
                         <div className="footer-col">
-                            <h4>get help</h4>
+                            <h4>Ayuda</h4>
                             <ul>
                                 <li><a href="#">FAQ</a></li>
-                                <li><a href="#">shipping</a></li>
-                                <li><a href="#">returns</a></li>
-                                <li><a href="#">order status</a></li>
-                                <li><a href="#">payment options</a></li>
+                                <li><a href="#">Metodos de pago</a></li>
+                                <li><a href="#">Como crear mi evento</a></li>
                             </ul>
                         </div>
 
                         <div className="footer-col">
-                            <h4>online shop</h4>
+                            <h4>Eventos</h4>
                             <ul>
-                                <li><a href="#">watch</a></li>
-                                <li><a href="#">bag</a></li>
-                                <li><a href="#">shoes</a></li>
-                                <li><a href="#">dress</a></li>
+                                <li><a href="#">Crear E-Vent</a></li>
+                                <li><a href="#">Galeria</a></li>
+                                <li><a href="#">Clientes</a></li>
                             </ul>
                         </div>
 
                         <div className="footer-col">
-                            <h4>follow us</h4>
+                            <h4>Redes sociales</h4>
                             <div className="social-links">
                                 <a href="#"><FontAwesomeIcon icon={faFacebookF} className="fab fa-facebook-f"></FontAwesomeIcon></a>
                                 <a href="#"><FontAwesomeIcon icon={faTwitter} className="fab fa-twitter"></FontAwesomeIcon></a>
@@ -50,6 +46,14 @@ export default function Footer(){
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div id="miModal" class="modal">
+                <div class="modal-contenido">
+                    <a href="#">X</a>
+                    <h2>Mi primer Modal</h2>
+                    <p>Este es mi primera ventana modal sin utilizar JavaScript.</p>
+                </div>  
                 </div>
             </footer>
         </>

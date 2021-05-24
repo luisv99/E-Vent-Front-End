@@ -1,6 +1,6 @@
 .cont1{
   background-color: #151414;
-  height: 100vh;
+  height: 185vh;
   color: aliceblue;
 }
 
@@ -16,11 +16,16 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.cont2{
+    margin-top: -15rem;
+    margin-bottom: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
   }
 
-  .adults h2{
-    text-align: center;
-  }
     
   img{
     width: 100%;
@@ -30,13 +35,13 @@
 
 .card {
     margin-top: 18%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    width: 40%;
+    width: 20%;
   }
   
   .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(107, 102, 102, 0.2);
   }
 
   
@@ -62,5 +67,9 @@
 
 
 .titulo{
-  margin-top: -10rem;
+  margin-top: -7rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
