@@ -16,6 +16,10 @@ export default function Login(){
             password: password,
         }).then((response) =>{
             alert("Succesful LogIn");
+            alert(JSON.stringify(response.data))
+            
+            let token = response.data.access;
+            localStorage.setItem("SavedToken", 'Bearer ' + token);
         },
         (error) =>{
             alert(error.response.data.message);
