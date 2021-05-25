@@ -2,6 +2,10 @@ import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import imgS from './../Imagenes/Métodos de pago.png';
 import imgT from './../Imagenes/team.png';
+import imgN from './../Imagenes/negocio2.png';
+import imgSA from './../Imagenes/SA.png';
+import imgP from './../Imagenes/preguntas.png';
+
 import { faFacebookF, faTwitter, faInstagram, faWhatsapp} from '@fortawesome/free-brands-svg-icons' 
 
 
@@ -15,16 +19,16 @@ export default function Footer(){
                             <h4>Compania</h4>
                             <ul>
                                 <li><a href="#miModal">Quienes somos</a></li>
-                                <li><a href="#miModal2">Servicios</a></li>
-                                <li><a href="#">Como afiliar mi negocio</a></li>
+                                <li><a href="#miModal2">Métodos de pago</a></li>
+                                <li><a href="#miModal3">Cómo afiliar mi negocio</a></li>
                             </ul>
                         </div>
 
                         <div className="footer-col">
                             <h4>Ayuda</h4>
                             <ul>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Metodos de pago</a></li>
+                                <li><a href="#miModal4">Servicio al cliente</a></li>
+                                <li><a href="#miModal5">Preguntas Frecuentes</a></li>
                                 <li><a href="#">Como crear mi evento</a></li>
                             </ul>
                         </div>
@@ -56,13 +60,36 @@ export default function Footer(){
                     <img src={imgT} alt=""/>
                 </div>  
                 </div>
+
                 <div id="miModal2" class="modal2">
                 <div class="modal-contenido2">
                     <a href="#">X</a>
                     <img src={imgS} alt=""/>
-                    
                 </div>  
                 </div>
+
+                <div id="miModal3" class="modal3">
+                <div class="modal-contenido3">
+                    <a href="#">X</a>
+                    <img src={imgN} alt=""/>
+                </div>  
+                </div>
+
+                <div id="miModal4" class="modal4">
+                <div class="modal-contenido4">
+                    <a href="#">X</a>
+                    <img src={imgSA} alt=""/>
+                </div>  
+                </div>
+
+                <div id="miModal5" class="modal5">
+                <div class="modal-contenido5">
+                    <a href="#">X</a>
+                    <img src={imgP} alt=""/>
+                </div>  
+                </div>
+
+              
             </footer>
         </>
     )
