@@ -111,9 +111,15 @@ ul{
 	pointer-events:none;
 	transition: all 1s;
   }
+
   #miModal:target{
 	opacity:1;
 	pointer-events:auto;
+  }
+
+  .modal-closed{
+	  text-align: end;
+	  text-decoration: none;
   }
 
 

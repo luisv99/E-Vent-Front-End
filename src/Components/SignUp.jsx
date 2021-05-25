@@ -21,9 +21,9 @@ export default function (){
             alert(res.data.message)
         },
         console.log("no se que pasa"),
-        alert(response.data.message),
+        //alert(response.data.message),
         (error) =>{
-            alert(error.response.data.message)
+           // alert(error.response.data.message)
         })
         
     }

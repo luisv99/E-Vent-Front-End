@@ -1,7 +1,9 @@
 import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faTwitter, faInstagram, faWhatsapp} from '@fortawesome/free-brands-svg-icons' 
-
+import {
+    Link
+  } from "react-router-dom";
 
 export default function Footer(){
     return(
@@ -50,9 +52,9 @@ export default function Footer(){
 
                 <div id="miModal" class="modal">
                 <div class="modal-contenido">
-                    <a href="#">X</a>
+                    <a href="#" className="modal-closed">X</a>
                     <h2>Mi primer Modal</h2>
-                    <p>Este es mi primera ventana modal sin utilizar JavaScript.</p>
+                    <p>Contenido del Modal</p>
                 </div>  
                 </div>
             </footer>
