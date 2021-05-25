@@ -1,5 +1,7 @@
 import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import imgS from './../Imagenes/Métodos de pago.png';
+import imgT from './../Imagenes/team.png';
 import { faFacebookF, faTwitter, faInstagram, faWhatsapp} from '@fortawesome/free-brands-svg-icons' 
 
 
@@ -13,7 +15,7 @@ export default function Footer(){
                             <h4>Compania</h4>
                             <ul>
                                 <li><a href="#miModal">Quienes somos</a></li>
-                                <li><a href="#">Servicios</a></li>
+                                <li><a href="#miModal2">Servicios</a></li>
                                 <li><a href="#">Como afiliar mi negocio</a></li>
                             </ul>
                         </div>
@@ -51,8 +53,14 @@ export default function Footer(){
                 <div id="miModal" class="modal">
                 <div class="modal-contenido">
                     <a href="#">X</a>
-                    <h2>Mi primer Modal</h2>
-                    <p>Este es mi primera ventana modal sin utilizar JavaScript.</p>
+                    <img src={imgT} alt=""/>
+                </div>  
+                </div>
+                <div id="miModal2" class="modal2">
+                <div class="modal-contenido2">
+                    <a href="#">X</a>
+                    <img src={imgS} alt=""/>
+                    
                 </div>  
                 </div>
             </footer>
