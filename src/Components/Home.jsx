@@ -11,7 +11,6 @@ export default function Home(){
     return(
        <>
          <main className="slide">
-          <Titulo>productos destacados</Titulo>
           <Slideshow/>
         </main>
        
