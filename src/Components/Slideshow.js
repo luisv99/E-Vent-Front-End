@@ -110,6 +110,7 @@ const Slideshow = () => {
 
 const ContenedorPrincipal = styled.div `
     position: relative;
+    z-index: 0;
 
 `;
 

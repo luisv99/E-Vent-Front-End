@@ -10,12 +10,12 @@ import Slideshow from './Slideshow';
 export default function Home(){
     return(
        <>
-         <main className="slide">
-          <Slideshow/>
-        </main>
        
        
         <main className="hero">
+          <div className="slide">
+            <Slideshow/>
+          </div>
           
           <div className="info-content" data-aos="fade-up" data-aos-duration="2000">
 
@@ -28,8 +28,9 @@ export default function Home(){
             <Link to="/SignUp" className="registro">Registrarme</Link>   
           </div>
       </main>
-
-      
+      <div className="hero2">
+        <h1 style={{color: "red"}}>Mas Contenido</h1>
+      </div>
       </>
     )
 }
