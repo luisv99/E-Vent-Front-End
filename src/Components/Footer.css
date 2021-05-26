@@ -94,13 +94,96 @@ ul{
 /* CODIGO DEL MODAL */
 
 .modal-contenido{
-	background-color:aqua;
-	width:300px;
+	background-color:#272f3a;
+	color: white;
+	width:800px;
+	padding: 10px 20px;
+	margin: 20% auto;
+	position: relative;
+  }
+  .modal-contenido2{
+	background-color:#272f3a;
+	color: white;
+	width: 800px;
+	padding: 10px 20px;
+	margin: 20% auto;
+	position: relative;
+  }
+
+  .modal-contenido3{
+	background-color:#272f3a;
+	color: white;
+	width: 800px;
+	padding: 10px 20px;
+	margin: 20% auto;
+	position: relative;
+  }
+
+  .modal-contenido4{
+	background-color:#272f3a;
+	color: white;
+	width: 800px;
+	padding: 10px 20px;
+	margin: 20% auto;
+	position: relative;
+  }
+
+  .modal-contenido5{
+	background-color:#272f3a;
+	color: white;
+	width: 800px;
 	padding: 10px 20px;
 	margin: 20% auto;
 	position: relative;
   }
   .modal{
+	background-color: rgba(0,0,0,.8);
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	opacity:0;
+	pointer-events:none;
+	transition: all 1s;
+  }
+  .modal2{
+	background-color: rgba(0,0,0,.8);
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	opacity:0;
+	pointer-events:none;
+	transition: all 1s;
+  }
+
+  .modal3{
+	background-color: rgba(0,0,0,.8);
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	opacity:0;
+	pointer-events:none;
+	transition: all 1s;
+  }
+
+  .modal4{
+	background-color: rgba(0,0,0,.8);
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	opacity:0;
+	pointer-events:none;
+	transition: all 1s;
+  }
+
+  .modal5{
 	background-color: rgba(0,0,0,.8);
 	position:fixed;
 	top:0;
@@ -121,5 +204,27 @@ ul{
 	  text-align: end;
 	  text-decoration: none;
   }
+
+  #miModal2:target{
+	opacity:1;
+	pointer-events:auto;
+  }
+
+  #miModal3:target{
+	opacity:1;
+	pointer-events:auto;
+  }
+
+  #miModal4:target{
+	opacity:1;
+	pointer-events:auto;
+  }
+
+  #miModal5:target{
+	opacity:1;
+	pointer-events:auto;
+  }
+
+
 
 

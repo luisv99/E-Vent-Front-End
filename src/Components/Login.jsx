@@ -32,6 +32,25 @@ export default function Login(){
                         <h1>LOGO</h1>
                     </div>
                     
+                    <form action="#" method="POST" className="signupForm" name="signupform">
+                        <h2>Iniciar Sesion</h2>
+                        <ul className="noBullet">
+                            <li>
+                                <label htmlfor="email"></label>
+                                <input type="email" className="inputFields" id="email" name="email" placeholder="Email"  required />
+                            </li>
+                            <li>
+                                <label htmlfor="password"></label>
+                                <input type="password" className="inputFields" id="password" name="password" placeholder="Contraseña"  required />
+                            </li>
+                            <li id="center-btn">
+                                <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
+                            </li>
+                        </ul>
+                    
+                    </form>
+                    
+                </div>
                 
                 <form onSubmit={handleSubmit} method="POST" className="signupForm" name="signupform">
                     <h2>Iniciar Sesion</h2>
@@ -51,7 +70,7 @@ export default function Login(){
                 
                 </form>
                 
-                </div>
+               
             </div>
                
         </>

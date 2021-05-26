@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Goblin+One&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -80,4 +82,10 @@
   .hero .registro:hover{
     background-color: #1F2227;
     color: #f5f5f5; 
+}
+
+ .slide {
+  max-width: 1000px;
+  margin: 50px auto;
+  overflow: hidden;
 }

@@ -22,6 +22,7 @@ export default function (){
         },
         console.log("no se que pasa"),
         //alert(response.data.message),
+       // alert(response.data.message),
         (error) =>{
            // alert(error.response.data.message)
         })
