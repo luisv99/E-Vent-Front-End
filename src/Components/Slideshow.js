@@ -1,7 +1,9 @@
 import React, {useRef} from 'react';
-import img1 from './../Imagenes/Probando.png';
-import img2 from './../Imagenes/pru.png';
-import img3 from './../Imagenes/pruo.png';
+import img1 from './../Imagenes/event.png';
+import img2 from './../Imagenes/neon2.png';
+import img3 from './../Imagenes/tinto.png';
+import img4 from './../Imagenes/asia.png';
+
 import styled from 'styled-components';
 import {ReactComponent as Flechaderecha}  from './../Imagenes/iconmonstr-arrow-63.svg';
 import {ReactComponent as Flechaizquierda}  from './../Imagenes/iconmonstr-arrow-64.svg';
@@ -67,27 +69,27 @@ const Slideshow = () => {
                     <a href="https://www.instagram.com">
                         <img src={img1} alt=""/>
                     </a>
-                    <TextoSlide>
-                        <p>aqui va un texto</p>
-                    </TextoSlide>
+                   
                 </Slide1>
 
                 <Slide1>
                     <a href="https://www.instagram.com">
                         <img src={img2} alt=""/>
                     </a>
-                    <TextoSlide>
-                        <p>aqui va un texto</p>
-                    </TextoSlide>
+                  
                 </Slide1>
 
                 <Slide1>
                     <a href="https://www.instagram.com">
                         <img src={img3} alt=""/>
                     </a>
-                    <TextoSlide>
-                        <p>aqui va un texto</p>
-                    </TextoSlide>
+                </Slide1>
+
+                
+                <Slide1>
+                    <a href="https://www.instagram.com">
+                        <img src={img4} alt=""/>
+                    </a>
                 </Slide1>
 
 
