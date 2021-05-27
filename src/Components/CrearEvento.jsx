@@ -1,19 +1,22 @@
-import './ProvedoresStyles.scss'
+import './CrearEvento.scss';
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 
 export default function (){
 
     const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+    const [location, setLocation] = useState("")
+    const [number, setNumber] = useState("")
+    const [date, setDate] = useState("")
     
     const handleSubmit =  event => {
         event.preventDefault()
-        Axios.post("./api/auth/signup", {
+        Axios.post("http://localhost:5000/api/auth/signup", {
             name: name,
-            email: email,
-            password: password,
+            location: location,
+            number: number,
+            date: date,
+            
         }).then((res) =>{
             alert("Prueba")
             alert(res.data.message)
@@ -37,7 +40,7 @@ export default function (){
                 </div>
                 
                 <form action="#" onSubmit= {handleSubmit} method="POST" className="signupForm" name="signupform">
-                    <h2>Agregar un provedor</h2>
+                    <h2>Crear tu evento</h2>
                     <ul className="noBullet">
                         <li>
                             <label htmlfor="nombre de la empresa"></label>
@@ -45,12 +48,17 @@ export default function (){
                         </li>
                     
                         <li>
-                            <label htmlfor="email"></label>
-                            <input type="email" className="inputFields" id="email" name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}}/>
+                            <label htmlfor="locación"></label>
+                            <input type="text" className="inputFields" id="location" name="location" placeholder="Locación"  required onChange = {(e)=>{setLocation(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="password"></label>
-                            <input type="password" className="inputFields" id="password" name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}}/>
+                            <label htmlfor="Numero de personas"></label>
+                            <input type="number" className="inputFields" id="number" name="number" placeholder="número de Personas"  required onChange = {(e)=>{setNumber(e.target.value)}}/>
+                        </li>
+
+                        <li>
+                            <label htmlfor="Fecha del evento"></label>
+                            <input type="date" className="inputFields" id="date" name="date" placeholder="número de Personas"  required onChange = {(e)=>{setDate(e.target.value)}}/>
                         </li>
                         <li id="center-btn">
                             <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>

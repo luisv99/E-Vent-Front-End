@@ -2,6 +2,7 @@ import './App.css';
 import NavBar from './Components/NavBar';
 import Home from './Components/Home';
 import Login from './Components/Login';
+import CrearEvento from './Components/CrearEvento';
 import Recomendaciones from './Components/Recomendaciones';
 import Contacto from './Components/Contacto';
 import SignUp from './Components/SignUp';
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route path="/register">
           <Login></Login>
+        </Route>
+        <Route path="/CrearEvento">
+          <CrearEvento></CrearEvento>
         </Route>
         <Route path="/recomendations">
           <Recomendaciones></Recomendaciones>
