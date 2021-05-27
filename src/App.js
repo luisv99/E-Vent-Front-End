@@ -7,6 +7,9 @@ import Contacto from './Components/Contacto';
 import SignUp from './Components/SignUp';
 import Footer from './Components/Footer';
 import Services from './Components/Services';
+import Provedores from './Components/Provedores';
+
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -42,6 +45,9 @@ function App() {
         </Route>
         <Route path="/Services">
           <Services></Services>
+        </Route>
+        <Route path="/Provedores">
+          <Provedores></Provedores>
         </Route>
       </Switch>
       <Footer/>

@@ -15,6 +15,8 @@ export default function NavBar(){
                 <li><Link to="/Services">Crea tu E-Vent</Link></li>
                 <li><Link to="/recomendations">Recomendaciones</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/Provedores">Provedores</Link></li>
+                
             </ul>
 
             <div className="menu-bar">
