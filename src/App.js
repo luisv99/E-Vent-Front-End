@@ -6,6 +6,7 @@ import Recomendaciones from './Components/Recomendaciones';
 import Contacto from './Components/Contacto';
 import SignUp from './Components/SignUp';
 import Footer from './Components/Footer';
+import Services from './Components/Services';
 import {
   BrowserRouter as Router,
   Switch,
@@ -38,6 +39,9 @@ function App() {
         </Route>
         <Route path="/SignUp">
           <SignUp></SignUp>
+        </Route>
+        <Route path="/Services">
+          <Services></Services>
         </Route>
       </Switch>
       <Footer/>
