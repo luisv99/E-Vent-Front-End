@@ -1,4 +1,4 @@
-import './NavBar.css'
+import './NavBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBars,faShoppingCart} from '@fortawesome/free-solid-svg-icons'
 import {
