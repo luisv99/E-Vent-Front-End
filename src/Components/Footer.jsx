@@ -1,10 +1,21 @@
+<<<<<<< HEAD
 import './Footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+=======
+import './Footer.css';
+import './Slideshow2';
+import './CrearEvento';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+>>>>>>> d73c56cd1d93afbe92b8396de70212929f45932d
 import imgS from './../Imagenes/Métodos de pago.png';
 import imgT from './../Imagenes/team.png';
 import imgN from './../Imagenes/negocio2.png';
 import imgSA from './../Imagenes/SA.png';
 import imgP from './../Imagenes/preguntas.png';
+<<<<<<< HEAD
+=======
+import Slideshow2 from './Slideshow2';
+>>>>>>> d73c56cd1d93afbe92b8396de70212929f45932d
 
 import { faFacebookF, faTwitter, faInstagram, faWhatsapp} from '@fortawesome/free-brands-svg-icons' 
 import {
@@ -38,8 +49,8 @@ export default function Footer(){
                         <div className="footer-col">
                             <h4>Eventos</h4>
                             <ul>
-                                <li><a href="#">Crear E-Vent</a></li>
-                                <li><a href="#">Galeria</a></li>
+                                <li><a href="CrearEvento">Crear E-Vent</a></li>
+                                <li><a href="#miModal8">Galeria</a></li>
                                 <li><a href="#">Clientes</a></li>
                             </ul>
                         </div>
@@ -88,6 +99,16 @@ export default function Footer(){
                 <div class="modal-contenido5">
                     <a href="#">X</a>
                     <img src={imgP} alt=""/>
+                </div>  
+                </div>
+
+
+                <div id="miModal8" class="modal8">
+                <div class="modal-contenido8">
+                    <a href="#">X</a>
+                    <div className="slide">
+                        <Slideshow2/>
+                    </div>
                 </div>  
                 </div>
 

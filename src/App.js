@@ -2,11 +2,18 @@ import './App.css';
 import NavBar from './Components/NavBar';
 import Home from './Components/Home';
 import Login from './Components/Login';
+import CrearEvento from './Components/CrearEvento';
 import Recomendaciones from './Components/Recomendaciones';
 import Contacto from './Components/Contacto';
 import SignUp from './Components/SignUp';
 import Footer from './Components/Footer';
 import Services from './Components/Services';
+<<<<<<< HEAD
+=======
+import Provedores from './Components/Provedores';
+
+
+>>>>>>> d73c56cd1d93afbe92b8396de70212929f45932d
 import {
   BrowserRouter as Router,
   Switch,
@@ -31,6 +38,9 @@ function App() {
         <Route path="/register">
           <Login></Login>
         </Route>
+        <Route path="/CrearEvento">
+          <CrearEvento></CrearEvento>
+        </Route>
         <Route path="/recomendations">
           <Recomendaciones></Recomendaciones>
         </Route>
@@ -42,6 +52,9 @@ function App() {
         </Route>
         <Route path="/Services">
           <Services></Services>
+        </Route>
+        <Route path="/Provedores">
+          <Provedores></Provedores>
         </Route>
       </Switch>
       <Footer/>

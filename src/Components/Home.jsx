@@ -40,6 +40,7 @@ export default function Home(){
       </div>
       </>
     )
+<<<<<<< HEAD
   }
   else{
     return(
@@ -62,9 +63,17 @@ export default function Home(){
 }
 
 
+=======
+}
+
+>>>>>>> d73c56cd1d93afbe92b8396de70212929f45932d
 const Titulo = styled.p `
     font-size: 18px;
     font-weight: 700;
     text-transform: upercase;
     margin-botto,: 10px
+<<<<<<< HEAD
 `;
+=======
+`;
+>>>>>>> d73c56cd1d93afbe92b8396de70212929f45932d

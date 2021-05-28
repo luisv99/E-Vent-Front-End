@@ -1,30 +1,29 @@
-import './SignUpStyles.scss'
+import './ProvedoresStyles.scss'
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 
 export default function (){
 
     const [name, setName] = useState("")
-    const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     
-    const handleSubmit = event => {
-        event.preventDefault();
+    const handleSubmit =  event => {
+        event.preventDefault()
         Axios.post("./api/auth/signup", {
             name: name,
-            lastName: lastName,
             email: email,
             password: password,
-            roles: ["user"],
-        }).then((response) =>{
-            alert("Funciona")
-            alert(response.data.message)
-        }).catch(err => {
-            alert(err)
+        }).then((res) =>{
+            alert("Prueba")
+            alert(res.data.message)
+        },
+        console.log("no se que pasa"),
+        //alert(response.data.message),
+       // alert(response.data.message),
+        (error) =>{
+           // alert(error.response.data.message)
         })
-        console.log("YA PASO")
-       
         
     }
     return(
@@ -38,16 +37,13 @@ export default function (){
                 </div>
                 
                 <form action="#" onSubmit= {handleSubmit} method="POST" className="signupForm" name="signupform">
-                    <h2>Crear una cuenta</h2>
+                    <h2>Agregar un provedor</h2>
                     <ul className="noBullet">
                         <li>
-                            <label htmlfor="nombre"></label>
+                            <label htmlfor="nombre de la empresa"></label>
                             <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre"  required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
-                        <li>
-                            <label htmlfor="apellido"></label>
-                            <input type="text" className="inputFields" id="apellido" name="apellido" placeholder="Apellido"  required onChange = {(e)=>{setLastName(e.target.value)}}/>
-                        </li>
+                    
                         <li>
                             <label htmlfor="email"></label>
                             <input type="email" className="inputFields" id="email" name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}}/>
