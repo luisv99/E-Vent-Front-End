@@ -20,11 +20,7 @@ export default function (){
         }).then((response) =>{
             alert("Funciona")
             alert(response.data.message)
-        },
-        (error) =>{
-            alert(error.response.data.message);
-        }
-        ).catch(err => {
+        }).catch(err => {
             alert(err)
         })
         console.log("YA PASO")
