@@ -112,7 +112,7 @@ flex-direction: row;}
   margin-right: 1rem;
   width: 850px;
   height: 350px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .title2{
@@ -120,7 +120,7 @@ flex-direction: row;}
   text-align: center;
   color: #f5f5f5;
   padding-top: 10rem;
-  font-size: 3rem;
+  font-size: 2rem;
 
 }
 
@@ -133,10 +133,27 @@ flex-direction: row;}
 
 .content2{
   display: flex;
-  padding-top: 5rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 .img2{
-  width: 750px;
+  width: 700px;
   height: 400px;
+  margin-left: 5rem;
+  border-radius: 10px;
+}
+
+.img3{
+  width: 900px;
+  height: 400px;
+  margin-left: 1rem;
+  border-radius: 10px;
+}
+
+.title4{
+  color: #f5f5f5;
+  font-size: 4rem;
+  margin-left: 5rem;
+  margin-top: 10rem;
 }
