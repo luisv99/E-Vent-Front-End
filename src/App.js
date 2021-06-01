@@ -14,6 +14,9 @@ import Users from './Components/Users';
 import ServiciosAdmin from './Components/ServiciosAdmin';
 import Proveedores from './Components/Proveedores';
 import React from "react";
+//fernando
+import InputDistribuidor from "./Components/InputDistribuidor";
+import ListDistribuidores from "./Components/ListDistribuidores";
 
 import {
   BrowserRouter as Router,
@@ -71,6 +74,9 @@ function App() {
         
         <Route path="/ProveedoresAdmin">
           <Proveedores/>
+        </Route>
+        <Route path="/DistribuidoresAdmin">
+          <ListDistribuidores/>
         </Route>
         
       </Switch>
