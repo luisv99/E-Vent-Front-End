@@ -11,6 +11,8 @@ import Services from './Components/Services';
 import Provedores from './Components/Provedores';
 import Admin from './Components/Admin';
 import Users from './Components/Users';
+import ServiciosAdmin from './Components/ServiciosAdmin';
+import Proveedores from './Components/Proveedores';
 import React from "react";
 
 import {
@@ -60,9 +62,15 @@ function App() {
         <Route path="/Admin">
           <Admin/>
         </Route>
-
         <Route path="/Users">
           <Users/>
+        </Route>
+        <Route path="/ServiciosAdmin">
+          <ServiciosAdmin/>
+        </Route>
+        
+        <Route path="/ProveedoresAdmin">
+          <Proveedores/>
         </Route>
         
       </Switch>
