@@ -9,7 +9,11 @@ import SignUp from './Components/SignUp';
 import Footer from './Components/Footer';
 import Services from './Components/Services';
 import Provedores from './Components/Provedores';
-
+import Admin from './Components/Admin';
+import Users from './Components/Users';
+import ServiciosAdmin from './Components/ServiciosAdmin';
+import Proveedores from './Components/Proveedores';
+import React from "react";
 
 import {
   BrowserRouter as Router,
@@ -18,6 +22,8 @@ import {
   Link
 } from "react-router-dom";
 
+
+ 
 
 function App() {
     
@@ -53,6 +59,20 @@ function App() {
         <Route path="/Provedores">
           <Provedores></Provedores>
         </Route>
+        <Route path="/Admin">
+          <Admin/>
+        </Route>
+        <Route path="/Users">
+          <Users/>
+        </Route>
+        <Route path="/ServiciosAdmin">
+          <ServiciosAdmin/>
+        </Route>
+        
+        <Route path="/ProveedoresAdmin">
+          <Proveedores/>
+        </Route>
+        
       </Switch>
       <Footer/>
     </div>
