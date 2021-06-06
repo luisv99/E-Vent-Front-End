@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useEffect} from 'react';
 import img1 from './../Imagenes/event.png';
 import img2 from './../Imagenes/neon2.png';
 import img3 from './../Imagenes/tinto.png';
@@ -14,6 +14,7 @@ import {ReactComponent as Flechaizquierda}  from './../Imagenes/iconmonstr-arrow
 
 const Slideshow = () => {
     const slideshow = useRef(null);
+    const intervaloSlideshow = useRef(null);
 
     const siguiente = () => {
         if(slideshow.current.children.length > 0){
@@ -61,6 +62,26 @@ const Slideshow = () => {
         }
 
     }
+
+    useEffect(() => {
+
+        intervaloSlideshow.current = setInterval(() => {
+            siguiente();
+        }, 4000);
+
+        slideshow.current.addEventListener('mouseenter',  () => {
+            clearInterval(intervaloSlideshow.current);
+        });
+
+        slideshow.current.addEventListener('mouseleave',  () => {
+            intervaloSlideshow.current = setInterval(() => {
+                siguiente();
+            }, 4000);
+        });
+
+    }, []);
+
+
     return(
 
         <ContenedorPrincipal>

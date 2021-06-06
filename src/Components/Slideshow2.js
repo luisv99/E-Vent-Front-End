@@ -1,8 +1,5 @@
 import React, {useRef} from 'react';
-import imga from '../Imagenes/asia.png';
-import imgb from '../Imagenes/asia.png';
-import imgc from '../Imagenes/asia.png';
-import imgd from '../Imagenes/asia.png';
+
 
 import styled from 'styled-components';
 import {ReactComponent as Flechaderecha}  from './../Imagenes/iconmonstr-arrow-63.svg';
@@ -67,28 +64,28 @@ const Slideshow2 = () => {
             <ContenedorSlideshow ref={slideshow}>
                 <Slide1>
                     <a href="https://www.instagram.com">
-                        <img src={imga} alt=""/>
+                        <img src="/imagenes/party1.png" alt=""/>
                     </a>
                    
                 </Slide1>
 
                 <Slide1>
                     <a href="https://www.instagram.com">
-                        <img src={imgb} alt=""/>
+                        <img src="/imagenes/party2.png" alt=""/>
                     </a>
                   
                 </Slide1>
 
                 <Slide1>
                     <a href="https://www.instagram.com">
-                        <img src={imgc} alt=""/>
+                        <img src="/imagenes/party3.png"alt=""/>
                     </a>
                 </Slide1>
 
                 
                 <Slide1>
                     <a href="https://www.instagram.com">
-                        <img src={imgd} alt=""/>
+                        <img src="/imagenes/party4.png" alt=""/>
                     </a>
                 </Slide1>
 

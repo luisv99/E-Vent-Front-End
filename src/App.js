@@ -13,6 +13,8 @@ import Admin from './Components/Admin';
 import Users from './Components/Users';
 import ServiciosAdmin from './Components/ServiciosAdmin';
 import Proveedores from './Components/Proveedores';
+import Catalogo from './Components/Catalogo';
+import Catalogos from './Components/Catalogos';
 import React from "react";
 
 import {
@@ -58,6 +60,12 @@ function App() {
         </Route>
         <Route path="/Provedores">
           <Provedores></Provedores>
+        </Route>
+        <Route path="/Catalogo">
+          <Catalogo></Catalogo>
+        </Route>
+        <Route path="/Catalogos">
+          <Catalogos></Catalogos>
         </Route>
         <Route path="/Admin">
           <Admin/>

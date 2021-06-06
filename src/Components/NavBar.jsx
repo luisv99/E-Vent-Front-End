@@ -16,6 +16,7 @@ export default function NavBar(){
                 <li><Link to="/recomendations">Recomendaciones</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
                 <li><Link to="/Provedores">Provedores</Link></li>
+                <li><Link to="/Catalogos">Catálogo</Link></li>
                 
             </ul>
 
