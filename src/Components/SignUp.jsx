@@ -8,20 +8,27 @@ export default function (){
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [direccion, setDireccion] = useState("")
+    const [telefono, setTelefono] = useState("")
+    const [cedula, setCedula] = useState("")
     
     const handleSubmit = event => {
         event.preventDefault();
+        console.log(cedula)
         Axios.post("./api/auth/signup", {
             name: name,
             lastName: lastName,
             email: email,
             password: password,
             roles: ["user"],
+            direccion: direccion,
+            telefono: telefono,
+            cedula: cedula
         }).then((response) =>{
             alert("Funciona")
             alert(response.data.message)
         }).catch(err => {
-            alert(err)
+            alert(err.response.data.message)
         })
         console.log("YA PASO")
        
@@ -47,6 +54,18 @@ export default function (){
                         <li>
                             <label htmlfor="apellido"></label>
                             <input type="text" className="inputFields" id="apellido" name="apellido" placeholder="Apellido"  required onChange = {(e)=>{setLastName(e.target.value)}}/>
+                        </li>
+                        <li>
+                            <label htmlfor="cedula"></label>
+                            <input type="number" className="inputFields" id="cedula" name="cedula" placeholder="Cedula"  required onChange = {(e)=>{setCedula(e.target.value)}}/>
+                        </li>
+                        <li>
+                            <label htmlfor="telefono"></label>
+                            <input type="number" className="inputFields" id="telefono" name="telefono" placeholder="Telefono"  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
+                        </li>
+                        <li>
+                            <label htmlfor="direccion"></label>
+                            <input type="text" className="inputFields" id="direccion" name="direccion" placeholder="Direccion"  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
                         </li>
                         <li>
                             <label htmlfor="email"></label>
