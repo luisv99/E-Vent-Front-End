@@ -19,7 +19,7 @@ export default function Footer(){
         <>
             <footer className="footer">
                 <div className="container">
-                    <div className="row">
+                    <div className="row1">
                         <div className="footer-col">
                             <h4>Compania</h4>
                             <ul>
