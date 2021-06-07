@@ -1,5 +1,7 @@
 import React from 'react';
 import Catalogo from './Catalogo'
+import './Catalogo.css'
+
 
 function Catalogos(){
     return(
