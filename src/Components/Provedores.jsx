@@ -10,6 +10,8 @@ export default function (){
     const [password, setPassword] = useState("")
     const [image, setImage] = useState("")
     const [imageURL, setImageURL] = useState("")
+    const [direccion, setDireccion] = useState("")
+    const [telefono, setTelefono] = useState("")
     
     const handleSubmit = async event => {
         event.preventDefault();
@@ -27,6 +29,7 @@ export default function (){
         console.log(file)
         console.log(file.secure_url)
         setImageURL(file.secure_url)
+        console.log(imageURL)
         
 
         Axios.post("./api/auth/signup", {
@@ -36,6 +39,8 @@ export default function (){
             password: password,
             roles: ["proveedor"],
             imageURL: imageURL,
+            direccion: direccion,
+            telefono: telefono
         }).then((res) =>{
             alert("Prueba")
             alert(res.data.message)
@@ -44,7 +49,7 @@ export default function (){
         //alert(response.data.message),
        // alert(response.data.message),
         ).catch(err => {
-            alert(err.message)
+            alert(err.response.data.message)
         })
         
     }
@@ -65,7 +70,14 @@ export default function (){
                             <label htmlfor="nombre de la empresa"></label>
                             <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre"  required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
-                    
+                        <li>
+                            <label htmlfor="telefono"></label>
+                            <input type="number" className="inputFields" id="telefono" name="telefono" placeholder="Telefono"  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
+                        </li>
+                        <li>
+                            <label htmlfor="direccion"></label>
+                            <input type="text" className="inputFields" id="direccion" name="direccion" placeholder="Direccion"  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
+                        </li>
                         <li>
                             <label htmlfor="email"></label>
                             <input type="email" className="inputFields" id="email" name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}}/>
