@@ -18,6 +18,7 @@ import React from "react";
 import InputDistribuidor from "./Components/InputDistribuidor";
 import ListDistribuidores from "./Components/ListDistribuidores";
 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -77,6 +78,8 @@ function App() {
         </Route>
         <Route path="/DistribuidoresAdmin">
           <ListDistribuidores/>
+          <InputDistribuidor/>
+         
         </Route>
         
       </Switch>

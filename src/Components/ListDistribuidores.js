@@ -12,7 +12,7 @@ const ListDistribuidores = () => {
                 method: "DELETE"
 
             });
-        setDistribuidores(distribuidores.filter(distribuidor => distribuidor.distribuidores_id !== id))
+        setDistribuidores(distribuidores.filter(distribuidor => distribuidor.id !== id))
 
             
         } catch (error) {
@@ -50,12 +50,12 @@ const ListDistribuidores = () => {
     </thead>
     <tbody>
         {distribuidores.map(distribuidor => (
-            <tr key={distribuidor.distribuidores_id}>
+            <tr key={distribuidor.id}>
                 <td>{distribuidor.nombre}</td>
                 <td>
                     <EditDistribuidores distribuidor={distribuidor}/>
                     </td>
-                <td><button className="btn btn-danger" onClick={() => deleteDistribuidor(distribuidor.distribuidores_id)}>Eliminar</button></td>
+                <td><button className="btn btn-danger" onClick={() => deleteDistribuidor(distribuidor.id)}>Eliminar</button></td>
             </tr>
         ))}
       

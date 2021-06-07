@@ -8,7 +8,7 @@ const EditDistribuidores = ({distribuidor}) => {
         
         try {
             const body = {nombre};
-            const response = await fetch(`http://localhost:5000/distribuidores/${distribuidor.distribuidores_id}`,
+            const response = await fetch(`http://localhost:5000/distribuidores/${distribuidor.id}`,
             {
                 method: "PUT",
                 headers: {"Content-Type": "application/json"},
@@ -25,11 +25,11 @@ const EditDistribuidores = ({distribuidor}) => {
 
     return <Fragment>
 
-<button type="button" class="btn btn-warning" data-toggle="modal" data-target={`#id${distribuidor.distribuidores_id}`}>
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target={`#id${distribuidor.id}`}>
   Editar
 </button>
 
-<div class="modal" id={`id${distribuidor.distribuidores_id}`} 
+<div class="modal" id={`id${distribuidor.id}`} 
  onClick={() => setNombre(distribuidor.nombre)}>
   <div class="modal-dialog">
     <div class="modal-content">
