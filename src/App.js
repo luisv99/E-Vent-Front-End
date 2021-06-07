@@ -8,6 +8,7 @@ import Contacto from './Components/Contacto';
 import SignUp from './Components/SignUp';
 import Footer from './Components/Footer';
 import Services from './Components/Services';
+
 import Provedores from './Components/Provedores';
 import Admin from './Components/Admin';
 import Users from './Components/Users';
@@ -15,6 +16,7 @@ import ServiciosAdmin from './Components/ServiciosAdmin';
 import Catalogo from './Components/Catalogo';
 import Proveedores from './Components/Proveedores';
 import React from "react";
+
 
 import {
   BrowserRouter as Router,
@@ -37,7 +39,7 @@ function App() {
           <Home></Home>
         </Route>
         <Route path="/login">
-          <Login></Login>
+            <Login></Login> 
         </Route>
         <Route path="/register">
           <Login></Login>

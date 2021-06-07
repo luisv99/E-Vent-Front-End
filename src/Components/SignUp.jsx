@@ -9,23 +9,22 @@ export default function (){
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     
-    const handleSubmit =  event => {
-        event.preventDefault()
-        Axios.post("http://localhost:5000/api/auth/signup", {
+    const handleSubmit = event => {
+        event.preventDefault();
+        Axios.post("./api/auth/signup", {
             name: name,
             lastName: lastName,
             email: email,
             password: password,
-        }).then((res) =>{
-            alert("Prueba")
-            alert(res.data.message)
-        },
-        console.log("no se que pasa"),
-        //alert(response.data.message),
-       // alert(response.data.message),
-        (error) =>{
-           // alert(error.response.data.message)
+            roles: ["user"],
+        }).then((response) =>{
+            alert("Funciona")
+            alert(response.data.message)
+        }).catch(err => {
+            alert(err)
         })
+        console.log("YA PASO")
+       
         
     }
     return(

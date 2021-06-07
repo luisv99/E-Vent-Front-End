@@ -14,19 +14,16 @@ export default function (){
         Axios.post("http://localhost:5000/api/event/create", {
             name: name,
             location: location,
-            number: number,
+            cant_personas: number,
             date: date,
             user_id: localStorage.getItem('user_id'),
             token: localStorage.getItem('SavedToken')
+            
         }).then((res) =>{
             alert("Prueba")
             alert(res.data.message)
-        },
-        console.log("no se que pasa"),
-        //alert(response.data.message),
-       // alert(response.data.message),
-        ).catch((err) => {
-            console.log(err)
+        }).catch(err => {
+            alert(err.response.data.message)
         })
         
     }
