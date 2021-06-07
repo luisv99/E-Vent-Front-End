@@ -17,10 +17,12 @@ export default function Home(){
     window.location.reload();
   }
 
-  if(!localStorage.getItem('SavedToken')){
   useEffect(()=>{
     AOS.init();
   })
+  
+  if(!localStorage.getItem('SavedToken')){
+
     return(
        <>
        

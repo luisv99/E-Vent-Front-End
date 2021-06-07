@@ -1,21 +1,41 @@
 import './ProvedoresStyles.scss'
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
+import { Router } from 'react-router';
 
 export default function (){
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [image, setImage] = useState("")
+    const [imageURL, setImageURL] = useState("")
     
-    const handleSubmit =  event => {
+    const handleSubmit = async event => {
         event.preventDefault();
+
+        const data = new FormData()
+        data.append('file', image)
+        data.append('upload_preset', 'proveedores')
+        const res = await fetch("https://api.cloudinary.com/v1_1/gtoro98/image/upload",
+        {
+            method: "POST",
+            body: data,
+        })
+
+        const file = await res.json()
+        console.log(file)
+        console.log(file.secure_url)
+        setImageURL(file.secure_url)
+        
+
         Axios.post("./api/auth/signup", {
             name: name,
             lastName: null,
             email: email,
             password: password,
             roles: ["proveedor"],
+            imageURL: imageURL,
         }).then((res) =>{
             alert("Prueba")
             alert(res.data.message)
@@ -24,7 +44,7 @@ export default function (){
         //alert(response.data.message),
        // alert(response.data.message),
         ).catch(err => {
-            alert(err)
+            alert(err.message)
         })
         
     }
@@ -53,6 +73,10 @@ export default function (){
                         <li>
                             <label htmlfor="password"></label>
                             <input type="password" className="inputFields" id="password" name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}}/>
+                        </li>
+                        <li>
+                            <label htmlfor="image"></label>
+                            <input type="file" className="inputFields" id="image" name="image" placeholder="Imagen"  required onChange = {(e)=>{setImage(e.target.files[0]); console.log(image)}}/>
                         </li>
                         <li id="center-btn">
                             <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
