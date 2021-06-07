@@ -6,205 +6,54 @@ import { faFacebookF, faTwitter, faInstagram, faWhatsapp} from '@fortawesome/fre
 function Contacto(){
     return(
         <>
-            <div className="container">
-
-            <div className="card-wrapper">
-            
-            <div className="card profile-two">
-                
-                <div className="card-image profile-img--two">
-                <img src="/imagenes/SelfieLuis.jpeg" id="card-imageLuiss" alt="profile two"/>
-                </div>
-
-                <ul className="social-icons">
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faFacebookF} className="fab fa-facebook-f"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faInstagram} className="fab fa-instagram"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-twitter"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faWhatsapp} className="fab fa-dribbble"></FontAwesomeIcon>
-                    </a>
-                </li>
-                </ul>
-
-                <div className="details jane">
-                    <h2>Luis Vargas
-                    <br/>
-                    <span className="job-title">Front End</span>
-                    </h2>
-                </div>
-            </div>
-        </div> 
-            
-        <div className="card-wrapper2">
-            
-            <div className="card profile-two">
-                
-                <div className="card-image profile-img--two">
-                <img src="https://image.ibb.co/c9rY6J/profile02.jpg" alt="profile two"/>
-                </div>
-
-                <ul className="social-icons">
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faFacebookF} className="fab fa-facebook-f"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faInstagram} className="fab fa-instagram"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-twitter"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faWhatsapp} className="fab fa-dribbble"></FontAwesomeIcon>
-                    </a>
-                </li>
-                </ul>
-
-                <div className="details jane">
-                    <h2>Gustavo Toro
-                    <br/>
-                    <span className="job-title">Back End</span>
-                    </h2>
-                </div>
-            </div>
-        </div>  
-        <div className="card-wrapper3">
-            
-            <div className="card profile-two">
-                
-                <div className="card-image profile-img--two">
-                <img src="https://image.ibb.co/c9rY6J/profile02.jpg" alt="profile two"/>
-                </div>
-
-                <ul className="social-icons">
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faFacebookF} className="fab fa-facebook-f"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faInstagram} className="fab fa-instagram"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-twitter"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faWhatsapp} className="fab fa-dribbble"></FontAwesomeIcon>
-                    </a>
-                </li>
-                </ul>
-
-                <div className="details jane">
-                    <h2>Marcos Rodriguez
-                    <br/>
-                    <span className="job-title">Social Media</span>
-                    </h2>
-                </div>
-            </div>
-        </div> 
-        <div className="card-wrapper4">
-            
-            <div className="card profile-two">
-                
-                <div className="card-image profile-img--two">
-                <img src="https://image.ibb.co/c9rY6J/profile02.jpg" alt="profile two"/>
-                </div>
-
-                <ul className="social-icons">
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faFacebookF} className="fab fa-facebook-f"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faInstagram} className="fab fa-instagram"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-twitter"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faWhatsapp} className="fab fa-dribbble"></FontAwesomeIcon>
-                    </a>
-                </li>
-                </ul>
-
-                <div className="details jane">
-                    <h2>Barbara Alvarez
-                    <br/>
-                    <span className="job-title">UI Designer</span>
-                    </h2>
-                </div>
-            </div>
-        </div>  
-        <div className="card-wrapper5">
-            
-            <div className="card profile-two">
-                
-                <div className="card-image profile-img--two">
-                <img src="https://image.ibb.co/c9rY6J/profile02.jpg" alt="profile two"/>
-                </div>
-
-                <ul className="social-icons">
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faFacebookF} className="fab fa-facebook-f"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faInstagram} className="fab fa-instagram"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faTwitter} className="fab fa-twitter"></FontAwesomeIcon>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                    <FontAwesomeIcon icon={faWhatsapp} className="fab fa-dribbble"></FontAwesomeIcon>
-                    </a>
-                </li>
-                </ul>
-
-                <div className="details jane">
-                    <h2>Fernando Mejia
-                    <br/>
-                    <span className="job-title">UI Designer</span>
-                    </h2>
-                </div>
-            </div>
-        </div>   
+            <div class="background">
+  <div class="container">
+    <div class="screen">
+      <div class="screen-header">
+        <div class="screen-header-left">
+  
         </div>
+        <div class="screen-header-right">
+          <div class="screen-header-ellipsis"></div>
+          <div class="screen-header-ellipsis"></div>
+          <div class="screen-header-ellipsis"></div>
+        </div>
+      </div>
+      <div class="screen-body">
+        <div class="screen-body-item left">
+          <div class="app-title">
+            <span>CONTACTANOS!</span>
+            <span></span>
+          </div>
+          <div class="app-contact">CONTACT INFO : +58 (424) 266-3931</div>
+        </div>
+        <div class="screen-body-item">
+          <div class="app-form">
+            <div class="app-form-group">
+              <input class="app-form-control" placeholder="NAME"/>
+            </div>
+            <div class="app-form-group">
+              <input class="app-form-control" placeholder="EMAIL"/>
+            </div>
+            <div class="app-form-group">
+              <input class="app-form-control" placeholder="CONTACT NO"/>
+            </div>
+            <div class="app-form-group message">
+              <input class="app-form-control" placeholder="MESSAGE"/>
+            </div>
+            <div class="app-form-group buttons">
+              <button class="app-form-button">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="credits">
+      
+    </div>
+  </div>
+</div>
+
         </>
     )
 }

@@ -16,10 +16,11 @@ export default function Login(){
             password: password,
         }).then((response) =>{
             alert("Succesful LogIn");
-            alert(JSON.stringify(response.data))
-            
-            let token = response.data.access;
-            localStorage.setItem("SavedToken", 'Bearer ' + token);
+            localStorage.setItem("SavedToken", response.data.accessToken)
+            localStorage.setItem("user_id", response.data.id)
+            localStorage.setItem("roles", response.data.roles)
+        
+
         },
         (error) =>{
             alert(error.response.data.message);
@@ -28,31 +29,35 @@ export default function Login(){
 
     return(
         <>
-            <div className="signupSection">
-                <div className="info">
-                    <h1>E-Vent</h1>
-                    <br></br>
-                    <h1>LOGO</h1>
+            <div className="cont">
+                <div className="signupSection">
+                    <div className="info">
+                        <h1>E-Vent</h1>
+                        <br></br>
+                        <h1>LOGO</h1>
+                    </div>
+                    
+                    <form onSubmit={handleSubmit} method="POST" className="signupForm" name="signupform">
+                        <h2>Iniciar Sesion</h2>
+                        <ul className="noBullet">
+                            <li>
+                                <label htmlFor="email"></label>
+                                <input type="email" className="inputFields" id="email" name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}} />
+                            </li>
+                            <li>
+                                <label htmlFor="password"></label>
+                                <input type="password" className="inputFields" id="password" name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}} />
+                            </li>
+                            <li id="center-btn">
+                                <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
+                            </li>
+                        </ul>
+                    
+                    </form>
+                    
                 </div>
                 
-                <form onSubmit={handleSubmit} method="POST" className="signupForm" name="signupform">
-                    <h2>Iniciar Sesion</h2>
-                    <ul className="noBullet">
-                        <li>
-                            <label htmlfor="email"></label>
-                            <input type="email" className="inputFields" id="email" name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}}/>
-                        </li>
-                        <li>
-                            <label htmlfor="password"></label>
-                            <input type="password" className="inputFields" id="password" name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}}/>
-                        </li>
-                        <li id="center-btn">
-                            <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
-                        </li>
-                    </ul>
-                
-                </form>
-                
+               
             </div>
                
         </>
