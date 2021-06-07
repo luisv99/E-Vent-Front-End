@@ -11,21 +11,20 @@ export default function (){
     
     const handleSubmit =  event => {
         event.preventDefault()
-        Axios.post("http://localhost:5000/api/auth/signup", {
+        console.log("SENT TOKEN: "+localStorage.getItem('SavedToken'))
+        Axios.post("http://localhost:5000/api/event/create", {
             name: name,
             location: location,
-            number: number,
+            cant_personas: number,
             date: date,
+            user_id: localStorage.getItem('user_id'),
+            token: localStorage.getItem('SavedToken')
             
         }).then((res) =>{
             alert("Prueba")
             alert(res.data.message)
-        },
-        console.log("no se que pasa"),
-        //alert(response.data.message),
-       // alert(response.data.message),
-        (error) =>{
-           // alert(error.response.data.message)
+        }).catch(err => {
+            alert(err.response.data.message)
         })
         
     }

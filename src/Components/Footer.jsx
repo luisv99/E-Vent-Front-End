@@ -1,31 +1,19 @@
-<<<<<<< HEAD
-import './Footer.css';
-import './Slideshow';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-=======
-<<<<<<< HEAD
-import './Footer.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-=======
+
 import './Footer.css';
 import './Slideshow2';
 import './CrearEvento';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
->>>>>>> d73c56cd1d93afbe92b8396de70212929f45932d
->>>>>>> marcos
+
 import imgS from './../Imagenes/Métodos de pago.png';
 import imgT from './../Imagenes/team.png';
 import imgN from './../Imagenes/negocio2.png';
 import imgSA from './../Imagenes/SA.png';
 import imgP from './../Imagenes/preguntas.png';
-<<<<<<< HEAD
+
 import Slideshow from './Slideshow';
-=======
-<<<<<<< HEAD
-=======
+
 import Slideshow2 from './Slideshow2';
->>>>>>> d73c56cd1d93afbe92b8396de70212929f45932d
->>>>>>> marcos
+
 
 import { faFacebookF, faTwitter, faInstagram, faWhatsapp} from '@fortawesome/free-brands-svg-icons' 
 import {
@@ -59,11 +47,7 @@ export default function Footer(){
                         <div className="footer-col">
                             <h4>Eventos</h4>
                             <ul>
-<<<<<<< HEAD
-                                <li><a href="#">Crear E-Vent</a></li>
-=======
                                 <li><a href="CrearEvento">Crear E-Vent</a></li>
->>>>>>> marcos
                                 <li><a href="#miModal8">Galeria</a></li>
                                 <li><a href="#">Clientes</a></li>
                             </ul>
@@ -116,19 +100,11 @@ export default function Footer(){
                 </div>  
                 </div>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> marcos
                 <div id="miModal8" class="modal8">
                 <div class="modal-contenido8">
                     <a href="#">X</a>
                     <div className="slide">
-<<<<<<< HEAD
-                        <Slideshow/>
-=======
                         <Slideshow2/>
->>>>>>> marcos
                     </div>
                 </div>  
                 </div>

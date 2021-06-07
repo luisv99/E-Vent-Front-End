@@ -18,8 +18,11 @@ export default function Login(){
             alert("Succesful LogIn");
             alert(JSON.stringify(response.data))
             
-            let token = response.data.access;
-            localStorage.setItem("SavedToken", 'Bearer ' + token);
+            let token = response.data.accessToken;
+            localStorage.setItem("SavedToken", token);
+            localStorage.setItem("user_id", response.data.id);
+            localStorage.setItem("roles", response.data.roles);
+        
         },
         (error) =>{
             alert(error.response.data.message);

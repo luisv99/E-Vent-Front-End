@@ -5,15 +5,10 @@ import Axios from 'axios';
 export default function (){
 
     const [name, setName] = useState("")
-<<<<<<< HEAD
-    const [lastName, setLastName] = useState("")
-=======
->>>>>>> marcos
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     
     const handleSubmit =  event => {
-<<<<<<< HEAD
         event.preventDefault();
         Axios.post("./api/auth/signup", {
             name: name,
@@ -21,13 +16,6 @@ export default function (){
             email: email,
             password: password,
             roles: ["proveedor"],
-=======
-        event.preventDefault()
-        Axios.post("./api/auth/signup", {
-            name: name,
-            email: email,
-            password: password,
->>>>>>> marcos
         }).then((res) =>{
             alert("Prueba")
             alert(res.data.message)
@@ -35,13 +23,8 @@ export default function (){
         console.log("no se que pasa"),
         //alert(response.data.message),
        // alert(response.data.message),
-<<<<<<< HEAD
         ).catch(err => {
             alert(err)
-=======
-        (error) =>{
-           // alert(error.response.data.message)
->>>>>>> marcos
         })
         
     }

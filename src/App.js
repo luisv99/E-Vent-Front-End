@@ -32,7 +32,7 @@ function App() {
           <Home></Home>
         </Route>
         <Route path="/login">
-          <Login></Login>
+            <Login></Login> 
         </Route>
         <Route path="/register">
           <Login></Login>
