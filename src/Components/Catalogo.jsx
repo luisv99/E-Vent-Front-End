@@ -22,15 +22,19 @@ export default function Catalogo(){
         <>
             <div className="cont1">
                 <div className="cont">
+
+                    {proveedores.map((proveedor,index)=>(
                     <div className="card">
-                        <h3>KFC</h3>
-                        <img src="/imagenes/KFC.JPG" alt=""/>
+                        <h3>{proveedor.name}</h3>
+                        <img src={proveedor.image} alt=""/>
                         <p>Kentucky Fried Chicken
                         </p>
                         <a href="#!" className="button">
                             Agregar
                         </a>
                     </div>
+                    ))}
+                
                 </div>
             </div>
             

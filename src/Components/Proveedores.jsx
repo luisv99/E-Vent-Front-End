@@ -43,6 +43,7 @@ export default function Admin(){
             getProveedores()
         }).catch(err => {
             alert(err.data.message)
+            alert("error")
         })
     }
 
@@ -68,7 +69,8 @@ export default function Admin(){
                 <tr>
                     <td>{proveedor.name}</td>
                     <td>{proveedor.email}</td>
-                    <td></td>
+                    <td><img src={proveedor.image}></img></td>
+                    
                     <td></td>
                     <td>
                         <button onClick = {(e) => {deleteProveedor(e, proveedor.id)}}>Delete</button>

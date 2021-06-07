@@ -37,14 +37,14 @@ export default function (){
             roles: ["proveedor"],
             imageURL: imageURL,
         }).then((res) =>{
-            alert("Prueba")
+            alert("Funcionó!")
             alert(res.data.message)
         },
         console.log("no se que pasa"),
         //alert(response.data.message),
        // alert(response.data.message),
         ).catch(err => {
-            alert(err.message)
+            alert("Error: " + err.message)
         })
         
     }
@@ -76,7 +76,7 @@ export default function (){
                         </li>
                         <li>
                             <label htmlfor="image"></label>
-                            <input type="file" className="inputFields" id="image" name="image" placeholder="Imagen"  required onChange = {(e)=>{setImage(e.target.files[0]); console.log(image)}}/>
+                            <input type="file" className="inputFields" id="image" name="image" placeholder="Imagen"  required onChange = {(e)=>{setImage(e.target.files[0]); console.log("Input foto",image)}}/>
                         </li>
                         <li id="center-btn">
                             <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
