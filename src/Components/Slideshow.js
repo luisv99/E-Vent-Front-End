@@ -128,6 +128,8 @@ const Slide1 = styled.div`
     z-index: 10;
     max-height: 500px;
     position: relative;
+    border-radius: 5px;
+
 
     img{
         width: 100%;

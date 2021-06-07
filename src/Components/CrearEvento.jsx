@@ -11,7 +11,6 @@ export default function (){
     
     const handleSubmit =  event => {
         event.preventDefault()
-        console.log("SENT TOKEN: "+localStorage.getItem('SavedToken'))
         Axios.post("http://localhost:5000/api/event/create", {
             name: name,
             location: location,

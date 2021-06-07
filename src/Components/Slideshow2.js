@@ -1,8 +1,8 @@
 import React, {useRef} from 'react';
-import imga from './../Imagenes/party1.png';
-import imgb from './../Imagenes/party2.png';
-import imgc from './../Imagenes/party3.png';
-import imgd from './../Imagenes/party4.png';
+import imga from '../Imagenes/asia.png';
+import imgb from '../Imagenes/asia.png';
+import imgc from '../Imagenes/asia.png';
+import imgd from '../Imagenes/asia.png';
 
 import styled from 'styled-components';
 import {ReactComponent as Flechaderecha}  from './../Imagenes/iconmonstr-arrow-63.svg';
