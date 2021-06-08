@@ -17,12 +17,12 @@ export default function NavBar(){
                 <li><Link to="/CrearEvento">Crea tu E-Vent</Link></li>
                 <li><Link to="/recomendations">Recomendaciones</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/admin">Admin</Link></li>
-                <li><Link to="/Catalogo">Catalogo</Link></li>
+                {/*<li><Link to="/admin">Admin</Link></li>*/}
+                <li><Link to="/Catalogo">Servicios</Link></li>
             </ul>
 
             <div className="menu-bar">
-                <FontAwesomeIcon icon= {faBars} id="menu-bar" className="fas"/>
+                <FontAwesomeIcon icon= {faBars} id="menu-bar" className="fas2"/>
             </div>
 
             <div className="shop">

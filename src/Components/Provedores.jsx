@@ -90,7 +90,7 @@ export default function (){
                         </li>
                         <li>
                             <label htmlfor="image"></label>
-                            <input type="file" className="inputFields" id="image" name="image" placeholder="Imagen"  required onChange = {(e)=>{setImage(e.target.files[0]); console.log("Input foto",image)}}/>
+                            <input type="file" className="inputFields" id="image" name="image" placeholder="Imagen"  required onChange = {(e)=>{setImage(e.target.files[0])}}/>
                         </li>
                     </ul>
                             <input type="submit" id="join-btn" name="join" alt="Join" value="Crear"/>

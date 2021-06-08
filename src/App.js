@@ -85,6 +85,10 @@ function App() {
         <Route path="/AddServices">
           <AddServices/>
         </Route>
+
+        <Route path="/ServicesAdmin">
+          <ServiciosAdmin/>
+        </Route>
         
       </Switch>
       <Footer/>
