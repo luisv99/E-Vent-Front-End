@@ -15,7 +15,13 @@ import ServiciosAdmin from './Components/ServiciosAdmin';
 import Catalogo from './Components/Catalogo';
 import Proveedores from './Components/Proveedores';
 import React from "react";
+<<<<<<< HEAD
 import AddServices from './Components/AddServices';
+=======
+//fernando
+import InputDistribuidor from "./Components/InputDistribuidor";
+import ListDistribuidores from "./Components/ListDistribuidores";
+>>>>>>> fer
 
 
 import {
@@ -81,6 +87,7 @@ function App() {
         <Route path="/ProveedoresAdmin">
           <Proveedores/>
         </Route>
+<<<<<<< HEAD
 
         <Route path="/AddServices">
           <AddServices/>
@@ -88,6 +95,12 @@ function App() {
 
         <Route path="/ServicesAdmin">
           <ServiciosAdmin/>
+=======
+        <Route path="/DistribuidoresAdmin">
+          <ListDistribuidores/>
+          <InputDistribuidor/>
+         
+>>>>>>> fer
         </Route>
         
       </Switch>
