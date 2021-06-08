@@ -36,8 +36,9 @@ body {
 }
 
 .navbar ul li {
-  margin-right: 0em;
+  margin: 2em;
   list-style: none;
+
 }
 
 .navbar ul li :hover {

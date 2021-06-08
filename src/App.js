@@ -19,6 +19,7 @@ import AddServices from './Components/AddServices';
 //fernando
 import InputDistribuidor from "./Components/InputDistribuidor";
 import ListDistribuidores from "./Components/ListDistribuidores";
+import ProveedorServicios from "./Components/ProveedorServicios";
 
 
 import {
@@ -91,6 +92,10 @@ function App() {
           <InputDistribuidor/>
          
         </Route>
+        <Route path="/ProveedorServicios">
+          <ProveedorServicios/>
+        </Route>
+        
         
       </Switch>
       <Footer/>
