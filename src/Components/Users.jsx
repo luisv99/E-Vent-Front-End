@@ -32,7 +32,7 @@ export default function Admin(){
 
     return(
         <>
-            <div className="contenedor">
+            <div className="contenedorU">
             
             <h1 className="titulo">Lista de usuarios</h1>
             <label htmlFor="filtro">Cedula</label>

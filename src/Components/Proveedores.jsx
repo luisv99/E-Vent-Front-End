@@ -53,7 +53,7 @@ export default function Admin(){
 
     return(
         <>
-            <div className="contenedor">
+            <div className="contenedorP">
             
             <h1 className="titulo">Lista de Proveedores</h1>
             <label htmlFor="filtro">Nombre</label>
