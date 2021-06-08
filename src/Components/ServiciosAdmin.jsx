@@ -13,7 +13,7 @@ export default function ServiciosAdmin(){
     }, []);
 
     const getServices = () =>{
-        Axios.get("./api/services").then((res)=>{
+        Axios.get("./api/service").then((res)=>{
             setServices(res.data)
             console.log(res.data)
         }
