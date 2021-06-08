@@ -16,6 +16,9 @@ import Catalogo from './Components/Catalogo';
 import Proveedores from './Components/Proveedores';
 import React from "react";
 import AddServices from './Components/AddServices';
+//fernando
+import InputDistribuidor from "./Components/InputDistribuidor";
+import ListDistribuidores from "./Components/ListDistribuidores";
 
 
 import {
@@ -82,6 +85,11 @@ function App() {
 
         <Route path="/AddServices">
           <AddServices/>
+          </Route>
+        <Route path="/DistribuidoresAdmin">
+          <ListDistribuidores/>
+          <InputDistribuidor/>
+         
         </Route>
         
       </Switch>
