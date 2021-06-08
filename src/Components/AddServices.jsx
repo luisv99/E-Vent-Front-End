@@ -50,16 +50,16 @@ export default function (){
                             <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre"  required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="telefono"></label>
-                            <textarea cols="40" rows="4" type="text" className="inputFields" id="telefono" name="Description" placeholder="Description"  required onChange = {(e)=>{setDescription(e.target.value)}}/>
-                        </li>
-                        <li>
-                            <label htmlfor="direccion"></label>
-                            <input type="text" className="inputFields" id="direccion" name="Promocion" placeholder="Promocion"  required onChange = {(e)=>{setPromocion(e.target.value)}}/>
+                            <label htmlfor="direccion">Esta en promocion?</label>
+                            <input type="checkbox" className="inputFields" id="direccion" name="Promocion" placeholder="Promocion"  required onChange = {(e)=>{setPromocion(e.target.value)}}/>
                         </li>
                         <li>
                             <label htmlfor="email"></label>
                             <input type="email" className="inputFields" id="email" name="Disponibilidad" placeholder="Disponibilidad"  required onChange = {(e)=>{setDisponibilidad(e.target.value)}}/>
+                        </li>
+                        <li>
+                            <label htmlfor="telefono"></label>
+                            <textarea cols="40" rows="4" type="text" className="inputFields" id="telefono" name="Description" placeholder="Description"  required onChange = {(e)=>{setDescription(e.target.value)}}/>
                         </li>
                     </ul>
                             <input type="submit" id="join-btn" name="join" alt="Join" value="Crear"/>

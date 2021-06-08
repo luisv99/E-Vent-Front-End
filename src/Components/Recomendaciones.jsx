@@ -3,10 +3,10 @@ import './RecomendacionesStyles.css'
 export default function Recomendaciones(){
     return(
         <>
-            <div className="cont1">
+            <div className="contenedor1">
                 <h2>Para los Adultos</h2>
 
-                <div className="cont">
+                <div className="contenedor">
                     <div className="card">
                         <h3>Pasapalos</h3>
                         <p>Recuerda siempre contratar una agencia encargada de los pasapalos y el servicio de mesoneros 
@@ -27,7 +27,7 @@ export default function Recomendaciones(){
                        <h3>Recomendacion 3</h3>
                     </div>
                 </div>
-                <h1 className="titulo">Para los Jovenes</h1>
+                <h1 className="tituloJovenes">Para los Jovenes</h1>
                 <div className="cont2">
                     <div className="card">
                         <h3>Hielo</h3>
