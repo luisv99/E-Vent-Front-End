@@ -12,8 +12,11 @@ import Provedores from './Components/Provedores';
 import Admin from './Components/Admin';
 import Users from './Components/Users';
 import ServiciosAdmin from './Components/ServiciosAdmin';
+import Catalogo from './Components/Catalogo';
 import Proveedores from './Components/Proveedores';
 import React from "react";
+import AddServices from './Components/AddServices';
+
 
 import {
   BrowserRouter as Router,
@@ -36,7 +39,7 @@ function App() {
           <Home></Home>
         </Route>
         <Route path="/login">
-          <Login></Login>
+            <Login></Login> 
         </Route>
         <Route path="/register">
           <Login></Login>
@@ -56,9 +59,15 @@ function App() {
         <Route path="/Services">
           <Services></Services>
         </Route>
+        
         <Route path="/Provedores">
           <Provedores></Provedores>
         </Route>
+      
+        <Route path="/Catalogo">
+          <Catalogo></Catalogo>
+        </Route>
+
         <Route path="/Admin">
           <Admin/>
         </Route>
@@ -69,6 +78,10 @@ function App() {
         
         <Route path="/ProveedoresAdmin">
           <Proveedores/>
+        </Route>
+
+        <Route path="/AddServices">
+          <AddServices/>
         </Route>
         
       </Switch>

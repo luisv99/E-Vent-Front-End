@@ -8,24 +8,30 @@ export default function (){
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [direccion, setDireccion] = useState("")
+    const [telefono, setTelefono] = useState("")
+    const [cedula, setCedula] = useState("")
     
-    const handleSubmit =  event => {
-        event.preventDefault()
-        Axios.post("http://localhost:5000/api/auth/signup", {
+    const handleSubmit = event => {
+        event.preventDefault();
+        console.log(cedula)
+        Axios.post("./api/auth/signup", {
             name: name,
             lastName: lastName,
             email: email,
             password: password,
-        }).then((res) =>{
-            alert("Prueba")
-            alert(res.data.message)
-        },
-        console.log("no se que pasa"),
-        //alert(response.data.message),
-       // alert(response.data.message),
-        (error) =>{
-           // alert(error.response.data.message)
+            roles: ["user"],
+            direccion: direccion,
+            telefono: telefono,
+            cedula: cedula
+        }).then((response) =>{
+            alert("Funciona")
+            alert(response.data.message)
+        }).catch(err => {
+            alert(err.response.data.message)
         })
+        console.log("YA PASO")
+       
         
     }
     return(
@@ -50,6 +56,18 @@ export default function (){
                             <input type="text" className="inputFields" id="apellido" name="apellido" placeholder="Apellido"  required onChange = {(e)=>{setLastName(e.target.value)}}/>
                         </li>
                         <li>
+                            <label htmlfor="cedula"></label>
+                            <input type="number" className="inputFields" id="cedula" name="cedula" placeholder="Cedula"  required onChange = {(e)=>{setCedula(e.target.value)}}/>
+                        </li>
+                        <li>
+                            <label htmlfor="telefono"></label>
+                            <input type="number" className="inputFields" id="telefono" name="telefono" placeholder="Telefono"  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
+                        </li>
+                        <li>
+                            <label htmlfor="direccion"></label>
+                            <input type="text" className="inputFields" id="direccion" name="direccion" placeholder="Direccion"  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
+                        </li>
+                        <li>
                             <label htmlfor="email"></label>
                             <input type="email" className="inputFields" id="email" name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}}/>
                         </li>
@@ -57,11 +75,9 @@ export default function (){
                             <label htmlfor="password"></label>
                             <input type="password" className="inputFields" id="password" name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}}/>
                         </li>
-                        <li id="center-btn">
-                            <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
-                        </li>
                     </ul>
                 
+                            <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
                 </form>
                 
             </div>

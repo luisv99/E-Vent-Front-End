@@ -11,9 +11,18 @@ import {
 import Slideshow from './Slideshow';
 
 export default function Home(){
+
+  const logOut = event =>{
+    localStorage.clear();
+    window.location.reload();
+  }
+
   useEffect(()=>{
     AOS.init();
   })
+  
+  if(!localStorage.getItem('SavedToken')){
+
     return(
        <>
        
@@ -43,7 +52,7 @@ export default function Home(){
 
       <div className="hero2" >
         <div className="content1">
-          <h2 className="title1" data-aos="fade-up-right" data-aos-duration="2000">Unica agencia de festejos <span style={{color: "#9c0525"}}>VIRTUAL</span> <br/>en el pais</h2>
+          <h2 className="title1" data-aos="fade-up-right" data-aos-duration="2000">Unica agencia de festejos <span style={{color: "#9c0525" ,fontWeight:"900"}}>VIRTUAL</span> <br/>en el pais</h2>
           <img data-aos="fade-up" data-aos-duration="1800" className="img1" src="/imagenes/party2.png" alt="" />
         </div>
       </div>
@@ -77,7 +86,27 @@ export default function Home(){
       </div>
       </>
     )
+  }
+  else{
+    return(
+    <>
+    <main className="hero">
+      <div className="slide">
+            <Slideshow/>
+      </div>
+      <div className="info-content" data-aos="fade-up" data-aos-duration="2000">
+        <h3>Welcome To</h3>
+        <h1>E-Vent</h1>
+        <p>Crea tu propio evento desde casa a tu gusto, y nosotros hacemos el resto por ti</p>
+        <br />
+        <button onClick={logOut} className="iniciar-sesion">Terminar Sesion</button>
+      </div>
+  </main>
+  </>
+    )
+  }
 }
+
 
 const Titulo = styled.p `
     font-size: 18px;

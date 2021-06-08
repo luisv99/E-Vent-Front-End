@@ -1,31 +1,60 @@
 import './ProvedoresStyles.scss'
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
+import { Router } from 'react-router';
 
 export default function (){
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [image, setImage] = useState("")
+    const [imageURL, setImageURL] = useState("")
+    const [direccion, setDireccion] = useState("")
+    const [telefono, setTelefono] = useState("")
     
-    const handleSubmit =  event => {
-        event.preventDefault()
+    const handleSubmit = async event => {
+        event.preventDefault();
+
+        const data = new FormData()
+        data.append('file', image)
+        data.append('upload_preset', 'proveedores')
+        const res = await fetch("https://api.cloudinary.com/v1_1/gtoro98/image/upload",
+        {
+            method: "POST",
+            body: data,
+        })
+
+        const file = await res.json()
+        console.log(file)
+        console.log(file.secure_url)
+        setImageURL(file.secure_url)
+        console.log(imageURL)
+        
+
         Axios.post("./api/auth/signup", {
             name: name,
+            lastName: null,
             email: email,
             password: password,
+            roles: ["proveedor"],
+            imageURL: file.secure_url,
+            direccion: direccion,
+            telefono: telefono
         }).then((res) =>{
-            alert("Prueba")
+            alert("Funcionó!")
             alert(res.data.message)
         },
         console.log("no se que pasa"),
         //alert(response.data.message),
        // alert(response.data.message),
-        (error) =>{
-           // alert(error.response.data.message)
+        ).catch(err => {
+            alert("Error: " + err.message)
+            alert(err.response.data.message)
         })
         
     }
+
     return(
         <>
             <div className="cont">
@@ -43,7 +72,14 @@ export default function (){
                             <label htmlfor="nombre de la empresa"></label>
                             <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre"  required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
-                    
+                        <li>
+                            <label htmlfor="telefono"></label>
+                            <input type="number" className="inputFields" id="telefono" name="telefono" placeholder="Telefono"  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
+                        </li>
+                        <li>
+                            <label htmlfor="direccion"></label>
+                            <input type="text" className="inputFields" id="direccion" name="direccion" placeholder="Direccion"  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
+                        </li>
                         <li>
                             <label htmlfor="email"></label>
                             <input type="email" className="inputFields" id="email" name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}}/>
@@ -52,10 +88,12 @@ export default function (){
                             <label htmlfor="password"></label>
                             <input type="password" className="inputFields" id="password" name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}}/>
                         </li>
-                        <li id="center-btn">
-                            <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
+                        <li>
+                            <label htmlfor="image"></label>
+                            <input type="file" className="inputFields" id="image" name="image" placeholder="Imagen"  required onChange = {(e)=>{setImage(e.target.files[0]); console.log("Input foto",image)}}/>
                         </li>
                     </ul>
+                            <input type="submit" id="join-btn" name="join" alt="Join" value="Crear"/>
                 
                 </form>
                 
