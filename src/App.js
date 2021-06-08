@@ -15,6 +15,7 @@ import ServiciosAdmin from './Components/ServiciosAdmin';
 import Catalogo from './Components/Catalogo';
 import Proveedores from './Components/Proveedores';
 import React from "react";
+import AddServices from './Components/AddServices';
 
 
 import {
@@ -79,6 +80,10 @@ function App() {
         
         <Route path="/ProveedoresAdmin">
           <Proveedores/>
+        </Route>
+
+        <Route path="/AddServices">
+          <AddServices/>
         </Route>
         
       </Switch>

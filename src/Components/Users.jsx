@@ -43,6 +43,8 @@ export default function Admin(){
                     <th>Email</th>
                     <th>Direccion</th>
                     <th>Cedula</th>
+                    <th>Eliminar</th>
+                    <th>Editar</th>
                 </tr>
 
                 { users.map((user) => (
@@ -52,6 +54,9 @@ export default function Admin(){
                     <td>{user.email}</td>
                     <td>Germany</td>
                     <td>26.489.495</td>
+                    <td><button className="deleteBtn" >Delete</button></td>
+                    <td><button className="editarBtn" >Editar</button></td>
+
 
                 </tr>
                 )) }

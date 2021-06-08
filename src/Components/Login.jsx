@@ -39,7 +39,7 @@ export default function Login(){
                     
                     <form onSubmit={handleSubmit} method="POST" className="signupForm" name="signupform">
                         <h2>Iniciar Sesion</h2>
-                        <ul className="noBullet">
+                        <ul className="noBullet2">
                             <li>
                                 <label htmlFor="email"></label>
                                 <input type="email" className="inputFields" id="email" name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}} />
