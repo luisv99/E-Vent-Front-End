@@ -6,18 +6,23 @@ import { Router } from 'react-router';
 export default function (){
 
     const [name, setName] = useState("")
+    const [price, setPrice] = useState("")
     const [description, setDescription] = useState("")
-    const [promocion, setPromocion] = useState(false)
-    const [disponibilidad, setDisponibilidad] = useState(true)
+    const [promotion, setPromocion] = useState(false)
+    const [available, setDisponibilidad] = useState(true)
     
     const handleSubmit = async event => {
         event.preventDefault();
-
-        Axios.post("./api/auth/signup", {
+        console.log(promotion)
+        Axios.post("./api/service/create", {
             name: name,
+            price: price,
             description: description,
-            promocion: promocion,
-            disponibilidad: disponibilidad,
+            promotion: promotion,
+            available: available,
+            user_id: localStorage.getItem('user_id'),
+            roles: localStorage.getItem('roles'),
+            token: localStorage.getItem('SavedToken')
         }).then((res) =>{
             alert("Funcionó!")
             alert(res.data.message)
@@ -46,20 +51,16 @@ export default function (){
                     <h2>Agregar un provedor</h2>
                     <ul className="noBullet">
                         <li>
-                            <label htmlfor="nombre de la empresa"></label>
-                            <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre"  required onChange = {(e)=>{setName(e.target.value)}}/>
+                            <label htmlfor="name"></label>
+                            <input type="text" className="inputFields" id="name" name="name" placeholder="Name"  required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="telefono"></label>
-                            <textarea cols="40" rows="4" type="text" className="inputFields" id="telefono" name="Description" placeholder="Description"  required onChange = {(e)=>{setDescription(e.target.value)}}/>
+                            <label htmlfor="description"></label>
+                            <textarea cols="40" rows="4" type="text" className="inputFields" id="description" name="Description" placeholder="Description"  required onChange = {(e)=>{setDescription(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="direccion"></label>
-                            <input type="text" className="inputFields" id="direccion" name="Promocion" placeholder="Promocion"  required onChange = {(e)=>{setPromocion(e.target.value)}}/>
-                        </li>
-                        <li>
-                            <label htmlfor="email"></label>
-                            <input type="email" className="inputFields" id="email" name="Disponibilidad" placeholder="Disponibilidad"  required onChange = {(e)=>{setDisponibilidad(e.target.value)}}/>
+                            <label htmlfor="price"></label>
+                            <input type="text" className="inputFields" id="price" name="price" placeholder="Price"  required onChange = {(e)=>{setPrice(e.target.value)}}/>
                         </li>
                     </ul>
                             <input type="submit" id="join-btn" name="join" alt="Join" value="Crear"/>
