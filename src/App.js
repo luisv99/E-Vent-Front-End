@@ -65,9 +65,7 @@ function App() {
         <Route path="/Users">
           <Users/>
         </Route>
-        <Route path="/ServiciosAdmin">
-          <ServiciosAdmin/>
-        </Route>
+        
         
         <Route path="/ProveedoresAdmin">
           <Proveedores/>
