@@ -6,7 +6,7 @@ import { faFacebookF, faTwitter, faInstagram, faWhatsapp} from '@fortawesome/fre
 function Contacto(){
     return(
         <>
-            <div class="background">
+  <div class="background">
   <div class="container">
     <div class="screen">
       <div class="screen-header">

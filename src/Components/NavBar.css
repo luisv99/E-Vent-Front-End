@@ -11,7 +11,7 @@ body {
 }
 
 .fas {
-  font-size: 1.8em;
+  font-size: 2.8em;
 }
 
 .header{
@@ -20,7 +20,7 @@ body {
 
 
 .navbar {
-  background-color: #272f3a;
+  background-color: #000000;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   align-items: center;
@@ -36,13 +36,14 @@ body {
 }
 
 .navbar ul li {
-  margin-right: 0.2em;
+  margin: 2em;
   list-style: none;
+
 }
 
 .navbar ul li :hover {
   color: #000000;
-  background-color: whitesmoke;
+  /*background-color: whitesmoke;*/
   
 }
 
@@ -50,12 +51,11 @@ body {
   text-decoration: none;
   color: whitesmoke;
   cursor: pointer;
-  padding: 1.75rem 1.5rem;
-  font-size: 1rem;
+  /*padding: 1.75rem 1.5rem;
+  font-size: 1rem;*/
   font-weight: 900;
   transition: all 0.3s ease-in-out;
 
-  
 }
 
 .navbar ul li a:hover {
@@ -71,6 +71,15 @@ body {
   justify-content: flex-end;
   color: #ffffff;
 }
+
+.home {
+  width: 400px;
+  height: 80px;
+  overflow: hidden;
+}
+
+
+
 
 
 /*RESPONSIVE*/

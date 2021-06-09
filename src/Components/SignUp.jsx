@@ -75,11 +75,9 @@ export default function (){
                             <label htmlfor="password"></label>
                             <input type="password" className="inputFields" id="password" name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}}/>
                         </li>
-                        <li id="center-btn">
-                            <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
-                        </li>
                     </ul>
                 
+                            <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
                 </form>
                 
             </div>

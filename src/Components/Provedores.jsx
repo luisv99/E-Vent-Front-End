@@ -38,7 +38,7 @@ export default function (){
             email: email,
             password: password,
             roles: ["proveedor"],
-            imageURL: imageURL,
+            imageURL: file.secure_url,
             direccion: direccion,
             telefono: telefono
         }).then((res) =>{
@@ -54,6 +54,7 @@ export default function (){
         })
         
     }
+
     return(
         <>
             <div className="cont">
@@ -91,10 +92,8 @@ export default function (){
                             <label htmlfor="image"></label>
                             <input type="file" className="inputFields" id="image" name="image" placeholder="Imagen"  required onChange = {(e)=>{setImage(e.target.files[0]); console.log("Input foto",image)}}/>
                         </li>
-                        <li id="center-btn">
-                            <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
-                        </li>
                     </ul>
+                            <input type="submit" id="join-btn" name="join" alt="Join" value="Crear"/>
                 
                 </form>
                 
