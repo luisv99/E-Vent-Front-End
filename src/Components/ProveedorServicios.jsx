@@ -17,7 +17,7 @@ export default function Admin(){
     }, []);
 
     const getServicios = () =>{
-        Axios.get("http://localhost:5000/").then((res)=>{
+        Axios.get("http://localhost:5000/services").then((res)=>{
             setServicios(res.data)
             console.log(res.data)
         }
