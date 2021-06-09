@@ -12,36 +12,41 @@ import {ReactComponent as Flechaizquierda}  from './../Imagenes/iconmonstr-arrow
 
 
 
+
+
 const Slideshow = () => {
     const slideshow = useRef(null);
     const intervaloSlideshow = useRef(null);
 
     const siguiente = () => {
-        if(slideshow.current.children.length > 0){
+        if(slideshow?.current){
+            if(slideshow.current.children.length > 0){
 
-            const primerElemento = slideshow.current.children[0];
-
-            slideshow.current.style.transition = `300ms ease-out all`;
-
-            const tamanoSlide = slideshow.current.children[0].offsetWidth;
-
-            slideshow.current.style.transform= `translateX(-${tamanoSlide}px)`;
-
-            const transicion = () => {
-
-                slideshow.current.style.transition = 'none';
-                slideshow.current.style.transform = `translateX(0)`;
-
-                slideshow.current.appendChild(primerElemento);
-
-                slideshow.current.removeEventListener('transitionend', transicion);
-
-            }
-
-            slideshow.current.addEventListener('transitionend', transicion);
-
-       }
-    }
+                const primerElemento = slideshow.current.children[0];
+    
+                slideshow.current.style.transition = `300ms ease-out all`;
+    
+                const tamanoSlide = slideshow.current.children[0].offsetWidth;
+    
+                slideshow.current.style.transform= `translateX(-${tamanoSlide}px)`;
+    
+                const transicion = () => {
+    
+                    slideshow.current.style.transition = 'none';
+                    slideshow.current.style.transform = `translateX(0)`;
+    
+                    slideshow.current.appendChild(primerElemento);
+    
+                    slideshow.current.removeEventListener('transitionend', transicion);
+    
+                }
+    
+                slideshow.current.addEventListener('transitionend', transicion);
+    
+           }
+        }
+        }
+        
     
     const anterior = () => {
 
