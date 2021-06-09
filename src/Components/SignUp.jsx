@@ -68,9 +68,12 @@ export default function (){
                         <li>
                             <input type="password" className="inputFields" id="password" name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}}/>
                         </li>
+                    <div className="boton">
+
+                            <input type="submit" id="join-btn" name="join" alt="Join" value="Registrarme"/>
+                    </div>
                     </ul>
                 
-                            <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
                 </form>
                 
             </div>
