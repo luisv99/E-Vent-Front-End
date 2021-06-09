@@ -1,6 +1,7 @@
 import './NavBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faGlassCheers, faIcons } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faGlassCheers, faIcons, faTruckMonster } from '@fortawesome/free-solid-svg-icons'
+import React, { useState, useEffect } from 'react';
 import {
     Link
   } from "react-router-dom";
@@ -8,21 +9,24 @@ import {
 
 
 export default function NavBar(){
+
+    const [open, setOpen] = useState(false)
+
     return(
         <>
         <header className="header">
             <nav className="navbar">
-            <ul className="menu" id="menu">
+
+            <ul className={`menu ${open? "menu-toggle":""}`} id="menu">
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/CrearEvento">Crea tu E-Vent</Link></li>
                 <li><Link to="/recomendations">Recomendaciones</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
-                {/*<li><Link to="/admin">Admin</Link></li>*/}
                 <li><Link to="/Catalogo">Servicios</Link></li>
             </ul>
 
-            <div className="menu-bar">
-                <FontAwesomeIcon icon= {faBars} id="menu-bar" className="fas2"/>
+            <div className="menu-bar" onClick={()=>setOpen(prev=>!prev)} >
+                <FontAwesomeIcon icon= {faBars} className="fas2" id="menu-bar"/>
             </div>
 
             <div className="shop">

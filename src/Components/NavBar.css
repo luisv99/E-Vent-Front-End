@@ -15,7 +15,7 @@ body {
 }
 
 .header{
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
 }
 
 
@@ -27,17 +27,18 @@ body {
   position: fixed;
   z-index: 999;
   width: 100vw;
-  height: 14vh;
+  height: 12vh;
 }
 
 .navbar .menu {
-  grid-column: 4 / 8;
+  grid-column: 4 / 9;
   display: flex;
 }
 
 .navbar ul li {
-  margin-right: 0.2em;
+  margin-right: 0.5em;
   list-style: none;
+  margin-top: 10px;
 
 }
 
@@ -48,10 +49,11 @@ body {
 }
 
 .navbar ul li a {
+  margin-top: 10px ;
   text-decoration: none;
   color: whitesmoke;
   cursor: pointer;
-  padding: 1.75rem 0.8rem;
+  padding: 1.8rem 1rem;
   font-size: 1rem;
   font-weight: 900;
   transition: all 0.3s ease-in-out;
@@ -120,17 +122,25 @@ body {
   .navbar .menu {
     position: absolute;
     width: 100%;
-    height: 70vh;
+    height: 60vh;
     display: grid;
     align-items: center;
     background-color: #272f3a;
     transform: translateX(170%);
     transition: all 1s;
-    margin-top: 34em;
+    margin-top: 26.5em;
     z-index: 1;
   } 
+  .navbar .menu ul li a{
+    color: white;
+    padding: 1rem 1rem;
+  }
+  .navbar .menu:hover{
+    color: black;
+  }
+
   .navbar .menu-toggle {
-    transform: translateX(70%);
+    transform: translateX(66%);
   }  
    .navbar .shop {
      display: none;
@@ -147,8 +157,12 @@ body {
   }  
   .navbar .menu li a {
     text-decoration: none;
-    color: #181818;
+    color: white;
     font-size: 1.2em;
+    padding: 1rem 1rem;
+  } 
+  .navbar .menu li a:hover {
+    color: black;
   } 
   .navbar .menu-bar {
     grid-column: 8 / 10;

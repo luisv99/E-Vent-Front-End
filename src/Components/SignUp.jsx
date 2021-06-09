@@ -48,31 +48,24 @@ export default function (){
                     <h2>Crear una cuenta</h2>
                     <ul className="noBullet">
                         <li>
-                            <label htmlfor="nombre"></label>
                             <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre"  required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="apellido"></label>
                             <input type="text" className="inputFields" id="apellido" name="apellido" placeholder="Apellido"  required onChange = {(e)=>{setLastName(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="cedula"></label>
                             <input type="number" className="inputFields" id="cedula" name="cedula" placeholder="Cedula"  required onChange = {(e)=>{setCedula(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="telefono"></label>
                             <input type="number" className="inputFields" id="telefono" name="telefono" placeholder="Telefono"  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="direccion"></label>
                             <input type="text" className="inputFields" id="direccion" name="direccion" placeholder="Direccion"  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="email"></label>
                             <input type="email" className="inputFields" id="email" name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="password"></label>
                             <input type="password" className="inputFields" id="password" name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}}/>
                         </li>
                     </ul>

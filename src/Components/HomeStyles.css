@@ -159,5 +159,34 @@ flex-direction: row;}
 }
 
 @media only screen and (max-width: 640px){
-   
+  .hero {
+    height: 100vh;
+    background-color: rgb(21, 20, 20);
+    display: grid;
+    grid-template-columns: repeat(28, 1fr);
+    grid-template-rows: repeat(28, 1fr);
+  }
+  .hero .info-content {
+    grid-column: 3 / 28;
+    grid-row: 2 / 28;
+    color: #fff;
+  }
+  
+  .hero .info-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    font-weight: 1000;
+  }
+  .hero .info-content h1 {
+    font-weight: 900;
+    font-size: 2em;
+    color: whitesmoke;
+    margin-right: 200px;
+  }
+
+  .slide {
+    margin-top: 1rem;
+    grid-column: 1 / 28;
+    grid-row: 13 / 28;
+  }
 }

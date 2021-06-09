@@ -1,4 +1,4 @@
-import React, {Fragment, useEffect, useState} from "react";
+/*import React, {Fragment, useEffect, useState} from "react";
 import EditDistribuidores from "./EditDistribuidores";
 
 const ListDistribuidores = () => {
@@ -64,4 +64,4 @@ const ListDistribuidores = () => {
     </Fragment>
 
 };
-export default ListDistribuidores;
+export default ListDistribuidores;*/

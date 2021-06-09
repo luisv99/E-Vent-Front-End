@@ -8,21 +8,22 @@ import {
 export default function ServiciosAdmin(){
     const [services, setServices] = useState([])
     const [serviceByName, setServiceByName] = useState('')
+    
     useEffect (() => {
         getServices()
     }, []);
 
     const getServices = () =>{
-        Axios.get("./api/service").then((res)=>{
+        Axios.get("http://localhost:5000/services").then((res)=>{
             setServices(res.data)
             console.log(res.data)
         }
         )
     }
 
-    const getServiceByName = (e) =>{
+    /*const getServiceByName = (e) =>{
         setServiceByName(e.target.value)
-        Axios.get("./api/service/" + serviceByName).then((res)=>{
+        Axios.get("./services/" + serviceByName).then((res)=>{
             setServices(res.data)
             console.log(res.data)
             //alert('Funciona')
@@ -31,14 +32,13 @@ export default function ServiciosAdmin(){
         ).catch(err => {
             console.log(err)
         })
-    }
+    }*/
 
-    const deleteService = (e, id) => {
-
-        console.log("Delete")
+    const deleteServices = (e, id) => {
         e.preventDefault();
+        console.log("Delete")
 
-        Axios.delete("./api/service/" + id).then((res) => {
+        Axios.delete("http://localhost:5000/services/"+ id).then((res) => {
             alert(res.data.message)
             getServices()
         }).catch(err => {
@@ -47,6 +47,19 @@ export default function ServiciosAdmin(){
         })
     }
 
+    /*const deleteService = async (id) => {
+        try {
+            const deleteService = await fetch(`http://localhost:5000/services/${id}`,{
+                method: "DELETE"
+
+            });
+        setServices(services.filter(service => service.id !== id))
+
+            
+        } catch (error) {
+            console.error(error.message)
+        }
+    }*/
 
     return(
         <>
@@ -54,14 +67,16 @@ export default function ServiciosAdmin(){
             
             <h1 className="titulo">Lista de Servicios</h1>
             <label htmlFor="filtro">Nombre</label>
-            <input type="text" id="filtro" onChange={(e)=>{getServiceByName(e)}} />
+            <input type="text" id="filtro" /*onChange={(e)=>{getServiceByName(e)}}*/ />
             <Link to="/AddServices" className="boton-crear-usuario">Agregar Servicio</Link>
             <table id="customers">
                 <tr>
                     <th>Nombre</th>
-                    <th>Telefono</th>
+                    <th>Precio</th>
                     <th>Correo</th>
-                    <th>Direccion</th>
+                    <th>Descripcion</th>
+                    <th>Disponibilidad</th>
+                    <th>Promocion</th>
                     <th>Eliminar</th>
                     <th>Editar</th>
                     
@@ -71,13 +86,13 @@ export default function ServiciosAdmin(){
                 
                 <tr>
                     <td>{service.name}</td>
-                    <td>{service.user_id}</td>
                     <td>{service.price}</td>
+                    <td>{service.user_id}</td>
                     <td>{service.description}</td>
                     <td>{service.available}</td>                    
                     <td>{service.promotion}</td>                    
-                    <td><button className="deleteBtn" onClick = {(e) => {deleteService(e, service.id)}}>Delete</button></td>
-                    <td><button className="editarBtn" onClick = {(e) => {deleteService(e, service.id)}}>Editar</button></td>
+                    <td><button className="deleteBtn" /*onClick={() => deleteService(service.id)}*/>Delete</button></td>
+                    <td><button className="editarBtn" onClick = {(e) => {deleteServices(e, service.id)}}>Editar</button></td>
 
                 </tr>
                 )) }

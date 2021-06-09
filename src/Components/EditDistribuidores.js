@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from "react";
+/*import React, {Fragment, useState} from "react";
 
 const EditDistribuidores = ({distribuidor}) => {
     const [nombre, setNombre]= useState(distribuidor.nombre);
@@ -56,4 +56,4 @@ const EditDistribuidores = ({distribuidor}) => {
 
     </Fragment>
 }
-export default EditDistribuidores;
+export default EditDistribuidores;*/

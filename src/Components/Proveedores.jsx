@@ -38,7 +38,6 @@ export default function Admin(){
     }
 
     const deleteProveedor = (e, id) => {
-
         console.log("Delete")
         e.preventDefault();
 

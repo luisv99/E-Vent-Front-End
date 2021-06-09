@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from "react";
+/*import React, {Fragment, useState} from "react";
 
 const InputDistribuidor = () => {
 
@@ -30,4 +30,4 @@ const onSubmitForm = async e => {
     </Fragment>
 };
 
-export default InputDistribuidor;
+export default InputDistribuidor;*/
