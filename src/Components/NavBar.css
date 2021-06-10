@@ -80,7 +80,6 @@ body {
 
   .header{
     padding-bottom: 0rem;
-    
   }
 
   .navbar {
@@ -88,6 +87,8 @@ body {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     align-items: center;
+    width: 96.5vw;
+
   }
   .navbar .logo {
     height: 60px;
@@ -122,17 +123,16 @@ body {
   }
   .navbar .menu {
     position: absolute;
-    width: 100%;
+    width: 115%;
     height: 60vh;
     display: grid;
     align-items: center;
     background-color: #272f3a;
-    transform: translateX(170%);
+    transform: translateX(155%);
     transition: all 1s;
     margin-top: 26.5em;
-    z-index: 1;
-    overflow: hidden;
-
+    z-index: 1000;
+;
   } 
   .navbar .menu ul li a{
     color: white;
@@ -143,7 +143,9 @@ body {
   }
 
   .navbar .menu-toggle {
-    transform: translateX(65%);
+    transform: translateY(1%);
+    transform: translateX(54%);
+    overflow: hidden;
   }  
    .navbar .shop {
      display: none;
