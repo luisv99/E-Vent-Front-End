@@ -16,6 +16,9 @@ import Catalogo from './Components/Catalogo';
 import Proveedores from './Components/Proveedores';
 import React from "react";
 import AddServices from './Components/AddServices';
+//fernando
+import InputDistribuidor from "./Components/InputDistribuidor";
+import ListDistribuidores from "./Components/ListDistribuidores";
 
 
 import {
@@ -24,9 +27,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import EditProveedores from './Components/EditProveedores';
 
-
- 
 
 function App() {
     
@@ -85,7 +87,15 @@ function App() {
         <Route path="/AddServices">
           <AddServices/>
         </Route>
-        
+
+        <Route path="/ServicesAdmin">
+          <ServiciosAdmin/>
+        </Route>
+
+        <Route path="/editProveedor">
+          <EditProveedores/>
+        </Route>
+      
       </Switch>
       <Footer/>
     </div>

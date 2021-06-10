@@ -12,6 +12,11 @@ export default function Admin(){
         getUsers()
     }, []);
 
+    useEffect (() => {
+        searchUsers()
+    }, [userByName]);
+
+
     const getUsers = () =>{
         Axios.get("http://localhost:5000/api/users").then((res)=>{
             setUsers(res.data)
@@ -20,23 +25,28 @@ export default function Admin(){
         )
     }
 
-    /*const getUsersByName = () =>{
-        Axios.get("http://localhost:5000/api/user/:name").then((res)=>{
+    const searchUsers = ()=>{
+        Axios.get("./api/users/"+ userByName).then((res)=>{
             setUsers(res.data)
             console.log(res.data)
-            //alert('Funciona')
+            console.log('User By Name' + userByName);
+    }).catch(err => {
+        console.log(err)
+    })}
 
+    const getUsersByName = (e) =>{
+            setUserByName(e.target.value)
         }
-        )
-    }*/
+        
+    
 
     return(
         <>
-            <div className="contenedor">
+            <div className="contenedorU">
             
             <h1 className="titulo">Lista de usuarios</h1>
             <label htmlFor="filtro">Cedula</label>
-            <input type="text" id="filtro" /*onChange={(e)=>{setUserByName(e.target.value)}}*/ />
+            <input type="text" id="filtro" onChange={(e)=>{getUsersByName(e)}}/>
             <table id="customers">
                 <tr>
                     <th>Nombre y Apellido</th>
@@ -52,8 +62,8 @@ export default function Admin(){
                 <tr>
                     <td>{user.name} {user.lastName}</td>
                     <td>{user.email}</td>
-                    <td>Germany</td>
-                    <td>26.489.495</td>
+                    <td>{user.direccion}</td>
+                    <td>{user.cedula}</td>
                     <td><button className="deleteBtn" >Delete</button></td>
                     <td><button className="editarBtn" >Editar</button></td>
 
