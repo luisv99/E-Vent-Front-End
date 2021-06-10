@@ -5,36 +5,44 @@ import React, { useState, useEffect } from 'react';
 import {
     Link
   } from "react-router-dom";
+import useStateWithCallback from 'use-state-with-callback'
 
 
 export default function Admin(){
 
     const [proveedores, setProveedores] = useState([])
-    const [proveedorByName, setProveedorByName] = useState('')
+    const [proveedorByName, setProveedorByName] = useStateWithCallback('', proveedorByName => {
+        
+        Axios.get("./api/proveedores/" + proveedorByName).then((res)=>{
+            setProveedores(res.data)
+            console.log(res.data)
+                //alert('Funciona')
+
+        }
+        ).catch(err => {
+            console.log(err)
+        })
+    })
 
     useEffect (() => {
         getProveedores()
     }, []);
 
     const getProveedores = () =>{
-        Axios.get("./api/proveedores").then((res)=>{
+        Axios.get("./api/proveedores/").then((res)=>{
             setProveedores(res.data)
             console.log(res.data)
         }
         )
     }
 
-    const getProveedorByName = (e) =>{
-        setProveedorByName(e.target.value)
-        Axios.get("./api/proveedor/" + proveedorByName).then((res)=>{
-            setProveedores(res.data)
-            console.log(res.data)
-            //alert('Funciona')
-
-        }
-        ).catch(err => {
-            console.log(err)
+    const getProveedorByName = async (e) =>{
+        setProveedorByName(e.target.value).then(() => {
+            alert(proveedorByName)
         })
+         ;
+        
+        
     }
 
     const deleteProveedor = (e, id) => {
@@ -57,7 +65,7 @@ export default function Admin(){
             
             <h1 className="titulo">Lista de Proveedores</h1>
             <label htmlFor="filtro">Nombre</label>
-            <input type="text" id="filtro" onChange={(e)=>{getProveedorByName(e)}} />
+            <input type="text" id="filtro" onChange={(e)=>{ setProveedorByName(e.target.value)}} />
             <Link to="/Provedores" className="boton-crear-usuario">Agregar Proveedor</Link>
             <table id="customers">
                 <tr>
