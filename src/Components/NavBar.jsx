@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 import {
     Link
   } from "react-router-dom";
-import logo from './../Imagenes/logo.png';
+
 import home from './../Imagenes/home.png';
 import crear from './../Imagenes/crear.png';
 import recomendaciones from './../Imagenes/recomendaciones.png';
@@ -27,7 +27,7 @@ export default function NavBar(){
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/CrearEvento">Crea tu E-Vent</Link></li>
                 <li><Link to="/recomendations">Recomendaciones</Link></li>
-                <li><Link to="/"><img src={logo} alt="logo"/></Link></li>
+     
                 <li><Link to="/contact">Contact</Link></li>
                 <li><Link to="/Catalogo">Servicios</Link></li>
             </ul>
