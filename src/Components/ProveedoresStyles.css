@@ -29,3 +29,12 @@
 table, tr, th{
     text-align: center;
 }
+
+.modal-contenido{
+	background-color:#272f3a;
+	color: white;
+	width:800px;
+	padding: 10px 90px;
+	margin: 20% auto;
+	position: relative;
+  }
