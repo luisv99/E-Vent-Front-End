@@ -17,6 +17,7 @@ const Slideshow = () => {
     const intervaloSlideshow = useRef(null);
 
     const siguiente = () => {
+        if(slideshow?.current){
         if(slideshow.current.children.length > 0){
 
             const primerElemento = slideshow.current.children[0];
@@ -41,6 +42,7 @@ const Slideshow = () => {
             slideshow.current.addEventListener('transitionend', transicion);
 
        }
+    }
     }
     
     const anterior = () => {

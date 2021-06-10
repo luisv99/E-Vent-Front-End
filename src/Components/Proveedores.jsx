@@ -28,6 +28,12 @@ export default function Admin(){
         getProveedores()
     }, []);
 
+    useEffect (() => {
+        searchProveedores()
+    }, [proveedorByName]);
+
+
+    
     const getProveedores = () =>{
         Axios.get("./api/proveedores/").then((res)=>{
             setProveedores(res.data)
@@ -36,23 +42,20 @@ export default function Admin(){
         )
     }
 
-    const getProveedorByName = async (e) =>{
-        setProveedorByName(e.target.value).then(() => {
-            alert(proveedorByName)
-        })
-         ;
-        
-        
-    }
+    const searchProveedores = ()=>{
+        Axios.get("./api/proveedores/"+ proveedorByName).then((res)=>{
+            setProveedores(res.data)
+            console.log(res.data)
+            console.log('Poveedor By Name' + proveedorByName);
+    }).catch(err => {
+        console.log(err)
+    })}
 
-    const editProveedor = async (e) =>{
-        
-         ;
-        
-        
-    }
+    const getProveedorByName = (e) =>{
+        setProveedorByName(e.target.value)
+        }
+
     const deleteProveedor = (e, id) => {
-
         console.log("Delete")
         e.preventDefault();
 
@@ -67,7 +70,7 @@ export default function Admin(){
 
     return(
         <>
-            <div className="contenedor">
+            <div className="contenedorP">
             
             <h1 className="titulo">Lista de Proveedores</h1>
             <label htmlFor="filtro">Nombre</label>
@@ -98,6 +101,8 @@ export default function Admin(){
                 )) }
                 </table>
                 </div>
+
+                
 
         </>
     )
