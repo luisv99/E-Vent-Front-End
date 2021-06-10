@@ -3,7 +3,6 @@ import img1 from './../Imagenes/event.png';
 import img2 from './../Imagenes/neon2.png';
 import img3 from './../Imagenes/tinto.png';
 import img4 from './../Imagenes/asia.png';
-
 import styled from 'styled-components';
 import {ReactComponent as Flechaderecha}  from './../Imagenes/iconmonstr-arrow-63.svg';
 import {ReactComponent as Flechaizquierda}  from './../Imagenes/iconmonstr-arrow-64.svg';
@@ -45,8 +44,10 @@ const Slideshow = () => {
     
            }
         }
-        }
         
+ 
+    }
+    
     
     const anterior = () => {
 

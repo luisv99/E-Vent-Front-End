@@ -28,9 +28,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import EditProveedores from './Components/EditProveedores';
 
-
- 
 
 function App() {
     
@@ -100,6 +99,10 @@ function App() {
       
         <Route path="/ServicesAdmin">
           <ServiciosAdmin/>
+        </Route>
+
+        <Route path="/editProveedor">
+          <EditProveedores/>
         </Route>
       
       </Switch>
