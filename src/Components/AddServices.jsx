@@ -1,4 +1,4 @@
-import './ProvedoresStyles.scss'
+import './AddServicesStyles.css'
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { Router } from 'react-router';
@@ -55,36 +55,30 @@ export default function (){
     return(
         <>
             <div className="cont">
-            <div className="signupSection">
-                <div className="info">
+            <div className="signupSectionServices">
+                <div className="infoServices">
                     <h1>E-Vent</h1>
                     <br></br>
                     <h1>LOGO</h1>
                 </div>
                 
-                <form action="#" onSubmit= {handleSubmit} method="POST" className="signupForm" name="signupform">
+                <form action="#" onSubmit= {handleSubmit} method="POST" className="addServiceForm" name="signupform">
                     <h2>Agregar un Servicio</h2>
                     <ul className="noBullet">
                         
                         <li>
-                            <label htmlfor="nombre de la empresa"></label>
                             <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre" required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
 
-
                         <li>
-                            
-                            <label htmlfor="name"></label>
                             <input type="file" className="inputFields" id="name" name="name" placeholder="Name" required onChange = {(e)=>{setImage(e.target.files[0])}}/>
                         </li>
 
                         <li>
-                            <label htmlfor="description"></label>
                             <textarea cols="40" rows="4" type="text" className="inputFields" id="description" name="Description" placeholder="Description" required onChange = {(e)=>{setDescription(e.target.value)}}/>
                         </li>
                         
                         <li>
-                            <label htmlfor="price"></label>
                             <input type="text" className="inputFields" id="price" name="price" placeholder="Price" required onChange = {(e)=>{setPrice(e.target.value)}}/>
                         </li>
                         
