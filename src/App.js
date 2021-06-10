@@ -97,6 +97,11 @@ function App() {
         </Route>
         
         
+      
+        <Route path="/ServicesAdmin">
+          <ServiciosAdmin/>
+        </Route>
+      
       </Switch>
       <Footer/>
     </div>

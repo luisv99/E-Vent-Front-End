@@ -6,18 +6,38 @@ import { Router } from 'react-router';
 export default function (){
 
     const [name, setName] = useState("")
+    const [price, setPrice] = useState("")
     const [description, setDescription] = useState("")
-    const [promocion, setPromocion] = useState(false)
-    const [disponibilidad, setDisponibilidad] = useState(true)
+    const [promotion, setPromotion] = useState(false)
+    const [available, setAvailable] = useState(true)
+    const [image, setImage] = useState("")
     
     const handleSubmit = async event => {
         event.preventDefault();
+        const data = new FormData()
+        data.append('file', image)
+        data.append('upload_preset', 'proveedores')
+        const res = await fetch("https://api.cloudinary.com/v1_1/gtoro98/image/upload",
+        {
+            method: "POST",
+            body: data,
+        })
 
-        Axios.post("./api/auth/signup", {
+        const file = await res.json()
+        console.log(file)
+        console.log(file.secure_url)
+        console.log(promotion)
+
+        Axios.post("./api/service/create", {
             name: name,
+            price: price,
             description: description,
-            promocion: promocion,
-            disponibilidad: disponibilidad,
+            promotion: promotion,
+            available: available,
+            image: file.secure_url,
+            user_id: localStorage.getItem('user_id'),
+            roles: localStorage.getItem('roles'),
+            token: localStorage.getItem('SavedToken')
         }).then((res) =>{
             alert("Funcionó!")
             alert(res.data.message)
@@ -43,23 +63,39 @@ export default function (){
                 </div>
                 
                 <form action="#" onSubmit= {handleSubmit} method="POST" className="signupForm" name="signupform">
-                    <h2>Agregar un provedor</h2>
+                    <h2>Agregar un Servicio</h2>
                     <ul className="noBullet">
+                        
                         <li>
                             <label htmlfor="nombre de la empresa"></label>
-                            <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre"  required onChange = {(e)=>{setName(e.target.value)}}/>
+                            <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre" required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
+
+
+                        <li>
+                            
+                            <label htmlfor="name"></label>
+                            <input type="file" className="inputFields" id="name" name="name" placeholder="Name" required onChange = {(e)=>{setImage(e.target.files[0])}}/>
+                        </li>
+
+                        <li>
+                            <label htmlfor="description"></label>
+                            <textarea cols="40" rows="4" type="text" className="inputFields" id="description" name="Description" placeholder="Description" required onChange = {(e)=>{setDescription(e.target.value)}}/>
+                        </li>
+                        
+                        <li>
+                            <label htmlfor="price"></label>
+                            <input type="text" className="inputFields" id="price" name="price" placeholder="Price" required onChange = {(e)=>{setPrice(e.target.value)}}/>
+                        </li>
+                        
                         <li>
                             <label htmlfor="direccion">Esta en promocion?</label>
-                            <input type="checkbox" className="inputFields" id="direccion" name="Promocion" placeholder="Promocion"  required onChange = {(e)=>{setPromocion(e.target.value)}}/>
+                            <input type="checkbox" className="inputFields" id="direccion" name="Promocion" placeholder="Promocion" onChange = {(e)=>{setPromotion(e.target.value)}}/>
                         </li>
+                        
                         <li>
-                            <label htmlfor="email"></label>
-                            <input type="email" className="inputFields" id="email" name="Disponibilidad" placeholder="Disponibilidad"  required onChange = {(e)=>{setDisponibilidad(e.target.value)}}/>
-                        </li>
-                        <li>
-                            <label htmlfor="telefono"></label>
-                            <textarea cols="40" rows="4" type="text" className="inputFields" id="telefono" name="Description" placeholder="Description"  required onChange = {(e)=>{setDescription(e.target.value)}}/>
+                            <label htmlfor="direccion">Esta Disponible?</label>
+                            <input type="checkbox" className="inputFields" id="direccion" name="Promocion" placeholder="Promocion" onChange = {(e)=>{setAvailable(e.target.value)}}/>
                         </li>
                     </ul>
                             <input type="submit" id="join-btn" name="join" alt="Join" value="Crear"/>

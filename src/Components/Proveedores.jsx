@@ -16,6 +16,12 @@ export default function Admin(){
         getProveedores()
     }, []);
 
+    useEffect (() => {
+        searchProveedores()
+    }, [proveedorByName]);
+
+
+    
     const getProveedores = () =>{
         Axios.get("./api/proveedores").then((res)=>{
             setProveedores(res.data)
@@ -24,21 +30,20 @@ export default function Admin(){
         )
     }
 
-    const getProveedorByName = (e) =>{
-        setProveedorByName(e.target.value)
-        Axios.get("./api/proveedor/" + proveedorByName).then((res)=>{
+    const searchProveedores = ()=>{
+        Axios.get("./api/proveedores/"+ proveedorByName).then((res)=>{
             setProveedores(res.data)
             console.log(res.data)
-            //alert('Funciona')
+            console.log('Poveedor By Name' + proveedorByName);
+    }).catch(err => {
+        console.log(err)
+    })}
 
+    const getProveedorByName = (e) =>{
+        setProveedorByName(e.target.value)
         }
-        ).catch(err => {
-            console.log(err)
-        })
-    }
 
     const deleteProveedor = (e, id) => {
-
         console.log("Delete")
         e.preventDefault();
 
