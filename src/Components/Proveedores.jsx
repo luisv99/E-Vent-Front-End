@@ -13,20 +13,23 @@ export default function Admin(){
     const [proveedores, setProveedores] = useState([])
     const [proveedorByName, setProveedorByName] = useState('')
 
-
+ 
     useEffect (() => {
         searchProveedores()
     }, [proveedorByName]);
+
+    
    
 
-    const searchProveedores = async ()=>{
+
+    const searchProveedores = ()=>{
         Axios.get("./api/proveedores/"+ proveedorByName).then((res)=>{
             setProveedores(res.data)
             console.log(res.data)
             console.log('Proveedor By Name' + proveedorByName);
     }).catch(err => {
         console.log(err)
-    })}
+    })};
 
 
     const deleteProveedor = (e, id) => {
@@ -47,8 +50,8 @@ export default function Admin(){
             <div className="contenedorP">
             
             <h1 className="titulo">Lista de Proveedores</h1>
-            <label htmlFor="filtro">Nombre</label>
-            <input type="text" id="filtro" onChange={(e)=>{ setProveedorByName(e.target.value)}} />
+            <label htmlFor="filtroP">Nombre del Proveedor</label>
+            <input type="text" id="filtroP" onChange={(e)=>{ setProveedorByName(e.target.value)}} />
             <Link to="/Provedores" className="boton-crear-usuario">Agregar Proveedor</Link>
             <table id="customers">
                 <tr>
@@ -79,4 +82,9 @@ export default function Admin(){
                 
 
         </>
-    )}
+    )
+    
+}
+
+                
+    
