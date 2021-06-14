@@ -11,47 +11,15 @@ import useStateWithCallback from 'use-state-with-callback'
 export default function Admin(){
 
     const [proveedores, setProveedores] = useState([])
-    const [proveedorByName, setProveedorByName] = useStateWithCallback('', proveedorByName => {
-        
-        Axios.get("./api/proveedores/" + proveedorByName).then((res)=>{
-            setProveedores(res.data)
-            //console.log(res.data)
-                //alert('Funciona')
+    const [proveedorByName, setProveedorByName] = useState('')
 
-        }
-        ).catch(err => {
-            console.log(err)
-        })
-    })
-
-    useEffect (() => {
-        getProveedores()
-    }, []);
-
+ 
     useEffect (() => {
         searchProveedores()
     }, [proveedorByName]);
 
-
-    
-    const getProveedores = () =>{
-        Axios.get("./api/proveedores/").then((res)=>{
-            setProveedores(res.data)
-            //console.log(res.data)
-        }
-        )
-    }    
-    
     
 
-    /*const getProveedorByName = async (e) =>{
-        setProveedorByName(e.target.value).then(() => {
-            alert(proveedorByName)
-        })
-         ;
-        
-        
-    }*/
 
     const searchProveedores = ()=>{
         Axios.get("./api/proveedores/"+ proveedorByName).then((res)=>{
@@ -60,13 +28,7 @@ export default function Admin(){
             console.log('Proveedor By Name' + proveedorByName);
     }).catch(err => {
         console.log(err)
-    })}
-
-    
-    const getProveedorByName = (e) =>{
-        setProveedorByName(e.target.value)
-        };
-
+    })};
 
 
     const deleteProveedor = (e, id) => {
@@ -75,7 +37,7 @@ export default function Admin(){
 
         Axios.delete("./api/proveedor/" + id).then((res) => {
             alert(res.data.message)
-            getProveedores()
+            searchProveedores()
         }).catch(err => {
             alert(err.data.message)
             alert("error")
@@ -88,7 +50,7 @@ export default function Admin(){
             
             <h1 className="titulo">Lista de Proveedores</h1>
             <label htmlFor="filtro">Nombre</label>
-            <input type="text" id="filtro" onChange={(e)=>{ getProveedorByName(e)}} />
+            <input type="text" id="filtro" onChange={(e)=>{ setProveedorByName(e)}} />
             <Link to="/Provedores" className="boton-crear-usuario">Agregar Proveedor</Link>
             <table id="customers">
                 <tr>
@@ -120,5 +82,5 @@ export default function Admin(){
 
         </>
     )
-
-                }
+    
+}
