@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.pagoZelle{
+    background-color: black;
+    margin-bottom: 0rem;
+}
+
+.tituloZelle{
+    text-align:center;
+    padding-top: 3rem;
+    color: #f5f5f5;
+}
+
+.correoZelle{
+    margin-top: 3rem;
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.inputZelle{
+    background: #f5f5f5;
+    border: none ;
+    border-radius: 5px;
+}
+
+.labelZelle{
+    color:#f5f5f5;
+    margin-right: .5rem;
+}
+
+.labelRef{
+    color:#f5f5f5;
+    margin-right: .5rem;
+    margin-left: -5.7rem;
+}
+
+.inputRef{
+    background: #f5f5f5;
+    border: none ;
+    border-radius: 5px;
+}
+
+.btnZelle{
+    width: 11.3rem;
+    border-radius: 5px;
+    margin-left: 4.9rem;
+    margin-top: 1rem;
+}
