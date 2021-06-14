@@ -18,17 +18,9 @@ export default function Admin(){
         searchProveedores()
     }, [proveedorByName]);
 
-
-    
-    const getProveedores = () =>{
-        Axios.get("./api/proveedores/"+ proveedorByName).then((res)=>{
-            setProveedores(res.data)
-            //console.log(res.data)
-        }
-        )
-    }    
     
     
+   
 
     /*const getProveedorByName = async (e) =>{
         setProveedorByName(e.target.value).then(() => {
@@ -56,7 +48,7 @@ export default function Admin(){
 
         Axios.delete("./api/proveedor/" + id).then((res) => {
             alert(res.data.message)
-            getProveedores()
+            searchProveedores()
         }).catch(err => {
             alert(err.data.message)
             alert("error")
@@ -69,7 +61,7 @@ export default function Admin(){
             
             <h1 className="titulo">Lista de Proveedores</h1>
             <label htmlFor="filtro">Nombre</label>
-            <input type="text" id="filtro" onChange={(e)=>{ getProveedorByName(e)}} />
+            <input type="text" id="filtro" onChange={(e)=>{ setProveedorByName(e.target.value)}} />
             <Link to="/Provedores" className="boton-crear-usuario">Agregar Proveedor</Link>
             <table id="customers">
                 <tr>
@@ -104,3 +96,5 @@ export default function Admin(){
 
     }            
 }
+                
+    
