@@ -49,8 +49,8 @@ export default function Admin(){
             <div className="contenedorP">
             
             <h1 className="titulo">Lista de Proveedores</h1>
-            <label htmlFor="filtro">Nombre</label>
-            <input type="text" id="filtro" onChange={(e)=>{ setProveedorByName(e)}} />
+            <label htmlFor="filtroP">Nombre del Proveedor</label>
+            <input type="text" id="filtroP" onChange={(e)=>{ setProveedorByName(e.target.value)}} />
             <Link to="/Provedores" className="boton-crear-usuario">Agregar Proveedor</Link>
             <table id="customers">
                 <tr>

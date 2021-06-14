@@ -7,7 +7,11 @@
     margin-top: 1rem;
     font-size: 1.3rem;
     font-weight: 900;
-    margin-left: 64vw;
+    margin-left: 56vw;
+}
+
+#filtroP{
+    margin-left: .5rem;
 }
 
 .deleteBtn{

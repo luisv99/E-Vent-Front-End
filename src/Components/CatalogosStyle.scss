@@ -4,6 +4,7 @@
     transition: 0.3s;
     width: 50%;
     margin-left: 20%;
+    margin-bottom: 4rem;
   }
 
   .labell{
@@ -21,23 +22,22 @@
     box-shadow: 0 8px 16px 0 rgba(107, 102, 102, 0.2);
   }
 
+  .cardTitle{
+    text-align: center;
+    color: blanchedalmond;
+  }
   .carta img{
     margin-top: 10px;
+    object-fit: cover;
   }
 
-  
-  .container {
-    padding: 8px 16px;
-    z-index: 999;
-    color: aliceblue;
-  }
 
   .button{
       background: #AB2626;
       color: #fff;
       font-weight: 900;
       display: block;
-      margin: 20px;
+      margin: 0px;
       padding: 10px 0px;
       text-align:center;
       width: 200px;
@@ -45,7 +45,16 @@
       box-shadow: 0px 3px 0px #590808;
       margin-left: auto;
       margin-right: auto;
+      transition: all 0.5s;
   }
+
+  .button:hover{
+    color: #fff;
+    text-decoration: none;
+    background: #8d1616;
+
+  }
+
   .carta h3{
     text-align: center;
     font-size: 2rem;
@@ -79,4 +88,21 @@
 
 .cont1Catalogo{
   background-color: rgb(21, 20, 20);
+}
+
+//Resposive Telefonos
+@media only screen and (max-width: 640px){
+  .contCatalogo{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buscador{
+    margin-left: -5rem;
+  }
+
+  #filtro{
+    width: 150px;
+  }
+
 }
