@@ -16,9 +16,15 @@ export default function ServiciosAdmin(){
     const getServices = () =>{
         Axios.get("http://localhost:5000/api/services").then((res)=>{
             console.log('Servicios' + res.data)
+        getServices()
+    }, [serviceByName]);
+
+    const getServices = () =>{
+        Axios.get("http://localhost:5000/api/services/" + serviceByName).then((res)=>{
             setServices(res.data)
         }
         )
+        console.log(services)
     }
 
     /*const getServiceByName = (e) =>{
@@ -54,7 +60,7 @@ export default function ServiciosAdmin(){
             
             <h1 className="titulo">Lista de Servicios</h1>
             <label htmlFor="filtro">Nombre</label>
-            <input type="text" id="filtro" /*onChange={(e)=>{getServiceByName(e)}}*/ />
+            <input type="text" id="filtro" onChange={(e)=>{setServiceByName(e.target.value)}}/>
             <Link to="/AddServices" className="boton-crear-usuario">Agregar Servicio</Link>
             <table id="customers">
                 <tr>
@@ -88,4 +94,5 @@ export default function ServiciosAdmin(){
 
         </>
     )
+}
 }
