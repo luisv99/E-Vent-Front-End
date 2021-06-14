@@ -20,32 +20,29 @@ const Slideshow = () => {
     const siguiente = () => {
         if(slideshow?.current){
             if(slideshow.current.children.length > 0){
-
-                const primerElemento = slideshow.current.children[0];
-    
-                slideshow.current.style.transition = `300ms ease-out all`;
-    
-                const tamanoSlide = slideshow.current.children[0].offsetWidth;
-    
-                slideshow.current.style.transform= `translateX(-${tamanoSlide}px)`;
-    
-                const transicion = () => {
-    
-                    slideshow.current.style.transition = 'none';
-                    slideshow.current.style.transform = `translateX(0)`;
-    
-                    slideshow.current.appendChild(primerElemento);
-    
-                    slideshow.current.removeEventListener('transitionend', transicion);
-    
-                }
-    
-                slideshow.current.addEventListener('transitionend', transicion);
-    
-           }
-        }
         
- 
+
+            const primerElemento = slideshow.current.children[0];
+
+            slideshow.current.style.transition = `300ms ease-out all`;
+
+            const tamanoSlide = slideshow.current.children[0].offsetWidth;
+
+            slideshow.current.style.transform= `translateX(-${tamanoSlide}px)`;
+
+            const transicion = () => {
+
+                slideshow.current.style.transition = 'none';
+                slideshow.current.style.transform = `translateX(0)`;
+
+                slideshow.current.appendChild(primerElemento);
+
+                slideshow.current.removeEventListener('transitionend', transicion);
+
+                }
+            }
+        }
+  
     }
     
     
@@ -135,11 +132,12 @@ const Slideshow = () => {
     );
 }
 
+
 const ContenedorPrincipal = styled.div `
     position: relative;
     z-index: 0;
-
-`;
+`
+;
 
 const ContenedorSlideshow = styled.div`
     display: flex;
@@ -217,5 +215,7 @@ const Boton = styled.button `
     ${props => props.derecho ? 'right: 0': 'left: 0'}
 
 `;
+
+
 
 export default Slideshow;

@@ -14,8 +14,11 @@ import Users from './Components/Users';
 import ServiciosAdmin from './Components/ServiciosAdmin';
 import Catalogo from './Components/Catalogo';
 import Proveedores from './Components/Proveedores';
+import Checkout from './Components/Checkout';
+import TarjetaCredito from './Components/TarjetaCredito';
 import React from "react";
 import AddServices from './Components/AddServices';
+
 //fernando
 import InputDistribuidor from "./Components/InputDistribuidor";
 import ListDistribuidores from "./Components/ListDistribuidores";
@@ -53,6 +56,10 @@ function App() {
         <Route path="/recomendations">
           <Recomendaciones></Recomendaciones>
         </Route>
+
+        <Route path="/TarjetaCredito">
+          <TarjetaCredito></TarjetaCredito>
+        </Route>
         <Route path="/contact">
           <Contacto></Contacto>
         </Route>
@@ -61,6 +68,10 @@ function App() {
         </Route>
         <Route path="/Services">
           <Services></Services>
+        </Route>
+
+        <Route path="/Checkout">
+          <Checkout></Checkout>
         </Route>
         
         <Route path="/Provedores">
@@ -88,12 +99,13 @@ function App() {
           </Route>
         <Route path="/DistribuidoresAdmin">
           <ListDistribuidores/>
-          <InputDistribuidor/>
-         
+          <InputDistribuidor/> 
         </Route>
         <Route path="/ProveedorServicios">
           <ProveedorServicios/>
         </Route>
+
+     
         
         
       
