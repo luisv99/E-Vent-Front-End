@@ -22,18 +22,7 @@ export default function ServiciosAdmin(){
         console.log(services)
     }
 
-    /*const getServiceByName = (e) =>{
-        setServiceByName(e.target.value)
-        Axios.get("./services/" + serviceByName).then((res)=>{
-            setServices(res.data)
-            console.log(res.data)
-            //alert('Funciona')
 
-        }
-        ).catch(err => {
-            console.log(err)
-        })
-    }*/
 
     const deleteServices = (e, id) => {
         e.preventDefault();
@@ -47,20 +36,6 @@ export default function ServiciosAdmin(){
             alert("error")
         })
     }
-
-    /*const deleteService = async (id) => {
-        try {
-            const deleteService = await fetch(`http://localhost:5000/services/${id}`,{
-                method: "DELETE"
-
-            });
-        setServices(services.filter(service => service.id !== id))
-
-            
-        } catch (error) {
-            console.error(error.message)
-        }
-    }*/
 
     return(
         <>
