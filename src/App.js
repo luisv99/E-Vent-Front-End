@@ -16,10 +16,7 @@ import Catalogo from './Components/Catalogo';
 import Proveedores from './Components/Proveedores';
 import React from "react";
 import AddServices from './Components/AddServices';
-//fernando
-import InputDistribuidor from "./Components/InputDistribuidor";
-import ListDistribuidores from "./Components/ListDistribuidores";
-
+import PagoPorZelle from './Components/PagoPorZelle';
 
 import {
   BrowserRouter as Router,
@@ -95,6 +92,11 @@ function App() {
         <Route path="/editProveedor">
           <EditProveedores/>
         </Route>
+        
+        <Route path="/PagoPorZelle">
+          <PagoPorZelle/>
+        </Route>
+
       
       </Switch>
       <Footer/>
