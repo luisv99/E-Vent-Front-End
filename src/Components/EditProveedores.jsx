@@ -49,7 +49,6 @@ export default function EditProveedores(){
 
     const editProveedor = () =>{
         //event.preventDefault();
-        //redirect.push("/ProveedoresAdmin")
         Axios.put("http://localhost:5000/api/proveedor/" + proveedor_id, {
             id: proveedor_id,
             name: name,
@@ -77,7 +76,7 @@ export default function EditProveedores(){
                     <h1>LOGO</h1>
                 </div>
                 
-                <form action="#"  onSubmit= {editProveedor} method="POST" className="addServiceForm" name="signupform">
+                <form action="#" onSubmit= {editProveedor} method="POST" className="addServiceForm" name="signupform">
                     <h2>Editar a "{name}"</h2>
                     <ul className="noBullet">
                         

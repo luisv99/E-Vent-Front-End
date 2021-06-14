@@ -17,6 +17,7 @@ export default function ServiciosAdmin(){
         Axios.get("http://localhost:5000/api/services").then((res)=>{
         getServices()
     }, [serviceByName]);
+    }
 
     const getServices = () =>{
         Axios.get("http://localhost:5000/api/services/" + serviceByName).then((res)=>{
@@ -27,18 +28,6 @@ export default function ServiciosAdmin(){
         console.log(services)
     }
 
-    /*const getServiceByName = (e) =>{
-        setServiceByName(e.target.value)
-        Axios.get("./services/" + serviceByName).then((res)=>{
-            setServices(res.data)
-            console.log(res.data)
-            //alert('Funciona')
-
-        }
-        ).catch(err => {
-            console.log(err)
-        })
-    }*/
 
     const deleteServices = (e, id) => {
         e.preventDefault();
