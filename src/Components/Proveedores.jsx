@@ -42,14 +42,15 @@ export default function Admin(){
         )
     }
 
-    const getProveedorByName = async (e) =>{
+    /*const getProveedorByName = async (e) =>{
         setProveedorByName(e.target.value).then(() => {
             alert(proveedorByName)
         })
          ;
         
         
-    }
+    }*/
+    
     const searchProveedores = ()=>{
         Axios.get("./api/proveedores/"+ proveedorByName).then((res)=>{
             setProveedores(res.data)
