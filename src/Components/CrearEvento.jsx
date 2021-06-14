@@ -1,6 +1,8 @@
 import './CrearEvento.scss';
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
+import { useHistory } from "react-router-dom"
+
 
 export default function (){
 
@@ -8,7 +10,8 @@ export default function (){
     const [location, setLocation] = useState("")
     const [number, setNumber] = useState("")
     const [date, setDate] = useState("")
-    
+    const redirect = useHistory();
+
     const handleSubmit =  event => {
         event.preventDefault()
         Axios.post("http://localhost:5000/api/event/create", {
@@ -22,6 +25,7 @@ export default function (){
         }).then((res) =>{
             alert("Prueba")
             alert(res.data.message)
+            redirect.push("/Catalogo")
         }).catch(err => {
             alert(err.response.data.message)
         })

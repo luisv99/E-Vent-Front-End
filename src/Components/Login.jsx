@@ -3,12 +3,15 @@ import './LoginStyles.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBars,faShoppingCart} from '@fortawesome/free-solid-svg-icons'
 import Axios from 'axios';
+import { useHistory } from "react-router-dom"
+
 
 export default function Login(){
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    
+    const redirect = useHistory();
+
     const handleSubmit = event => {
         event.preventDefault();
         Axios.post("./api/auth/logIn", {
@@ -19,6 +22,8 @@ export default function Login(){
             localStorage.setItem("SavedToken", response.data.accessToken)
             localStorage.setItem("user_id", response.data.id)
             localStorage.setItem("roles", response.data.roles)
+            redirect.push("/")
+
         
 
         },
