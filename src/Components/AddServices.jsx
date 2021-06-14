@@ -83,12 +83,12 @@ export default function (){
                         </li>
                         
                         <li>
-                            <label htmlfor="direccion">Esta en promocion?</label>
+                            <label htmlFor="direccion">Esta en promocion?</label>
                             <input type="checkbox" className="inputFields" id="direccion" name="Promocion" placeholder="Promocion" onChange = {(e)=>{setPromotion(e.target.value)}}/>
                         </li>
                         
                         <li>
-                            <label htmlfor="direccion">Esta Disponible?</label>
+                            <label htmlFor="direccion">Esta Disponible?</label>
                             <input type="checkbox" className="inputFields" id="direccion" name="Promocion" placeholder="Promocion" onChange = {(e)=>{setAvailable(e.target.value)}}/>
                         </li>
                     </ul>

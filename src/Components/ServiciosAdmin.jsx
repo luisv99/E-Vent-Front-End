@@ -10,13 +10,13 @@ export default function ServiciosAdmin(){
     const [serviceByName, setServiceByName] = useState('')
     
     useEffect (() => {
-        getServices()
+        getServices();
     }, []);
 
     const getServices = () =>{
-        Axios.get("http://localhost:5000/services").then((res)=>{
+        Axios.get("http://localhost:5000/api/services").then((res)=>{
+            console.log('Servicios' + res.data)
             setServices(res.data)
-            console.log(res.data)
         }
         )
     }
@@ -47,19 +47,6 @@ export default function ServiciosAdmin(){
         })
     }
 
-    /*const deleteService = async (id) => {
-        try {
-            const deleteService = await fetch(`http://localhost:5000/services/${id}`,{
-                method: "DELETE"
-
-            });
-        setServices(services.filter(service => service.id !== id))
-
-            
-        } catch (error) {
-            console.error(error.message)
-        }
-    }*/
 
     return(
         <>

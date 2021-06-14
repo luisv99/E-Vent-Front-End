@@ -21,11 +21,10 @@ export default function (){
             date: date,
             user_id: localStorage.getItem('user_id'),
             token: localStorage.getItem('SavedToken')
-            
         }).then((res) =>{
-            alert("Prueba")
-            alert(res.data.message)
             redirect.push("/Catalogo")
+            alert("Prueba")
+            //alert(res.data.message)
         }).catch(err => {
             alert(err.response.data.message)
         })
@@ -62,6 +61,7 @@ export default function (){
                             <label htmlfor="Fecha del evento"></label>
                             <input type="date" className="inputFields" id="date" name="date" placeholder="número de Personas"  required onChange = {(e)=>{setDate(e.target.value)}}/>
                         </li>
+                        
                         <li id="center-btn">
                             <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
                         </li>
