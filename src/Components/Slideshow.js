@@ -3,10 +3,11 @@ import img1 from './../Imagenes/event.png';
 import img2 from './../Imagenes/neon2.png';
 import img3 from './../Imagenes/tinto.png';
 import img4 from './../Imagenes/asia.png';
-
 import styled from 'styled-components';
 import {ReactComponent as Flechaderecha}  from './../Imagenes/iconmonstr-arrow-63.svg';
 import {ReactComponent as Flechaizquierda}  from './../Imagenes/iconmonstr-arrow-64.svg';
+
+
 
 
 
@@ -18,7 +19,8 @@ const Slideshow = () => {
 
     const siguiente = () => {
         if(slideshow?.current){
-        if(slideshow.current.children.length > 0){
+            if(slideshow.current.children.length > 0){
+        
 
             const primerElemento = slideshow.current.children[0];
 
@@ -37,13 +39,12 @@ const Slideshow = () => {
 
                 slideshow.current.removeEventListener('transitionend', transicion);
 
+                }
             }
-
-            slideshow.current.addEventListener('transitionend', transicion);
-
-       }
+        }
+  
     }
-    }
+    
     
     const anterior = () => {
 
@@ -131,11 +132,12 @@ const Slideshow = () => {
     );
 }
 
+
 const ContenedorPrincipal = styled.div `
     position: relative;
     z-index: 0;
-
-`;
+`
+;
 
 const ContenedorSlideshow = styled.div`
     display: flex;
@@ -213,5 +215,7 @@ const Boton = styled.button `
     ${props => props.derecho ? 'right: 0': 'left: 0'}
 
 `;
+
+
 
 export default Slideshow;

@@ -40,7 +40,7 @@ export default function Home(){
 
             <h3>Welcome To</h3>
             <h1>E-Vent</h1>
-            <p>Crea tu propio evento desde casa a tu gusto, y nosotros hacemos el resto por ti</p>
+            <p>Crea tu propio evento desde casa, y nosotros hacemos el resto por ti</p>
             <br />
             <Link to="/login" className="iniciar-sesion">Iniciar Sesion</Link>
             <Link to="/SignUp" className="registro">Registrarme</Link>   
@@ -48,6 +48,7 @@ export default function Home(){
           
       
       </main>
+
 
       
 
@@ -82,6 +83,7 @@ export default function Home(){
         <h2 className="title4" data-aos="fade-up" data-aos-duration="1800">Fiestas</h2>
         <img data-aos="fade-up" data-aos-duration="1800" className="img3" id="img4" src="/imagenes/party4.png" alt="" />
         </div>
+
       </div>
       </div>
       </>

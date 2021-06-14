@@ -20,7 +20,7 @@ body {
 
 
 .navbar {
-  background-color: #272f3a;
+  background-color: #000000;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   align-items: center;
@@ -44,7 +44,7 @@ body {
 
 .navbar ul li :hover {
   color: #000000;
-  background-color: whitesmoke;
+  /*background-color: whitesmoke;*/
   
 }
 
@@ -71,6 +71,15 @@ body {
   justify-content: flex-end;
   color: #ffffff;
 }
+
+.home {
+  width: 400px;
+  height: 80px;
+  overflow: hidden;
+}
+
+
+
 
 
 /*RESPONSIVE*/
