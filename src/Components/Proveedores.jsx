@@ -92,7 +92,7 @@ export default function Admin(){
                     <td>{proveedor.email}</td>
                     <td>{proveedor.direccion}</td>                    
                     <td><button className="deleteBtn" onClick = {(e) => {deleteProveedor(e, proveedor.id)}}>Delete</button></td>
-                    <td><Link to={`/ProveedoresAdmin/ ${proveedor.id}`} >Editar</Link></td>
+                    <td><Link to={`/ProveedoresAdmin/${proveedor.id}`} >Editar</Link></td>
 
                 </tr>
                 )) }
