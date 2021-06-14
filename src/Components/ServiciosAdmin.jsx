@@ -11,13 +11,7 @@ export default function ServiciosAdmin(){
     
     useEffect (() => {
         getServices();
-    }, []);
-
-    const getServices = () =>{
-        Axios.get("http://localhost:5000/api/services").then((res)=>{
-        getServices()
     }, [serviceByName]);
-    }
 
     const getServices = () =>{
         Axios.get("http://localhost:5000/api/services/" + serviceByName).then((res)=>{
@@ -48,8 +42,8 @@ export default function ServiciosAdmin(){
             <div className="contenedorP">
             
             <h1 className="titulo">Lista de Servicios</h1>
-            <label htmlFor="filtro">Nombre</label>
-            <input type="text" id="filtro" onChange={(e)=>{setServiceByName(e.target.value)}}/>
+            <label htmlFor="filtroS">Nombre</label>
+            <input type="text" id="filtroS" onChange={(e)=>{setServiceByName(e.target.value)}}/>
             <Link to="/AddServices" className="boton-crear-usuario">Agregar Servicio</Link>
             <table id="customers">
                 <tr>

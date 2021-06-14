@@ -22,7 +22,7 @@ export default function NavBar(){
                 <li><Link to="/CrearEvento">Crea tu E-Vent</Link></li>
                 <li><Link to="/recomendations">Recomendaciones</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/Catalogo">Servicios</Link></li>
+                <li><Link to="/Catalogo">Locales</Link></li>
             </ul>
 
             <div className="menu-bar" onClick={()=>setOpen(prev=>!prev)} >

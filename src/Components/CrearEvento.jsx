@@ -32,17 +32,17 @@ export default function (){
     }
     return(
         <>
-            <div className="cont">
-            <div className="signupSection">
+            <div className="cont-crear-eventos">
+            <div className="signupSection-crear-eventos">
                 <div className="info">
                     <h1>E-Vent</h1>
                     <br></br>
                     <h1>LOGO</h1>
                 </div>
                 
-                <form action="#" onSubmit= {handleSubmit} method="POST" className="signupForm" name="signupform">
+                <form action="#" onSubmit= {handleSubmit} method="POST" className="signupForm-crear-eventos" name="signupform">
                     <h2>Crear tu evento</h2>
-                    <ul className="noBullet">
+                    <ul className="noBullet-crear-eventos">
                         <li>
                             <label htmlfor="nombre de la empresa"></label>
                             <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre"  required onChange = {(e)=>{setName(e.target.value)}}/>
@@ -63,7 +63,7 @@ export default function (){
                         </li>
                         
                         <li id="center-btn">
-                            <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
+                            <input type="submit" id="join-btn-crear-eventos" name="join" alt="Join" value="Entrar a E-Vent"/>
                         </li>
                     </ul>
                 
