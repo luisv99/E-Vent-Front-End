@@ -15,7 +15,7 @@ export default function Admin(){
         
         Axios.get("./api/proveedores/" + proveedorByName).then((res)=>{
             setProveedores(res.data)
-            console.log(res.data)
+            //console.log(res.data)
                 //alert('Funciona')
 
         }
@@ -37,39 +37,27 @@ export default function Admin(){
     const getProveedores = () =>{
         Axios.get("./api/proveedores/").then((res)=>{
             setProveedores(res.data)
-            console.log(res.data)
+            //console.log(res.data)
         }
         )
-    }
-
-    /*const getProveedorByName = async (e) =>{
-        setProveedorByName(e.target.value).then(() => {
-            alert(proveedorByName)
-        })
-         ;
-        
-        
-    }*/
+    }    
     
     const searchProveedores = ()=>{
         Axios.get("./api/proveedores/"+ proveedorByName).then((res)=>{
             setProveedores(res.data)
             console.log(res.data)
-            console.log('Poveedor By Name' + proveedorByName);
+            console.log('Proveedor By Name' + proveedorByName);
     }).catch(err => {
         console.log(err)
     })}
 
+    
     const getProveedorByName = (e) =>{
         setProveedorByName(e.target.value)
-        }
+        };
 
-    const editProveedor = async (e) =>{
-        
-         ;
-        
-        
-    }
+
+
     const deleteProveedor = (e, id) => {
         console.log("Delete")
         e.preventDefault();
@@ -89,7 +77,7 @@ export default function Admin(){
             
             <h1 className="titulo">Lista de Proveedores</h1>
             <label htmlFor="filtro">Nombre</label>
-            <input type="text" id="filtro" onChange={(e)=>{ setProveedorByName(e.target.value)}} />
+            <input type="text" id="filtro" onChange={(e)=>{ getProveedorByName(e)}} />
             <Link to="/Provedores" className="boton-crear-usuario">Agregar Proveedor</Link>
             <table id="customers">
                 <tr>
