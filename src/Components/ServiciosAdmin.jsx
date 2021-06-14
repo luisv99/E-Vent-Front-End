@@ -15,8 +15,8 @@ export default function ServiciosAdmin(){
 
     const getServices = () =>{
         Axios.get("http://localhost:5000/api/services").then((res)=>{
-            console.log('Servicios' + res.data)
             setServices(res.data)
+            console.log('Servicios' + res.data)
         }
         )
     }
@@ -38,7 +38,7 @@ export default function ServiciosAdmin(){
         e.preventDefault();
         console.log("Delete")
 
-        Axios.delete("http://localhost:5000/services/"+ id).then((res) => {
+        Axios.delete("http://localhost:5000/api/services/"+ id).then((res) => {
             alert(res.data.message)
             getServices()
         }).catch(err => {
@@ -58,11 +58,11 @@ export default function ServiciosAdmin(){
             <Link to="/AddServices" className="boton-crear-usuario">Agregar Servicio</Link>
             <table id="customers">
                 <tr>
+                    <th>User_id</th>
                     <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Correo</th>
+                    <th>Precio ($)</th>
                     <th>Descripcion</th>
-                    <th>Disponibilidad</th>
+                    <th>Correo</th>
                     <th>Promocion</th>
                     <th>Eliminar</th>
                     <th>Editar</th>
@@ -72,14 +72,14 @@ export default function ServiciosAdmin(){
                 { services.map((service) => (
                 
                 <tr>
+                    <td>{service.user_id}</td>
                     <td>{service.name}</td>
                     <td>{service.price}</td>
-                    <td>{service.user_id}</td>
                     <td>{service.description}</td>
                     <td>{service.available}</td>                    
                     <td>{service.promotion}</td>                    
-                    <td><button className="deleteBtn" /*onClick={() => deleteService(service.id)}*/>Delete</button></td>
-                    <td><button className="editarBtn" onClick = {(e) => {deleteServices(e, service.id)}}>Editar</button></td>
+                    <td><button className="deleteBtn" onClick = {(e) => {deleteServices(e, service.id)}}>Delete</button></td>
+                    <td><Link to={`/EditServicios/ ${service.id}`} >Editar</Link></td>
 
                 </tr>
                 )) }

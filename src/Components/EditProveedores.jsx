@@ -49,19 +49,16 @@ export default function EditProveedores(){
 
     const editProveedor = () =>{
         //event.preventDefault();
-        
-        console.log(proveedor_id)
-        
-
+        //redirect.push("/ProveedoresAdmin")
         Axios.put("http://localhost:5000/api/proveedor/" + proveedor_id, {
             id: proveedor_id,
             name: name,
             email: email,
             direccion: direccion,
             telefono: telefono,
+            image: image
         }).then((response) =>{
             alert("Funciona")
-            alert(response.data.message)
             redirect.push("/ProveedoresAdmin")
         }).catch(err => {
             alert(err.response.data.message)
@@ -81,7 +78,7 @@ export default function EditProveedores(){
                 </div>
                 
                 <form action="#"  onSubmit= {editProveedor} method="POST" className="addServiceForm" name="signupform">
-                    <h2>Editar a {name}</h2>
+                    <h2>Editar a "{name}"</h2>
                     <ul className="noBullet">
                         
                         <li>

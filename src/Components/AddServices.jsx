@@ -88,8 +88,8 @@ export default function (){
                         </li>
                         
                         <li>
-                            <label htmlFor="direccion">Esta Disponible?</label>
-                            <input type="checkbox" className="inputFields" id="direccion" name="Promocion" placeholder="Promocion" onChange = {(e)=>{setAvailable(e.target.value)}}/>
+                            <label htmlFor="available">Esta Disponible?</label>
+                            <input type="checkbox" className="inputFields" id="available" name="Promocion" placeholder="Promocion" onChange = {(e)=>{setAvailable(e.target.value)}}/>
                         </li>
                     </ul>
                             <input type="submit" id="join-btn" name="join" alt="Join" value="Crear"/>
