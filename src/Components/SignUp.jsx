@@ -25,8 +25,7 @@ export default function (){
             telefono: telefono,
             cedula: cedula
         }).then((response) =>{
-            alert("Funciona")
-            alert(response.data.message)
+            
         }).catch(err => {
             alert(err.response.data.message)
         })

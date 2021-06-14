@@ -42,6 +42,16 @@ export default function Admin(){
         )
     }    
     
+    }
+
+    const getProveedorByName = async (e) =>{
+        setProveedorByName(e.target.value).then(() => {
+            alert(proveedorByName)
+        })
+         ;
+        
+        
+    }
     const searchProveedores = ()=>{
         Axios.get("./api/proveedores/"+ proveedorByName).then((res)=>{
             setProveedores(res.data)
@@ -98,7 +108,7 @@ export default function Admin(){
                     <td>{proveedor.email}</td>
                     <td>{proveedor.direccion}</td>                    
                     <td><button className="deleteBtn" onClick = {(e) => {deleteProveedor(e, proveedor.id)}}>Delete</button></td>
-                    <td><Link to={`/ProveedoresAdmin/${proveedor.id}`} >Editar</Link></td>
+                    <td><Link to={`/EditProveedores/ ${proveedor.id}`} >Editar</Link></td>
 
                 </tr>
                 )) }
@@ -109,4 +119,3 @@ export default function Admin(){
 
         </>
     )
-}
