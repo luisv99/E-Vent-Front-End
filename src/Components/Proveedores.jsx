@@ -11,22 +11,8 @@ import useStateWithCallback from 'use-state-with-callback'
 export default function Admin(){
 
     const [proveedores, setProveedores] = useState([])
-    const [proveedorByName, setProveedorByName] = useStateWithCallback('', async proveedorByName => {
-        
-        Axios.get("./api/proveedores/" + proveedorByName).then((res)=>{
-            setProveedores(res.data)
-            console.log(res.data)
-                //alert('Funciona')
+    const [proveedorByName, setProveedorByName] = useState('')
 
-        }
-        ).catch(err => {
-            console.log(err)
-        })
-    })
-
-    useEffect (() => {
-        getProveedores()
-    }, []);
 
     useEffect (() => {
         searchProveedores()
@@ -35,7 +21,7 @@ export default function Admin(){
 
     
     const getProveedores = () =>{
-        Axios.get("./api/proveedores/").then((res)=>{
+        Axios.get("./api/proveedores/"+ proveedorByName).then((res)=>{
             setProveedores(res.data)
             console.log(res.data)
         }
@@ -51,9 +37,6 @@ export default function Admin(){
         console.log(err)
     })}
 
-    const getProveedorByName = (e) =>{
-        setProveedorByName(e.target.value)
-        }
 
     const deleteProveedor = (e, id) => {
         console.log("Delete")
