@@ -11,7 +11,7 @@ import useStateWithCallback from 'use-state-with-callback'
 export default function Admin(){
 
     const [proveedores, setProveedores] = useState([])
-    const [proveedorByName, setProveedorByName] = useStateWithCallback('', proveedorByName => {
+    const [proveedorByName, setProveedorByName] = useStateWithCallback('', async proveedorByName => {
         
         Axios.get("./api/proveedores/" + proveedorByName).then((res)=>{
             setProveedores(res.data)
@@ -42,18 +42,7 @@ export default function Admin(){
         )
     }
 
-<<<<<<< HEAD
-=======
-    const getProveedorByName = async (e) =>{
-        setProveedorByName(e.target.value).then(() => {
-            alert(proveedorByName)
-        })
-         ;
-        
-        
-    }
->>>>>>> 9fb09f3f80d284382b3b2f414843f2e66f9f690b
-    const searchProveedores = ()=>{
+    const searchProveedores = async ()=>{
         Axios.get("./api/proveedores/"+ proveedorByName).then((res)=>{
             setProveedores(res.data)
             console.log(res.data)
