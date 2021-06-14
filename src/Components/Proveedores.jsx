@@ -83,12 +83,14 @@ export default function Admin(){
                     <td>{proveedor.email}</td>
                     <td>{proveedor.direccion}</td>                    
                     <td><button className="deleteBtn" onClick = {(e) => {deleteProveedor(e, proveedor.id)}}>Delete</button></td>
-                    <td><button className="editarBtn" onClick = {(e) => {deleteProveedor(e, proveedor.id)}}>Editar</button></td>
+                    <td><a href="miModal">Editar</a></td>
 
                 </tr>
                 )) }
                 </table>
                 </div>
+
+                
 
         </>
     )
