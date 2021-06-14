@@ -92,7 +92,7 @@ function App() {
           <ServiciosAdmin/>
         </Route>
 
-        <Route path="/editProveedor">
+        <Route path="/EditProveedores/:proveedor_id">
           <EditProveedores/>
         </Route>
       
