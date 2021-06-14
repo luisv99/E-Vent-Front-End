@@ -43,7 +43,7 @@ export default function Catalogo(){
                         <h4 className="cardTitle">{proveedor.name}</h4>
                         <img src={proveedor.image} alt=""/>
                         <p>ID: {proveedor.id}</p>
-                        <Link to="#!" className="button">Ver Servicios</Link>
+                        <Link Link to={`/Services/ ${proveedor.id}`} className="button">Ver Servicios</Link>
                     </div>
                     ))}
                 

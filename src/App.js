@@ -56,7 +56,7 @@ function App() {
         <Route path="/SignUp">
           <SignUp></SignUp>
         </Route>
-        <Route path="/Services">
+        <Route path="/Services/:proveedor_id">
           <Services></Services>
         </Route>
         
@@ -86,7 +86,7 @@ function App() {
           <AddServices/>
         </Route>
 
-        <Route path="/ServicesAdmin">
+        <Route path="/ServiciosAdmin">
           <ServiciosAdmin/>
         </Route>
 
