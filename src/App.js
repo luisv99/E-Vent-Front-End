@@ -25,6 +25,7 @@ import {
   Link
 } from "react-router-dom";
 import EditProveedores from './Components/EditProveedores';
+import EditServicios from './Components/EditServicios';
 
 
 function App() {
@@ -55,7 +56,7 @@ function App() {
         <Route path="/SignUp">
           <SignUp></SignUp>
         </Route>
-        <Route path="/Services">
+        <Route path="/Services/:proveedor_id">
           <Services></Services>
         </Route>
         
@@ -85,12 +86,16 @@ function App() {
           <AddServices/>
         </Route>
 
-        <Route path="/ServicesAdmin">
+        <Route path="/ServiciosAdmin">
           <ServiciosAdmin/>
         </Route>
 
         <Route path="/EditProveedores/:proveedor_id">
           <EditProveedores/>
+        </Route>
+
+        <Route path="/EditServicios/:servicio_id">
+          <EditServicios/>
         </Route>
         
         <Route path="/PagoPorZelle">

@@ -1,13 +1,15 @@
 import './editProveedoresStyles.css';
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom"
+import { useHistory, useParams } from "react-router-dom"
 import { Redirect } from 'react-router';
 import {
     Link
   } from "react-router-dom";
 
 export default function EditProveedores(){
+
+    const redirect = useHistory();
 
     const { proveedor_id } = useParams();
 
@@ -27,7 +29,7 @@ export default function EditProveedores(){
 
     const getInfo = () =>{
         
-        console.log(proveedor_id)
+        console.log('Id del proveedor:' + proveedor_id)
 
         Axios.get("http://localhost:5000/api/user/" + proveedor_id).then((res)=>{
             setName(res.data.name)
@@ -47,22 +49,20 @@ export default function EditProveedores(){
 
     const editProveedor = () =>{
         //event.preventDefault();
-        
-        console.log(proveedor_id)
-        
-
         Axios.put("http://localhost:5000/api/proveedor/" + proveedor_id, {
             id: proveedor_id,
             name: name,
             email: email,
             direccion: direccion,
             telefono: telefono,
+            image: image
         }).then((response) =>{
             alert("Funciona")
-            alert(response.data.message)
+            redirect.push("/ProveedoresAdmin")
         }).catch(err => {
             alert(err.response.data.message)
         })
+        
         
     }
 
@@ -76,8 +76,8 @@ export default function EditProveedores(){
                     <h1>LOGO</h1>
                 </div>
                 
-                <form action="#"  onSubmit= {editProveedor} method="POST" className="addServiceForm" name="signupform">
-                    <h2>Editar a ...</h2>
+                <form action="#" onSubmit= {editProveedor} method="POST" className="addServiceForm" name="signupform">
+                    <h2>Editar a "{name}"</h2>
                     <ul className="noBullet">
                         
                         <li>
