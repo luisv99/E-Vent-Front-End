@@ -19,6 +19,7 @@ export default function Admin(){
     }, [proveedorByName]);
 
     
+   
 
 
     const searchProveedores = ()=>{
@@ -84,3 +85,6 @@ export default function Admin(){
     )
     
 }
+
+                
+    
