@@ -21,7 +21,7 @@ export default function Catalogo(){
     }, []);
 
     const searchProveedores = ()=>{
-        Axios.get("./api/proveedores/"+ proveedorByName).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/proveedores/"+ proveedorByName).then((res)=>{
             setProveedores(res.data)
             console.log(res.data)
             console.log('Proveedor By Name' + proveedorByName);

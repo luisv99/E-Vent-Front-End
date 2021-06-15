@@ -31,7 +31,7 @@ export default function Provedores (){
         console.log(imageURL)
         
 
-        Axios.post("./api/auth/signup", {
+        Axios.post("https://dry-shelf-94984.herokuapp.com/api/auth/signup", {
             name: name,
             lastName: null,
             email: email,

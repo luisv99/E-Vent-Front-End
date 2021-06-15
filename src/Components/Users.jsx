@@ -19,7 +19,7 @@ export default function Admin(){
 
 
     const getUsers = () =>{
-        Axios.get("https://dry-shelf-94984.herokuapp.com/api/users").then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/users/").then((res)=>{
             setUsers(res.data)
             console.log(res.data)
         }
@@ -27,7 +27,7 @@ export default function Admin(){
     }
 
     const searchUsers = ()=>{
-        Axios.get("./api/users/"+ userByName).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/users/"+ userByName).then((res)=>{
             setUsers(res.data)
             console.log(res.data)
             console.log('User By Name' + userByName);
