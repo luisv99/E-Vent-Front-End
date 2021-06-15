@@ -19,7 +19,7 @@ export default function EditProveedores(){
     
 
     useEffect (() => {
-        getInfo()
+        getInfo();
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -35,8 +35,8 @@ export default function EditProveedores(){
             setAvailable(res.data.available)
             setImage(res.data.image)
             
-            
             console.log(res.data)
+            console.log(res.data.name)
         }
         ).catch(err =>{
             console.log(err)
@@ -46,8 +46,6 @@ export default function EditProveedores(){
     const editServicio = () =>{
         //event.preventDefault();
         
-        console.log(servicio_id)
-
         Axios.put("https://dry-shelf-94984.herokuapp.com/api/services/" + servicio_id, {
             id: servicio_id,
             name: name,
@@ -58,7 +56,7 @@ export default function EditProveedores(){
             image: image
         }).then((response) =>{
             alert("Funciona")
-            redirect.push("/")
+            redirect.push("/ServiciosAdmin")
         }).catch(err => {
             alert(err.response.data.message)
         })
@@ -85,7 +83,7 @@ export default function EditProveedores(){
                         </li>
 
                         <li>
-                            <input type="text" className="inputFields" id="name" name="name" placeholder="Name" required value={image} onChange = {(e)=>{setImage(e.target.value)}}/>
+                            <input type="text" className="inputFields" id="name" name="name" placeholder="Foto" required value={image} onChange = {(e)=>{setImage(e.target.value)}}/>
                         </li>
 
                         <li>

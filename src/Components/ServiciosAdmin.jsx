@@ -51,8 +51,8 @@ export default function ServiciosAdmin(){
                     <th>Nombre</th>
                     <th>Precio ($)</th>
                     <th>Descripcion</th>
-                    <th>Correo</th>
                     <th>Promocion</th>
+                    <th>Disponibilidad</th>
                     <th>Eliminar</th>
                     <th>Editar</th>
                     

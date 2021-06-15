@@ -1,8 +1,12 @@
 import './AddServicesStyles.css'
 import React, { useState } from 'react';
 import Axios from 'axios';
+import { useHistory } from "react-router-dom"
+import {Link}from "react-router-dom";
 
 export default function AddServices(){
+
+    const redirect = useHistory();
 
     const [name, setName] = useState("")
     const [price, setPrice] = useState("")
@@ -23,11 +27,14 @@ export default function AddServices(){
         })
 
         const file = await res.json()
+        console.log('File:');
         console.log(file)
+        console.log('File.Secure_URL:')
+        
         console.log(file.secure_url)
-        console.log(promotion)
 
-        Axios.post("./api/service/create", {
+
+        Axios.post("https://dry-shelf-94984.herokuapp.com/api/service/create", {
             name: name,
             price: price,
             description: description,
@@ -40,6 +47,8 @@ export default function AddServices(){
         }).then((res) =>{
             alert("Funcionó!")
             alert(res.data.message)
+            //redirect.push("/ServiciosAdmin")
+            window.location.reload();
         },
         console.log("no se que pasa"),
         //alert(response.data.message),
@@ -70,7 +79,7 @@ export default function AddServices(){
                         </li>
 
                         <li>
-                            <input type="file" className="inputFields" id="name" name="name" placeholder="Name" required onChange = {(e)=>{setImage(e.target.files[0])}}/>
+                            <input type="file" className="inputFields" id="name" name="name" placeholder="Foto" required onChange = {(e)=>{setImage(e.target.files[0])}}/>
                         </li>
 
                         <li>
@@ -91,8 +100,10 @@ export default function AddServices(){
                             <input type="checkbox" className="inputFields" id="available" name="Promocion" placeholder="Promocion" onChange = {(e)=>{setAvailable(e.target.value)}}/>
                         </li>
                     </ul>
-                            <input type="submit" id="join-btn" name="join" alt="Join" value="Crear"/>
+                            <input type="submit" id="join-btn" name="join" alt="Join" value="Agregar"/>
                 
+                            <Link to="/ServiciosAdmin" id="join-btn-2" >Listado de servicio</Link>
+                            
                 </form>
                 
             </div>

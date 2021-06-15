@@ -31,3 +31,15 @@
     box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
     height: 85vh;
 }
+
+#join-btn-2{
+    border: 1px solid rgba(10, 180, 180, 1);
+  background: rgba(20, 20, 20, .6);
+  font-size: 18px;
+  color: white;
+  margin-top: 5px;
+  padding: 10px 50px;
+  cursor: pointer;
+  transition: .4s;
+  margin-left: 2rem;
+}

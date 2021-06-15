@@ -53,11 +53,12 @@ export default function Admin(){
             <label id="labelFiltroP" htmlFor="filtroP">Nombre del Proveedor</label>
             <input type="text" id="filtroP" onChange={(e)=>{ setProveedorByName(e.target.value)}} />
             <Link to="/Provedores" className="boton-crear-usuario">Agregar Proveedor</Link>
+            
             <table id="customers">
                 <tr>
                     <th>Nombre</th>
                     <th>Telefono</th>
-                    <th>Correo</th>
+                    <th className="emailTable">Correo</th>
                     <th>Direccion</th>
                     <th>Eliminar</th>
                     <th>Editar</th>
@@ -69,7 +70,7 @@ export default function Admin(){
                 <tr>
                     <td>{proveedor.name}</td>
                     <td>{proveedor.telefono}</td>
-                    <td>{proveedor.email}</td>
+                    <td className="emailTable">{proveedor.email}</td>
                     <td>{proveedor.direccion}</td>                    
                     <td><button className="deleteBtn" onClick = {(e) => {deleteProveedor(e, proveedor.id)}}>Delete</button></td>
                     <td><Link className="botonEditar" to={`/EditProveedores/ ${proveedor.id}`} >Edit</Link></td>

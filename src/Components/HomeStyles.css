@@ -147,6 +147,7 @@ body{
 
 .content2{
   display: flex;
+  justify-content: space-evenly;
   padding-top: 8rem;
   padding-bottom: 10rem;
 }
@@ -154,7 +155,7 @@ body{
 .img2{
   width: 700px;
   height: 400px;
-  margin-left: 5rem;
+  margin-left: 0rem;
   border-radius: 10px;
 }
 
@@ -232,7 +233,7 @@ body{
 
   #divFiestas1{
     margin-top: -1rem;
-    padding-bottom: 3rem;
+    padding-bottom: 9rem;
   }
 
   .content2{
@@ -264,8 +265,10 @@ body{
 
   #img4{
     width: 350px;
-    height: 180px;
+    height: 200px;
     margin-left: auto ;
     margin-right: auto;
+    padding-bottom: 0rem;
+    border-radius: 10px;
   }
 }

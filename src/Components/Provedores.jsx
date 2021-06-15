@@ -1,6 +1,8 @@
 import './ProvedoresStyles.scss'
 import React, { useState } from 'react';
 import Axios from 'axios';
+import {Link}from "react-router-dom";
+
 
 export default function Provedores (){
 
@@ -86,7 +88,8 @@ export default function Provedores (){
                             <input type="file" className="inputFields" id="image" name="image" placeholder="Imagen"  required onChange = {(e)=>{setImage(e.target.files[0])}}/>
                         </li>
                     </ul>
-                            <input type="submit" id="join-btn" name="join" alt="Join" value="Crear"/>
+                            <input type="submit" id="join-btn" name="join" alt="Join" value="Agregar"/>
+                            <Link to="/ServiciosAdmin" id="join-btn-2" >Ver Proveedores</Link>
                 
                 </form>
                 

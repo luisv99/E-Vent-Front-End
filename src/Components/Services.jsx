@@ -1,8 +1,9 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import {
-    Link, useParams
+     useParams
   } from "react-router-dom";
+  import './ServicesStyles.css'
 
 
 export default function Services(){
@@ -26,38 +27,28 @@ export default function Services(){
 
     return(
         <>
-            <div className="contenedorP">
-            
-            <h1 className="titulo">Lista de Servicios</h1>
-            
-            <Link to="/AddServices" className="boton-crear-usuario">Agregar Servicio</Link>
-            <table id="customers">
-                <tr>
-                    <th>User_id</th>
-                    <th>Nombre</th>
-                    <th>Precio ($)</th>
-                    <th>Descripcion</th>
-                    <th>Correo</th>
-                    <th>Promocion</th>
+            <div className="cont1">
+
+                <div className="contCard">
+                { services.map((service) => (
+
+                    <div className="card1">
+                        <h3 >{service.name}</h3>
+                        <img src={service.image} className="service-img" alt="service-pic"/>
+                        <p>{service.description}
+                        </p>
+                        <a href="#!" className="button">
+                            Lo quiero en mi Evento 
+                        </a>
+                    </div>
 
                     
-                </tr>
 
-                { services.map((service) => (
-                
-                <tr>
-                    <td>{service.user_id}</td>
-                    <td>{service.name}</td>
-                    <td>{service.price}</td>
-                    <td>{service.description}</td>
-                    <td>{service.available}</td>                    
-                    <td>{service.promotion}</td>                    
-                   
 
-                </tr>
-                )) }
-                </table>
+                    ))}
                 </div>
+            </div>
+
 
         </>
     )
