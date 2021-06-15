@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from "react";
+/*import React, {Fragment, useState} from "react";
 
 const EditDistribuidores = ({distribuidor}) => {
     const [nombre, setNombre]= useState(distribuidor.nombre);
@@ -8,7 +8,7 @@ const EditDistribuidores = ({distribuidor}) => {
         
         try {
             const body = {nombre};
-            const response = await fetch(`http://localhost:5000/distribuidores/${distribuidor.id}`,
+            const response = await fetch(`https://dry-shelf-94984.herokuapp.com/distribuidores/${distribuidor.id}`,
             {
                 method: "PUT",
                 headers: {"Content-Type": "application/json"},
@@ -56,4 +56,4 @@ const EditDistribuidores = ({distribuidor}) => {
 
     </Fragment>
 }
-export default EditDistribuidores;
+export default EditDistribuidores;*/

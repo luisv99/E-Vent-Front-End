@@ -1,0 +1,33 @@
+.addServiceForm{
+    width: 70%;
+    padding: 30px 0;
+    background: rgba(20, 40, 40, .8);
+    transition: .2s;
+    height: 80vh;
+    margin-top: 3rem;
+}
+
+
+.infoServices{
+    width: 45%;
+    background: rgba(20, 20, 20, .8);
+    padding: 30px 0;
+    border-right: 5px solid rgba(30, 30, 30, .8);
+    height: 80vh;
+    margin-top: 3rem;
+
+}
+
+.signupSectionServices{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 450px;
+    text-align: center;
+    display: flex;
+    color: white;
+    box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+    height: 85vh;
+}

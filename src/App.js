@@ -21,16 +21,16 @@ import InputDistribuidor from "./Components/InputDistribuidor";
 import ListDistribuidores from "./Components/ListDistribuidores";
 import ProveedorServicios from "./Components/ProveedorServicios";
 
+import PagoPorZelle from './Components/PagoPorZelle';
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
+import EditProveedores from './Components/EditProveedores';
+import EditServicios from './Components/EditServicios';
 
-
- 
 
 function App() {
     
@@ -60,7 +60,7 @@ function App() {
         <Route path="/SignUp">
           <SignUp></SignUp>
         </Route>
-        <Route path="/Services">
+        <Route path="/Services/:proveedor_id">
           <Services></Services>
         </Route>
         
@@ -75,10 +75,14 @@ function App() {
         <Route path="/Admin">
           <Admin/>
         </Route>
+
         <Route path="/Users">
           <Users/>
         </Route>
         
+        <Route path="/ServiciosAdmin">
+          <ServiciosAdmin/>
+        </Route>
         
         <Route path="/ProveedoresAdmin">
           <Proveedores/>
@@ -87,16 +91,30 @@ function App() {
         <Route path="/AddServices">
           <AddServices/>
           </Route>
+          
         <Route path="/DistribuidoresAdmin">
           <ListDistribuidores/>
           <InputDistribuidor/>
          
+        </Route>
+
+        <Route path="/EditProveedores/:proveedor_id">
+          <EditProveedores/>
+        </Route>
+
+        <Route path="/EditServicios/:servicio_id">
+          <EditServicios/>
         </Route>
         <Route path="/ProveedorServicios">
           <ProveedorServicios/>
         </Route>
         
         
+        <Route path="/PagoPorZelle">
+          <PagoPorZelle/>
+        </Route>
+
+      
       </Switch>
       <Footer/>
     </div>

@@ -68,6 +68,7 @@
 .noBullet {
   display: grid;
   grid-template-columns: repeat(2,1fr);
+  grid-gap: 5px;
   margin-top: 2rem;
   list-style-type: none;
   padding: 0;
@@ -85,11 +86,14 @@
 
   &:hover {
     background: rgba(20, 20, 20, .8);
-    padding: 10px 80px;
   }
 }
 
 .aa{
   color: wheat;
+}
+
+.boton{
+  margin-top: 5px;
 }
 

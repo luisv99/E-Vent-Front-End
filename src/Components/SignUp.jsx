@@ -1,8 +1,10 @@
 import './SignUpStyles.scss'
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Axios from 'axios';
+import { useHistory } from "react-router-dom"
 
-export default function (){
+
+export default function SignUp(){
 
     const [name, setName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -11,11 +13,13 @@ export default function (){
     const [direccion, setDireccion] = useState("")
     const [telefono, setTelefono] = useState("")
     const [cedula, setCedula] = useState("")
+    const redirect = useHistory();
+
     
     const handleSubmit = event => {
         event.preventDefault();
         console.log(cedula)
-        Axios.post("./api/auth/signup", {
+        Axios.post("https://dry-shelf-94984.herokuapp.com/api/auth/signup", {
             name: name,
             lastName: lastName,
             email: email,
@@ -25,8 +29,8 @@ export default function (){
             telefono: telefono,
             cedula: cedula
         }).then((response) =>{
-            alert("Funciona")
-            alert(response.data.message)
+            redirect.push("/")
+
         }).catch(err => {
             alert(err.response.data.message)
         })
@@ -48,36 +52,32 @@ export default function (){
                     <h2>Crear una cuenta</h2>
                     <ul className="noBullet">
                         <li>
-                            <label htmlfor="nombre"></label>
                             <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre"  required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="apellido"></label>
                             <input type="text" className="inputFields" id="apellido" name="apellido" placeholder="Apellido"  required onChange = {(e)=>{setLastName(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="cedula"></label>
                             <input type="number" className="inputFields" id="cedula" name="cedula" placeholder="Cedula"  required onChange = {(e)=>{setCedula(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="telefono"></label>
                             <input type="number" className="inputFields" id="telefono" name="telefono" placeholder="Telefono"  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="direccion"></label>
                             <input type="text" className="inputFields" id="direccion" name="direccion" placeholder="Direccion"  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="email"></label>
                             <input type="email" className="inputFields" id="email" name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="password"></label>
                             <input type="password" className="inputFields" id="password" name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}}/>
                         </li>
+                    <div className="boton">
+
+                            <input type="submit" id="join-btn" name="join" alt="Join" value="Registrarme"/>
+                    </div>
                     </ul>
                 
-                            <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
                 </form>
                 
             </div>

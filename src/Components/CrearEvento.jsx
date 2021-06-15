@@ -1,27 +1,30 @@
 import './CrearEvento.scss';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Axios from 'axios';
+import { useHistory } from "react-router-dom"
 
-export default function (){
+
+export default function CrearEvento (){
 
     const [name, setName] = useState("")
     const [location, setLocation] = useState("")
     const [number, setNumber] = useState("")
     const [date, setDate] = useState("")
-    
+    const redirect = useHistory();
+
     const handleSubmit =  event => {
         event.preventDefault()
-        Axios.post("http://localhost:5000/api/event/create", {
+        Axios.post("https://dry-shelf-94984.herokuapp.com/api/event/create", {
             name: name,
             location: location,
             cant_personas: number,
             date: date,
             user_id: localStorage.getItem('user_id'),
             token: localStorage.getItem('SavedToken')
-            
         }).then((res) =>{
+            redirect.push("/Catalogo")
             alert("Prueba")
-            alert(res.data.message)
+            //alert(res.data.message)
         }).catch(err => {
             alert(err.response.data.message)
         })
@@ -29,17 +32,17 @@ export default function (){
     }
     return(
         <>
-            <div className="cont">
-            <div className="signupSection">
+            <div className="cont-crear-eventos">
+            <div className="signupSection-crear-eventos">
                 <div className="info">
                     <h1>E-Vent</h1>
                     <br></br>
                     <h1>LOGO</h1>
                 </div>
                 
-                <form action="#" onSubmit= {handleSubmit} method="POST" className="signupForm" name="signupform">
-                    <h2>Crear tu evento</h2>
-                    <ul className="noBullet">
+                <form action="#" onSubmit= {handleSubmit} method="POST" className="signupForm-crear-eventos" name="signupform">
+                    <h2>Crea tu evento</h2>
+                    <ul className="noBullet-crear-eventos">
                         <li>
                             <label htmlfor="nombre de la empresa"></label>
                             <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre"  required onChange = {(e)=>{setName(e.target.value)}}/>
@@ -58,8 +61,9 @@ export default function (){
                             <label htmlfor="Fecha del evento"></label>
                             <input type="date" className="inputFields" id="date" name="date" placeholder="número de Personas"  required onChange = {(e)=>{setDate(e.target.value)}}/>
                         </li>
+                        
                         <li id="center-btn">
-                            <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
+                            <input type="submit" id="join-btn-crear-eventos" name="join" alt="Join" value="Crear Evento"/>
                         </li>
                     </ul>
                 

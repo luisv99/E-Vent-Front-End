@@ -3,13 +3,13 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.cont{
+.cont-login{
   background-color: rgb(21, 20, 20);
   z-index: 999;
   height: 100vh;
 }
 
-.signupSection {
+.signupSection-login {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -68,7 +68,7 @@
   padding: 0;
 }
 
-#join-btn {
+#join-btn-login {
   border: 1px solid rgba(10, 180, 180, 1);
   background: rgba(20, 20, 20, .6);
   font-size: 18px;
@@ -79,7 +79,31 @@
   transition: .4s;
   &:hover {
     background: rgba(20, 20, 20, .8);
-    padding: 10px 80px;
+  }
+}
+
+@media only screen and (max-width: 640px){
+
+  .signupSection-login {
+    width: 380px;
+    height: 380px;
+    margin-top: -8rem;
+  }
+
+  .noBullet2{
+    margin-top: 0px;
+    width: 200px;
+    margin-left: 15px;
+  }
+  
+  .noBullet2 li input{
+    width: 200px;
+    margin-top: auto;
+  }
+
+  #join-btn-login{
+    margin-top: 20px;
+    text-align: center;
   }
 }
 

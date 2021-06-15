@@ -17,6 +17,7 @@ const Slideshow = () => {
     const intervaloSlideshow = useRef(null);
 
     const siguiente = () => {
+        if(slideshow?.current){
         if(slideshow.current.children.length > 0){
 
             const primerElemento = slideshow.current.children[0];
@@ -41,6 +42,7 @@ const Slideshow = () => {
             slideshow.current.addEventListener('transitionend', transicion);
 
        }
+    }
     }
     
     const anterior = () => {
@@ -156,22 +158,6 @@ const Slide1 = styled.div`
         width: 100%;
         vertical-aling: top; 
 
-    }
-
-`;
-
-const TextoSlide= styled.div `
-    background: rgba(0,0,0,.5);
-    color: #fff;
-    width: 100%;
-    padding: 10px 60px;
-    text-align: center;
-    position: absolute;
-    bottom:0;
-
-    @media screen and (max-width: 700px){
-        position: relative;
-        
     }
 
 `;

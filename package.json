@@ -24,6 +24,7 @@
     "react-scroll-animation": "^1.0.3",
     "sass": "^1.32.13",
     "styled-components": "^5.3.0",
+    "use-state-with-callback": "^2.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -50,5 +51,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "https://dry-shelf-94984.herokuapp.com"
 }
