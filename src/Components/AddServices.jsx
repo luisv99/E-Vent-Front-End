@@ -6,8 +6,6 @@ import {Link}from "react-router-dom";
 
 export default function AddServices(){
 
-    const redirect = useHistory();
-
     const [name, setName] = useState("")
     const [price, setPrice] = useState("")
     const [description, setDescription] = useState("")
