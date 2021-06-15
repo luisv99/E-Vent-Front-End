@@ -123,16 +123,17 @@ body {
   }
   .navbar .menu {
     position: absolute;
-    width: 115%;
-    height: 60vh;
+    width: 120%;
+    height: 40vh;
     display: grid;
     align-items: center;
     background-color: #272f3a;
     transform: translateX(155%);
     transition: all 1s;
-    margin-top: 30.5em;
+    margin-top: 38em;
     z-index: 1000;
-;
+    font-size: .75rem;
+
   } 
   .navbar .menu ul li a{
     color: white;
@@ -143,8 +144,7 @@ body {
   }
 
   .navbar .menu-toggle {
-    transform: translateY(15%);
-    transform: translateX(54%);
+    transform: translateX(46%);
     overflow: hidden;
   }  
    .navbar .shop {
