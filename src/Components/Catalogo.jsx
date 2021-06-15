@@ -1,7 +1,6 @@
 import './CatalogosStyle.scss'
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import useStateWithCallback from 'use-state-with-callback'
 import {
     Link
   } from "react-router-dom";
@@ -12,7 +11,7 @@ export default function Catalogo(){
 
  
     useEffect (() => {
-        searchProveedores()
+        searchProveedores();
     }, [proveedorByName]);
 
     useEffect (() => {

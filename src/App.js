@@ -22,7 +22,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import EditProveedores from './Components/EditProveedores';
 import EditServicios from './Components/EditServicios';

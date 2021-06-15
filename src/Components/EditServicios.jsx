@@ -2,9 +2,7 @@ import './AddServicesStyles.css';
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from "react-router-dom"
-import {
-    Link
-  } from "react-router-dom";
+
 
 export default function EditProveedores(){
 

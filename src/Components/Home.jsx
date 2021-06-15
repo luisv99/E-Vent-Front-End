@@ -1,6 +1,5 @@
 import './HomeStyles.css'
 import './Slideshow'
-import styled from 'styled-components';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import {useEffect} from 'react'
@@ -147,9 +146,3 @@ export default function Home(){
 }
 
 
-const Titulo = styled.p `
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: upercase;
-    margin-botto,: 10px
-`;

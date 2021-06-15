@@ -1,10 +1,10 @@
 import './SignUpStyles.scss'
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Axios from 'axios';
 import { useHistory } from "react-router-dom"
 
 
-export default function (){
+export default function SignUp(){
 
     const [name, setName] = useState("")
     const [lastName, setLastName] = useState("")

@@ -1,7 +1,7 @@
 import './NavBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faGlassCheers, faIcons, faTruckMonster } from '@fortawesome/free-solid-svg-icons'
-import React, { useState, useEffect } from 'react';
+import { faBars, faIcons } from '@fortawesome/free-solid-svg-icons'
+import React, { useState } from 'react';
 import {
     Link
   } from "react-router-dom";

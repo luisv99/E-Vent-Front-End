@@ -2,10 +2,7 @@ import './editProveedoresStyles.css';
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from "react-router-dom"
-import { Redirect } from 'react-router';
-import {
-    Link
-  } from "react-router-dom";
+
 
 export default function EditProveedores(){
 
@@ -15,9 +12,7 @@ export default function EditProveedores(){
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
     const [image, setImage] = useState("")
-    const [imageURL, setImageURL] = useState("")
     const [direccion, setDireccion] = useState("")
     const [telefono, setTelefono] = useState("")
     
@@ -34,7 +29,6 @@ export default function EditProveedores(){
         Axios.get("http://localhost:5000/api/user/" + proveedor_id).then((res)=>{
             setName(res.data.name)
             setEmail(res.data.email)
-            setPassword(res.data.password)
             setImage(res.data.image)
             setDireccion(res.data.direccion)
             setTelefono(res.data.telefono)

@@ -10,7 +10,6 @@ import imgN from './../Imagenes/negocio2.png';
 import imgSA from './../Imagenes/SA.png';
 import imgP from './../Imagenes/preguntas.png';
 
-import Slideshow from './Slideshow';
 
 import Slideshow2 from './Slideshow2';
 
@@ -29,37 +28,37 @@ export default function Footer(){
                         <div className="footer-col">
                             <h4>Compania</h4>
                             <ul>
-                                <li><a href="#miModal">Quienes somos</a></li>
-                                <li><a href="#miModal2">Métodos de pago</a></li>
-                                <li><a href="#miModal3">Cómo afiliar mi negocio</a></li>
+                                <li><Link to="#miModal">Quienes somos</Link></li>
+                                <li><Link to="#miModal2">Métodos de pago</Link></li>
+                                <li><Link to="#miModal3">Cómo afiliar mi negocio</Link></li>
                             </ul>
                         </div>
 
                         <div className="footer-col">
                             <h4>Ayuda</h4>
                             <ul>
-                                <li><a href="#miModal4">Servicio al cliente</a></li>
-                                <li><a href="#miModal5">Preguntas Frecuentes</a></li>
-                                <li><a href="#">Como crear mi evento</a></li>
+                                <li><Link to="#miModal4">Servicio al cliente</Link></li>
+                                <li><Link to="#miModal5">Preguntas Frecuentes</Link></li>
+                                <li><Link to="#">Como crear mi evento</Link></li>
                             </ul>
                         </div>
 
                         <div className="footer-col">
                             <h4>Eventos</h4>
                             <ul>
-                                <li><a href="CrearEvento">Crear E-Vent</a></li>
-                                <li><a href="#miModal8">Galeria</a></li>
-                                <li><a href="#">Clientes</a></li>
+                                <li><Link to="CrearEvento">Crear E-Vent</Link></li>
+                                <li><Link to="#miModal8">Galeria</Link></li>
+                                <li><Link to="#">Clientes</Link></li>
                             </ul>
                         </div>
 
                         <div className="footer-col">
                             <h4>Redes sociales</h4>
                             <div className="social-links">
-                                <a href="#"><FontAwesomeIcon icon={faFacebookF} className="fab fa-facebook-f"></FontAwesomeIcon></a>
-                                <a href="#"><FontAwesomeIcon icon={faTwitter} className="fab fa-twitter"></FontAwesomeIcon></a>
-                                <a href="#"><FontAwesomeIcon icon={faInstagram} className="fab fa-instagram"></FontAwesomeIcon></a>
-                                <a href="#"><FontAwesomeIcon icon={faWhatsapp} className="fab fa-dribbble"></FontAwesomeIcon></a>
+                                <Link to="#"><FontAwesomeIcon icon={faFacebookF} className="fab fa-facebook-f"></FontAwesomeIcon></Link>
+                                <Link to="#"><FontAwesomeIcon icon={faTwitter} className="fab fa-twitter"></FontAwesomeIcon></Link>
+                                <Link to="#"><FontAwesomeIcon icon={faInstagram} className="fab fa-instagram"></FontAwesomeIcon></Link>
+                                <Link to="#"><FontAwesomeIcon icon={faWhatsapp} className="fab fa-dribbble"></FontAwesomeIcon></Link>
                             </div>
                         </div>
                     </div>
@@ -67,42 +66,42 @@ export default function Footer(){
 
                 <div id="miModal" class="modal">
                 <div class="modal-contenido">
-                    <a href="#" className="modal-closed">X</a>
+                    <Link to="#" className="modal-closed">X</Link>
                     <img src={imgT} alt=""/>
                 </div>  
                 </div>
 
                 <div id="miModal2" class="modal2">
                 <div class="modal-contenido2">
-                    <a href="#">X</a>
+                    <Link to="#">X</Link>
                     <img src={imgS} alt=""/>
                 </div>  
                 </div>
 
                 <div id="miModal3" class="modal3">
                 <div class="modal-contenido3">
-                    <a href="#">X</a>
+                    <Link to="#">X</Link>
                     <img src={imgN} alt=""/>
                 </div>  
                 </div>
 
                 <div id="miModal4" class="modal4">
                 <div class="modal-contenido4">
-                    <a href="#">X</a>
+                    <Link to="#">X</Link>
                     <img src={imgSA} alt=""/>
                 </div>  
                 </div>
 
                 <div id="miModal5" class="modal5">
                 <div class="modal-contenido5">
-                    <a href="#">X</a>
+                    <Link to="#">X</Link>
                     <img src={imgP} alt=""/>
                 </div>  
                 </div>
 
                 <div id="miModal8" class="modal8">
                 <div class="modal-contenido8">
-                    <a href="#">X</a>
+                    <Link to="#">X</Link>
                     <div className="slide">
                         <Slideshow2/>
                     </div>

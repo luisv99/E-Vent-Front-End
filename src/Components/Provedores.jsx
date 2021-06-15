@@ -1,9 +1,8 @@
 import './ProvedoresStyles.scss'
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Axios from 'axios';
-import { Router } from 'react-router';
 
-export default function (){
+export default function Provedores (){
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")

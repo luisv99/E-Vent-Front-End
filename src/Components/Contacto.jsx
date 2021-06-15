@@ -1,6 +1,5 @@
 import './ContactoStyles.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebookF, faTwitter, faInstagram, faWhatsapp} from '@fortawesome/free-brands-svg-icons' 
+
 
 
 function Contacto(){
