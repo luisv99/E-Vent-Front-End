@@ -62,7 +62,7 @@ export default function Admin(){
                 
                 <tr>
                     <td>{user.name} {user.lastName}</td>
-                    <td>{user.email}</td>
+                    <td className="emailField">{user.email}</td>
                     <td>{user.direccion}</td>
                     <td>{user.cedula}</td>
                     <td><button className="deleteBtn" >Delete</button></td>

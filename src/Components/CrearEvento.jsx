@@ -41,7 +41,7 @@ export default function CrearEvento (){
                 </div>
                 
                 <form action="#" onSubmit= {handleSubmit} method="POST" className="signupForm-crear-eventos" name="signupform">
-                    <h2>Crear tu evento</h2>
+                    <h2>Crea tu evento</h2>
                     <ul className="noBullet-crear-eventos">
                         <li>
                             <label htmlfor="nombre de la empresa"></label>
@@ -63,7 +63,7 @@ export default function CrearEvento (){
                         </li>
                         
                         <li id="center-btn">
-                            <input type="submit" id="join-btn-crear-eventos" name="join" alt="Join" value="Entrar a E-Vent"/>
+                            <input type="submit" id="join-btn-crear-eventos" name="join" alt="Join" value="Crear Evento"/>
                         </li>
                     </ul>
                 

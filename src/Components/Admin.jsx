@@ -9,7 +9,7 @@ export default function Admin(){
         <>
             <div className="con">
                 <div className="con2">
-                <h1 className="title">Seleccione un opcion</h1>
+                <h1 className="title">Seleccione una opcion</h1>
                     <div className="links">
                         <Link to="/Users" className="usersA">Gestion de Usuarios</Link>
                         <Link to="/ProveedoresAdmin" className="usersA">Gestion de Proveedores</Link>
