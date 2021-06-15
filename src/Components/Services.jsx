@@ -16,7 +16,7 @@ export default function Services(){
     }, []);
 
     const getServices = () =>{
-        Axios.get("https://dry-shelf-94984.herokuapp.comapi/services/proveedores/" + proveedor_id).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/services/proveedores/" + proveedor_id).then((res)=>{
             setServices(res.data)
             console.log('Servicios' + res.data)
         }
