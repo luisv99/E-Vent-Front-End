@@ -24,20 +24,6 @@ export default function Services(){
         console.log(services)
     }
 
-
-    const deleteServices = (e, id) => {
-        e.preventDefault();
-        console.log("Delete")
-
-        Axios.delete("https://dry-shelf-94984.herokuapp.com/api/services/"+ id).then((res) => {
-            alert(res.data.message)
-            getServices()
-        }).catch(err => {
-            alert(err.data.message)
-            alert("error")
-        })
-    }
-
     return(
         <>
             <div className="contenedorP">
