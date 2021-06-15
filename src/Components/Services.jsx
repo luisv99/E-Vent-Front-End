@@ -53,8 +53,7 @@ export default function Services(){
                     <th>Descripcion</th>
                     <th>Correo</th>
                     <th>Promocion</th>
-                    <th>Eliminar</th>
-                    <th>Editar</th>
+
                     
                 </tr>
 
@@ -67,8 +66,7 @@ export default function Services(){
                     <td>{service.description}</td>
                     <td>{service.available}</td>                    
                     <td>{service.promotion}</td>                    
-                    <td><button className="deleteBtn" onClick = {(e) => {deleteServices(e, service.id)}}>Delete</button></td>
-                    <td><Link to={`/EditServicios/ ${service.id}`} >Editar</Link></td>
+                   
 
                 </tr>
                 )) }
