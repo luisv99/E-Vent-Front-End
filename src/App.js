@@ -70,9 +70,11 @@ function App() {
         <Route path="/Admin">
           <Admin/>
         </Route>
+
         <Route path="/Users">
           <Users/>
         </Route>
+        
         <Route path="/ServiciosAdmin">
           <ServiciosAdmin/>
         </Route>
@@ -83,10 +85,6 @@ function App() {
 
         <Route path="/AddServices">
           <AddServices/>
-        </Route>
-
-        <Route path="/ServiciosAdmin">
-          <ServiciosAdmin/>
         </Route>
 
         <Route path="/EditProveedores/:proveedor_id">
