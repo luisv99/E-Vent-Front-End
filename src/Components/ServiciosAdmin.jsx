@@ -11,6 +11,7 @@ export default function ServiciosAdmin(){
     
     useEffect (() => {
         getServices();
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [serviceByName]);
 
     const getServices = () =>{

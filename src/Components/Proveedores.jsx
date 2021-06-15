@@ -15,6 +15,7 @@ export default function Admin(){
  
     useEffect (() => {
         searchProveedores()
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [proveedorByName]);
 
     

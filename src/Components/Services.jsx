@@ -12,6 +12,7 @@ export default function Services(){
 
     useEffect (() => {
         getServices();
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const getServices = () =>{

@@ -64,43 +64,43 @@ export default function Footer(){
                     </div>
                 </div>
 
-                <div id="miModal" class="modal">
-                <div class="modal-contenido">
+                <div id="miModal" className="modal">
+                <div className="modal-contenido">
                     <Link to="#" className="modal-closed">X</Link>
                     <img src={imgT} alt=""/>
                 </div>  
                 </div>
 
-                <div id="miModal2" class="modal2">
-                <div class="modal-contenido2">
+                <div id="miModal2" className="modal2">
+                <div className="modal-contenido2">
                     <Link to="#">X</Link>
                     <img src={imgS} alt=""/>
                 </div>  
                 </div>
 
-                <div id="miModal3" class="modal3">
-                <div class="modal-contenido3">
+                <div id="miModal3" className="modal3">
+                <div className="modal-contenido3">
                     <Link to="#">X</Link>
                     <img src={imgN} alt=""/>
                 </div>  
                 </div>
 
-                <div id="miModal4" class="modal4">
-                <div class="modal-contenido4">
+                <div id="miModal4" className="modal4">
+                <div className="modal-contenido4">
                     <Link to="#">X</Link>
                     <img src={imgSA} alt=""/>
                 </div>  
                 </div>
 
-                <div id="miModal5" class="modal5">
-                <div class="modal-contenido5">
+                <div id="miModal5" className="modal5">
+                <div className="modal-contenido5">
                     <Link to="#">X</Link>
                     <img src={imgP} alt=""/>
                 </div>  
                 </div>
 
-                <div id="miModal8" class="modal8">
-                <div class="modal-contenido8">
+                <div id="miModal8" className="modal8">
+                <div className="modal-contenido8">
                     <Link to="#">X</Link>
                     <div className="slide">
                         <Slideshow2/>

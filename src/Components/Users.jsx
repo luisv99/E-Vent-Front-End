@@ -13,7 +13,8 @@ export default function Admin(){
     }, []);
 
     useEffect (() => {
-        searchUsers()
+        searchUsers();
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userByName]);
 
 

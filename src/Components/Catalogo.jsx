@@ -12,10 +12,12 @@ export default function Catalogo(){
  
     useEffect (() => {
         searchProveedores();
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [proveedorByName]);
-
+    
     useEffect (() => {
         console.log(proveedores);
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const searchProveedores = ()=>{
