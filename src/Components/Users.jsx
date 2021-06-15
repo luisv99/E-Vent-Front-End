@@ -19,7 +19,7 @@ export default function Admin(){
 
 
     const getUsers = () =>{
-        Axios.get("http://localhost:5000/api/users").then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/users").then((res)=>{
             setUsers(res.data)
             console.log(res.data)
         }

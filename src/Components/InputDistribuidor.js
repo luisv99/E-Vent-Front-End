@@ -7,7 +7,7 @@ const onSubmitForm = async e => {
     e.preventDefault();
     try {
         const body = {nombre};
-        const response = await fetch("http://localhost:5000/distribuidores",{
+        const response = await fetch("https://dry-shelf-94984.herokuapp.com/distribuidores",{
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(body)

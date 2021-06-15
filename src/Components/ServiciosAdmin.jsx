@@ -15,7 +15,7 @@ export default function ServiciosAdmin(){
     }, [serviceByName]);
 
     const getServices = () =>{
-        Axios.get("http://localhost:5000/api/services/" + serviceByName).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/services/" + serviceByName).then((res)=>{
             setServices(res.data)
             console.log('Servicios' + res.data)
         }
@@ -28,7 +28,7 @@ export default function ServiciosAdmin(){
         e.preventDefault();
         console.log("Delete")
 
-        Axios.delete("http://localhost:5000/api/services/"+ id).then((res) => {
+        Axios.delete("https://dry-shelf-94984.herokuapp.com/api/services/"+ id).then((res) => {
             alert(res.data.message)
             getServices()
         }).catch(err => {

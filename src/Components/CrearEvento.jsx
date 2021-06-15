@@ -14,7 +14,7 @@ export default function CrearEvento (){
 
     const handleSubmit =  event => {
         event.preventDefault()
-        Axios.post("http://localhost:5000/api/event/create", {
+        Axios.post("https://dry-shelf-94984.herokuapp.com/api/event/create", {
             name: name,
             location: location,
             cant_personas: number,

@@ -26,7 +26,7 @@ export default function EditProveedores(){
         
         console.log('Id del proveedor:' + proveedor_id)
 
-        Axios.get("http://localhost:5000/api/user/" + proveedor_id).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/user/" + proveedor_id).then((res)=>{
             setName(res.data.name)
             setEmail(res.data.email)
             setImage(res.data.image)
@@ -43,7 +43,7 @@ export default function EditProveedores(){
 
     const editProveedor = () =>{
         //event.preventDefault();
-        Axios.put("http://localhost:5000/api/proveedor/" + proveedor_id, {
+        Axios.put("https://dry-shelf-94984.herokuapp.com/api/proveedor/" + proveedor_id, {
             id: proveedor_id,
             name: name,
             email: email,
