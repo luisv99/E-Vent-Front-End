@@ -91,7 +91,7 @@ body{
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     align-items: center;
-    width: 96.5vw;
+    width: 100vw;
 
   }
   .navbar .logo {
@@ -132,9 +132,9 @@ body{
     display: grid;
     align-items: center;
     background-color: #272f3a;
-    transform: translateX(155%);
+    transform: translateX(175%);
     transition: all 1s;
-    margin-top: 38em;
+    margin-top: 37em;
     z-index: 1000;
     font-size: .75rem;
     touch-action: none;
@@ -150,7 +150,7 @@ body{
   }
 
   .navbar .menu-toggle {
-    transform: translateX(46%);
+    transform: translateX(40%);
     overflow: hidden;
   }  
    .navbar .shop {
