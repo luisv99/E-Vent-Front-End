@@ -185,7 +185,7 @@ body{
 
 @media only screen and (max-width: 640px){
 
-  body{
+  body, html{
     overflow-x: hidden;
   }
 
