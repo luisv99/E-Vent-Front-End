@@ -1,7 +1,9 @@
 import './AddServicesStyles.css';
+import './editServicios.css'
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from "react-router-dom"
+import {Link}from "react-router-dom";
 
 
 export default function EditProveedores(){
@@ -27,7 +29,7 @@ export default function EditProveedores(){
         
         console.log('Id del servicio:' + servicio_id)
 
-        Axios.get("https://dry-shelf-94984.herokuapp.com/api/services/" + servicio_id).then((res)=>{
+        Axios.get("http://localhost:5000/api/servicesById/" + servicio_id).then((res)=>{
             setName(res.data.name)
             setPrice(res.data.price)
             setDescription(res.data.description)
@@ -35,8 +37,9 @@ export default function EditProveedores(){
             setAvailable(res.data.available)
             setImage(res.data.image)
             
-            console.log(res.data)
-            console.log(res.data.name)
+            console.log(res);
+            console.log(res.data);
+            console.log(res.data.name);
         }
         ).catch(err =>{
             console.log(err)
@@ -66,7 +69,7 @@ export default function EditProveedores(){
 
     return(
         <>
-            <div className="cont">
+            <div className="cont-services" id="cont-services">
             <div className="signupSectionServices">
                 <div className="infoServices">
                     <h1>E-Vent</h1>
@@ -76,35 +79,37 @@ export default function EditProveedores(){
                 
                 <form action="#" onSubmit= {editServicio} method="POST" className="addServiceForm" name="signupform">
                     <h2>Editar "{name}"</h2>
-                    <ul className="noBullet">
+                    <ul className="noBulletServices">
                         
                         <li>
-                            <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre" required value={name} onChange = {(e)=>{setName(e.target.value)}}/>
+                            <input type="text" className="inputFields-services" id="nombre" name="nombre" placeholder="Nombre" required value={name} onChange = {(e)=>{setName(e.target.value); }}/>
                         </li>
 
                         <li>
-                            <input type="text" className="inputFields" id="name" name="name" placeholder="Foto" required value={image} onChange = {(e)=>{setImage(e.target.value)}}/>
+                            <input type="text" className="inputFields-services" id="name" name="name" placeholder="Foto" required value={image} onChange = {(e)=>{setImage(e.target.value)}}/>
                         </li>
 
                         <li>
-                            <textarea cols="40" rows="4" type="text" className="inputFields" id="description" name="Description" placeholder="Description" required value={description} onChange = {(e)=>{setDescription(e.target.value)}}/>
+                            <textarea cols="40" rows="4" type="text" className="inputFields-services" id="description" name="Description" placeholder="Description" required value={description} onChange = {(e)=>{setDescription(e.target.value)}}/>
                         </li>
                         
                         <li>
-                            <input type="text" className="inputFields" id="price" name="price" placeholder="Price" required value={price} onChange = {(e)=>{setPrice(e.target.value)}}/>
+                            <input type="text" className="inputFields-services" id="price" name="price" placeholder="Price" required value={price} onChange = {(e)=>{setPrice(e.target.value)}}/>
                         </li>
                         
                         <li>
                             <label htmlFor="direccion">Esta en promocion?</label>
-                            <input type="checkbox" className="inputFields" id="direccion" name="Promocion" placeholder="Promocion" value={promotion} onChange = {(e)=>{setPromotion(e.target.value)}}/>
+                            <input type="checkbox" className="inputFields-services" id="direccion" name="Promocion" placeholder="Promocion" value={promotion} onChange = {(e)=>{setPromotion(e.target.value); console.log(e.target.value);} }/>
                         </li>
                         
                         <li>
                             <label htmlFor="direccion">Esta Disponible?</label>
-                            <input type="checkbox" className="inputFields" id="direccion" name="Promocion" placeholder="Promocion" value={available} onChange = {(e)=>{setAvailable(e.target.value)}}/>
+                            <input type="checkbox" className="inputFields-services" id="direccion" name="Promocion" placeholder="Promocion" value={available} onChange = {(e)=>{setAvailable(e.target.value); console.log(e.target.value);}}/>
                         </li>
                     </ul>
-                            <input type="submit" id="join-btn" name="join" alt="Join" value="Crear"/>
+                            <input type="submit" id="join-btn-services" name="join" alt="Join" value="Crear"/>
+
+                            <Link to="/ServiciosAdmin" id="join-btn-2" >Listado de servicios</Link>
                 
                 </form>
                 

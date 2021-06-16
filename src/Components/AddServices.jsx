@@ -59,7 +59,7 @@ export default function AddServices(){
 
     return(
         <>
-            <div className="cont">
+            <div className="cont-services">
             <div className="signupSectionServices">
                 <div className="infoServices">
                     <h1>E-Vent</h1>
@@ -69,37 +69,37 @@ export default function AddServices(){
                 
                 <form action="#" onSubmit= {handleSubmit} method="POST" className="addServiceForm" name="signupform">
                     <h2>Agregar un Servicio</h2>
-                    <ul className="noBullet">
+                    <ul className="noBulletServices">
                         
                         <li>
-                            <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre" required onChange = {(e)=>{setName(e.target.value)}}/>
+                            <input type="text" className="inputFields-services" id="nombre" name="nombre" placeholder="Nombre" required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
 
                         <li>
-                            <input type="file" className="inputFields" id="name" name="name" placeholder="Foto" required onChange = {(e)=>{setImage(e.target.files[0])}}/>
+                            <input type="file" className="inputFields-services" id="name" name="name" placeholder="Foto" required onChange = {(e)=>{setImage(e.target.files[0])}}/>
                         </li>
 
                         <li>
-                            <textarea cols="40" rows="4" type="text" className="inputFields" id="description" name="Description" placeholder="Description" required onChange = {(e)=>{setDescription(e.target.value)}}/>
+                            <textarea cols="40" rows="4" type="text" className="inputFields-services" id="description" name="Description" placeholder="Description" required onChange = {(e)=>{setDescription(e.target.value)}}/>
                         </li>
                         
                         <li>
-                            <input type="text" className="inputFields" id="price" name="price" placeholder="Price" required onChange = {(e)=>{setPrice(e.target.value)}}/>
+                            <input type="text" className="inputFields-services" id="price" name="price" placeholder="Price" required onChange = {(e)=>{setPrice(e.target.value)}}/>
                         </li>
                         
                         <li>
                             <label htmlFor="direccion">Esta en promocion?</label>
-                            <input type="checkbox" className="inputFields" id="direccion" name="Promocion" placeholder="Promocion" onChange = {(e)=>{setPromotion(e.target.value)}}/>
+                            <input type="checkbox" className="inputFields-services" id="direccion" name="Promocion" placeholder="Promocion" onChange = {(e)=>{setPromotion(e.target.value)}}/>
                         </li>
                         
                         <li>
                             <label htmlFor="available">Esta Disponible?</label>
-                            <input type="checkbox" className="inputFields" id="available" name="Promocion" placeholder="Promocion" onChange = {(e)=>{setAvailable(e.target.value)}}/>
+                            <input type="checkbox" className="inputFields-services" id="available" name="Promocion" placeholder="Promocion" onChange = {(e)=>{setAvailable(e.target.value)}}/>
                         </li>
                     </ul>
-                            <input type="submit" id="join-btn" name="join" alt="Join" value="Agregar"/>
+                            <input type="submit" id="join-btn-services" name="join" alt="Join" value="Agregar"/>
                 
-                            <Link to="/ServiciosAdmin" id="join-btn-2" >Listado de servicio</Link>
+                            <Link to="/ServiciosAdmin" id="join-btn-2" >Listado de servicios</Link>
                             
                 </form>
                 
