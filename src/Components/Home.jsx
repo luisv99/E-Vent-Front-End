@@ -27,19 +27,16 @@ export default function Home(){
        
        <div className="allHome">
 
-      
         <main className="hero">
           <div className="slide" data-aos="fade-up-right" data-aos-duration="2000">
             <Slideshow/>
           </div>
           
-          
-          
           <div className="info-content" data-aos="fade-up" data-aos-duration="3000">
 
             <h3>Welcome To</h3>
             <h1>E-Vent</h1>
-            <p>Crea tu propio evento desde casa a tu gusto, y nosotros hacemos el resto por ti</p>
+            <h3>Crea tu propio evento desde casa a tu gusto, y nosotros hacemos el resto por ti</h3>
             <br />
             <Link to="/login" className="iniciar-sesion">Iniciar Sesion</Link>
             <Link to="/SignUp" className="registro">Registrarme</Link>   
@@ -97,9 +94,10 @@ export default function Home(){
       <div className="info-content" data-aos="fade-up" data-aos-duration="2000">
         <h3>Welcome To</h3>
         <h1>E-Vent</h1>
-        <p>Crea tu propio evento desde casa a tu gusto, y nosotros hacemos el resto por ti</p>
+        <h3>Crea tu propio evento desde casa a tu gusto, y nosotros hacemos el resto por ti</h3>
         <br />
-        <button onClick={logOut} className="iniciar-sesion">Terminar Sesion</button>
+        <button onClick={logOut} id="logout" className="iniciar-sesion">Terminar Sesion</button>
+        <Link to="/UserProfile" id="logout" className="iniciar-sesion">Mi Perfil</Link>
       </div>
   </main>
     <div className="hero2" >

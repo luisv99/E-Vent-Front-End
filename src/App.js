@@ -25,6 +25,7 @@ import {
 } from "react-router-dom";
 import EditProveedores from './Components/EditProveedores';
 import EditServicios from './Components/EditServicios';
+import UserProfile from './Components/UserProfile';
 
 
 function App() {
@@ -97,6 +98,10 @@ function App() {
         
         <Route path="/PagoPorZelle">
           <PagoPorZelle/>
+        </Route>
+
+        <Route path="/UserProfile">
+          <UserProfile/>
         </Route>
 
       
