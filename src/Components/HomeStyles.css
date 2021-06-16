@@ -16,6 +16,11 @@ body{
 
 }
 
+#divFiestas img{
+  width: 700px;
+  height: 400px;
+  border-radius: 10px;
+}
 
 .hero {
     height: 100vh;
