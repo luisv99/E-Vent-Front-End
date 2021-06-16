@@ -69,8 +69,8 @@ export default function Home(){
 
       <div className="hero3">
         <div className="content2">
-        <img data-aos="fade-up" data-aos-duration="1800" className="img2" src="/imagenes/Caracas-Catering.jpg" alt="" />
         <h2 className="title3" data-aos="fade-up" data-aos-duration="1800">Comida</h2>
+        <img data-aos="fade-up" data-aos-duration="1800" className="img2" src="/imagenes/Caracas-Catering.jpg" alt="" />
         </div>
       </div>
       
