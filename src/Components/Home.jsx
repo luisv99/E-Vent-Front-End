@@ -74,7 +74,7 @@ export default function Home(){
 
       <div className="hero3" id="divFiestas1">
         <div className="content2" id="divFiestas">
-        <h2 className="title4" data-aos="fade-up" data-aos-duration="1800">Fiestas</h2>
+        <h2 className="title4" data-aos="fade-up" data-aos-duration="1800">Festivos</h2>
         <img data-aos="fade-up" data-aos-duration="1800"  id="img4" src="/imagenes/party4.png" alt="" />
         </div>
       </div>
@@ -96,8 +96,8 @@ export default function Home(){
         <h1>E-Vent</h1>
         <h3>Crea tu propio evento desde casa a tu gusto, y nosotros hacemos el resto por ti</h3>
         <br />
-        <button onClick={logOut} id="logout" className="iniciar-sesion">Terminar Sesion</button>
-        <Link to="/UserProfile" id="logout" className="iniciar-sesion">Mi Perfil</Link>
+        <button onClick={logOut} id="logout">Terminar Sesion</button>
+        <Link to="/UserProfile" id="perfil" className="perfil">Mi Perfil</Link>
       </div>
   </main>
     <div className="hero2" >

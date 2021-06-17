@@ -1,4 +1,3 @@
-import './editProveedoresStyles.css';
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from "react-router-dom"
