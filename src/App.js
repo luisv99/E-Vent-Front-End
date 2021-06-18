@@ -26,6 +26,7 @@ import {
 import EditProveedores from './Components/EditProveedores';
 import EditServicios from './Components/EditServicios';
 import UserProfile from './Components/UserProfile';
+import Checkout from './Components/Checkout';
 
 
 function App() {
@@ -102,6 +103,10 @@ function App() {
 
         <Route path="/UserProfile/:user_id">
           <UserProfile/>
+        </Route>
+
+        <Route path="/Checkout">
+          <Checkout/>
         </Route>
 
       

@@ -6,9 +6,7 @@ import {useEffect} from 'react'
 import React, { useState } from 'react';
 
 
-import {
-  Link
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Slideshow from './Slideshow';
 
 export default function Home(){
