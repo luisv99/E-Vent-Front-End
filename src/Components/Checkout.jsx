@@ -1,5 +1,5 @@
 import React from 'react';
-import './CheckoutStyles.css'
+import './CheckoutStyles.scss'
 import { useState } from 'react';
 import {Link} from "react-router-dom";
 
