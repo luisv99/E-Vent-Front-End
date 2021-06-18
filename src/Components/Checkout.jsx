@@ -12,25 +12,37 @@ export default function Checkout(){
         const zellePayment = ()=>{
             setZelle(true)
         }
+        const tdcPayment = ()=>{
+            setTDC(true)
+        }
+        const cashPayment = ()=>{
+            setCash(true)
+        }
+        const paypalPayment = ()=>{
+            setPaypal(true)
+        }
 
     return(
         <>
             <div className="comtenedor">
-                        <a href="./TarjetaCredito" className="button1">
+                <div className="botonesPagos">
+
+                        <Link onClick={tdcPayment} className="button1" id="linksPagos">
                             Tarjeta de credito
-                        </a>
+                        </Link>
 
-                        <a href="#!" className="button2">
+                        <Link onClick={paypalPayment} className="button2" id="linksPagos">
                             Paypal
-                        </a>
+                        </Link>
 
-                        <a href="#!" className="button3">
+                        <Link onClick={cashPayment} className="button3" id="linksPagos">
                             Cash 
-                        </a>
+                        </Link>
 
-                        <Link onClick={zellePayment} className="button4">
+                        <Link onClick={zellePayment} className="button4" id="linksPagos">
                             Zelle 
                         </Link>               
+                </div>
             </div>
 
             {zelle && <div className="pagoZelle">

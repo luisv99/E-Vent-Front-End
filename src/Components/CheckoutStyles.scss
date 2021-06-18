@@ -1,0 +1,80 @@
+.comtenedor{
+    background-color: rgb(21, 20, 20);
+    height: 70vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonesPagos{
+
+}
+
+#linksPagos{
+    border-radius: 10px;
+}
+
+#linksPagos:hover{
+    text-decoration: none;
+    color: blanchedalmond;
+}
+
+.button1{
+    background: #AB2626;
+    color: #fff;
+    font-weight: 900;
+    display: block;
+    margin: 20px;
+    padding: 10px 0px;
+    text-align:center;
+    width: 200px;
+    text-decoration: none;
+    box-shadow: 0px 3px 0px #590808;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button2{
+    background: #012169 ;
+    color: #fff;
+    font-weight: 900;
+    display: block;
+    margin: 20px;
+    padding: 10px 0px;
+    text-align:center;
+    width: 200px;
+    text-decoration: none;
+    box-shadow: 0px 3px 0px #5357F0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button3{
+    background: #2FA632;
+    color: #fff;
+    font-weight: 900;
+    display: block;
+    margin: 20px;
+    padding: 10px 0px;
+    text-align:center;
+    width: 200px;
+    text-decoration: none;
+    box-shadow: 0px 3px 0px #3DDC41;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button4{
+    background: #B22DB8;
+    color: #fff;
+    font-weight: 900;
+    display: block;
+    margin: 20px;
+    padding: 10px 0px;
+    text-align:center;
+    width: 200px;
+    text-decoration: none;
+    box-shadow: 0px 3px 0px #742077;
+    margin-left: auto;
+    margin-right: auto;
+}
