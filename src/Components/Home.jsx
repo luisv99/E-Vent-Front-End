@@ -97,7 +97,7 @@ export default function Home(){
         <h3>Crea tu propio evento desde casa a tu gusto, y nosotros hacemos el resto por ti</h3>
         <br />
         <button onClick={logOut} id="logout">Terminar Sesion</button>
-        <Link to="/UserProfile" id="perfil" className="perfil">Mi Perfil</Link>
+        {/*<Link to={`/UserProfile/ ${user_id}`} id="perfil" className="perfil">Mi Perfil</Link>*/}
       </div>
   </main>
     <div className="hero2" >

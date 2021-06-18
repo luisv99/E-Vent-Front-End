@@ -19,7 +19,7 @@ export default function NavBar(){
 
             <ul className={`menu ${open? "menu-toggle":""}`} id="menu">
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/CrearEvento">Crea tu E-Vent</Link></li>
+                <li className="crear-evento"><Link to="/CrearEvento">Crea tu E-Vent</Link></li>
                 <li><Link to="/recomendations">Recomendaciones</Link></li>
                 <li><Link to="/Admin">Admin</Link></li>
                 <li><Link to="/Catalogo">Locales</Link></li>

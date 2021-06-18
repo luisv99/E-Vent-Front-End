@@ -100,7 +100,7 @@ function App() {
           <PagoPorZelle/>
         </Route>
 
-        <Route path="/UserProfile">
+        <Route path="/UserProfile/:user_id">
           <UserProfile/>
         </Route>
 
