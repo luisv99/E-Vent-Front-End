@@ -12,14 +12,16 @@ export default function Login(){
 
     const handleSubmit = event => {
         event.preventDefault();
-        Axios.post("https://dry-shelf-94984.herokuapp.com/api/auth/logIn", {
+        Axios.post("http://localhost:5000/api/auth/logIn", {
             email: email,
             password: password,
         }).then((response) =>{
-            alert("Succesful LogIn");
+            alert("Se ha iniciado la sesion exitosamente");
             localStorage.setItem("SavedToken", response.data.accessToken)
             localStorage.setItem("user_id", response.data.id)
             localStorage.setItem("roles", response.data.roles)
+
+            console.log('user_id: ' + response.data.id)
             redirect.push("/")
 
         

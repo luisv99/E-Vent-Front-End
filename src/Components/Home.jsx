@@ -3,6 +3,8 @@ import './Slideshow'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import {useEffect} from 'react'
+import React, { useState } from 'react';
+
 
 import {
   Link
@@ -11,14 +13,21 @@ import Slideshow from './Slideshow';
 
 export default function Home(){
 
+  const [user_id, setUser_id] = useState("")
+
   const logOut = event =>{
     localStorage.clear();
     window.location.reload();
   }
+    const getUserId = () =>{
+        setUser_id(localStorage.getItem('user_id'));
+        console.log(user_id);
+    }
 
   useEffect(()=>{
     AOS.init();
-  })
+    getUserId()
+  });
   
   if(!localStorage.getItem('SavedToken')){
 
@@ -97,7 +106,7 @@ export default function Home(){
         <h3>Crea tu propio evento desde casa a tu gusto, y nosotros hacemos el resto por ti</h3>
         <br />
         <button onClick={logOut} id="logout">Terminar Sesion</button>
-        {/*<Link to={`/UserProfile/ ${user_id}`} id="perfil" className="perfil">Mi Perfil</Link>*/}
+        {<Link to={`/UserProfile/ ${user_id}`} id="perfil" className="perfil">Mi Perfil</Link>}
       </div>
   </main>
     <div className="hero2" >

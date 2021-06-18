@@ -2,7 +2,6 @@ import './UserProfileStyles.scss'
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { useParams } from "react-router-dom"
-import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
   
 
 export default function UserProfile(){
@@ -35,7 +34,7 @@ export default function UserProfile(){
             setCedula(res.data.cedula)
             
             
-            console.log(res.data)
+            console.log('usuario: ' + res.data)
         }
         ).catch(err =>{
             console.log(err)
@@ -102,7 +101,7 @@ export default function UserProfile(){
                         </li>*/}
                     <div className="boton">
 
-                            <input type="submit" id="join-btn-registro" name="join" alt="Join" value="Registrarme"/>
+                            <input type="submit" id="join-btn-registro" name="join" alt="Join" value="Guardar Cambios"/>
                     </div>
                     </ul>
                 
