@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './LoginStyles.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faBars,faShoppingCart} from '@fortawesome/free-solid-svg-icons'
 import Axios from 'axios';
 import { useHistory } from "react-router-dom"
 
