@@ -29,6 +29,8 @@ export default function NavBar(){
                 <li><Link to="/Services">Servicios</Link></li>
                 <li><Link to="/Checkout">Checout</Link></li>
                 
+                
+                <li><Link to="/Catalogo">Locales</Link></li>
             </ul>
 
             <div className="menu-bar" onClick={()=>setOpen(prev=>!prev)} >

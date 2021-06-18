@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import {
     Link
   } from "react-router-dom";
+import useStateWithCallback from 'use-state-with-callback'
 
 
 export default function Admin(){
@@ -12,36 +13,23 @@ export default function Admin(){
     const [proveedores, setProveedores] = useState([])
     const [proveedorByName, setProveedorByName] = useState('')
 
-    useEffect (() => {
-        getProveedores()
-    }, []);
-
+ 
     useEffect (() => {
         searchProveedores()
     }, [proveedorByName]);
 
-
     
-    const getProveedores = () =>{
-        Axios.get("./api/proveedores").then((res)=>{
-            setProveedores(res.data)
-            console.log(res.data)
-        }
-        )
-    }
+
 
     const searchProveedores = ()=>{
         Axios.get("./api/proveedores/"+ proveedorByName).then((res)=>{
             setProveedores(res.data)
             console.log(res.data)
-            console.log('Poveedor By Name' + proveedorByName);
+            console.log('Proveedor By Name' + proveedorByName);
     }).catch(err => {
         console.log(err)
-    })}
+    })};
 
-    const getProveedorByName = (e) =>{
-        setProveedorByName(e.target.value)
-        }
 
     const deleteProveedor = (e, id) => {
         console.log("Delete")
@@ -49,7 +37,7 @@ export default function Admin(){
 
         Axios.delete("./api/proveedor/" + id).then((res) => {
             alert(res.data.message)
-            getProveedores()
+            searchProveedores()
         }).catch(err => {
             alert(err.data.message)
             alert("error")
@@ -61,8 +49,8 @@ export default function Admin(){
             <div className="contenedorP">
             
             <h1 className="titulo">Lista de Proveedores</h1>
-            <label htmlFor="filtro">Nombre</label>
-            <input type="text" id="filtro" onChange={(e)=>{getProveedorByName(e)}} />
+            <label htmlFor="filtroP">Nombre del Proveedor</label>
+            <input type="text" id="filtroP" onChange={(e)=>{ setProveedorByName(e.target.value)}} />
             <Link to="/Provedores" className="boton-crear-usuario">Agregar Proveedor</Link>
             <table id="customers">
                 <tr>
@@ -83,7 +71,7 @@ export default function Admin(){
                     <td>{proveedor.email}</td>
                     <td>{proveedor.direccion}</td>                    
                     <td><button className="deleteBtn" onClick = {(e) => {deleteProveedor(e, proveedor.id)}}>Delete</button></td>
-                    <td><a href="miModal">Editar</a></td>
+                    <td><Link to={`/EditProveedores/ ${proveedor.id}`} >Editar</Link></td>
 
                 </tr>
                 )) }
@@ -94,4 +82,5 @@ export default function Admin(){
 
         </>
     )
+    
 }

@@ -2,6 +2,9 @@
   "name": "e-vent",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
@@ -24,6 +27,8 @@
     "react-scroll-animation": "^1.0.3",
     "sass": "^1.32.13",
     "styled-components": "^5.3.0",
+    "use-state-with-callback": "^2.0.3",
+    "use-table": "0.0.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

@@ -33,6 +33,7 @@ import {
   Link
 } from "react-router-dom";
 import EditProveedores from './Components/EditProveedores';
+import EditServicios from './Components/EditServicios';
 
 
 function App() {
@@ -114,8 +115,12 @@ function App() {
           <ServiciosAdmin/>
         </Route>
 
-        <Route path="/editProveedor">
+        <Route path="/EditProveedores/:proveedor_id">
           <EditProveedores/>
+        </Route>
+
+        <Route path="/EditServicios/:servicio_id">
+          <EditServicios/>
         </Route>
         
         <Route path="/PagoPorZelle">
