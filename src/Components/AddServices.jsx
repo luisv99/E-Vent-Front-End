@@ -31,7 +31,7 @@ export default function AddServices(){
         console.log(file.secure_url)
 
 
-        Axios.post("https://dry-shelf-94984.herokuapp.com/api/service/create", {
+        Axios.post("http://localhost:5000/api/service/create", {
             name: name,
             price: price,
             description: description,

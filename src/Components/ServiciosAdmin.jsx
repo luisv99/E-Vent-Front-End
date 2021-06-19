@@ -15,9 +15,10 @@ export default function ServiciosAdmin(){
     }, [serviceByName]);
 
     const getServices = () =>{
-        Axios.get("https://dry-shelf-94984.herokuapp.com/api/services/" + serviceByName).then((res)=>{
+        Axios.get("http://localhost:5000/api/services/" + serviceByName).then((res)=>{
             setServices(res.data)
             console.log('Servicios' + res.data)
+            console.log('Servicios')
         }
         )
         console.log(services)
@@ -51,8 +52,6 @@ export default function ServiciosAdmin(){
                     <th>Nombre</th>
                     <th>Precio ($)</th>
                     <th>Descripcion</th>
-                    <th>Promocion</th>
-                    <th>Disponibilidad</th>
                     <th>Eliminar</th>
                     <th>Editar</th>
                     
@@ -65,8 +64,6 @@ export default function ServiciosAdmin(){
                     <td>{service.name}</td>
                     <td>{service.price}</td>
                     <td>{service.description}</td>
-                    <td>{service.available}</td>                    
-                    <td>{service.promotion}</td>                    
                     <td><button className="deleteBtn" onClick = {(e) => {deleteServices(e, service.id)}}>Delete</button></td>
                     <td><Link to={`/EditServicios/ ${service.id}`} >Editar</Link></td>
 

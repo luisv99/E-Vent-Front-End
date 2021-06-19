@@ -6,8 +6,22 @@
     align-items: center;
 }
 
-.botonesPagos{
-
+.btn-continuar{
+    background-color: rgb(21, 20, 20);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 5rem;
+}
+.btn-continuar a{
+    text-decoration: none;
+    color: blanchedalmond;
+    background-color: crimson;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    padding: 10px 10px;
+    font-size: 1.5rem;
 }
 
 #linksPagos{

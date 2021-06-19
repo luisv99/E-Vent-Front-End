@@ -6,6 +6,10 @@ import { useHistory } from "react-router-dom"
 
 export default function CrearEvento (){
 
+    const fecha =  new Date ();
+    
+    console.log(fecha+2);
+
     const [name, setName] = useState("")
     const [location, setLocation] = useState("")
     const [number, setNumber] = useState("")
@@ -59,7 +63,7 @@ export default function CrearEvento (){
 
                         <li>
                             <label htmlfor="Fecha del evento"></label>
-                            <input type="date" className="inputFields" id="date" name="date" placeholder="número de Personas"  required onChange = {(e)=>{setDate(e.target.value)}}/>
+                            <input type="date" className="inputFields" id="date" name="date" placeholder="número de Personas" min="2017-04-01" required onChange = {(e)=>{setDate(e.target.value)}}/>
                         </li>
                         
                         <li id="center-btn">
