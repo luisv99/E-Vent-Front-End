@@ -8,7 +8,7 @@ const EditDistribuidores = ({distribuidor}) => {
         
         try {
             const body = {nombre};
-            const response = await fetch(`http://localhost:5000/distribuidores/${distribuidor.id}`,
+            const response = await fetch(`https://dry-shelf-94984.herokuapp.com/distribuidores/${distribuidor.id}`,
             {
                 method: "PUT",
                 headers: {"Content-Type": "application/json"},

@@ -1,10 +1,10 @@
 import './CrearEvento.scss';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Axios from 'axios';
 import { useHistory } from "react-router-dom"
 
 
-export default function (){
+export default function CrearEvento (){
 
     const [name, setName] = useState("")
     const [location, setLocation] = useState("")
@@ -14,7 +14,7 @@ export default function (){
 
     const handleSubmit =  event => {
         event.preventDefault()
-        Axios.post("http://localhost:5000/api/event/create", {
+        Axios.post("https://dry-shelf-94984.herokuapp.com/api/event/create", {
             name: name,
             location: location,
             cant_personas: number,
@@ -41,7 +41,7 @@ export default function (){
                 </div>
                 
                 <form action="#" onSubmit= {handleSubmit} method="POST" className="signupForm-crear-eventos" name="signupform">
-                    <h2>Crear tu evento</h2>
+                    <h2>Crea tu evento</h2>
                     <ul className="noBullet-crear-eventos">
                         <li>
                             <label htmlfor="nombre de la empresa"></label>
@@ -63,7 +63,7 @@ export default function (){
                         </li>
                         
                         <li id="center-btn">
-                            <input type="submit" id="join-btn-crear-eventos" name="join" alt="Join" value="Entrar a E-Vent"/>
+                            <input type="submit" id="join-btn-crear-eventos" name="join" alt="Join" value="Crear Evento"/>
                         </li>
                     </ul>
                 

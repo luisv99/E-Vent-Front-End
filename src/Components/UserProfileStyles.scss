@@ -3,14 +3,14 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.cont-crear-eventos{
+.cont-registro{
   background-color: rgb(21, 20, 20);
   z-index: 999;
-  height: 100vh;
+  height: 130vh;
 }
 
 
-.signupSection-crear-eventos {
+.signupSection-registro {
   margin-top: 2rem;
   background-repeat: no-repeat;
   position: absolute;
@@ -25,7 +25,7 @@
   box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
 }
 
-.info {
+.info-registro{
 
   width: 45%;
   background: rgba(20, 20, 20, .8);
@@ -41,7 +41,7 @@
 
 }
 
-.signupForm-crear-eventos {
+.signupForm-registro {
   width: 70%;
   padding: 30px 0;
   background: rgba(20, 40, 40, .8);
@@ -51,7 +51,7 @@
   }
 }
 
-.inputFields {
+.inputFields-registro {
   margin: 15px 0;
   font-size: 16px;
   padding: 10px;
@@ -65,13 +65,16 @@
   outline: none;
 }
 
-.noBullet-crear-eventos {
-    margin-top: 0rem;
+.noBullet-registro {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 5px;
+  margin-top: 2rem;
   list-style-type: none;
   padding: 0;
 }
 
-#join-btn-crear-eventos {
+#join-btn-registro {
   border: 1px solid rgba(10, 180, 180, 1);
   background: rgba(20, 20, 20, .6);
   font-size: 18px;
@@ -90,23 +93,45 @@
   color: wheat;
 }
 
+.boton{
+  margin-top: 5px;
+}
+
 @media only screen and (max-width: 640px){
-  .signupSection-crear-eventos {
-    width: 380px;
-    margin-top: 0rem;
+  .noBullet-registro {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 5px;
+    margin-top: 2rem;
+    list-style-type: none;
+    padding: 0;
   }
 
-  .noBullet-crear-eventos li{
-    margin-top: -25px;
-    width: 200px;
-    margin-left: 20px;
-  }
-  .noBullet-crear-eventos li input{
-    width: 200px;
+.inputFields-registro{
+  width: 170px;
+}
+  .signupSection-registro {
+    margin-top: 15rem;
+    width: 350px;
+    height: 750px;
+    text-align: center;
+    display: flex;
+    color: white;
+    box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
   }
 
-  #join-btn-crear-eventos{
-    margin-top: 40px;
+  #join-btn-registro {
+    width: 180px;
+    padding: 5px 30px;
+
+  }
+
+  .info-registro{
+   
+    background: rgba(20, 20, 20, .8);
+    padding: 100px 0;
+    border-right: 5px solid rgba(30, 30, 30, .8);
+
   }
 }
 

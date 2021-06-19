@@ -134,22 +134,6 @@ const Slide1 = styled.div`
 
 `;
 
-const TextoSlide= styled.div `
-    background: rgba(0,0,0,.5);
-    color: #fff;
-    width: 100%;
-    padding: 10px 60px;
-    text-align: center;
-    position: absolute;
-    bottom:0;
-
-    @media screen and (max-width: 700px){
-        position: relative;
-        
-    }
-
-`;
-
 const Controles = styled.div`
     position: absolute;
     top: 0;

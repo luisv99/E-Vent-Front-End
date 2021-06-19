@@ -1,9 +1,10 @@
 import './ProvedoresStyles.scss'
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Axios from 'axios';
-import { Router } from 'react-router';
+import {Link}from "react-router-dom";
 
-export default function (){
+
+export default function Provedores (){
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -32,7 +33,7 @@ export default function (){
         console.log(imageURL)
         
 
-        Axios.post("./api/auth/signup", {
+        Axios.post("https://dry-shelf-94984.herokuapp.com/api/auth/signup", {
             name: name,
             lastName: null,
             email: email,
@@ -57,37 +58,40 @@ export default function (){
 
     return(
         <>
-            <div className="cont">
-            <div className="signupSection">
-                <div className="info">
+            <div className="cont-add-proveedores">
+            <div className="signupSection-add-proveedores">
+                <div className="info-add-proveedores">
                     <h1>E-Vent</h1>
                     <br></br>
                     <h1>LOGO</h1>
                 </div>
                 
-                <form action="#" onSubmit= {handleSubmit} method="POST" className="signupForm" name="signupform">
+                <form action="#" onSubmit= {handleSubmit} method="POST" className="signupForm-add-proveedores" name="signupform">
                     <h2>Agregar un provedor</h2>
-                    <ul className="noBullet">
+                    <ul className="noBullet-add-proveedores">
                         <li>
-                            <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre"  required onChange = {(e)=>{setName(e.target.value)}}/>
+                            <input type="text" className="inputFields-add-proveedores" id="nombre" name="nombre" placeholder="Nombre"  required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="number" className="inputFields" id="telefono" name="telefono" placeholder="Telefono"  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
+                            <input type="number" className="inputFields-add-proveedores" id="telefono" name="telefono" placeholder="Telefono"  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="text" className="inputFields" id="direccion" name="direccion" placeholder="Direccion"  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
+                            <input type="text" className="inputFields-add-proveedores" id="direccion" name="direccion" placeholder="Direccion"  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="email" className="inputFields" id="email" name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}}/>
+                            <input type="email" className="inputFields-add-proveedores" id="email" name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="password" className="inputFields" id="password" name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}}/>
+                            <input type="password" className="inputFields-add-proveedores" id="password" name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="file" className="inputFields" id="image" name="image" placeholder="Imagen"  required onChange = {(e)=>{setImage(e.target.files[0])}}/>
+                            <input type="file" className="inputFields-add-proveedores" id="image" name="image" placeholder="Imagen"  required onChange = {(e)=>{setImage(e.target.files[0])}}/>
                         </li>
                     </ul>
-                            <input type="submit" id="join-btn" name="join" alt="Join" value="Crear"/>
+                    
+                            <input type="submit" id="join-btn" name="join" alt="Join" value="Agregar"/>
+
+                            <Link to="/ProveedoresAdmin" id="join-btn-2" >Ver Proveedores</Link>
                 
                 </form>
                 

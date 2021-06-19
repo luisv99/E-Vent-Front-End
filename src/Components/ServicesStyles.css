@@ -1,31 +1,64 @@
 
 
-#customers {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  #customers td, #customers th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  #customers tr:nth-child(even){background-color: #f2f2f2;}
-  
-  #customers tr:hover {background-color: #ddd;}
-  
-  #customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #9c0525;
-    color: white;
-  }
 
-  .titulo{
-      text-align: center;
-      margin: 3rem;
-      
+  .cont1{
+    background-color: #151414;
+ 
   }
+  
+  .contCard{
+      padding-bottom: 0rem;
+      display: grid;
+      grid-template-columns: auto auto auto;
+  }
+  
+  .card1 {
+      margin-top: 15%;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 50%;
+    margin-left: 20%;
+    margin-bottom: 4rem;
+    }
+
+    .card1 h3{
+       text-align: center;
+       color: #f5f5f5;
+    }
+
+    .card1 p{
+       text-align: center;
+       color: #f5f5f5;
+    }
+
+    .card1:hover {
+      box-shadow: 0 8px 16px 0 rgba(107, 102, 102, 0.2);
+    }
+
+    .card1 h3{
+      text-align: center;
+    }
+    
+  
+    .card1 p{
+      text-align: center;
+      font-size: 1.25rem;
+      margin-top: 0.8rem;
+      text-align: center;
+      padding: 0 4px;
+    }
+  
+
+    @media only screen and (max-width: 640px){
+
+      .contCard{
+        display: flex;
+        flex-direction: column;
+      }
+    
+    }
+    
+  
+  
+  
   

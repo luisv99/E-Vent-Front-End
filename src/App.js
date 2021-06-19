@@ -22,10 +22,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import EditProveedores from './Components/EditProveedores';
 import EditServicios from './Components/EditServicios';
+import UserProfile from './Components/UserProfile';
+import Checkout from './Components/Checkout';
 
 
 function App() {
@@ -71,9 +72,11 @@ function App() {
         <Route path="/Admin">
           <Admin/>
         </Route>
+
         <Route path="/Users">
           <Users/>
         </Route>
+        
         <Route path="/ServiciosAdmin">
           <ServiciosAdmin/>
         </Route>
@@ -86,10 +89,6 @@ function App() {
           <AddServices/>
         </Route>
 
-        <Route path="/ServiciosAdmin">
-          <ServiciosAdmin/>
-        </Route>
-
         <Route path="/EditProveedores/:proveedor_id">
           <EditProveedores/>
         </Route>
@@ -100,6 +99,14 @@ function App() {
         
         <Route path="/PagoPorZelle">
           <PagoPorZelle/>
+        </Route>
+
+        <Route path="/UserProfile/:user_id">
+          <UserProfile/>
+        </Route>
+
+        <Route path="/Checkout">
+          <Checkout/>
         </Route>
 
       

@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './LoginStyles.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faBars,faShoppingCart} from '@fortawesome/free-solid-svg-icons'
 import Axios from 'axios';
 import { useHistory } from "react-router-dom"
 
@@ -14,14 +12,16 @@ export default function Login(){
 
     const handleSubmit = event => {
         event.preventDefault();
-        Axios.post("./api/auth/logIn", {
+        Axios.post("http://localhost:5000/api/auth/logIn", {
             email: email,
             password: password,
         }).then((response) =>{
-            alert("Succesful LogIn");
+            alert("Se ha iniciado la sesion exitosamente");
             localStorage.setItem("SavedToken", response.data.accessToken)
             localStorage.setItem("user_id", response.data.id)
             localStorage.setItem("roles", response.data.roles)
+
+            console.log('user_id: ' + response.data.id)
             redirect.push("/")
 
         
@@ -34,8 +34,8 @@ export default function Login(){
 
     return(
         <>
-            <div className="cont">
-                <div className="signupSection">
+            <div className="cont-login">
+                <div className="signupSection-login">
                     <div className="info">
                         <h1>E-Vent</h1>
                         <br></br>
@@ -54,7 +54,7 @@ export default function Login(){
                                 <input type="password" className="inputFields" id="password" name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}} />
                             </li>
                             <li id="center-btn">
-                                <input type="submit" id="join-btn" name="join" alt="Join" value="Entrar a E-Vent"/>
+                                <input type="submit" id="join-btn-login" name="join" alt="Join" value="Entrar a E-Vent"/>
                             </li>
                         </ul>
                     

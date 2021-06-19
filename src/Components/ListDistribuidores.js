@@ -8,7 +8,7 @@ const ListDistribuidores = () => {
     //eliminar fuction
     const deleteDistribuidor = async (id) => {
         try {
-            const deleteDistribuidor = await fetch(`http://localhost:5000/distribuidores/${id}`,{
+            const deleteDistribuidor = await fetch(`https://dry-shelf-94984.herokuapp.com/distribuidores/${id}`,{
                 method: "DELETE"
 
             });
@@ -24,7 +24,7 @@ const ListDistribuidores = () => {
     const getDistribuidores = async () => {
         try {
 
-            const response = await fetch("http://localhost:5000/distribuidores");
+            const response = await fetch("https://dry-shelf-94984.herokuapp.com/distribuidores");
             const jsonData = await response.json();
             setDistribuidores(jsonData)
             
