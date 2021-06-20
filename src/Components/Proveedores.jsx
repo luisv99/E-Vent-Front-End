@@ -23,7 +23,7 @@ export default function Admin(){
 
 
     const searchProveedores = ()=>{
-        Axios.get("https://dry-shelf-94984.herokuapp.com/api/proveedores/"+ proveedorByName).then((res)=>{
+        Axios.get("./api/proveedores/"+ proveedorByName).then((res)=>{
             setProveedores(res.data)
             console.log(res.data)
             console.log('Proveedor By Name' + proveedorByName);
@@ -36,7 +36,7 @@ export default function Admin(){
         console.log("Delete")
         e.preventDefault();
 
-        Axios.delete("https://dry-shelf-94984.herokuapp.com/api/proveedor/" + id).then((res) => {
+        Axios.delete("./api/proveedor/" + id).then((res) => {
             alert(res.data.message)
             searchProveedores()
         }).catch(err => {
