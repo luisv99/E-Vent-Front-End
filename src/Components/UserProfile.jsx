@@ -1,10 +1,12 @@
 import './UserProfileStyles.scss'
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
-import { useParams } from "react-router-dom"
+import { useHistory, useParams } from "react-router-dom"
   
 
 export default function UserProfile(){
+
+    const redirect = useHistory();
  
     const [name, setName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -35,6 +37,7 @@ export default function UserProfile(){
             
             
             console.log('usuario: ' + res.data)
+            console.log(name)
         }
         ).catch(err =>{
             console.log(err)
@@ -43,7 +46,8 @@ export default function UserProfile(){
 
     const editUser = () =>{
         //event.preventDefault();
-        Axios.put("https://dry-shelf-94984.herokuapp.com/api/user/" + user_id, {
+        console.log(lastName)
+        Axios.put("https://dry-shelf-94984.herokuapp.com/api/proveedor/" + user_id, {
             id: user_id,
             name: name,
             lastName: lastName,
@@ -53,7 +57,7 @@ export default function UserProfile(){
             cedula: cedula
         }).then((response) =>{
             alert("Funciona")
-            //redirect.push("/ProveedoresAdmin")
+            redirect.push("/UserProfile/" + user_id)
         }).catch(err => {
             alert(err.response.data.message)
         })

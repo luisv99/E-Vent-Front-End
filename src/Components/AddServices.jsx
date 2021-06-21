@@ -16,7 +16,7 @@ export default function AddServices(){
         event.preventDefault();
         const data = new FormData()
         data.append('file', image)
-        data.append('upload_preset', 'proveedores')
+        data.append('upload_preset', 'servicios')
         const res = await fetch("https://api.cloudinary.com/v1_1/gtoro98/image/upload",
         {
             method: "POST",
