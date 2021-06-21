@@ -33,7 +33,7 @@ export default function Services(){
 
     const getServices = () =>{
         console.log("Proveedor Id: " + proveedor_id)
-        Axios.get("http://localhost:5000/api/services/proveedores/" + proveedor_id).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/services/proveedores/" + proveedor_id).then((res)=>{
             setServices(res.data)
             console.log('Servicios' + res.data)
         }
@@ -43,7 +43,7 @@ export default function Services(){
 
     const getUserEvents = (serviceId) =>{
         setServiceId(serviceId)
-        Axios.get("http://localhost:5000/api/events/user/" + localStorage.getItem('user_id')).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/events/user/" + localStorage.getItem('user_id')).then((res)=>{
             setEvents(res.data)
             console.log('Eventos: ' + res.data)
         }
@@ -55,7 +55,7 @@ export default function Services(){
     const agregarServicio = () => {
         console.log("agregando servico")
         console.log("Event Id: " + eventId)
-        Axios.post("http://localhost:5000/api/event/" + eventId + "/add/" + serviceId, {
+        Axios.post("https://dry-shelf-94984.herokuapp.com/api/event/" + eventId + "/add/" + serviceId, {
             event_id: 5,
             service_id: serviceId
         }).then(() => {

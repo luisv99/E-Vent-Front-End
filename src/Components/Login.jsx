@@ -12,7 +12,7 @@ export default function Login(){
 
     const handleSubmit = event => {
         event.preventDefault();
-        Axios.post("http://localhost:5000/api/auth/logIn", {
+        Axios.post("https://dry-shelf-94984.herokuapp.com/api/auth/logIn", {
             email: email,
             password: password,
         }).then((response) =>{
