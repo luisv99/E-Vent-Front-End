@@ -11,20 +11,23 @@ import Slideshow from './Slideshow';
 
 export default function Home(){
 
-  const [user_id, setUser_id] = useState("")
+  const [user_id, setUser_id] = useState("");
 
   const logOut = event =>{
     localStorage.clear();
     window.location.reload();
   }
+
     const getUserId = () =>{
         setUser_id(localStorage.getItem('user_id'));
-        console.log(user_id);
+        //console.log(user_id);
     }
 
   useEffect(()=>{
     AOS.init();
-    getUserId()
+    getUserId();
+    //const role = localStorage.getItem('roles');
+    //console.log('Tipo de Rol: ' + role);
   });
   
   if(!localStorage.getItem('SavedToken')){

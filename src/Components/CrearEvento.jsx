@@ -49,21 +49,21 @@ export default function CrearEvento (){
                     <h2>Crea tu evento</h2>
                     <ul className="noBullet-crear-eventos">
                         <li>
-                            <label htmlfor="nombre de la empresa"></label>
+                            <label htmlFor="nombre de la empresa"></label>
                             <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre"  required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
                     
                         <li>
-                            <label htmlfor="locación"></label>
+                            <label htmlFor="locación"></label>
                             <input type="text" className="inputFields" id="location" name="location" placeholder="Locación"  required onChange = {(e)=>{setLocation(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="Numero de personas"></label>
+                            <label htmlFor="Numero de personas"></label>
                             <input type="number" className="inputFields" id="number" name="number" placeholder="número de Personas"  required onChange = {(e)=>{setNumber(e.target.value)}}/>
                         </li>
 
                         <li>
-                            <label htmlfor="Fecha del evento"></label>
+                            <label htmlFor="Fecha del evento"></label>
                             <input type="date" className="inputFields" id="date" name="date" placeholder="número de Personas" /*{min={sumarDias(d)}}*/ required onChange = {(e)=>{setDate(e.target.value)}}/>
                         </li>
                         

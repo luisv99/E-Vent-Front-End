@@ -17,6 +17,7 @@ import Proveedores from './Components/Proveedores';
 import React from "react";
 import AddServices from './Components/AddServices';
 import PagoPorZelle from './Components/PagoPorZelle';
+import ServiciosProveedor from './Components/ServiciosProveedor';
 
 import {
   BrowserRouter as Router,
@@ -27,6 +28,7 @@ import EditProveedores from './Components/EditProveedores';
 import EditServicios from './Components/EditServicios';
 import UserProfile from './Components/UserProfile';
 import Checkout from './Components/Checkout';
+import PrivateRoute from './Components/PrivateRoute';
 
 
 function App() {
@@ -36,18 +38,23 @@ function App() {
       <div className="App">
       <NavBar/>
       <Switch>
+
         <Route path="/" exact>
           <Home></Home>
         </Route>
+
         <Route path="/login">
             <Login></Login> 
         </Route>
+
         <Route path="/register">
           <Login></Login>
         </Route>
-        <Route path="/CrearEvento">
+
+        {/*<Route path="/CrearEvento">
           <CrearEvento></CrearEvento>
-        </Route>
+        </Route>*/}
+
         <Route path="/recomendations">
           <Recomendaciones></Recomendaciones>
         </Route>
@@ -61,17 +68,23 @@ function App() {
           <Services></Services>
         </Route>
         
-        <Route path="/Provedores">
+        {/*<Route path="/Provedores">
           <Provedores></Provedores>
-        </Route>
+      </Route>*/}
+
+        <PrivateRoute exact path="/Provedores" component={Provedores}/>
       
         <Route path="/Catalogo">
           <Catalogo></Catalogo>
         </Route>
 
-        <Route path="/Admin">
+        {/*<Route path="/Admin">
           <Admin/>
-        </Route>
+        </Route>*/}
+
+        <PrivateRoute exact path="/Admin" component={Admin}/>
+
+        <PrivateRoute exact path="/CrearEvento" component={CrearEvento}/>
 
         <Route path="/Users">
           <Users/>
@@ -107,6 +120,10 @@ function App() {
 
         <Route path="/Checkout">
           <Checkout/>
+        </Route>
+
+        <Route path="/ServiciosProveedor">
+          <ServiciosProveedor/>
         </Route>
 
       
