@@ -48,6 +48,36 @@
       padding: 0 4px;
     }
   
+    .eventModal{
+      background-color: rgb(21, 20, 20);
+      margin: 8rem;
+      border-radius: 10px;
+      
+    }
+
+    .titulo-servicios{
+      text-align: center;
+      color: honeydew;
+    }
+
+    .close-modal{
+      background-color: red;
+      border: none;
+      padding: .5rem .5rem;
+      border-radius: 5px;
+    }
+
+    #btn-btn-success{
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    .select{
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+      padding-bottom: 3rem;
+    }
 
     @media only screen and (max-width: 640px){
 
