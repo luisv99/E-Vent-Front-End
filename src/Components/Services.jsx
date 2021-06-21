@@ -23,6 +23,7 @@ export default function Services(){
 
     useEffect (() => {
         getServices();
+        console.log(events);
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -46,15 +47,19 @@ export default function Services(){
     }
 
     const getUserEvents = (serviceId) =>{
+        console.log('getUserEvents')
+        console.log('serviceID: ' + serviceId)
         setServiceId(serviceId)
         Axios.get("http://localhost:5000/api/events/user/" + localStorage.getItem('user_id')).then((res)=>{
             setEvents(res.data)
             console.log('Eventos: ' + res.data)
         }
-        )
+        ).catch(() => {
+            alert('Error')
+        });
 
         setModalIsOpen(true)
-    }
+    };
 
     const agregarServicio = () => {
         console.log("agregando servico")
@@ -64,6 +69,8 @@ export default function Services(){
             service_id: serviceId
         }).then(() => {
             alert("Event added successfully")
+        }).catch(err => {
+            alert('Seleccione un evento')
         })
     }
 
@@ -87,7 +94,7 @@ export default function Services(){
                             <h1>Selecciona el eveanto a agregar el servicio</h1>
                             <select value={eventId}  onChange = {(e) => {setEventId(e.target.value)}}>
                                 {events.map((event => (
-                                    <option value = {event.id}  >{event.name}</option>
+                                    <option value = {event.id}> {event.name} </option>
                                 )))}
                             </select>
                             <button onClick={e => agregarServicio()}>Agregar Servicio</button>
@@ -103,29 +110,7 @@ export default function Services(){
                 </div>
             </div>
 
-    <ReactCircleModal
-      backgroundColor="#97349a"
-      toogleComponent={onClick => (
-        <button onClick={onClick}>
-          Click here to open modal
-        </button>
-      )}
-      // Optional fields and their default values
-      offsetX={0}
-      offsetY={0}
-    >
-      {(onClick) => (
-        <div style={{ backgroundColor: '#fff', padding: '1em' }}>
-          <p>
-            Content inside of modal
-          </p>
-          <button onClick={onClick}>
-            Click here to close modal
-          </button>
-        </div>
-      )}
-    </ReactCircleModal>
-
+    
         </>
     )
 }
