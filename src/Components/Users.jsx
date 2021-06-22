@@ -13,12 +13,13 @@ export default function Admin(){
     }, []);
 
     useEffect (() => {
-        searchUsers()
+        searchUsers();
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userByName]);
 
 
     const getUsers = () =>{
-        Axios.get("http://localhost:5000/api/users").then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/users/").then((res)=>{
             setUsers(res.data)
             console.log(res.data)
         }
@@ -26,7 +27,7 @@ export default function Admin(){
     }
 
     const searchUsers = ()=>{
-        Axios.get("./api/users/"+ userByName).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/users/"+ userByName).then((res)=>{
             setUsers(res.data)
             console.log(res.data)
             console.log('User By Name' + userByName);
@@ -61,7 +62,7 @@ export default function Admin(){
                 
                 <tr>
                     <td>{user.name} {user.lastName}</td>
-                    <td>{user.email}</td>
+                    <td className="emailField">{user.email}</td>
                     <td>{user.direccion}</td>
                     <td>{user.cedula}</td>
                     <td><button className="deleteBtn" >Delete</button></td>

@@ -2,9 +2,6 @@
   "name": "e-vent",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "14.x"
-  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
@@ -20,11 +17,14 @@
     "react-animate-on-scroll": "^2.1.5",
     "react-axios": "^2.0.5",
     "react-chatbot-kit": "^1.1.20",
+    "react-circle-modal": "^0.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
+    "react-modal": "^3.14.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-scroll-animation": "^1.0.3",
+    "react-simple-modal-provider": "^1.6.2",
     "sass": "^1.32.13",
     "styled-components": "^5.3.0",
     "use-state-with-callback": "^2.0.3",
@@ -54,5 +54,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "https://dry-shelf-94984.herokuapp.com"
 }

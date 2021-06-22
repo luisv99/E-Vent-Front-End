@@ -18,13 +18,42 @@
   #customers th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
+    text-align: center;
     background-color: #9c0525;
     color: white;
   }
 
   .titulo{
       text-align: center;
-      margin: 3rem;
       
+  }
+
+
+  @media only screen and (max-width: 640px)  {
+
+    #customers {
+      font-size: .5rem;
+      font-weight: bold;
+      color: black;
+      text-align: start;
+    }
+
+    .deleteBtn{
+        width: 35px;
+        height: 25px;
+        font-size: .5rem;
+        color: white;
+    }
+    .editarBtn{
+        width: 35px;
+        height: 25px;
+        font-size: .5rem;
+        color: white;
+    }
+
+    .emailField{
+      width: 10vw;
+    }
+
+
   }

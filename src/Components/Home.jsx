@@ -1,25 +1,34 @@
 import './HomeStyles.css'
 import './Slideshow'
-import styled from 'styled-components';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import {useEffect} from 'react'
+import React, { useState } from 'react';
 
-import {
-  Link
-} from "react-router-dom";
+
+import {Link} from "react-router-dom";
 import Slideshow from './Slideshow';
 
 export default function Home(){
+
+  const [user_id, setUser_id] = useState("");
 
   const logOut = event =>{
     localStorage.clear();
     window.location.reload();
   }
 
+    const getUserId = () =>{
+        setUser_id(localStorage.getItem('user_id'));
+        //console.log(user_id);
+    }
+
   useEffect(()=>{
     AOS.init();
-  })
+    getUserId();
+    //const role = localStorage.getItem('roles');
+    //console.log('Tipo de Rol: ' + role);
+  });
   
   if(!localStorage.getItem('SavedToken')){
 
@@ -28,35 +37,31 @@ export default function Home(){
        
        <div className="allHome">
 
-      
         <main className="hero">
           <div className="slide" data-aos="fade-up-right" data-aos-duration="2000">
             <Slideshow/>
           </div>
           
-          
-          
-          <div className="info-content" data-aos="fade-up" data-aos-duration="2000">
+          <div className="info-content" data-aos="fade-up" data-aos-duration="3000">
 
             <h3>Welcome To</h3>
             <h1>E-Vent</h1>
-            <p>Crea tu propio evento desde casa a tu gusto, y nosotros hacemos el resto por ti</p>
+            <h3>Crea tu propio evento desde casa a tu gusto, y nosotros hacemos el resto por ti</h3>
             <br />
             <Link to="/login" className="iniciar-sesion">Iniciar Sesion</Link>
             <Link to="/SignUp" className="registro">Registrarme</Link>   
           </div>
-          
-      
       </main>
-
-      
 
       <div className="hero2" >
         <div className="content1">
-          <h2 className="title1" data-aos="fade-up-right" data-aos-duration="2000">Unica agencia de festejos <span style={{color: "#9c0525" ,fontWeight:"900"}}>VIRTUAL</span> <br/>en el pais</h2>
-          <img data-aos="fade-up" data-aos-duration="1800" className="img1" src="/imagenes/party2.png" alt="" />
+          <h2 className="title1" data-aos="fade-up-right" data-aos-duration="3000">Unica agencia de festejos <span style={{color: "#9c0525" ,fontWeight:"900"}}>VIRTUAL</span> <br/>en el pais</h2>
+          <img data-aos="fade-up" data-aos-duration="3000" className="img1" src="/imagenes/party2.png" alt="" />
         </div>
       </div>
+
+      
+
 
       <div className="title2">
         <h1 data-aos="zoom-in" data-aos-duration="2000" >Contrata tus servicios favoritos</h1>
@@ -77,10 +82,10 @@ export default function Home(){
       </div>
       
 
-      <div className="hero3">
-        <div className="content2">
-        <h2 className="title4" data-aos="fade-up" data-aos-duration="1800">Fiestas</h2>
-        <img data-aos="fade-up" data-aos-duration="1800" className="img3" id="img4" src="/imagenes/party4.png" alt="" />
+      <div className="hero3" id="divFiestas1">
+        <div className="content2" id="divFiestas">
+        <h2 className="title4" data-aos="fade-up" data-aos-duration="1800">Festivos</h2>
+        <img data-aos="fade-up" data-aos-duration="1800"  id="img4" src="/imagenes/party4.png" alt="" />
         </div>
       </div>
       </div>
@@ -99,9 +104,10 @@ export default function Home(){
       <div className="info-content" data-aos="fade-up" data-aos-duration="2000">
         <h3>Welcome To</h3>
         <h1>E-Vent</h1>
-        <p>Crea tu propio evento desde casa a tu gusto, y nosotros hacemos el resto por ti</p>
+        <h3>Crea tu propio evento desde casa a tu gusto, y nosotros hacemos el resto por ti</h3>
         <br />
-        <button onClick={logOut} className="iniciar-sesion">Terminar Sesion</button>
+        <button onClick={logOut} id="logout">Terminar Sesion</button>
+        {<Link to={`/UserProfile/ ${user_id}`} id="perfil" className="perfil">Mi Perfil</Link>}
       </div>
   </main>
     <div className="hero2" >
@@ -130,10 +136,10 @@ export default function Home(){
   </div>
   
 
-  <div className="hero3">
-    <div className="content2">
+  <div className="hero3" id="divFiestas1">
+    <div className="content2" id="divFiestas">
     <h2 className="title4" data-aos="fade-up" data-aos-duration="1800">Fiestas</h2>
-    <img data-aos="fade-up" data-aos-duration="1800" className="img3" src="/imagenes/party4.png" alt="" />
+    <img data-aos="fade-up" data-aos-duration="1800" className="fiestaFoto" id="img4" src="/imagenes/party4.png" alt="" />
     </div>
   </div>
 
@@ -147,9 +153,3 @@ export default function Home(){
 }
 
 
-const Titulo = styled.p `
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: upercase;
-    margin-botto,: 10px
-`;

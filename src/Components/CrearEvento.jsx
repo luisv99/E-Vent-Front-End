@@ -1,10 +1,13 @@
 import './CrearEvento.scss';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Axios from 'axios';
 import { useHistory } from "react-router-dom"
 
 
-export default function (){
+export default function CrearEvento (){
+
+
+    
 
     const [name, setName] = useState("")
     const [location, setLocation] = useState("")
@@ -14,7 +17,7 @@ export default function (){
 
     const handleSubmit =  event => {
         event.preventDefault()
-        Axios.post("http://localhost:5000/api/event/create", {
+        Axios.post("https://dry-shelf-94984.herokuapp.com/api/event/create", {
             name: name,
             location: location,
             cant_personas: number,
@@ -30,6 +33,8 @@ export default function (){
         })
         
     }
+    
+
     return(
         <>
             <div className="cont-crear-eventos">
@@ -41,29 +46,29 @@ export default function (){
                 </div>
                 
                 <form action="#" onSubmit= {handleSubmit} method="POST" className="signupForm-crear-eventos" name="signupform">
-                    <h2>Crear tu evento</h2>
+                    <h2>Crea tu evento</h2>
                     <ul className="noBullet-crear-eventos">
                         <li>
-                            <label htmlfor="nombre de la empresa"></label>
+                            <label htmlFor="nombre de la empresa"></label>
                             <input type="text" className="inputFields" id="nombre" name="nombre" placeholder="Nombre"  required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
                     
                         <li>
-                            <label htmlfor="locación"></label>
+                            <label htmlFor="locación"></label>
                             <input type="text" className="inputFields" id="location" name="location" placeholder="Locación"  required onChange = {(e)=>{setLocation(e.target.value)}}/>
                         </li>
                         <li>
-                            <label htmlfor="Numero de personas"></label>
+                            <label htmlFor="Numero de personas"></label>
                             <input type="number" className="inputFields" id="number" name="number" placeholder="número de Personas"  required onChange = {(e)=>{setNumber(e.target.value)}}/>
                         </li>
 
                         <li>
-                            <label htmlfor="Fecha del evento"></label>
-                            <input type="date" className="inputFields" id="date" name="date" placeholder="número de Personas"  required onChange = {(e)=>{setDate(e.target.value)}}/>
+                            <label htmlFor="Fecha del evento"></label>
+                            <input type="date" className="inputFields" id="date" name="date" placeholder="número de Personas" /*{min={sumarDias(d)}}*/ required onChange = {(e)=>{setDate(e.target.value)}}/>
                         </li>
                         
                         <li id="center-btn">
-                            <input type="submit" id="join-btn-crear-eventos" name="join" alt="Join" value="Entrar a E-Vent"/>
+                            <input type="submit" id="join-btn-crear-eventos" name="join" alt="Join" value="Crear Evento"/>
                         </li>
                     </ul>
                 

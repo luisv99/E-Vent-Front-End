@@ -17,90 +17,161 @@ import Proveedores from './Components/Proveedores';
 import React from "react";
 import AddServices from './Components/AddServices';
 import PagoPorZelle from './Components/PagoPorZelle';
-
+import ServiciosProveedor from './Components/ServiciosProveedor';
+import EditProveedores from './Components/EditProveedores';
+import EditServicios from './Components/EditServicios';
+import UserProfile from './Components/UserProfile';
+import Checkout from './Components/Checkout';
+import PrivateRoute from './Components/PrivateRoute';
+import PrivateRouteUsers from './Components/PrivateRouteUsers';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
-import EditProveedores from './Components/EditProveedores';
-import EditServicios from './Components/EditServicios';
 
 
 function App() {
+
+  let rol = localStorage.getItem('roles');
+  console.log(rol);
+  let isUser;
+  let isProveedor;
+  let isAdmin = false;
+  
+  if (rol == 'ROLE_USER'){
+    isUser = true;  
+    console.log('isUser: ' + isUser);
+  }else{
+    isUser = false;
+    console.log('isUser: ' + isUser);
+  };
+
+  if (rol == 'ROLE_PROVEEDOR'){
+    isProveedor = true;  
+    console.log('proveedor: ' + isProveedor);
+  }else{
+    isProveedor = false;
+    console.log('proveedor: ' + isProveedor);
+  };
     
   return (
     <Router>
       <div className="App">
       <NavBar/>
       <Switch>
+
         <Route path="/" exact>
           <Home></Home>
         </Route>
+
         <Route path="/login">
             <Login></Login> 
         </Route>
+
         <Route path="/register">
           <Login></Login>
         </Route>
-        <Route path="/CrearEvento">
+
+        {(isUser || isAdmin) && <Route path="/CrearEvento">
           <CrearEvento></CrearEvento>
-        </Route>
+        </Route>}
+
         <Route path="/recomendations">
           <Recomendaciones></Recomendaciones>
         </Route>
+
         <Route path="/contact">
           <Contacto></Contacto>
         </Route>
+
         <Route path="/SignUp">
           <SignUp></SignUp>
         </Route>
-        <Route path="/Services">
+
+        <Route path="/Services/:proveedor_id">
           <Services></Services>
         </Route>
         
-        <Route path="/Provedores">
+      {/*<Route path="/Provedores">
           <Provedores></Provedores>
-        </Route>
+      </Route>*/}
+
       
         <Route path="/Catalogo">
           <Catalogo></Catalogo>
         </Route>
 
-        <Route path="/Admin">
+        {/*<Route path="/Admin">
           <Admin/>
-        </Route>
-        <Route path="/Users">
+        </Route>*/}
+
+
+        {isUser && <PrivateRouteUsers exact path="/Admin" component={Admin}/>}
+        {!isUser && <PrivateRoute exact path="/Admin" component={Admin}/>}
+        
+        {!isUser && <PrivateRoute exact path="/Provedores" component={Provedores}/>}
+        {isUser && <PrivateRouteUsers exact path="/Provedores" component={Provedores}/>}
+
+        {!isUser && <PrivateRoute exact path="/CrearEvento" component={CrearEvento}/>}
+
+        {!isUser && <PrivateRoute exact path="/Users" component={Users}/>}
+        {isUser && <PrivateRouteUsers exact path="/Users" component={Users}/>}
+
+        {!isUser && <PrivateRoute exact path="/ServiciosAdmin" component={ServiciosAdmin}/>}
+        {isUser && <PrivateRouteUsers exact path="/ServiciosAdmin" component={ServiciosAdmin}/>}
+
+        {!isUser && <PrivateRoute exact path="/ProveedoresAdmin" component={Proveedores}/>}
+        {isUser && <PrivateRouteUsers exact path="/ProveedoresAdmin" component={Proveedores}/>}
+
+        {isUser && <PrivateRouteUsers exact path="/AddServices" component={AddServices}/>}
+        {isUser && <PrivateRouteUsers exact path="/EditProveedores/:proveedor_id" component={EditProveedores}/>}
+        {isUser && <PrivateRouteUsers exact path="/EditServicios/:servicio_id" component={EditServicios}/>}
+        
+        {!isUser && <PrivateRoute exact path="/PagoPorZelle" component={PagoPorZelle}/>}
+        {!isUser && <PrivateRoute exact path="/UserProfile/:user_id" component={PagoPorZelle}/>}
+
+        {isUser && <PrivateRouteUsers exact path="/ServiciosProveedor" component={EditServicios}/>}
+
+        {isAdmin && <Route path="/Users">
           <Users/>
-        </Route>
-        <Route path="/ServiciosAdmin">
-          <ServiciosAdmin/>
-        </Route>
+        </Route>}
         
-        <Route path="/ProveedoresAdmin">
+       {isAdmin && <Route path="/ServiciosAdmin">
+          <ServiciosAdmin/>
+        </Route>}
+        
+       {isAdmin && <Route path="/ProveedoresAdmin">
           <Proveedores/>
-        </Route>
+        </Route>}
 
-        <Route path="/AddServices">
+        {(isAdmin || isProveedor) && <Route path="/AddServices">
           <AddServices/>
-        </Route>
+        </Route>}
 
-        <Route path="/ServicesAdmin">
-          <ServiciosAdmin/>
-        </Route>
-
-        <Route path="/EditProveedores/:proveedor_id">
+        {(isAdmin || isProveedor) && <Route path="/EditProveedores/:proveedor_id">
           <EditProveedores/>
-        </Route>
+        </Route>}
 
-        <Route path="/EditServicios/:servicio_id">
+        {(isAdmin || isProveedor) && <Route path="/EditServicios/:servicio_id">
           <EditServicios/>
-        </Route>
+        </Route>}
         
-        <Route path="/PagoPorZelle">
+        {(isAdmin || isUser) && <Route path="/PagoPorZelle">
           <PagoPorZelle/>
-        </Route>
+        </Route>}
+
+        {(isUser) && <Route path="/UserProfile/:user_id">
+          <UserProfile/>
+        </Route>}
+
+        {(isAdmin || isUser) && <Route path="/Checkout">
+          <Checkout/>
+        </Route>}
+
+        {(isAdmin || isProveedor) && <Route path="/ServiciosProveedor">
+          <ServiciosProveedor/>
+        </Route>}
 
       
       </Switch>

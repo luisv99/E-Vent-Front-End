@@ -1,7 +1,7 @@
 import './NavBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faGlassCheers, faIcons, faTruckMonster } from '@fortawesome/free-solid-svg-icons'
-import React, { useState, useEffect } from 'react';
+import { faBars, faIcons } from '@fortawesome/free-solid-svg-icons'
+import React, { useState } from 'react';
 import {
     Link
   } from "react-router-dom";
@@ -19,9 +19,9 @@ export default function NavBar(){
 
             <ul className={`menu ${open? "menu-toggle":""}`} id="menu">
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/CrearEvento">Crea tu E-Vent</Link></li>
+                <li className="crear-evento"><Link to="/CrearEvento">Crea tu E-Vent</Link></li>
                 <li><Link to="/recomendations">Recomendaciones</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/Admin">Admin</Link></li>
                 <li><Link to="/Catalogo">Locales</Link></li>
             </ul>
 

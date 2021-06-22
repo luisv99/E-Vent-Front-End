@@ -1,11 +1,7 @@
-import './editProveedoresStyles.css';
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from "react-router-dom"
-import { Redirect } from 'react-router';
-import {
-    Link
-  } from "react-router-dom";
+
 
 export default function EditProveedores(){
 
@@ -15,26 +11,23 @@ export default function EditProveedores(){
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
     const [image, setImage] = useState("")
-    const [imageURL, setImageURL] = useState("")
     const [direccion, setDireccion] = useState("")
     const [telefono, setTelefono] = useState("")
     
 
     useEffect (() => {
-        
         getInfo()
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const getInfo = () =>{
         
         console.log('Id del proveedor:' + proveedor_id)
 
-        Axios.get("http://localhost:5000/api/user/" + proveedor_id).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/user/" + proveedor_id).then((res)=>{
             setName(res.data.name)
             setEmail(res.data.email)
-            setPassword(res.data.password)
             setImage(res.data.image)
             setDireccion(res.data.direccion)
             setTelefono(res.data.telefono)
@@ -49,7 +42,7 @@ export default function EditProveedores(){
 
     const editProveedor = () =>{
         //event.preventDefault();
-        Axios.put("http://localhost:5000/api/proveedor/" + proveedor_id, {
+        Axios.put("https://dry-shelf-94984.herokuapp.com/api/proveedor/" + proveedor_id, {
             id: proveedor_id,
             name: name,
             email: email,
