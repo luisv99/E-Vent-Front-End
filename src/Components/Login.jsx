@@ -22,7 +22,17 @@ export default function Login(){
             localStorage.setItem("roles", response.data.roles)
 
             console.log('user_id: ' + response.data.id)
-            redirect.push("/")
+
+            const rol = localStorage.getItem('roles')
+            if (rol == "ROLE_PROVEEDOR"){
+
+                redirect.push("/ServiciosProveedor")
+            }else if (rol == "ROLE_USER") {
+                redirect.push("/")
+                
+            }else{
+                redirect.push("/Admin")
+            }
 
         
 

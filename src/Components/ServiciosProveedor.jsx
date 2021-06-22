@@ -5,7 +5,7 @@ import {
   } from "react-router-dom";
 
 
-export default function ServiciosAdmin(){
+export default function ServiciosProveedor(){
     const [services, setServices] = useState([])
     const [serviceByName, setServiceByName] = useState('')
     

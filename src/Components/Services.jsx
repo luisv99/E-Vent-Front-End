@@ -5,10 +5,13 @@ import {
      useParams
   } from "react-router-dom";
   import './ServicesStyles.css'
+import ReactCircleModal from 'react-circle-modal'
+
 
 
 export default function Services(){
     const [services, setServices] = useState([])
+    const [show, setShow] = useState(false);
     const [events, setEvents] = useState([])
 
     const [serviceId, setServiceId] = useState('')
@@ -18,8 +21,17 @@ export default function Services(){
     
     const { proveedor_id } = useParams();
 
+    let role = true
+
+    if (localStorage.getItem('roles') == "ROLE_USER"){
+        role = true;
+    }else{
+        role = false;
+    }
+
     useEffect (() => {
         getServices();
+        console.log(events);
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -36,21 +48,26 @@ export default function Services(){
         Axios.get("https://dry-shelf-94984.herokuapp.com/api/services/proveedores/" + proveedor_id).then((res)=>{
             setServices(res.data)
             console.log('Servicios' + res.data)
+            console.log(proveedor_id)
         }
         )
         console.log(services)
     }
 
     const getUserEvents = (serviceId) =>{
+        console.log('getUserEvents')
+        console.log('serviceID: ' + serviceId)
         setServiceId(serviceId)
         Axios.get("https://dry-shelf-94984.herokuapp.com/api/events/user/" + localStorage.getItem('user_id')).then((res)=>{
             setEvents(res.data)
             console.log('Eventos: ' + res.data)
         }
-        )
+        ).catch(() => {
+            alert('Error')
+        });
 
         setModalIsOpen(true)
-    }
+    };
 
     const agregarServicio = () => {
         console.log("agregando servico")
@@ -60,6 +77,8 @@ export default function Services(){
             service_id: serviceId
         }).then(() => {
             alert("Event added successfully")
+        }).catch(err => {
+            alert('Seleccione un evento')
         })
     }
 
@@ -75,19 +94,24 @@ export default function Services(){
                         <img src={service.image} className="service-img" alt="service-pic"/>
                         <p>{service.description}
                         </p>
-                        <button value = {service.id} className="button" onClick = {e => getUserEvents(e.target.value)}>
+                        {role && <button value = {service.id} className="button" onClick = {e => getUserEvents(e.target.value)}>
                             Lo quiero en mi Evento 
-                        </button>
-                        <Modal isOpen={modalIsOpen}style="height:50%; width: 50%">
-                            <button onClick={setModalIsOpenToFalse}>x</button>
-                            <h1>Selecciona el eveanto a agregar el servicio</h1>
+                        </button>}
+                        {!role && <button value = {service.id} className="button" disabled onClick = {e => getUserEvents(e.target.value)}>
+                            Accion no permitida
+                        </button>}
+                        <Modal className="eventModal" isOpen={modalIsOpen} >
+                            <button className="close-modal" onClick={setModalIsOpenToFalse}>x</button>
+                            <h2 className="titulo-servicios">Seleccione a cual de sus eventos desea agregar "{service.name}"</h2>
+                            <div className="select">
                             <select value={eventId}  onChange = {(e) => {setEventId(e.target.value)}}>
                                 {events.map((event => (
-                                    <option value = {event.id}  >{event.name}</option>
-                                )))}
+                                    <option value = {event.id}> {event.name} </option>
+                                )))};
                             </select>
-                            <button onClick={e => agregarServicio()}>Agregar Servicio</button>
-                            <button onClick={setModalIsOpenToFalse}>Cancelar</button>
+                            <button id="btn-btn-success" className="btn btn-success" onClick={e => agregarServicio()}>Agregar Servicio</button>
+                            <button id="btn-btn-danger"  className="btn btn-danger" onClick={setModalIsOpenToFalse}>Cancelar</button>
+                            </div>
                         </Modal>
                     </div>
 
@@ -95,10 +119,11 @@ export default function Services(){
 
 
                     ))}
+                    
                 </div>
             </div>
 
-
+    
         </>
     )
 }
