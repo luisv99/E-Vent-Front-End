@@ -30,7 +30,7 @@ export default function NavBar(){
             </div>
 
             <div className="shop">
-                <FontAwesomeIcon icon={faIcons}  className="fas" />
+                <Link style={{color:"white"}} to="/UserEvents"><FontAwesomeIcon icon={faIcons}  className="fas" /></Link>
             </div>
 
             </nav>

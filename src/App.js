@@ -94,9 +94,11 @@ function App() {
         <Route path="/Services/:proveedor_id">
           <Services></Services>
         </Route>
+        
         <Route path="/EventServices/:event_id">
           <EventServices></EventServices>
         </Route>
+
         <Route path="/UserEvents">
           <UserEvents></UserEvents>
         </Route>
