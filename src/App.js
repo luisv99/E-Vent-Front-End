@@ -8,6 +8,8 @@ import Contacto from './Components/Contacto';
 import SignUp from './Components/SignUp';
 import Footer from './Components/Footer';
 import Services from './Components/Services';
+import EventServices from './Components/EventServices';
+import UserEvents from './Components/UserEvents';
 import Provedores from './Components/Provedores';
 import Admin from './Components/Admin';
 import Users from './Components/Users';
@@ -91,6 +93,12 @@ function App() {
 
         <Route path="/Services/:proveedor_id">
           <Services></Services>
+        </Route>
+        <Route path="/EventServices/:event_id">
+          <EventServices></EventServices>
+        </Route>
+        <Route path="/UserEvents">
+          <UserEvents></UserEvents>
         </Route>
         
       {/*<Route path="/Provedores">
