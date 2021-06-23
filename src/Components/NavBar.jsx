@@ -12,6 +12,19 @@ export default function NavBar(){
 
     const [open, setOpen] = useState(false)
 
+    let isProveedor;
+    let isAdmin;
+    let isUser;
+    const rol = localStorage.getItem('roles');  
+
+    if (rol === "ROLE_PROVEEDOR"){
+        isProveedor = true
+    }else if (rol === "ROLE_ADMIN"){
+        isAdmin = true 
+    }else if (rol === "ROLE_USER" ){
+        isUser = true
+    }
+
     return(
         <>
         <header className="header">
@@ -19,9 +32,10 @@ export default function NavBar(){
 
             <ul className={`menu ${open? "menu-toggle":""}`} id="menu">
                 <li><Link to="/">Home</Link></li>
-                <li className="crear-evento"><Link to="/CrearEvento">Crea tu E-Vent</Link></li>
-                <li><Link to="/recomendations">Recomendaciones</Link></li>
-                <li><Link to="/Admin">Admin</Link></li>
+                {isUser &&<li className="crear-evento"><Link to="/CrearEvento">Crea tu E-Vent</Link></li>}
+                {isUser &&<li><Link to="/recomendations">Recomendaciones</Link></li>}
+                {isAdmin &&<li><Link to="/Admin">Admin</Link></li>}
+                {isProveedor &&<li><Link to="/ServiciosProveedor">Servicios</Link></li>}
                 <li><Link to="/Catalogo">Locales</Link></li>
             </ul>
 

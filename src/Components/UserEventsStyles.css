@@ -1,9 +1,15 @@
-
+.contenedorP2{
+	background-color: rgb(21, 20, 20);
+}
 .tilesWrap {
-	padding: 0;
-	margin: 50px auto;
+	padding-top: 2rem;
+	margin: auto auto;
 	list-style: none;
 	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	justify-items: center;
+	z-index: 999;
 }
 .tilesWrap li {
 	display: inline-block;
@@ -16,7 +22,7 @@
 	margin: 10px;
 	font-family: 'helvetica', san-serif;
 	min-height: 25vh;
-	background: #262a2b;
+	background: rgba(20, 40, 40, .8);
 	border: 1px solid #252727;
 	text-align: left;
 }
@@ -31,13 +37,13 @@
 }
 .tilesWrap li h3 {
 	font-size: 20px;
-	color: #b7b7b7;
-	margin-bottom: 5px;
+	color: #e4e1e1;
+	margin-bottom: 2rem;
 }
 .tilesWrap li p {
 	font-size: 16px;
 	line-height: 18px;
-	color: #b7b7b7;
+	color: #e4e1e1;
 	margin-top: 5px;
 }
 .tilesWrap li button {

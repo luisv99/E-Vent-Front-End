@@ -9,35 +9,36 @@ import Paypal from './Paypal'
 export default function Checkout(){
         const [zelle, setZelle] = useState(false);
         const [tdc, setTDC] = useState(false);
-        const [paypal, setPaypal] = useState(false);
+        //const [paypal, setPaypal] = useState(false);
         const [checkoutPaypal, setCheckoutPaypal] = useState(false);
-        const [cash, setCash] = useState(false);
+        //const [cash, setCash] = useState(false);
 
         const zellePayment = ()=>{
             setZelle(true)
             setTDC(false)
-            setCash(false)
-            setPaypal(false)
+            //setCash(false)
+            //setPaypal(false)
         }
         const tdcPayment = ()=>{
             setTDC(true)
             setZelle(false)
-            setCash(false)
-            setPaypal(false)
+            //setCash(false)
+            //setPaypal(false)
             
         }
         const cashPayment = ()=>{
-            setCash(true)
+            //setCash(true)
             setTDC(false)
             setZelle(false)
-            setPaypal(false)
+            //setPaypal(false)
         }
-        const paypalPayment = ()=>{
+        {/*const paypalPayment = ()=>{
             setPaypal(true)
             setTDC(false)
             setZelle(false)
             setCash(false)
-        }
+        }*/}
+
 
     return(
         <>

@@ -1,0 +1,17 @@
+.fondo{
+    background-color: black;
+
+}
+
+.pago-exitoso{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    color: blanchedalmond;
+    font-size: 10rem;
+}
+
+.pago-exitoso h1{
+    font-size: 4rem;
+}

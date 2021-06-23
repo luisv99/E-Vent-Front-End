@@ -22,12 +22,13 @@ export default function Home(){
         setUser_id(localStorage.getItem('user_id'));
         //console.log(user_id);
     }
-
+    
+    const role = localStorage.getItem('roles');
+    console.log('Rol desde Home: ' + role);
+    
   useEffect(()=>{
     AOS.init();
     getUserId();
-    //const role = localStorage.getItem('roles');
-    //console.log('Tipo de Rol: ' + role);
   });
   
   if(!localStorage.getItem('SavedToken')){

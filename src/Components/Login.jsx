@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import './LoginStyles.scss'
 import Axios from 'axios';
 import { useHistory } from "react-router-dom"
+import { RolesContext } from './RolesContextProvider';
 
 
 export default function Login(){
@@ -9,6 +10,19 @@ export default function Login(){
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const redirect = useHistory();
+    const {role, setRole} = useContext(RolesContext);
+
+    useEffect (() => {
+        if (role === "ROLE_PROVEEDOR"){
+            redirect.push("/ServiciosProveedor");
+        }else if (role === "ROLE_USER") {
+            redirect.push("/");
+        }else if (role === 'ROLE_ADMIN'){
+            redirect.push("/Admin");
+        };
+
+        console.log('Context desde Login: ' + role);
+    }, [role]);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -17,23 +31,13 @@ export default function Login(){
             password: password,
         }).then((response) =>{
             alert("Se ha iniciado la sesion exitosamente");
-            localStorage.setItem("SavedToken", response.data.accessToken)
-            localStorage.setItem("user_id", response.data.id)
-            localStorage.setItem("roles", response.data.roles)
+            localStorage.setItem("SavedToken", response.data.accessToken);
+            localStorage.setItem("user_id", response.data.id);
+            localStorage.setItem("roles", response.data.roles);
 
             console.log('user_id: ' + response.data.id)
 
-            const rol = localStorage.getItem('roles')
-            if (rol == "ROLE_PROVEEDOR"){
-
-                redirect.push("/ServiciosProveedor")
-            }else if (rol == "ROLE_USER") {
-                redirect.push("/")
-                
-            }else{
-                redirect.push("/Admin")
-            }
-
+            setRole(localStorage.getItem('roles'));
         
 
         },

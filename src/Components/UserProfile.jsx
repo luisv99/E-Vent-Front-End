@@ -7,7 +7,7 @@ import { useHistory, useParams } from "react-router-dom"
 export default function UserProfile(){
 
     const redirect = useHistory();
- 
+
     const [name, setName] = useState("")
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
@@ -65,6 +65,18 @@ export default function UserProfile(){
         
     }
 
+    const deleteUser = () => {
+        console.log("Delete")
+
+        Axios.delete("./api/proveedor/" + user_id).then((res) => {
+            alert(res.data.message)
+            redirect.push("/")
+        }).catch(err => {
+            alert(err.data.message)
+            alert("error")
+        });
+    };
+
     
 
 
@@ -86,10 +98,10 @@ export default function UserProfile(){
                             <input type="text" className="inputFields-registro" id="nombre" name="nombre" placeholder="Nombre" value={name}  required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="text" className="inputFields-registro" id="apellido" name="apellido" placeholder="Apellido" value={lastName} required onChange = {(e)=>{setLastName(e.target.value)}}/>
+                            <input type="text" className="inputFields-registro" id="apellido" name="apellido" placeholder="Apellido" value={lastName} onChange = {(e)=>{setLastName(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="number" className="inputFields-registro" id="cedula" name="cedula" placeholder="Cedula" value={cedula}  required onChange = {(e)=>{setCedula(e.target.value)}}/>
+                            <input type="number" className="inputFields-registro" id="cedula" name="cedula" placeholder="Cedula" value={cedula}  onChange = {(e)=>{setCedula(e.target.value)}}/>
                         </li>
                         <li>
                             <input type="number" className="inputFields-registro" id="telefono" name="telefono" placeholder="Telefono" value={telefono}  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
@@ -100,16 +112,15 @@ export default function UserProfile(){
                         <li>
                             <input type="email" className="inputFields-registro" id="email" name="email" placeholder="Email" value={email}  required onChange = {(e)=>{setEmail(e.target.value)}}/>
                         </li>
-                        {/*<li>
-                            <input type="password" className="inputFields-registro" id="password" name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}}/>
-                        </li>*/}
-                    <div className="boton">
 
-                            <input type="submit" id="join-btn-registro" name="join" alt="Join" value="Guardar Cambios"/>
-                    </div>
                     </ul>
+                    
+                    <div className="boton">
+                            <input type="submit" id="join-btn-delete" name="join" alt="Join" value="Guardar Cambios"/>
+                    </div>
                 
                 </form>
+                            <input onClick={deleteUser} id="join-btn-delete" name="join" alt="Join" value="Eliminar Cuenta"/>
                 
             </div>
             </div>

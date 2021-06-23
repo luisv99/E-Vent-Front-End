@@ -1,6 +1,5 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import Modal from 'react-modal';
 import {
      useParams, Link
   } from "react-router-dom";
@@ -8,19 +7,14 @@ import {
 
 
 export default function Services(){
-    const [event, setEvent] = useState({})
     const [services, setServices] = useState([])
-
-
-    const [serviceId, setServiceId] = useState('')
-
-    const [modalIsOpen, setModalIsOpen] = useState(false);
     
     const { event_id } = useParams();
 
     useEffect (() => {
-        getEventServices()
+        getEventServices();
     }, []);
+
     const getEventServices = () =>{
         
         Axios.get("http://localhost:5000/api/event/full/" + event_id).then((res)=>{

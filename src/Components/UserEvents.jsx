@@ -13,7 +13,7 @@ export default function Admin(){
     const [events, setEvents] = useState([])
 
     useEffect (() => {
-        getUserEvents()
+        getUserEvents();
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -32,36 +32,7 @@ export default function Admin(){
 
     return(
         <>
-            <div className="contenedorP">
-            
-            <h1 className="titulo">Tus Eventos</h1>
-            <label id="labelFiltroP" htmlFor="filtroP">Nombre del Proveedor</label>
-            <input type="text" id="filtroP"  />
-            <Link to="/Provedores" className="boton-crear-usuario">Agregar Proveedor</Link>
-            
-            <table id="customers">
-                <tr>
-                    <th>Nombre</th>
-                    <th>Fecha</th>
-                    <th>Direccion</th>
-                    <th>Cantidad de Personas</th>
-                    <th>Editar</th>
-                    
-                </tr>
-
-                { events.map((event) => (
-                
-                <tr>
-                    <td>{event.name}</td>
-                    <td>{event.date}</td>
-                    <td>{event.location}</td>                    
-                    <td>{event.cant_personas}</td>                    
-                    <td><Link className="botonEditar" to={`/EventServices/ ${event.id}`} >Detalles</Link></td>
-
-                </tr>
-                )) }
-                </table>
-                </div>
+            <div className="contenedorP2">
 
         <ul class="tilesWrap">
             
@@ -75,12 +46,13 @@ export default function Admin(){
                 Fecha: {event.date}
             </p>
             <p>
-                Ubicacion: {event.cant_personas}
+                Personas: {event.cant_personas}
             </p>
-            <button>Detalles</button>
+            <Link to="/Factura"><button>Factura</button></Link>
             </li>	
             ))};
         </ul>
+            </div>
 
                 
 

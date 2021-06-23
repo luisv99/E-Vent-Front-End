@@ -5,13 +5,11 @@ import {
      useParams
   } from "react-router-dom";
   import './ServicesStyles.css'
-import ReactCircleModal from 'react-circle-modal'
 
 
 
 export default function Services(){
     const [services, setServices] = useState([])
-    const [show, setShow] = useState(false);
     const [events, setEvents] = useState([])
 
     const [serviceId, setServiceId] = useState('')
@@ -23,11 +21,11 @@ export default function Services(){
 
     let role = true
 
-    if (localStorage.getItem('roles') == "ROLE_USER"){
+    if (localStorage.getItem('roles') === "ROLE_USER"){
         role = true;
     }else{
         role = false;
-    }
+    };
 
     useEffect (() => {
         getServices();
@@ -35,9 +33,9 @@ export default function Services(){
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const setModalIsOpenToTrue =()=>{
+{  /*  const setModalIsOpenToTrue =()=>{
         setModalIsOpen(true)
-    }
+    }*/}
 
     const setModalIsOpenToFalse =()=>{
         setModalIsOpen(false)
