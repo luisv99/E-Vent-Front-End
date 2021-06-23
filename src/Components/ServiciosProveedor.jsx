@@ -40,7 +40,7 @@ export default function ServiciosProveedor(){
 
     return(
         <>
-            <div className="contenedorP">
+            <div style={{marginTop: "10rem"}} className="contened">
             
             <h1 className="titulo">Lista de Servicios</h1>
             <label htmlFor="filtroS">Nombre</label>

@@ -812,9 +812,9 @@
     border-radius: 10px;
   }
 
-  #img4{
+  #divFiestas img{
     width: 900px;
-    height: 600px;
+    height:500px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -826,4 +826,5 @@
     margin-top: 10rem;
     margin-right: 5rem;
   }
+  
   }

@@ -16,28 +16,37 @@ import Users from './Components/Users';
 import ServiciosAdmin from './Components/ServiciosAdmin';
 import Catalogo from './Components/Catalogo';
 import Proveedores from './Components/Proveedores';
-import React from "react";
 import AddServices from './Components/AddServices';
-import PagoPorZelle from './Components/PagoPorZelle';
 import ServiciosProveedor from './Components/ServiciosProveedor';
+import EditProveedores from './Components/EditProveedores';
+import EditServicios from './Components/EditServicios';
+import UserProfile from './Components/UserProfile';
+import Checkout from './Components/Checkout';
+import PrivateRoutes from './Components/PrivateRoutes';
+import Facturacion from './Components/Facturacion';
+import PagoExitoso from './Components/PagoExitoso';
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
-import EditProveedores from './Components/EditProveedores';
-import EditServicios from './Components/EditServicios';
-import UserProfile from './Components/UserProfile';
-import Checkout from './Components/Checkout';
-import PrivateRoute from './Components/PrivateRoute';
+import React, { useContext } from 'react';
+import RolesContextProvider, { RolesContext } from './Components/RolesContextProvider';
+
 
 
 function App() {
-    
+
+
+console.log(localStorage.getItem('roles'));
+
   return (
+    <RolesContextProvider>
+
     <Router>
       <div className="App">
+
       <NavBar/>
       <Switch>
 
@@ -49,78 +58,88 @@ function App() {
             <Login></Login> 
         </Route>
 
-        <Route path="/register">
-          <Login></Login>
-        </Route>
-
-        {/*<Route path="/CrearEvento">
+        <Route path="/CrearEvento">
           <CrearEvento></CrearEvento>
-        </Route>*/}
+        </Route>
 
         <Route path="/recomendations">
           <Recomendaciones></Recomendaciones>
         </Route>
+
         <Route path="/contact">
           <Contacto></Contacto>
         </Route>
+
         <Route path="/SignUp">
           <SignUp></SignUp>
         </Route>
+
+
         <Route path="/Services/:proveedor_id">
           <Services></Services>
         </Route>
+        
         <Route path="/EventServices/:event_id">
           <EventServices></EventServices>
         </Route>
+
         <Route path="/UserEvents">
           <UserEvents></UserEvents>
         </Route>
         
         {/*<Route path="/Provedores">
-          <Provedores></Provedores>
-      </Route>*/}
+            <Provedores></Provedores>
+        </Route>*/}
 
-        <PrivateRoute exact path="/Provedores" component={Provedores}/>
-      
+        <PrivateRoutes path="/Provedores" availableForRole={["ROLE_ADMIN"]} component={Provedores}/>
+
         <Route path="/Catalogo">
           <Catalogo></Catalogo>
         </Route>
 
-        {/*<Route path="/Admin">
+      {/*<Route path="/Admin">
           <Admin/>
         </Route>*/}
 
-        <PrivateRoute exact path="/Admin" component={Admin}/>
+        <PrivateRoutes path="/Admin" availableForRole={["ROLE_ADMIN"]} component={Admin}/>
 
-        <PrivateRoute exact path="/CrearEvento" component={CrearEvento}/>
 
-        <Route path="/Users">
+        {/*<Route path="/Users">
           <Users/>
-        </Route>
+        </Route>*/}
+
+        <PrivateRoutes path="/Users" availableForRole={["ROLE_ADMIN"]} component={Users}/>
+
         
-        <Route path="/ServiciosAdmin">
+        {/*<Route path="/ServiciosAdmin">
           <ServiciosAdmin/>
-        </Route>
+        </Route>*/}
+
+        <PrivateRoutes path="/ServiciosAdmin" availableForRole={["ROLE_ADMIN"]} component={ServiciosAdmin}/>
         
-        <Route path="/ProveedoresAdmin">
+        {/*<Route path="/ProveedoresAdmin">
           <Proveedores/>
-        </Route>
+        </Route>*/}
 
-        <Route path="/AddServices">
+        <PrivateRoutes path="/ProveedoresAdmin" availableForRole={["ROLE_ADMIN"]} component={Proveedores}/>
+
+        {/*<Route path="/AddServices">
           <AddServices/>
-        </Route>
+      </Route>*/}
 
-        <Route path="/EditProveedores/:proveedor_id">
+        <PrivateRoutes path="/AddServices" availableForRole={["ROLE_PROVEEDOR"]} component={AddServices}/>
+
+        {/*<Route path="/EditProveedores/:proveedor_id">
           <EditProveedores/>
-        </Route>
+    </Route>*/}
 
-        <Route path="/EditServicios/:servicio_id">
+      <PrivateRoutes path="/EditProveedores/:proveedor_id" availableForRole={["ROLE_ADMIN"]} component={EditProveedores}/>
+
+        {/*<Route path="/EditServicios/:servicio_id">
           <EditServicios/>
-        </Route>
-        
-        <Route path="/PagoPorZelle">
-          <PagoPorZelle/>
-        </Route>
+        </Route>*/}
+
+        <PrivateRoutes path="/EditServicios/:servicio_id" availableForRole={["ROLE_PROVEEDOR"]} component={EditServicios}/>
 
         <Route path="/UserProfile/:user_id">
           <UserProfile/>
@@ -134,11 +153,23 @@ function App() {
           <ServiciosProveedor/>
         </Route>
 
+        <Route path="/Factura">
+          <Facturacion/>
+        </Route>
+
+        <Route path="/PagoExitoso">
+          <PagoExitoso/>
+        </Route>
       
       </Switch>
+
       <Footer/>
+
     </div>
+
     </Router>
+
+   </RolesContextProvider>
   );
 }
 

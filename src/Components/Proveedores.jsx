@@ -47,7 +47,7 @@ export default function Admin(){
 
     return(
         <>
-            <div className="contenedorP">
+            <div className="contenedorPA">
             
             <h1 className="titulo">Lista de Proveedores</h1>
             <label id="labelFiltroP" htmlFor="filtroP">Nombre del Proveedor</label>
