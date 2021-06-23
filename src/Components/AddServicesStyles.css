@@ -1,3 +1,9 @@
+.cont-services{
+    background-color: rgb(21, 20, 20);
+    z-index: 999;
+    height: 100vh;
+}
+
 .addServiceForm{
     width: 70%;
     padding: 30px 0;
@@ -7,6 +13,24 @@
     margin-top: 3rem;
 }
 
+.noBulletServices{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.inputFields-services{
+    margin: 15px 0;
+    font-size: 16px;
+    padding: 10px;
+    width: 230px;
+    border: 1px solid rgba(10, 180, 180, 1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, .2);
+    color: white;
+    outline: none;
+}
 
 .infoServices{
     width: 45%;
@@ -30,4 +54,78 @@
     color: white;
     box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
     height: 85vh;
+}
+
+#join-btn-services {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin-top: 5px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+#join-btn-2{
+    border: 1px solid rgba(10, 180, 180, 1);
+  background: rgba(20, 20, 20, .6);
+  font-size: 18px;
+  color: white;
+  margin-top: 5px;
+  padding: 10px 50px;
+  cursor: pointer;
+  transition: .4s;
+  margin-left: 2rem;
+}
+
+@media only screen and (max-width: 640px){
+
+    .cont-services{
+        background-color: rgb(21, 20, 20);
+        z-index: 999;
+        height: 200vh;
+    }
+    .signupSectionServices{
+        width: 350px;
+        height: 800px;
+        margin-top: 15rem;
+    }
+
+    .noBulletServices{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .join-btn-services{
+        display: block;
+    }
+
+    #join-btn-2{
+      font-size: 18px;
+      padding: 7px 25px;
+      cursor: pointer;
+      transition: .4s;
+      margin-left: 1rem;
+    }
+    
+    #join-btn-services{
+      font-size: 18px;
+      margin-top: 0px;
+      margin-bottom: 20px;
+      padding: 5px 30px;
+      cursor: pointer;
+      transition: .4s;
+      margin-left: 1rem;
+    }
+    
+    .addServiceForm{
+        width: 95%;
+        height: 100%;
+        margin-top: 0rem;
+    }
+
+    .inputFields-services{
+        width: 200px;
+    }
 }

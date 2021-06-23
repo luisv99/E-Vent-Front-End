@@ -8,6 +8,8 @@ import Contacto from './Components/Contacto';
 import SignUp from './Components/SignUp';
 import Footer from './Components/Footer';
 import Services from './Components/Services';
+import EventServices from './Components/EventServices';
+import UserEvents from './Components/UserEvents';
 import Provedores from './Components/Provedores';
 import Admin from './Components/Admin';
 import Users from './Components/Users';
@@ -17,15 +19,18 @@ import Proveedores from './Components/Proveedores';
 import React from "react";
 import AddServices from './Components/AddServices';
 import PagoPorZelle from './Components/PagoPorZelle';
+import ServiciosProveedor from './Components/ServiciosProveedor';
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import EditProveedores from './Components/EditProveedores';
 import EditServicios from './Components/EditServicios';
+import UserProfile from './Components/UserProfile';
+import Checkout from './Components/Checkout';
+import PrivateRoute from './Components/PrivateRoute';
 
 
 function App() {
@@ -35,18 +40,23 @@ function App() {
       <div className="App">
       <NavBar/>
       <Switch>
+
         <Route path="/" exact>
           <Home></Home>
         </Route>
+
         <Route path="/login">
             <Login></Login> 
         </Route>
+
         <Route path="/register">
           <Login></Login>
         </Route>
-        <Route path="/CrearEvento">
+
+        {/*<Route path="/CrearEvento">
           <CrearEvento></CrearEvento>
-        </Route>
+        </Route>*/}
+
         <Route path="/recomendations">
           <Recomendaciones></Recomendaciones>
         </Route>
@@ -56,24 +66,38 @@ function App() {
         <Route path="/SignUp">
           <SignUp></SignUp>
         </Route>
-        <Route path="/Services">
+        <Route path="/Services/:proveedor_id">
           <Services></Services>
         </Route>
-        
-        <Route path="/Provedores">
-          <Provedores></Provedores>
+        <Route path="/EventServices/:event_id">
+          <EventServices></EventServices>
         </Route>
+        <Route path="/UserEvents">
+          <UserEvents></UserEvents>
+        </Route>
+        
+        {/*<Route path="/Provedores">
+          <Provedores></Provedores>
+      </Route>*/}
+
+        <PrivateRoute exact path="/Provedores" component={Provedores}/>
       
         <Route path="/Catalogo">
           <Catalogo></Catalogo>
         </Route>
 
-        <Route path="/Admin">
+        {/*<Route path="/Admin">
           <Admin/>
-        </Route>
+        </Route>*/}
+
+        <PrivateRoute exact path="/Admin" component={Admin}/>
+
+        <PrivateRoute exact path="/CrearEvento" component={CrearEvento}/>
+
         <Route path="/Users">
           <Users/>
         </Route>
+        
         <Route path="/ServiciosAdmin">
           <ServiciosAdmin/>
         </Route>
@@ -86,10 +110,6 @@ function App() {
           <AddServices/>
         </Route>
 
-        <Route path="/ServicesAdmin">
-          <ServiciosAdmin/>
-        </Route>
-
         <Route path="/EditProveedores/:proveedor_id">
           <EditProveedores/>
         </Route>
@@ -100,6 +120,18 @@ function App() {
         
         <Route path="/PagoPorZelle">
           <PagoPorZelle/>
+        </Route>
+
+        <Route path="/UserProfile/:user_id">
+          <UserProfile/>
+        </Route>
+
+        <Route path="/Checkout">
+          <Checkout/>
+        </Route>
+
+        <Route path="/ServiciosProveedor">
+          <ServiciosProveedor/>
         </Route>
 
       

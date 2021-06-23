@@ -1,0 +1,121 @@
+
+
+
+  .cont1{
+    background-color: #151414;
+ 
+  }
+  
+  .contCard{
+      padding-bottom: 0rem;
+      display: grid;
+      grid-template-columns: auto auto auto;
+  }
+  
+  .card1 {
+      margin-top: 15%;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 50%;
+    margin-left: 20%;
+    margin-bottom: 4rem;
+    }
+
+    .card1 h3{
+       text-align: center;
+       color: #f5f5f5;
+    }
+
+    .card1 p{
+       text-align: center;
+       color: #f5f5f5;
+    }
+
+    .card1:hover {
+      box-shadow: 0 8px 16px 0 rgba(107, 102, 102, 0.2);
+    }
+
+    .card1 h3{
+      text-align: center;
+    }
+    
+  
+    .card1 p{
+      text-align: center;
+      font-size: 1.25rem;
+      margin-top: 0.8rem;
+      text-align: center;
+      padding: 0 4px;
+    }
+
+    .modal-contenido{
+      background-color:aqua;
+      width:300px;
+      padding: 10px 20px;
+      margin: 20% auto;
+      position: relative;
+  }
+    .modal{
+      background-color: rgba(0,0,0,.8);
+      position:fixed;
+      top:0;
+      right:0;
+      bottom:0;
+      left:0;
+      opacity:0;
+      pointer-events:none;
+      transition: all 1s;
+  }
+    #miModal:target{
+      opacity:1;
+      pointer-events:auto;
+  }
+  
+    .eventModal{
+      background-color: rgb(21, 20, 20);
+      margin: 10rem auto;
+      border-radius: 10px;
+      width: 50%;
+      height: 50%;
+      
+    }
+
+    .titulo-servicios{
+      text-align: center;
+      color: honeydew;
+    }
+
+    .close-modal{
+      background-color: red;
+      border: none;
+      padding: .5rem .5rem;
+      border-radius: 5px;
+    }
+
+    #btn-btn-success{
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    .select{
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    @media only screen and (max-width: 640px){
+
+      .contCard{
+        display: flex;
+        flex-direction: column;
+      }
+    
+    }
+
+
+    
+  
+  
+  
+  

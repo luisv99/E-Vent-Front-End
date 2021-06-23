@@ -1,7 +1,7 @@
 .contenedor1{
   background-color: #151414;
-  height: 185vh;
   color: aliceblue;
+  height: 350vh;
 }
 
 .contenedor1 h2{
@@ -31,7 +31,6 @@
     width: 100%;
   }
   
-
 
 .card {
     margin-top: 5%;
@@ -73,4 +72,29 @@
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 640px){
+.contenedor{
+  padding-bottom: 23rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  width: 70%;
+  margin-bottom: 2rem;
+}
+
+.cont2{
+  padding-bottom: 23rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  width: 70%;
+  margin-bottom: 2rem;
+}
+
 }
