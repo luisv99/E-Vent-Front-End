@@ -56,6 +56,7 @@ export default function UserProfile(){
             telefono: telefono,
             cedula: cedula
         }).then((response) =>{
+            localStorage.clear();
             alert("Funciona")
             redirect.push("/UserProfile/" + user_id)
         }).catch(err => {
@@ -65,14 +66,14 @@ export default function UserProfile(){
         
     }
 
-    const deleteUser = () => {
+    const deleteUser = (e) => {
         console.log("Delete")
-
-        Axios.delete("./api/proveedor/" + user_id).then((res) => {
+        e.preventDefault();
+        Axios.delete("http://localhost:5000/api/proveedor/" + user_id).then((res) => {
             alert(res.data.message)
             redirect.push("/")
         }).catch(err => {
-            alert(err.data.message)
+            alert(err.response.data.message)
             alert("error")
         });
     };
@@ -120,7 +121,7 @@ export default function UserProfile(){
                     </div>
                 
                 </form>
-                            <input onClick={deleteUser} id="join-btn-delete" name="join" alt="Join" value="Eliminar Cuenta"/>
+                            <input onClick={e => {deleteUser(e)}} id="join-btn-delete" name="join" alt="Join" value="Eliminar Cuenta"/>
                 
             </div>
             </div>
