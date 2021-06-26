@@ -103,6 +103,7 @@ export default function Services(){
                             <h2 className="titulo-servicios">Seleccione a cual de sus eventos desea agregar "{service.name}"</h2>
                             <div className="select">
                             <select value={eventId}  onChange = {(e) => {setEventId(e.target.value)}}>
+                                <option> Seleccione un Evento </option>
                                 {events.map((event => (
                                     <option value = {event.id}> {event.name} </option>
                                 )))};

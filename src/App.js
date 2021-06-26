@@ -25,6 +25,7 @@ import Checkout from './Components/Checkout';
 import PrivateRoutes from './Components/PrivateRoutes';
 import Facturacion from './Components/Facturacion';
 import PagoExitoso from './Components/PagoExitoso';
+import HiredServices from './Components/HiredServices';
 
 import {
   BrowserRouter as Router,
@@ -153,12 +154,15 @@ console.log(localStorage.getItem('roles'));
           <ServiciosProveedor/>
         </Route>
 
-        <Route path="/Factura">
+        <Route path="/Factura/:id">
           <Facturacion/>
         </Route>
 
         <Route path="/PagoExitoso">
           <PagoExitoso/>
+        </Route>
+        <Route path="/HiredServices/:proveedor_id">
+          <HiredServices/>
         </Route>
       
       </Switch>
