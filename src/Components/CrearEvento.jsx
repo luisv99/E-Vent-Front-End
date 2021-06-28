@@ -17,7 +17,7 @@ export default function CrearEvento (){
 
     const handleSubmit =  event => {
         event.preventDefault()
-        Axios.post("https://dry-shelf-94984.herokuapp.com/api/event/create", {
+        Axios.post("./api/event/create", {
             name: name,
             location: location,
             cant_personas: number,
@@ -27,7 +27,7 @@ export default function CrearEvento (){
         }).then((res) =>{
             redirect.push("/Catalogo")
             alert("Prueba")
-            //alert(res.data.message)
+            alert(res.data.message)
         }).catch(err => {
             alert(err.response.data.message)
         })

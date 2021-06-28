@@ -18,7 +18,7 @@ export default function Services(){
 
     const getEventServices = () =>{
         
-        Axios.get("http://localhost:5000/api/event/full/" + event_id).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/event/full/" + event_id).then((res)=>{
             setServices(res.data.services)
             console.log('Servicios: ' + res.data.services)
 
@@ -31,7 +31,20 @@ export default function Services(){
             setMontoTotal(aux)
         }
         )
-    } 
+    }
+    
+    const deleteService = (e, id) => {
+        console.log("Delete Service " + id)
+        e.preventDefault();
+
+        Axios.delete("https://dry-shelf-94984.herokuapp.com/api/event/" + event_id + "/delete/" + id).then((res) => {
+            alert(res.data.message)
+            getEventServices()
+        }).catch(err => {
+            alert(err.data.message)
+            alert("error")
+        })
+    }
   
     return(
         <>
@@ -56,7 +69,7 @@ export default function Services(){
                     <td>{service.name}</td>
                     <td>{service.description}</td>
                     <td>{service.price}</td>                    
-                    <td><button className="deleteBtn" >Delete</button></td>
+                    <td><button className="deleteBtn" onClick = {(e) => {deleteService(e, service.id)}}>Delete</button></td>
 
                 </tr>
                 )) }
