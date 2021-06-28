@@ -34,7 +34,6 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import React, { useContext } from 'react';
 import RolesContextProvider, { RolesContext } from './Components/RolesContextProvider';
 
 function App() {
@@ -59,9 +58,12 @@ console.log(localStorage.getItem('roles'));
             <Login></Login> 
         </Route>
 
-        <Route path="/CrearEvento">
+        {/*<Route path="/CrearEvento">
           <CrearEvento></CrearEvento>
-        </Route>
+        </Route>*/}
+
+        <PrivateRoutes path="/CrearEvento" availableForRole={["ROLE_USER"]} component={CrearEvento}/>
+
 
         <Route path="/recomendations">
           <Recomendaciones></Recomendaciones>
@@ -84,9 +86,11 @@ console.log(localStorage.getItem('roles'));
           <EventServices></EventServices>
         </Route>
 
-        <Route path="/UserEvents">
+        {/*<Route path="/UserEvents">
           <UserEvents></UserEvents>
-        </Route>
+        </Route>*/}
+
+        <PrivateRoutes path="/UserEvents" availableForRole={["ROLE_ADMIN" , "ROLE_USER"]} component={UserEvents}/>
         
         {/*<Route path="/Provedores">
             <Provedores></Provedores>
@@ -146,13 +150,19 @@ console.log(localStorage.getItem('roles'));
           <UserProfile/>
         </Route>
 
-        <Route path="/Checkout">
+        {/*<Route path="/Checkout">
           <Checkout/>
-        </Route>
+        </Route>*/}
 
-        <Route path="/ServiciosProveedor">
+        <PrivateRoutes path="/Checkout" availableForRole={["ROLE_USER"]} component={Checkout}/>
+
+
+        {/*<Route path="/ServiciosProveedor">
           <ServiciosProveedor/>
-        </Route>
+        </Route>*/}
+
+        <PrivateRoutes path="/ServiciosProveedor" availableForRole={["ROLE_PROVEEDOR", "ROLE_ADMIN"]} component={ServiciosProveedor}/>
+
 
         <Route path="/Factura/:id">
           <Facturacion/>

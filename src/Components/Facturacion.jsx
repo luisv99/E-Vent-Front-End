@@ -74,15 +74,15 @@ export default function (){
                     <ul className="noBullet-factura">
                         <li>
                             <label htmlFor="">Nombre del evento</label>
-                           <input className="inputFields-factura" type="text" value={name}  required onChange = {(e)=>{setName(e.target.value)}} />
+                           <input className="inputFields-factura" type="text" value={name} readOnly= {true}  onChange = {(e)=>{setName(e.target.value)}} />
                         </li>
                     
                         <li>
                             <label htmlFor="">Locación</label>
-                            <input className="inputFields-factura"  type="text" value={location}  required onChange = {(e)=>{setLocation(e.target.value)}}/>
+                            <input className="inputFields-factura"  type="text" value={location} readOnly= {true}  onChange = {(e)=>{setLocation(e.target.value)}}/>
                         </li>
                         <li>
-                            <p htmlFor="">Servicios</p>
+                            <label className="labels-factura" htmlFor="">Servicios</label>
                             <ul className="services-list">
                                 {services.map((service) => (
                                     <li className="services-li" key = {service.id} >{service.name}: ${service.price}</li>
@@ -91,8 +91,8 @@ export default function (){
                             {/*<input className="inputFields-factura" type="text"  />*/}
                         </li>
                         <li>
-                            <label htmlFor="">Monto total</label>
-                            <input className="inputFields-factura" type="text" value = {montoTotal} readOnly= {true}/>
+                            <label className="labels-factura" htmlFor="">Monto total</label>
+                            <input className="inputFields-factura" type="text" value = {montoTotal + " $"} readOnly= {true}/>
                         </li>
                         
                     </ul>

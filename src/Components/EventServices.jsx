@@ -38,7 +38,7 @@ export default function Services(){
         <>
             <div className="contenedorA" style={{marginTop: "10rem"}}>
             
-            <h1 className="titulo">Lista de Proveedores</h1>
+            <h1 className="titulo">Servicios de su evento</h1>
             <Link className="pay-link" to={`/Factura/${event_id}`}><button className="pay-btn">Pagar</button></Link>
             <table id="customers"> 
                 <tr>
@@ -54,13 +54,14 @@ export default function Services(){
                 <tr key = {service.id}>
                     <td>{service.name}</td>
                     <td>{service.description}</td>
-                    <td>{service.price}</td>                    
+                    <td>{service.price}$</td>                    
                     <td><button className="deleteBtn" >Delete</button></td>
 
                 </tr>
                 )) }
                 </table>
-                <p>Monto Total: {montoTotal}</p>
+                <hr />
+                <h4 className="monto-total">Monto Total: {montoTotal}$</h4>
                 </div>
 
                 
