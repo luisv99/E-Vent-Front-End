@@ -4,11 +4,12 @@ import './PagoTDC.scss';
 import './PagoPorZelleStyles.css'
 import { useState } from 'react';
 import {Link} from "react-router-dom";
-import { useHistory } from "react-router-dom"
+import { useHistory, useParams } from "react-router-dom"
 
 
 export default function Checkout(){
 
+        const { event_id } = useParams();
         const redirect = useHistory();
 
         const [zelle, setZelle] = useState(false);
@@ -56,7 +57,7 @@ export default function Checkout(){
                     <label className="labelRef" htmlFor="ref">Comprobante de Pago</label>
                     <input className="inputRef" type="file" id="ref" required />
                     <br />
-                    <Link to="/PagoExitoso" onClick={finishPayment} value="Enviar" className="btnZelle" id="ref">Enviar Comprobante</Link>
+                    <Link to={`/Factura/${event_id}`} onClick={finishPayment} value="Enviar" className="btnZelle" id="ref">Enviar Comprobante</Link>
                 </div>
                 </form>
             </div>}
@@ -88,7 +89,7 @@ export default function Checkout(){
                         </li>
 
                         <li id="center-btn">
-                            <Link to="/PagoExitoso" id="join-btn-checkout" name="join" alt="Join">Pagar E-Vent</Link>
+                            <Link to={`/Factura/${event_id}`} id="join-btn-checkout" name="join" alt="Join">Pagar E-Vent</Link>
                         </li>
                     </ul>
                 

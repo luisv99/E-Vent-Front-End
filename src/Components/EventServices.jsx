@@ -52,7 +52,7 @@ export default function Services(){
             <div className="contenedorA" style={{marginTop: "10rem"}}>
             
             <h1 className="titulo">Servicios de su evento</h1>
-            <Link className="pay-link" to={`/Factura/${event_id}`}><button className="pay-btn">Pagar</button></Link>
+            <Link className="pay-link" to={`/Checkout/${event_id}`}><button className="pay-btn">Pagar</button></Link>
             <table id="customers"> 
                 <tr>
                     <th>Nombre</th>

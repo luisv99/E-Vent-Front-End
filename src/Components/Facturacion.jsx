@@ -17,7 +17,7 @@ export default function (){
     const [location, setLocation] = useState("")
     const [montoTotal, setMontoTotal] = useState("")
     const [services, setServices] = useState([])
-    const { id } = useParams();
+    const { event_id } = useParams();
 
     useEffect (() => {
         getInfo()
@@ -28,9 +28,9 @@ export default function (){
 
 
 
-        console.log('Id: ' + id)
+        console.log('Id: ' + event_id)
 
-        Axios.get("http://localhost:5000/api/event/full/" + id).then((res)=>{
+        Axios.get("http://localhost:5000/api/event/full/" + event_id).then((res)=>{
             setName(res.data.name)
             setLocation(res.data.location)
             setServices(res.data.services)
@@ -52,12 +52,12 @@ export default function (){
 
     const handleSubmit =  e => {
 
-        Axios.put("http://localhost:5000/api/event/completar/" + id, {
+        Axios.put("http://localhost:5000/api/event/completar/" + event_id, {
             user_id: localStorage.getItem('user_id'),
             montoTotal: montoTotal,
 
         })
-        console.log("Id: " + id)
+        console.log("Id: " + event_id)
     }
     return(
         <>
@@ -97,7 +97,7 @@ export default function (){
                         
                     </ul>
                         <div id="center-btn">
-                            <Link to="/Checkout" type="submit" id="join-btn-factura" name="join" alt="Join">Pagar</Link>
+                            <Link to="/PagoExitoso" type="submit" id="join-btn-factura" name="join" alt="Join">Pagar</Link>
                         </div>
                 
                 </form>

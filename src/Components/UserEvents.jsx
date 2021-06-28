@@ -48,13 +48,9 @@ export default function Admin(){
             <p>
                 Personas: {event.cant_personas}
             </p>
-<<<<<<< HEAD
-
-=======
             {event.completado && <p>Completado</p>}
             {!event.completado && <p>Pendiente</p>}
         
->>>>>>> tavo
             <Link to={`/EventServices/${event.id}`}><button>Detalles</button></Link>
             </li>	
             ))};
