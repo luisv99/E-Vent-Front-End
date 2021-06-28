@@ -43,7 +43,7 @@ export default function Admin(){
 
     return(
         <>
-            <div className="contenedorU">
+            <div className="contenedorU" style={{marginTop: "10rem"}}>
             
             <h1 className="titulo">Lista de usuarios</h1>
             <label htmlFor="filtro">Cedula</label>

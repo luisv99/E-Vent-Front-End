@@ -25,6 +25,8 @@ import Checkout from './Components/Checkout';
 import PrivateRoutes from './Components/PrivateRoutes';
 import Facturacion from './Components/Facturacion';
 import PagoExitoso from './Components/PagoExitoso';
+import Compras from './Components/Compras';
+
 
 import {
   BrowserRouter as Router,
@@ -33,8 +35,6 @@ import {
 } from "react-router-dom";
 import React, { useContext } from 'react';
 import RolesContextProvider, { RolesContext } from './Components/RolesContextProvider';
-
-
 
 function App() {
 
@@ -159,6 +159,10 @@ console.log(localStorage.getItem('roles'));
 
         <Route path="/PagoExitoso">
           <PagoExitoso/>
+        </Route>
+
+        <Route path="/Compras">
+          <Compras/>
         </Route>
       
       </Switch>
