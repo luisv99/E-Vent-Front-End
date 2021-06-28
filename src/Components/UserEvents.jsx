@@ -26,6 +26,7 @@ export default function Admin(){
         Axios.get("http://localhost:5000/api/events/user/" + localStorage.getItem('user_id')).then((res)=>{
             setEvents(res.data)
             console.log('Eventos: ' + res.data)
+            
         }
         )
     } 
@@ -37,6 +38,7 @@ export default function Admin(){
         <ul class="tilesWrap">
             
             {events.map((event)=>(
+                console.log("Completado " + event.completado),
                 <li>
             <h3>{event.name}</h3>
             <p>
@@ -48,7 +50,10 @@ export default function Admin(){
             <p>
                 Personas: {event.cant_personas}
             </p>
-            <Link to="/Factura"><button>Factura</button></Link>
+            <p>
+                Co{event.completado}
+            </p>
+            <Link to={`/EventServices/${event.id}`}><button>Detalles</button></Link>
             </li>	
             ))};
         </ul>

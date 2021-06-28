@@ -27,7 +27,7 @@ export default function UserProfile(){
 
         console.log('Id del usuario:' + user_id)
 
-        Axios.get("https://dry-shelf-94984.herokuapp.com/api/user/" + user_id).then((res)=>{
+        Axios.get("http://localhost:5000/api/user/" + user_id).then((res)=>{
             setName(res.data.name)
             setLastName(res.data.lastName)
             setEmail(res.data.email)
@@ -56,6 +56,7 @@ export default function UserProfile(){
             telefono: telefono,
             cedula: cedula
         }).then((response) =>{
+            localStorage.clear();
             alert("Funciona")
             redirect.push("/UserProfile/" + user_id)
         }).catch(err => {
@@ -65,14 +66,14 @@ export default function UserProfile(){
         
     }
 
-    const deleteUser = () => {
+    const deleteUser = (e) => {
         console.log("Delete")
-
-        Axios.delete("./api/proveedor/" + user_id).then((res) => {
+        e.preventDefault();
+        Axios.delete("https://dry-shelf-94984.herokuapp.com/api/proveedor/" + user_id).then((res) => {
             alert(res.data.message)
             redirect.push("/")
         }).catch(err => {
-            alert(err.data.message)
+            alert(err.response.data.message)
             alert("error")
         });
     };
@@ -121,6 +122,7 @@ export default function UserProfile(){
                 
                 </form>
                             <input onClick={deleteUser} className="join-btn-delete" name="join" alt="Join" value="Eliminar Cuenta"/>
+                            <input onClick={e => {deleteUser(e)}} id="join-btn-delete" name="join" alt="Join" value="Eliminar Cuenta"/>
                 
             </div>
             </div>

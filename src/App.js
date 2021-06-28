@@ -27,6 +27,7 @@ import Facturacion from './Components/Facturacion';
 import PagoExitoso from './Components/PagoExitoso';
 import Compras from './Components/Compras';
 
+import HiredServices from './Components/HiredServices';
 
 import {
   BrowserRouter as Router,
@@ -153,7 +154,7 @@ console.log(localStorage.getItem('roles'));
           <ServiciosProveedor/>
         </Route>
 
-        <Route path="/Factura">
+        <Route path="/Factura/:id">
           <Facturacion/>
         </Route>
 
@@ -163,6 +164,10 @@ console.log(localStorage.getItem('roles'));
 
         <Route path="/Compras">
           <Compras/>
+        </Route>
+
+        <Route path="/HiredServices/:proveedor_id">
+          <HiredServices/>
         </Route>
       
       </Switch>
@@ -174,6 +179,7 @@ console.log(localStorage.getItem('roles'));
     </Router>
 
    </RolesContextProvider>
+
   );
 }
 

@@ -8,7 +8,8 @@ import {
 
 export default function Services(){
     const [services, setServices] = useState([])
-    
+    const [montoTotal, setMontoTotal] = useState("")
+
     const { event_id } = useParams();
 
     useEffect (() => {
@@ -20,6 +21,14 @@ export default function Services(){
         Axios.get("http://localhost:5000/api/event/full/" + event_id).then((res)=>{
             setServices(res.data.services)
             console.log('Servicios: ' + res.data.services)
+
+            var aux = 0
+            res.data.services.map(service => {
+                aux = aux + service.price
+                console.log(aux)
+                
+            })
+            setMontoTotal(aux)
         }
         )
     } 
@@ -38,22 +47,22 @@ export default function Services(){
                     <th>Descripcion</th>
                     <th>Precio</th>
                     <th>Eliminar</th>
-                    <th>Editar</th>
                     
                 </tr>
 
                 { services.map((service) => (
                 
-                <tr>
+                <tr key = {service.id}>
                     <td>{service.name}</td>
                     <td>{service.description}</td>
-                    <td>{service.precio}</td>                    
+                    <td>{service.price}</td>                    
                     <td><button className="deleteBtn" >Delete</button></td>
-                    <td><Link className="botonEditar" to={`/EditProveedores/ ${service.id}`} >Edit</Link></td>
 
                 </tr>
                 )) }
                 </table>
+                <p>Monto Total: {montoTotal}</p>
+                <Link to={`/Factura/${event_id}`}><button>Pagar</button></Link>
                 </div>
 
                 
