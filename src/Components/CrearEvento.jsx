@@ -27,7 +27,7 @@ export default function CrearEvento (){
         }).then((res) =>{
             redirect.push("/Catalogo")
             alert("Prueba")
-            //alert(res.data.message)
+            alert(res.data.message)
         }).catch(err => {
             alert(err.response.data.message)
         })

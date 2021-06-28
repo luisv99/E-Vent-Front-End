@@ -21,7 +21,7 @@ export default function Admin(){
 
     const getUserEvents = () =>{
 
-        Axios.get("http://localhost:5000/api/events/user/" + localStorage.getItem('user_id')).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/events/user/" + localStorage.getItem('user_id')).then((res)=>{
             setEvents(res.data)
             console.log('Eventos: ' + res.data)
             
@@ -48,7 +48,13 @@ export default function Admin(){
             <p>
                 Personas: {event.cant_personas}
             </p>
+<<<<<<< HEAD
 
+=======
+            {event.completado && <p>Completado</p>}
+            {!event.completado && <p>Pendiente</p>}
+        
+>>>>>>> tavo
             <Link to={`/EventServices/${event.id}`}><button>Detalles</button></Link>
             </li>	
             ))};
