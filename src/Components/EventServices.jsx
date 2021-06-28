@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import {
      useParams, Link
   } from "react-router-dom";
-  import './ServicesStyles.css'
+  import './UsersStyles.css'
 
 
 export default function Services(){
@@ -35,12 +35,10 @@ export default function Services(){
   
     return(
         <>
-            <div className="contenedorP">
+            <div className="contenedorA" style={{marginTop: "10rem"}}>
             
             <h1 className="titulo">Lista de Proveedores</h1>
-            
-            <Link to="/Provedores" className="boton-crear-usuario">Agregar Proveedor</Link>
-            
+                        
             <table id="customers">
                 <tr>
                     <th>Nombre</th>
