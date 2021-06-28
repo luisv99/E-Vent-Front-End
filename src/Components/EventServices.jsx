@@ -4,6 +4,7 @@ import {
      useParams, Link
   } from "react-router-dom";
   import './UsersStyles.css'
+  import './EventServices.css'
 
 
 export default function Services(){
@@ -38,8 +39,8 @@ export default function Services(){
             <div className="contenedorA" style={{marginTop: "10rem"}}>
             
             <h1 className="titulo">Lista de Proveedores</h1>
-                        
-            <table id="customers">
+            <Link className="pay-link" to={`/Factura/${event_id}`}><button className="pay-btn">Pagar</button></Link>
+            <table id="customers"> 
                 <tr>
                     <th>Nombre</th>
                     <th>Descripcion</th>
@@ -60,7 +61,6 @@ export default function Services(){
                 )) }
                 </table>
                 <p>Monto Total: {montoTotal}</p>
-                <Link to={`/Factura/${event_id}`}><button>Pagar</button></Link>
                 </div>
 
                 

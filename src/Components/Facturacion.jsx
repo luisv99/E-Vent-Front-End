@@ -3,6 +3,7 @@ import './FacturacionStyles.scss';
 import Axios from 'axios';
 import { useParams } from "react-router-dom"
 import React, { useState, useEffect } from 'react';
+import {Link} from "react-router-dom";
 
 
 export default function (){
@@ -96,7 +97,7 @@ export default function (){
                         
                     </ul>
                         <div id="center-btn">
-                            <input type="submit" id="join-btn-factura" name="join" alt="Join" value="Ir a Pagar" />
+                            <Link to="/Checkout" type="submit" id="join-btn-factura" name="join" alt="Join">Pagar</Link>
                         </div>
                 
                 </form>

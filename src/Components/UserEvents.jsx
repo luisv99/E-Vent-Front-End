@@ -3,9 +3,7 @@ import './ProveedoresStyles.css'
 import './UserEventsStyles.css'
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import {
-    Link
-  } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 
 export default function Admin(){
@@ -50,9 +48,7 @@ export default function Admin(){
             <p>
                 Personas: {event.cant_personas}
             </p>
-            <p>
-                Co{event.completado}
-            </p>
+
             <Link to={`/EventServices/${event.id}`}><button>Detalles</button></Link>
             </li>	
             ))};
