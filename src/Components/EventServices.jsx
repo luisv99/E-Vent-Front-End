@@ -11,12 +11,13 @@ export default function Services(){
     const [services, setServices] = useState([])
     const [montoTotal, setMontoTotal] = useState("")
 
-    const [comp, setComp] = useState(false)
+    const [comp, setComp] = useState(false);
 
     const { event_id } = useParams();
 
     useEffect (() => {
         getEventServices();
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const getEventServices = () =>{
@@ -33,7 +34,7 @@ export default function Services(){
                 console.log(aux)
                 
             })
-            setComp(res.data.completado)
+            setComp(res.data.completado);
             console.log('comp: ' + comp);
             setMontoTotal(aux)
         }
@@ -61,7 +62,7 @@ export default function Services(){
             
             <h1 className="titulo">Servicios de su evento</h1>
             
-            {comp &&<li><Link className="pay-link" to={`/Checkout/${event_id}`}><button className="pay-btn">Pagar</button></Link></li>}
+            {!comp &&<li><Link to={`/Checkout/${event_id}`} className="pay-link"><button className="pay-btn">Pagar</button></Link></li>}
             <table id="customers"> 
                 <tr>
                     <th>Nombre</th>

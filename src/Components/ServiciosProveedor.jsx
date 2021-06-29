@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import {
-    Link, useParams
+    Link
   } from "react-router-dom";
 
 

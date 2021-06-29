@@ -6,13 +6,8 @@ import React, { useState, useEffect } from 'react';
 import {useHistory} from "react-router-dom";
 
 
-export default function (){
+export default function Facturacion(){
 
-    {/*const [name, setName] = useState("")
-    const [location, setLocation] = useState("")
-    const [number, setNumber] = useState("")
-    const [date, setDate] = useState("")
-    const redirect = useHistory();*/}
     const [name, setName] = useState("")
     const [location, setLocation] = useState("")
     const [montoTotal, setMontoTotal] = useState("")

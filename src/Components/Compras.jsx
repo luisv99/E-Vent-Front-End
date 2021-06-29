@@ -1,8 +1,6 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import {
-    Link
-  } from "react-router-dom";
+
 
 export default function Compras(){
     const [services, setServices] = useState([])
@@ -23,19 +21,6 @@ export default function Compras(){
         console.log(services)
     }
 
-
-    const deleteServices = (e, id) => {
-        e.preventDefault();
-        console.log("Delete")
-
-        Axios.delete("https://dry-shelf-94984.herokuapp.com/api/services/"+ id).then((res) => {
-            alert(res.data.message)
-            getServices()
-        }).catch(err => {
-            alert(err.data.message)
-            alert("error")
-        })
-    }
 
     return(
         <>

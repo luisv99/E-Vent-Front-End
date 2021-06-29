@@ -71,6 +71,7 @@ export default function UserProfile(){
         e.preventDefault();
         Axios.delete("https://dry-shelf-94984.herokuapp.com/api/proveedor/" + user_id).then((res) => {
             alert(res.data.message)
+            localStorage.clear();
             redirect.push("/")
         }).catch(err => {
             alert(err.response.data.message)
