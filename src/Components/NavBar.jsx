@@ -16,6 +16,7 @@ export default function NavBar(){
     let isAdmin;
     let isUser;
     const rol = localStorage.getItem('roles');  
+    const user_id = localStorage.getItem('user_id');  
 
     if (rol === "ROLE_PROVEEDOR"){
         isProveedor = true

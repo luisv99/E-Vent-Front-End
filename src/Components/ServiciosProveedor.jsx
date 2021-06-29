@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import {
-    Link
+    Link, useParams
   } from "react-router-dom";
 
 
@@ -9,13 +9,17 @@ export default function ServiciosProveedor(){
     const [services, setServices] = useState([])
     const [serviceByName, setServiceByName] = useState('')
     
+
     useEffect (() => {
         getServices();
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [serviceByName]);
 
     const getServices = () =>{
-        Axios.get("http://localhost:5000/api/services/" + serviceByName).then((res)=>{
+        
+        console.log("User Id: " + localStorage.getItem('user_id'))
+
+        Axios.get("http://localhost:5000/api/services/proveedores/" + localStorage.getItem('user_id')).then((res)=>{
             setServices(res.data)
             console.log('Servicios' + res.data)
             console.log('Servicios')

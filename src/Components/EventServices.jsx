@@ -11,6 +11,8 @@ export default function Services(){
     const [services, setServices] = useState([])
     const [montoTotal, setMontoTotal] = useState("")
 
+    const [comp, setComp] = useState(false)
+
     const { event_id } = useParams();
 
     useEffect (() => {
@@ -20,15 +22,19 @@ export default function Services(){
     const getEventServices = () =>{
         
         Axios.get("https://dry-shelf-94984.herokuapp.com/api/event/full/" + event_id).then((res)=>{
-            setServices(res.data.services)
-            console.log('Servicios: ' + res.data.services)
-
+            setServices(res.data.services);
+            
+            console.log('res data: ' + res.data.completado);
+            
+            
             var aux = 0
             res.data.services.map(service => {
                 aux = aux + service.price
                 console.log(aux)
                 
             })
+            setComp(res.data.completado)
+            console.log('comp: ' + comp);
             setMontoTotal(aux)
         }
         )
@@ -46,13 +52,16 @@ export default function Services(){
             alert("error")
         })
     }
+
+    
   
     return(
         <>
             <div className="contenedorA" style={{marginTop: "10rem"}}>
             
             <h1 className="titulo">Servicios de su evento</h1>
-            <Link className="pay-link" to={`/Checkout/${event_id}`}><button className="pay-btn">Pagar</button></Link>
+            
+            {comp &&<li><Link className="pay-link" to={`/Checkout/${event_id}`}><button className="pay-btn">Pagar</button></Link></li>}
             <table id="customers"> 
                 <tr>
                     <th>Nombre</th>
