@@ -222,7 +222,7 @@
 
 /*--------------------------RESPONSIVE----------------------------------------------------------------------------*/
 
-  @media only screen and (min-width: 601px){
+  @media only screen and (min-width: 600px){
     body, html{
       overflow-x: hidden;
     }
@@ -258,7 +258,7 @@
       margin-left: auto;
       margin-right: auto;
       grid-column: 1 / 25;
-      grid-row: 11 / 28;
+      grid-row: 7 / 28;
       width: 570px;
       overflow: hidden;
     }
@@ -531,26 +531,40 @@
   .slide {
     margin-left: auto;
     margin-right: auto;
-    grid-column: 1 / 25;
-    grid-row: 11 / 28;
-    width: 750px;
+    grid-column: 2 / 25;
+    grid-row: 7 / 28;
+    width: 700px;
     overflow: hidden;
 
   }
 
   .hero2{
-    margin-top: -20rem;
+    margin-top: -7rem;
   }
 
   .hero2 .content1{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-size: 4rem;
+}
+  .hero2 .content1 .title1{
+    font-size: 2.5rem;
+}
+ .title2 h1{
+    font-size: 3rem;
+}
+
+.title3{
+  font-size: 2.5rem;
+}
+.title4{
+  font-size: 2.5rem;
 }
 
   .hero2 .content1 .img1{
-    width: 350px;
-    height: 200px;
+    width: 650px;
+    height: 300px;
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -570,8 +584,8 @@
   }
   
   .img2{
-    width: 370px;
-    height: 220px;
+    width: 650px;
+    height: 300px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2rem;
@@ -579,8 +593,8 @@
   }
   
   .img3{
-    width: 420px;
-    height: 250px;
+    width: 650px;
+    height: 300px;
     margin-left: 1.7rem;
     border-radius: 10px;
   }
@@ -599,8 +613,8 @@
   }
 
   #divFiestas img{
-    width: 350px;
-    height: 220px;
+    width: 650px;
+    height: 300px;
     margin-left: auto ;
     margin-right: auto;
     padding-bottom: 0rem;
@@ -612,6 +626,204 @@
   }
 
 }
+
+@media only screen and (min-width: 992px) {
+  
+    body, html{
+      overflow-x: hidden;
+    }
+  
+    .hero {
+      height: 100vh;
+      background-color: rgb(21, 20, 20);
+      display: grid;
+      grid-template-columns: repeat(28, 1fr);
+      grid-template-rows: repeat(28, 1fr);
+      overflow: hidden;
+    }
+    .hero .info-content {
+      grid-column: 3 / 28;
+      grid-row: 4 / 28;
+      color: #fff;
+    }
+    
+    .hero .info-content h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.9em;
+      font-weight: 1000;
+    }
+    .hero .info-content h1 {
+      font-weight: 900;
+      font-size: 2.5em;
+      color: whitesmoke;
+      margin-right: 200px;
+    }
+  
+    .hero .iniciar-sesion{
+      text-decoration: none;
+      padding: 8px 8px;
+      color: #1F2227;
+      border: #f5f5f5 solid;
+      border-radius: 8px;
+      margin-right: 10px;
+      transition: all .5s ease-in-out;
+      font-weight: 700;
+      background-color: #f5f5f5;
+      /*background-color: blue;*/
+  }
+  .hero .iniciar-sesion:hover{
+      background-color:#1F2227 ;
+      color: #f5f5f5; 
+  }
+  
+  #logout{
+    text-decoration: none;
+    padding: 8px 15px;
+    color: #1f1f1f;
+    border: #f5f5f5 solid;
+    border-radius: 8px;
+    transition: all .5s ease-in-out;
+    font-weight: 700;
+    background-color: #f5f5f5;
+  }
+  
+  .hero #logout:hover{
+    background-color: #1F2227;
+    color: #f5f5f5; 
+  }
+  
+  .hero .registro{
+    text-decoration: none;
+    padding: 8px 8px;
+    color: #1f1f1f;
+    border: #f5f5f5 solid;
+    border-radius: 8px;
+    transition: all .5s ease-in-out;
+    font-weight: 700;
+    background-color: #f5f5f5;
+  }
+  
+  #perfil{
+    text-decoration: none;
+    padding: 8px 15px;
+    color: #1f1f1f;
+    border: #f5f5f5 solid;
+    border-radius: 8px;
+    transition: all .5s ease-in-out;
+    font-weight: 700;
+    background-color: #f5f5f5;
+    margin-left: 10px;
+  }
+  .hero #perfil:hover{
+    background-color: #1F2227;
+    color: #f5f5f5; 
+    text-decoration: none;
+  }
+  
+  .hero .registro:hover{
+    background-color: #1F2227;
+    color: #f5f5f5; 
+  }
+  
+    .slide {
+      margin-left: auto;
+      margin-right: auto;
+      grid-column: 3 / 25;
+      grid-row: 13 / 28;
+      width: 830px;
+      overflow: hidden;
+  
+    }
+  
+    .hero2{
+      margin-top: -5rem;
+    }
+  
+    .hero2 .content1{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 4rem;
+  }
+    .hero2 .content1 .title1{
+      font-size: 3rem;
+  }
+   .title2 h1{
+      font-size: 4rem;
+  }
+  
+  .title3{
+    font-size: 3.5rem;
+  }
+  .title4{
+    font-size: 3.5rem;
+  }
+  
+    .hero2 .content1 .img1{
+      width: 860px;
+      height: 370px;
+      border-radius: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1rem;
+    }
+  
+    #divFiestas1{
+      margin-top: -1rem;
+      padding-bottom: 9rem;
+    }
+  
+    .content2{
+      display: flex;
+      flex-direction: column;
+      padding-top: 5rem;
+      padding-bottom: 0rem;
+    }
+    
+    .img2{
+      width: 860px;
+      height: 370px;;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 2rem;
+      border-radius: 10px;
+    }
+    
+    .img3{
+      width: 860px;
+      height: 370px;
+      margin-left: 1.7rem;
+      border-radius: 10px;
+    }
+  
+    .title4{
+    text-align: center; 
+   }
+  
+    #img4{
+      width: 300px;
+      height: 200px;
+      margin-left: auto ;
+      margin-right: auto;
+      padding-bottom: 0rem;
+      border-radius: 10px;
+    }
+  
+    #divFiestas img{
+      width: 860px;
+      height: 370px;
+      margin-left: auto ;
+      margin-right: auto;
+      padding-bottom: 0rem;
+      border-radius: 10px;
+    }
+  
+    #logout{
+      margin-top: -10px;
+    }
+  
+  }
+
 
 /*--------------------------RESPONSIVE----------------------------------------------------------------------------*/
 
@@ -743,7 +955,7 @@
     /*background-color: #000000;*/
     grid-column: 2 / 18;
     grid-row: 3 / 22;
-    margin-left: 1.5rem;
+    width: 750px;
   }
   
   .hero2, .hero3{
@@ -751,7 +963,7 @@
   }
   
   .hero2 .content1{
-    margin-top: 18rem;
+    margin-top: 0rem;
     display: flex;
     flex-direction: row;}
   

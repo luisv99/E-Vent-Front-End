@@ -3,110 +3,172 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.cont-crear-eventos{
-  background-color: rgb(21, 20, 20);
-  z-index: 999;
-  height: 100vh;
-}
-
-
-.signupSection-crear-eventos {
-  margin-top: 2rem;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px;
-  height: 450px;
-  text-align: center;
-  display: flex;
-  color: white;
-  box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
-}
-
-.info {
-
-  width: 45%;
-  background: rgba(20, 20, 20, .8);
-  padding: 30px 0;
-  border-right: 5px solid rgba(30, 30, 30, .8);
-  h2 {
-    padding-top: 30px;
-    font-weight: 300;
-  }
-  p {
-    font-size: 18px;
-  }
-
-}
-
-.signupForm-crear-eventos {
-  width: 70%;
-  padding: 30px 0;
-  background: rgba(20, 40, 40, .8);
-  transition: .2s;
-  h2 {
-    font-weight: 300;
-  }
-}
-
-.inputFields {
-  margin: 15px 0;
-  font-size: 16px;
-  padding: 10px;
-  width: 250px;
-  border: 1px solid rgba(10, 180, 180, 1);
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  background: rgba(20, 20, 20, .2);
-  color: white;
-  outline: none;
-}
-
-.noBullet-crear-eventos {
-    margin-top: 0rem;
-  list-style-type: none;
-  padding: 0;
-}
-
-#join-btn-crear-eventos {
-  border: 1px solid rgba(10, 180, 180, 1);
-  background: rgba(20, 20, 20, .6);
-  font-size: 18px;
-  color: white;
-  margin-top: 5px;
-  padding: 10px 50px;
-  cursor: pointer;
-  transition: .4s;
-
-  &:hover {
-    background: rgba(20, 20, 20, .8);
-  }
-}
-
-.aa{
-  color: wheat;
-}
-
-@media only screen and (max-width: 640px){
+@media only screen and (max-width: 600px){
   .signupSection-crear-eventos {
-    width: 380px;
-    margin-top: 0rem;
+    margin-top: 2rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    color: white;
+    box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+  }
+  
+  .info {
+  
+    width: 45%;
+    background: rgba(20, 20, 20, .8);
+    padding: 30px 0;
+    border-right: 5px solid rgba(30, 30, 30, .8);
+    h2 {
+      padding-top: 30px;
+      font-weight: 300;
+    }
+    p {
+      font-size: 18px;
+    }
+  
+  }
+  
+  .signupForm-crear-eventos {
+    width: 70%;
+    padding: 30px 0;
+    background: rgba(20, 40, 40, .8);
+    transition: .2s;
+    h2 {
+      font-weight: 300;
+    }
+  }
+  
+  .inputFields {
+    margin: 15px 0;
+    font-size: 16px;
+    padding: 10px;
+    width: 250px;
+    border: 1px solid rgba(10, 180, 180, 1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, .2);
+    color: white;
+    outline: none;
+  }
+  
+  .noBullet-crear-eventos {
+      margin-top: 0rem;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #join-btn-crear-eventos {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin-top: 5px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: .4s;
+  
+    &:hover {
+      background: rgba(20, 20, 20, .8);
+    }
+  }
+  
+  .aa{
+    color: wheat;
   }
 
-  .noBullet-crear-eventos li{
-    margin-top: -25px;
-    width: 200px;
-    margin-left: 20px;
-  }
-  .noBullet-crear-eventos li input{
-    width: 200px;
-  }
-
-  #join-btn-crear-eventos{
-    margin-top: 40px;
-  }
 }
+
+@media only screen and (min-width: 768px){
+  .signupSection-crear-eventos {
+    margin-top: 2rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 450px;
+    text-align: center;
+    display: flex;
+    color: white;
+    box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+  }
+  
+  .info {
+  
+    width: 45%;
+    background: rgba(20, 20, 20, .8);
+    padding: 30px 0;
+    border-right: 5px solid rgba(30, 30, 30, .8);
+    h2 {
+      padding-top: 30px;
+      font-weight: 300;
+    }
+    p {
+      font-size: 18px;
+    }
+  
+  }
+  
+  .signupForm-crear-eventos {
+    width: 70%;
+    padding: 30px 0;
+    background: rgba(20, 40, 40, .8);
+    transition: .2s;
+    h2 {
+      font-weight: 300;
+    }
+  }
+  
+  .inputFields {
+    margin: 15px 0;
+    font-size: 16px;
+    padding: 10px;
+    width: 250px;
+    border: 1px solid rgba(10, 180, 180, 1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, .2);
+    color: white;
+    outline: none;
+  }
+  
+  .noBullet-crear-eventos {
+      margin-top: 0rem;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #join-btn-crear-eventos {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin-top: 5px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: .4s;
+  
+    &:hover {
+      background: rgba(20, 20, 20, .8);
+    }
+  }
+  
+  .aa{
+    color: wheat;
+  }
+
+}
+
+
+
 

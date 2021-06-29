@@ -97,7 +97,7 @@ export default function (){
                         
                     </ul>
                         <div id="center-btn">
-                            <Link to="/PagoExitoso" type="submit" id="join-btn-factura" name="join" alt="Join">Pagar</Link>
+                            <Link to="/PagoExitoso" type="submit" id="join-btn-factura" name="join" alt="Join">Culminar proceso de compra</Link>
                         </div>
                 
                 </form>

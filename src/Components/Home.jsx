@@ -61,8 +61,6 @@ export default function Home(){
         </div>
       </div>
 
-      
-
 
       <div className="title2">
         <h1 data-aos="zoom-in" data-aos-duration="2000" >Contrata tus servicios favoritos</h1>
@@ -116,6 +114,7 @@ export default function Home(){
       <h2 className="title1" data-aos="fade-up-right" data-aos-duration="2000">Unica agencia de festejos <span style={{color: "#9c0525" ,fontWeight:"900"}}>VIRTUAL</span> <br/>en el pais</h2>
       <img data-aos="fade-up" data-aos-duration="1800" className="img1" src="/imagenes/party2.png" alt="" />
     </div>
+
   <div className="title2">
     <h1 data-aos="zoom-in" data-aos-duration="2000" >Contrata tus servicios favoritos</h1>
   </div>
@@ -139,7 +138,7 @@ export default function Home(){
 
   <div className="hero3" id="divFiestas1">
     <div className="content2" id="divFiestas">
-    <h2 className="title4" data-aos="fade-up" data-aos-duration="1800">Fiestas</h2>
+    <h2 className="title4" data-aos="fade-up" data-aos-duration="1800">Festivos</h2>
     <img data-aos="fade-up" data-aos-duration="1800" className="fiestaFoto" id="img4" src="/imagenes/party4.png" alt="" />
     </div>
   </div>

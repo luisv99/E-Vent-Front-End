@@ -4,33 +4,25 @@ import './PagoTDC.scss';
 import './PagoPorZelleStyles.css'
 import { useState } from 'react';
 import {Link} from "react-router-dom";
-import { useHistory, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 
 export default function Checkout(){
 
         const { event_id } = useParams();
-        const redirect = useHistory();
 
         const [zelle, setZelle] = useState(false);
         const [tdc, setTDC] = useState(false);
-        //const [paypal, setPaypal] = useState(false);
 
         const zellePayment = ()=>{
             setZelle(true)
             setTDC(false)
         };
+
         const tdcPayment = ()=>{
             setTDC(true)
             setZelle(false)
         };
-
-        const finishPayment = () =>{
-            redirect.push("/PagoExitoso");
-        };
-
-
-
         
 
     return(
@@ -50,15 +42,15 @@ export default function Checkout(){
 
             {zelle && <div className="pagoZelle">
                 <form>
-                <h2 className="tituloZelle">Usted ha seleccionado su pago por zelle</h2>
-                <div className="correoZelle">
-                    <label className="labelZelle" htmlFor="correoZelle">Nombre y apellido del Titular</label>
-                    <input className="inputZelle" type="email" id="correoZelle" required /> <br />
-                    <label className="labelRef" htmlFor="ref">Comprobante de Pago</label>
-                    <input className="inputRef" type="file" id="ref" required />
-                    <br />
-                    <Link to={`/Factura/${event_id}`} onClick={finishPayment} value="Enviar" className="btnZelle" id="ref">Enviar Comprobante</Link>
-                </div>
+                    <h2 className="tituloZelle">Usted ha seleccionado su pago por zelle</h2>
+                    <div className="correoZelle">
+                        <label className="labelZelle" htmlFor="correoZelle">Nombre y apellido del Titular</label>
+                        <input className="inputZelle" type="email" id="correoZelle" required /> <br />
+                        <label className="labelRef" htmlFor="ref">Comprobante de Pago</label>
+                        <input className="inputRef" type="file" id="ref" required />
+                        <br />
+                        <Link to={`/Factura/${event_id}`} value="Enviar" className="btnZelle" id="ref">Enviar Comprobante</Link>
+                    </div>
                 </form>
             </div>}
 

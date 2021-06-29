@@ -154,7 +154,7 @@ console.log(localStorage.getItem('roles'));
           <Checkout/>
         </Route>*/}
 
-        <PrivateRoutes path="/Checkout" availableForRole={["ROLE_USER"]} component={Checkout}/>
+        <PrivateRoutes path="/Checkout/:event_id" availableForRole={["ROLE_USER"]} component={Checkout}/>
 
 
         {/*<Route path="/ServiciosProveedor">
