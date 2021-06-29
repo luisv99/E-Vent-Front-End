@@ -22,8 +22,6 @@ export default function Compras(){
     }
 
 
-<<<<<<< HEAD
-=======
     const deleteServices = (e, id) => {
         e.preventDefault();
         console.log("Delete")
@@ -37,7 +35,6 @@ export default function Compras(){
         })
     }
 
->>>>>>> tavo
     return(
         <>
             <div className="contenedorP" style={{marginTop: "10rem"}}>
