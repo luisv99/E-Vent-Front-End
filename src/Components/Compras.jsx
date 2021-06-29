@@ -3,25 +3,41 @@ import React, { useState, useEffect } from 'react';
 
 
 export default function Compras(){
-    const [services, setServices] = useState([])
+    const [facturas, setFacturas] = useState([])
     const [serviceByName, setServiceByName] = useState('')
     
     useEffect (() => {
-        getServices();
+        getFacturas();
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [serviceByName]);
 
-    const getServices = () =>{
-        Axios.get("http://localhost:5000/api/services/" + serviceByName).then((res)=>{
-            setServices(res.data)
-            console.log('Servicios' + res.data)
-            console.log('Servicios')
+    const getFacturas = () =>{
+        Axios.get("http://localhost:5000/api/facturas").then((res)=>{
+            setFacturas(res.data)
+            console.log('Facturas' + JSON.stringify(res.data))
+            
         }
         )
-        console.log(services)
+        
     }
 
 
+<<<<<<< HEAD
+=======
+    const deleteServices = (e, id) => {
+        e.preventDefault();
+        console.log("Delete")
+
+        Axios.delete("https://dry-shelf-94984.herokuapp.com/api/services/"+ id).then((res) => {
+            alert(res.data.message)
+
+        }).catch(err => {
+            alert(err.data.message)
+            alert("error")
+        })
+    }
+
+>>>>>>> tavo
     return(
         <>
             <div className="contenedorP" style={{marginTop: "10rem"}}>
@@ -39,14 +55,14 @@ export default function Compras(){
                     
                 </tr>
 
-                { services.map((service) => (
+                { facturas.map((factura) => (
                 
                 <tr>
-                    <td>{service.user_id}</td>
-                    <td>{service.name}</td>
-                    <td>{service.price}</td>
-                    <td>{service.description}</td>
-                    <td>{service.description}</td>
+                    <td>{factura.user_id}</td>
+                    <td>{factura.id}</td>
+                    <td>{factura.user.name}</td>
+                    <td>{factura.event.name}</td>
+                    <td>{factura.montoTotal}</td>
 
                 </tr>
                 )) }
