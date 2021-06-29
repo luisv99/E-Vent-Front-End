@@ -3,6 +3,8 @@ import './Footer.css';
 import './Slideshow2';
 import './CrearEvento';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react';
+
 
 import imgS from './../Imagenes/Métodos de pago.png';
 import imgT from './../Imagenes/team.png';
@@ -18,8 +20,17 @@ import { faFacebookF, faTwitter, faInstagram, faWhatsapp} from '@fortawesome/fre
 import {
     Link
   } from "react-router-dom";
+  import Modal from 'react-modal';
 
 export default function Footer(){
+    const [quienesSomosmodalIsOpen, setQuienesSomosmodalIsOpen] = useState(false);
+    const [metodosPagomodalIsOpen, setMetodosPagomodalIsOpen] = useState(false);
+    const [pregFrecuentesmodalIsOpen, setPregFrecuentesmodalIsOpen] = useState(false);
+    const [afiliaNegociomodalIsOpen, setAfiliaNegociomodalIsOpen] = useState(false);
+    const [servicioClientemodalIsOpen, setServicioClientemodalIsOpen] = useState(false);
+    /* const [modalIsOpen, modalIsOpen] = useState(false);
+    const [modalIsOpen, modalIsOpen] = useState(false);  */
+ 
     return(
         <>
             <footer className="footer">
@@ -28,18 +39,18 @@ export default function Footer(){
                         <div className="footer-col">
                             <h4>Compania</h4>
                             <ul>
-                                <li><Link to="#miModal">Quienes somos</Link></li>
-                                <li><Link to="#miModal2">Métodos de pago</Link></li>
-                                <li><Link to="#miModal3">Cómo afiliar mi negocio</Link></li>
+                                <li><Link onClick={()=>setQuienesSomosmodalIsOpen(true)}>Quienes somos</Link></li>
+                                <li><Link onClick={()=>setMetodosPagomodalIsOpen(true)}>Métodos de pago</Link></li>
+                                <li><Link onClick={()=>setAfiliaNegociomodalIsOpen(true)}>Cómo afiliar mi negocio</Link></li>
                             </ul>
                         </div>
 
                         <div className="footer-col">
                             <h4>Ayuda</h4>
                             <ul>
-                                <li><Link to="#miModal4">Servicio al cliente</Link></li>
-                                <li><Link to="#miModal5">Preguntas Frecuentes</Link></li>
-                                <li><Link to="#">Como crear mi evento</Link></li>
+                                <li><Link onClick={()=>setServicioClientemodalIsOpen(true)}>Servicio al cliente</Link></li>
+                                <li><Link onClick={()=>setPregFrecuentesmodalIsOpen(true)}>Preguntas Frecuentes</Link></li>
+                                <li><Link to="/">Como crear mi evento</Link></li>
                             </ul>
                         </div>
 
@@ -64,49 +75,31 @@ export default function Footer(){
                     </div>
                 </div>
 
-                <div id="miModal" className="modal">
-                <div className="modal-contenido">
-                    <Link to="#" className="modal-closed">X</Link>
+                <Modal className="eventModal" isOpen={quienesSomosmodalIsOpen} >
+                    <button className="close-modal" onClick={()=>setQuienesSomosmodalIsOpen(false)}>X</button>
                     <img src={imgT} alt=""/>
-                </div>  
-                </div>
+                </Modal>
 
-                <div id="miModal2" className="modal2">
-                <div className="modal-contenido2">
-                    <Link to="#">X</Link>
+                <Modal className="eventModal" isOpen={metodosPagomodalIsOpen} >
+                    <button className="close-modal" onClick={()=>setMetodosPagomodalIsOpen(false)}>X</button>
                     <img src={imgS} alt=""/>
-                </div>  
-                </div>
+                </Modal>
 
-                <div id="miModal3" className="modal3">
-                <div className="modal-contenido3">
-                    <Link to="#">X</Link>
+                <Modal className="eventModal" isOpen={afiliaNegociomodalIsOpen} >
+                    <button className="close-modal" onClick={()=>setAfiliaNegociomodalIsOpen(false)}>X</button>
                     <img src={imgN} alt=""/>
-                </div>  
-                </div>
+                </Modal>
 
-                <div id="miModal4" className="modal4">
-                <div className="modal-contenido4">
-                    <Link to="#">X</Link>
+                <Modal className="eventModal" isOpen={servicioClientemodalIsOpen} >
+                    <button className="close-modal" onClick={()=>setServicioClientemodalIsOpen(false)}>X</button>
                     <img src={imgSA} alt=""/>
-                </div>  
-                </div>
+                </Modal>
 
-                <div id="miModal5" className="modal5">
-                <div className="modal-contenido5">
-                    <Link to="#">X</Link>
+                <Modal className="eventModal" isOpen={pregFrecuentesmodalIsOpen} >
+                    <button className="close-modal" onClick={()=>setPregFrecuentesmodalIsOpen(false)}>X</button>
                     <img src={imgP} alt=""/>
-                </div>  
-                </div>
+                </Modal>
 
-                <div id="miModal8" className="modal8">
-                <div className="modal-contenido8">
-                    <Link to="#">X</Link>
-                    <div className="slide">
-                        <Slideshow2/>
-                    </div>
-                </div>  
-                </div>
 
               
             </footer>

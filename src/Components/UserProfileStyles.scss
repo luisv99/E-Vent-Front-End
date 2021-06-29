@@ -9,114 +9,9 @@
   height: 130vh;
 }
 
+//--------------------------------------RESPONSIVE----------------------------------------------------------
 
-.signupSection-registro {
-  margin-top: 8rem;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px;
-  height: 500px;
-  text-align: center;
-  display: flex;
-  color: white;
-  box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
-}
-
-.info-registro{
-
-  width: 45%;
-  background: rgba(20, 20, 20, .8);
-  padding: 30px 0;
-  border-right: 5px solid rgba(30, 30, 30, .8);
-  h2 {
-    padding-top: 30px;
-    font-weight: 300;
-  }
-  p {
-    font-size: 18px;
-  }
-
-}
-
-.signupForm-registro {
-  width: 70%;
-  padding: 30px 0;
-  background: rgba(20, 40, 40, .8);
-  transition: .2s;
-  h2 {
-    font-weight: 300;
-  }
-}
-
-.inputFields-registro {
-  margin: 15px 0;
-  font-size: 16px;
-  padding: 10px;
-  width: 250px;
-  border: 1px solid rgba(10, 180, 180, 1);
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  background: rgba(20, 20, 20, .2);
-  color: white;
-  outline: none;
-}
-
-.noBullet-registro {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-gap: 5px;
-  margin-top: 2rem;
-  list-style-type: none;
-  padding: 0;
-}
-
-.pay-btn{
-  
-}
-
-#join-btn-delete {
-  border: 1px solid rgba(10, 180, 180, 1);
-  background: rgba(20, 20, 20, .6);
-  font-size: 18px;
-  color: white;
-  margin: 0px 5px;
-  padding: 10px 50px;
-  cursor: pointer;
-  transition: .4s;
-
-  &:hover {
-    background: rgba(20, 20, 20, .8);
-  }
-}
-.join-btn-delete {
-  border: 1px solid rgba(10, 180, 180, 1);
-  background: rgba(20, 20, 20, .6);
-  font-size: 18px;
-  color: white;
-  margin-top: 15px;
-  padding: 10px 50px;
-  cursor: pointer;
-  transition: .4s;
-  text-align: center;
-
-  &:hover {
-    background: rgba(20, 20, 20, .8);
-  }
-}
-
-.aa{
-  color: wheat;
-}
-
-.boton{
-  margin-top: 5px;
-}
-
-@media only screen and (max-width: 640px){
+@media only screen and (max-width: 600px){
   .noBullet-registro {
     display: flex;
     flex-direction: column;
@@ -130,9 +25,9 @@
   width: 170px;
 }
   .signupSection-registro {
-    margin-top: 18rem;
+    margin-top: 10rem;
     width: 350px;
-    height: 800px;
+    height: 750px;
     text-align: center;
     display: flex;
     color: white;
@@ -153,5 +48,476 @@
     border-right: 5px solid rgba(30, 30, 30, .8);
 
   }
+
+  #join-btn-delete {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin: 0px 5px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: .4s;
+    text-align: center;
+  
+    &:hover {
+      background: rgba(20, 20, 20, .8);
+    }
+  }
+  .join-btn-delete {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin-top: 15px;
+    padding: 10px 0px;
+    cursor: pointer;
+    transition: .4s;
+    text-align: center;
+  
+    &:hover {
+      background: rgba(20, 20, 20, .8);
+    }
+  }
 }
+
+//--------------------------------------RESPONSIVE----------------------------------------------------------
+
+
+@media only screen and (min-width: 600px){
+  .signupSection-registro {
+    margin-top: 3rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 570px;
+    height: 500px;
+    text-align: center;
+    display: flex;
+    color: white;
+    box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+  }
+  
+  .info-registro{
+  
+    width: 45%;
+    background: rgba(20, 20, 20, .8);
+    padding: 30px 0;
+    border-right: 5px solid rgba(30, 30, 30, .8);
+    h2 {
+      padding-top: 30px;
+      font-weight: 300;
+    }
+    p {
+      font-size: 18px;
+    }
+  
+  }
+  
+  .signupForm-registro {
+    width: 70%;
+    padding: 30px 0;
+    background: rgba(20, 40, 40, .8);
+    transition: .2s;
+    h2 {
+      font-weight: 300;
+    }
+  }
+  
+  .inputFields-registro {
+    margin: 15px 0;
+    font-size: 16px;
+    padding: 10px;
+    width: 160px;
+    border: 1px solid rgba(10, 180, 180, 1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, .2);
+    color: white;
+    outline: none;
+  }
+  
+  .noBullet-registro {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 5px;
+    margin-top: 2rem;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .pay-btn{
+    
+  }
+  
+  #join-btn-delete {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin: 0px 5px;
+    padding: 10px 55px;
+    cursor: pointer;
+    transition: .4s;
+  
+    &:hover {
+      background: rgba(20, 20, 20, .8);
+    }
+  }
+  .join-btn-delete {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin-top: 15px;
+    padding: 10px 0px;
+    cursor: pointer;
+    transition: .4s;
+    text-align: center;
+  
+    &:hover {
+      background: rgba(20, 20, 20, .8);
+    }
+  }
+  
+  .aa{
+    color: wheat;
+  }
+  
+  .boton{
+    margin-top: 5px;
+  }
+}
+
+//-------------------------------------------RESPONSIVE-------------------------------------------------
+
+@media only screen and (min-width: 768px){
+  .signupSection-registro {
+    margin-top: 3rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 730px;
+    height: 500px;
+    text-align: center;
+    display: flex;
+    color: white;
+    box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+  }
+  
+  .info-registro{
+  
+    width: 45%;
+    background: rgba(20, 20, 20, .8);
+    padding: 30px 0;
+    border-right: 5px solid rgba(30, 30, 30, .8);
+    h2 {
+      padding-top: 30px;
+      font-weight: 300;
+    }
+    p {
+      font-size: 18px;
+    }
+  
+  }
+  
+  .signupForm-registro {
+    width: 70%;
+    padding: 30px 0;
+    background: rgba(20, 40, 40, .8);
+    transition: .2s;
+    h2 {
+      font-weight: 300;
+    }
+  }
+  
+  .inputFields-registro {
+    margin: 15px 0;
+    font-size: 16px;
+    padding: 10px;
+    width: 200px;
+    border: 1px solid rgba(10, 180, 180, 1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, .2);
+    color: white;
+    outline: none;
+  }
+  
+  .noBullet-registro {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 5px;
+    margin-top: 2rem;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  
+  #join-btn-delete {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin: 0px 5px;
+    padding: 10px 95px;
+    cursor: pointer;
+    transition: .4s;
+  
+    &:hover {
+      background: rgba(20, 20, 20, .8);
+    }
+  }
+  .join-btn-delete {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin-top: 15px;
+    padding: 10px 0px;
+    cursor: pointer;
+    transition: .4s;
+    text-align: center;
+  
+    &:hover {
+      background: rgba(20, 20, 20, .8);
+    }
+  }
+  
+  .aa{
+    color: wheat;
+  }
+  
+  .boton{
+    margin-top: 5px;
+  }
+}
+
+/*--------------------------RESPONSIVE----------------------------------------------------------------------------*/
+
+@media only screen and (min-width: 992px){
+  .signupSection-registro {
+    margin-top: 3rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 920px;
+    height: 500px;
+    text-align: center;
+    display: flex;
+    color: white;
+    box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+  }
+  
+  .info-registro{
+  
+    width: 45%;
+    background: rgba(20, 20, 20, .8);
+    padding: 30px 0;
+    border-right: 5px solid rgba(30, 30, 30, .8);
+    h2 {
+      padding-top: 30px;
+      font-weight: 300;
+    }
+    p {
+      font-size: 18px;
+    }
+  
+  }
+  
+  .signupForm-registro {
+    width: 70%;
+    padding: 30px 0;
+    background: rgba(20, 40, 40, .8);
+    transition: .2s;
+    h2 {
+      font-weight: 300;
+    }
+  }
+  
+  .inputFields-registro {
+    margin: 15px 0;
+    font-size: 16px;
+    padding: 10px;
+    width: 235px;
+    border: 1px solid rgba(10, 180, 180, 1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, .2);
+    color: white;
+    outline: none;
+  }
+  
+  .noBullet-registro {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 5px;
+    margin-top: 2rem;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  
+  #join-btn-delete {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin: 0px 5px;
+    padding: 10px 95px;
+    cursor: pointer;
+    transition: .4s;
+  
+    &:hover {
+      background: rgba(20, 20, 20, .8);
+    }
+  }
+  .join-btn-delete {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin-top: 15px;
+    padding: 10px 0px;
+    cursor: pointer;
+    transition: .4s;
+    text-align: center;
+  
+    &:hover {
+      background: rgba(20, 20, 20, .8);
+    }
+  }
+  
+  .aa{
+    color: wheat;
+  }
+  
+  .boton{
+    margin-top: 5px;
+  }
+}
+
+/*--------------------------RESPONSIVE----------------------------------------------------------------------------*/
+
+@media only screen and (min-width: 1200px){
+
+  .signupSection-registro {
+    margin-top: 3rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 500px;
+    text-align: center;
+    display: flex;
+    color: white;
+    box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+  }
+  
+  .info-registro{
+  
+    width: 45%;
+    background: rgba(20, 20, 20, .8);
+    padding: 30px 0;
+    border-right: 5px solid rgba(30, 30, 30, .8);
+    h2 {
+      padding-top: 30px;
+      font-weight: 300;
+    }
+    p {
+      font-size: 18px;
+    }
+  
+  }
+  
+  .signupForm-registro {
+    width: 70%;
+    padding: 30px 0;
+    background: rgba(20, 40, 40, .8);
+    transition: .2s;
+    h2 {
+      font-weight: 300;
+    }
+  }
+  
+  .inputFields-registro {
+    margin: 15px 0;
+    font-size: 16px;
+    padding: 10px;
+    width: 270px;
+    border: 1px solid rgba(10, 180, 180, 1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, .2);
+    color: white;
+    outline: none;
+  }
+  
+  .noBullet-registro {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 5px;
+    margin-top: 2rem;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .pay-btn{
+    
+  }
+  
+  #join-btn-delete {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin: 0px 5px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: .4s;
+  
+    &:hover {
+      background: rgba(20, 20, 20, .8);
+    }
+  }
+  .join-btn-delete {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin-top: 15px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: .4s;
+    text-align: center;
+  
+    &:hover {
+      background: rgba(20, 20, 20, .8);
+    }
+  }
+  
+  .aa{
+    color: wheat;
+  }
+  
+  .boton{
+    margin-top: 5px;
+  }
+}
+
+
+
+
 

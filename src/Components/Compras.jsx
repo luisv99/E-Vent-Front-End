@@ -22,25 +22,12 @@ export default function Compras(){
     }
 
 
-    const deleteServices = (e, id) => {
-        e.preventDefault();
-        console.log("Delete")
-
-        Axios.delete("https://dry-shelf-94984.herokuapp.com/api/services/"+ id).then((res) => {
-            alert(res.data.message)
-
-        }).catch(err => {
-            alert(err.data.message)
-            alert("error")
-        })
-    }
-
     return(
         <>
             <div className="contenedorP" style={{marginTop: "10rem"}}>
             
             <h1 className="titulo">Historial de Facturas</h1>
-            <label htmlFor="filtroS">Nombre</label>
+            <label htmlFor="filtroS">Nombre del cliente</label>
             <input type="text" id="filtroS" onChange={(e)=>{setServiceByName(e.target.value)}}/>
             <table id="customers">
                 <tr>
