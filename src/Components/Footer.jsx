@@ -46,7 +46,7 @@ export default function Footer(){
                         <div className="footer-col">
                             <h4>Eventos</h4>
                             <ul>
-                                <li><Link to="CrearEvento">Crear E-Vent</Link></li>
+                                <li><Link to="/CrearEvento">Crear E-Vent</Link></li>
                                 <li><Link to="#miModal8">Galeria</Link></li>
                                 <li><Link to="#">Clientes</Link></li>
                             </ul>

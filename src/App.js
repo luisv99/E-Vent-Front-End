@@ -25,6 +25,8 @@ import Checkout from './Components/Checkout';
 import PrivateRoutes from './Components/PrivateRoutes';
 import Facturacion from './Components/Facturacion';
 import PagoExitoso from './Components/PagoExitoso';
+import Compras from './Components/Compras';
+
 import HiredServices from './Components/HiredServices';
 
 import {
@@ -32,10 +34,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import React, { useContext } from 'react';
 import RolesContextProvider, { RolesContext } from './Components/RolesContextProvider';
-
-
 
 function App() {
 
@@ -59,9 +58,12 @@ console.log(localStorage.getItem('roles'));
             <Login></Login> 
         </Route>
 
-        <Route path="/CrearEvento">
+        {/*<Route path="/CrearEvento">
           <CrearEvento></CrearEvento>
-        </Route>
+        </Route>*/}
+
+        <PrivateRoutes path="/CrearEvento" availableForRole={["ROLE_USER"]} component={CrearEvento}/>
+
 
         <Route path="/recomendations">
           <Recomendaciones></Recomendaciones>
@@ -84,9 +86,11 @@ console.log(localStorage.getItem('roles'));
           <EventServices></EventServices>
         </Route>
 
-        <Route path="/UserEvents">
+        {/*<Route path="/UserEvents">
           <UserEvents></UserEvents>
-        </Route>
+        </Route>*/}
+
+        <PrivateRoutes path="/UserEvents" availableForRole={["ROLE_ADMIN" , "ROLE_USER"]} component={UserEvents}/>
         
         {/*<Route path="/Provedores">
             <Provedores></Provedores>
@@ -146,21 +150,32 @@ console.log(localStorage.getItem('roles'));
           <UserProfile/>
         </Route>
 
-        <Route path="/Checkout">
+        {/*<Route path="/Checkout">
           <Checkout/>
-        </Route>
+        </Route>*/}
 
-        <Route path="/ServiciosProveedor">
+        <PrivateRoutes path="/Checkout/:event_id" availableForRole={["ROLE_USER"]} component={Checkout}/>
+
+
+        {/*<Route path="/ServiciosProveedor">
           <ServiciosProveedor/>
-        </Route>
+        </Route>*/}
 
-        <Route path="/Factura/:id">
+        <PrivateRoutes path="/ServiciosProveedor" availableForRole={["ROLE_PROVEEDOR", "ROLE_ADMIN"]} component={ServiciosProveedor}/>
+
+
+        <Route path="/Factura/:event_id">
           <Facturacion/>
         </Route>
 
         <Route path="/PagoExitoso">
           <PagoExitoso/>
         </Route>
+
+        <Route path="/Compras">
+          <Compras/>
+        </Route>
+
         <Route path="/HiredServices/:proveedor_id">
           <HiredServices/>
         </Route>
@@ -174,6 +189,7 @@ console.log(localStorage.getItem('roles'));
     </Router>
 
    </RolesContextProvider>
+
   );
 }
 

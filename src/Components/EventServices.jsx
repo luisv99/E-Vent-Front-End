@@ -3,12 +3,15 @@ import React, { useState, useEffect } from 'react';
 import {
      useParams, Link
   } from "react-router-dom";
-  import './ServicesStyles.css'
+  import './UsersStyles.css'
+  import './EventServices.css'
 
 
 export default function Services(){
     const [services, setServices] = useState([])
     const [montoTotal, setMontoTotal] = useState("")
+
+    const [comp, setComp] = useState(false)
 
     const { event_id } = useParams();
 
@@ -19,15 +22,19 @@ export default function Services(){
     const getEventServices = () =>{
         
         Axios.get("https://dry-shelf-94984.herokuapp.com/api/event/full/" + event_id).then((res)=>{
-            setServices(res.data.services)
-            console.log('Servicios: ' + res.data.services)
-
+            setServices(res.data.services);
+            
+            console.log('res data: ' + res.data.completado);
+            
+            
             var aux = 0
             res.data.services.map(service => {
                 aux = aux + service.price
                 console.log(aux)
                 
             })
+            setComp(res.data.completado)
+            console.log('comp: ' + comp);
             setMontoTotal(aux)
         }
         )
@@ -45,16 +52,17 @@ export default function Services(){
             alert("error")
         })
     }
+
+    
   
     return(
         <>
-            <div className="contenedorP">
+            <div className="contenedorA" style={{marginTop: "10rem"}}>
             
-            <h1 className="titulo">Lista de Proveedores</h1>
+            <h1 className="titulo">Servicios de su evento</h1>
             
-            <Link to="/Provedores" className="boton-crear-usuario">Agregar Proveedor</Link>
-            
-            <table id="customers">
+            {comp &&<li><Link className="pay-link" to={`/Checkout/${event_id}`}><button className="pay-btn">Pagar</button></Link></li>}
+            <table id="customers"> 
                 <tr>
                     <th>Nombre</th>
                     <th>Descripcion</th>
@@ -74,8 +82,8 @@ export default function Services(){
                 </tr>
                 )) }
                 </table>
-                <p>Monto Total: {montoTotal}</p>
-                <Link to={`/Factura/${event_id}`}><button>Pagar</button></Link>
+                <hr />
+                <h4 className="monto-total">Monto Total: {montoTotal}$</h4>
                 </div>
 
                 

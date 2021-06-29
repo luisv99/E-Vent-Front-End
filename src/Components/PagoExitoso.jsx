@@ -12,7 +12,7 @@ export default function PagoExitoso(){
     return(
     <>  <div className="fondo">
             <div className= "pago-exitoso" data-aos="zoom-in" data-aos-duration="3000">
-                <h1>Gracias Por Comprar en Event!</h1>
+                <h1>Gracias por celebrar con Event!</h1>
             </div>
         </div>
     </>

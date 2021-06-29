@@ -17,7 +17,7 @@ export default function CrearEvento (){
 
     const handleSubmit =  event => {
         event.preventDefault()
-        Axios.post("./api/event/create", {
+        Axios.post("http://localhost:5000/api/event/create", {
             name: name,
             location: location,
             cant_personas: number,
@@ -59,12 +59,12 @@ export default function CrearEvento (){
                         </li>
                         <li>
                             <label htmlFor="Numero de personas"></label>
-                            <input type="number" className="inputFields" id="number" name="number" placeholder="número de Personas"  required onChange = {(e)=>{setNumber(e.target.value)}}/>
+                            <input type="number" className="inputFields" id="number" name="number" placeholder="número de Personas" min="1" max="1200"  required onChange = {(e)=>{setNumber(e.target.value)}}/>
                         </li>
 
                         <li>
                             <label htmlFor="Fecha del evento"></label>
-                            <input type="date" className="inputFields" id="date" name="date" placeholder="número de Personas" /*{min={sumarDias(d)}}*/ required onChange = {(e)=>{setDate(e.target.value)}}/>
+                            <input type="date" className="inputFields" id="date" name="date" placeholder="número de Personas" required onChange = {(e)=>{setDate(e.target.value)}}/>
                         </li>
                         
                         <li id="center-btn">

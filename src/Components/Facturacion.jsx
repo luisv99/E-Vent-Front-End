@@ -3,6 +3,7 @@ import './FacturacionStyles.scss';
 import Axios from 'axios';
 import { useParams } from "react-router-dom"
 import React, { useState, useEffect } from 'react';
+import {useHistory} from "react-router-dom";
 
 
 export default function (){
@@ -16,7 +17,8 @@ export default function (){
     const [location, setLocation] = useState("")
     const [montoTotal, setMontoTotal] = useState("")
     const [services, setServices] = useState([])
-    const { id } = useParams();
+    const { event_id } = useParams();
+    const redirect = useHistory();
 
     useEffect (() => {
         getInfo()
@@ -27,9 +29,9 @@ export default function (){
 
 
 
-        console.log('Id: ' + id)
+        console.log('Id: ' + event_id)
 
-        Axios.get("http://localhost:5000/api/event/full/" + id).then((res)=>{
+        Axios.get("http://localhost:5000/api/event/full/" + event_id).then((res)=>{
             setName(res.data.name)
             setLocation(res.data.location)
             setServices(res.data.services)
@@ -51,12 +53,14 @@ export default function (){
 
     const handleSubmit =  e => {
 
-        Axios.put("http://localhost:5000/api/event/completar/" + id, {
+        Axios.put("http://localhost:5000/api/event/completar/" + event_id, {
             user_id: localStorage.getItem('user_id'),
             montoTotal: montoTotal,
+            metodo_pago: localStorage.getItem('metodo_pago')
 
         })
-        console.log("Id: " + id)
+        redirect.push("/PagoExitoso");
+        console.log("Id: " + event_id)
     }
     return(
         <>
@@ -73,15 +77,15 @@ export default function (){
                     <ul className="noBullet-factura">
                         <li>
                             <label htmlFor="">Nombre del evento</label>
-                           <input className="inputFields-factura" type="text" value={name}  required onChange = {(e)=>{setName(e.target.value)}} />
+                           <input className="inputFields-factura" type="text" value={name} readOnly= {true}  onChange = {(e)=>{setName(e.target.value)}} />
                         </li>
                     
                         <li>
                             <label htmlFor="">Locación</label>
-                            <input className="inputFields-factura"  type="text" value={location}  required onChange = {(e)=>{setLocation(e.target.value)}}/>
+                            <input className="inputFields-factura"  type="text" value={location} readOnly= {true}  onChange = {(e)=>{setLocation(e.target.value)}}/>
                         </li>
                         <li>
-                            <p htmlFor="">Servicios</p>
+                            <label className="labels-factura" htmlFor="">Servicios</label>
                             <ul className="services-list">
                                 {services.map((service) => (
                                     <li className="services-li" key = {service.id} >{service.name}: ${service.price}</li>
@@ -90,13 +94,14 @@ export default function (){
                             {/*<input className="inputFields-factura" type="text"  />*/}
                         </li>
                         <li>
-                            <label htmlFor="">Monto total</label>
-                            <input className="inputFields-factura" type="text" value = {montoTotal} readOnly= {true}/>
+                            <label className="labels-factura" htmlFor="">Monto total</label>
+                            <input className="inputFields-factura" type="text" value = {montoTotal + " $"} readOnly= {true}/>
                         </li>
                         
                     </ul>
                         <div id="center-btn">
-                            <input type="submit" id="join-btn-factura" name="join" alt="Join" value="Ir a Pagar" />
+                            
+                            <input type="submit" id="join-btn-login" name="join" alt="Join" value="Pagar"/>
                         </div>
                 
                 </form>

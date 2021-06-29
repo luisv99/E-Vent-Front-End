@@ -14,7 +14,7 @@ export default function Admin(){
                         <Link to="/Users" className="usersA">Gestion de Usuarios</Link>
                         <Link to="/ProveedoresAdmin" className="usersA">Gestion de Proveedores</Link>
                         <Link to="/ServiciosAdmin" className="usersA">Gestion de Servicios</Link>
-                        <Link to="/Users" className="usersA">Gestion de Administradores</Link>
+                        <Link to="/Compras" className="usersA">Gestion de Compras</Link>
                     </div>
                 </div>
             </div>
