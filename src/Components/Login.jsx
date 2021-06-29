@@ -22,6 +22,7 @@ export default function Login(){
         };
 
         console.log('Context desde Login: ' + role);
+        //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [role]);
 
     const handleSubmit = event => {

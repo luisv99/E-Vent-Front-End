@@ -22,18 +22,6 @@ export default function Compras(){
     }
 
 
-    const deleteServices = (e, id) => {
-        e.preventDefault();
-        console.log("Delete")
-
-        Axios.delete("https://dry-shelf-94984.herokuapp.com/api/services/"+ id).then((res) => {
-            alert(res.data.message)
-
-        }).catch(err => {
-            alert(err.data.message)
-            alert("error")
-        })
-    }
 
     return(
         <>
