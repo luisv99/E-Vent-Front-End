@@ -3,7 +3,7 @@ import './FacturacionStyles.scss';
 import Axios from 'axios';
 import { useParams } from "react-router-dom"
 import React, { useState, useEffect } from 'react';
-import {Link} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 
 export default function (){
@@ -18,6 +18,7 @@ export default function (){
     const [montoTotal, setMontoTotal] = useState("")
     const [services, setServices] = useState([])
     const { event_id } = useParams();
+    const redirect = useHistory();
 
     useEffect (() => {
         getInfo()
@@ -55,8 +56,10 @@ export default function (){
         Axios.put("http://localhost:5000/api/event/completar/" + event_id, {
             user_id: localStorage.getItem('user_id'),
             montoTotal: montoTotal,
+            metodo_pago: localStorage.getItem('metodo_pago')
 
         })
+        redirect.push("/PagoExitoso");
         console.log("Id: " + event_id)
     }
     return(
@@ -97,7 +100,8 @@ export default function (){
                         
                     </ul>
                         <div id="center-btn">
-                            <Link to="/PagoExitoso" type="submit" id="join-btn-factura" name="join" alt="Join">Pagar</Link>
+                            
+                            <input type="submit" id="join-btn-login" name="join" alt="Join" value="Pagar"/>
                         </div>
                 
                 </form>

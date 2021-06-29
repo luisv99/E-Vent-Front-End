@@ -2,7 +2,7 @@ import React from 'react';
 import './CheckoutStyles.scss'
 import './PagoTDC.scss';
 import './PagoPorZelleStyles.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
 import { useHistory, useParams } from "react-router-dom"
 
@@ -19,10 +19,12 @@ export default function Checkout(){
         const zellePayment = ()=>{
             setZelle(true)
             setTDC(false)
+            localStorage.setItem("metodo_pago", "Zelle");
         };
         const tdcPayment = ()=>{
             setTDC(true)
             setZelle(false)
+            localStorage.setItem("metodo_pago", "TDC");
         };
 
         const finishPayment = () =>{
@@ -57,7 +59,7 @@ export default function Checkout(){
                     <label className="labelRef" htmlFor="ref">Comprobante de Pago</label>
                     <input className="inputRef" type="file" id="ref" required />
                     <br />
-                    <Link to={`/Factura/${event_id}`} onClick={finishPayment} value="Enviar" className="btnZelle" id="ref">Enviar Comprobante</Link>
+                    <Link to={`/Factura/${event_id}`} value="Enviar" className="btnZelle" id="ref">Enviar Comprobante</Link>
                 </div>
                 </form>
             </div>}
