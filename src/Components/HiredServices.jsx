@@ -18,6 +18,7 @@ export default function HiredServices(){
 
     const getServices = () =>{
         console.log("Proveedor Id: " + proveedor_id)
+        
         Axios.get("http://localhost:5000/api/services/hired/" + proveedor_id).then((res)=>{
             setServices(res.data)
             console.log("Data: " + res.data['events'])
@@ -29,46 +30,32 @@ export default function HiredServices(){
         
     }
 
-
-    const deleteServices = (e, id) => {
-        e.preventDefault();
-        console.log("Delete")
-
-        Axios.delete("https://dry-shelf-94984.herokuapp.com/api/services/"+ id).then((res) => {
-            alert(res.data.message)
-            getServices()
-        }).catch(err => {
-            alert(err.data.message)
-            alert("error")
-        })
-    }
-
     return(
         <>
-            <div className="contenedorP">
-            
-            <h1 className="titulo">Lista de Servicios</h1>
-            
-            {services.map((service) => (
-                
-                <table id="customers">
-                    <div>
-                        <h2>Servicio: {service.name}</h2>
+            <div className="contenedorP" style={{marginTop:"5rem"}}>
+            <div>
+                        <h2 style={{textAlign:"center"}}>Eventos que me han contratado</h2>
                     </div>
+                        
+            {services.map((service) => (
+
+                <table id="customers">
+                    
                     <tr>
-                        <th>User_id</th>
-                        <th>Evento</th>
-                        <th>Fecha</th>  
+                        <th style={{width:"10px"}}>User_id</th>
+                        <th style={{textAlign:"center"}}>Servicio</th>
+                        <th style={{textAlign:"center"}}>Evento</th>  
+                        <th style={{width:"300px" , textAlign:"center"}}>Fecha</th>  
                     </tr>
                         
                     {service.events.map((event) => (
                     
                     <tr>
                         <td>{event.user_id}</td>
+                        <td>{service.name}</td>
                         <td>{event.name}</td>
                         <td>{event.date}</td>
-                        <td><button className="deleteBtn" onClick = {(e) => {deleteServices(e, service.id)}}>Delete</button></td>
-                        <td><Link to={`/EditServicios/ ${service.id}`} >Editar</Link></td>
+
 
                     </tr>
                     ))}

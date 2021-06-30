@@ -56,12 +56,12 @@ export default function Admin(){
             
             <table id="customers">
                 <tr>
-                    <th>Nombre</th>
-                    <th>Telefono</th>
-                    <th className="emailTable">Correo</th>
-                    <th>Direccion</th>
-                    <th>Eliminar</th>
-                    <th>Editar</th>
+                    <th style={{textAlign:"center"}}>Nombre</th>
+                    <th style={{textAlign:"center"}}>Telefono</th>
+                    <th style={{textAlign:"center"}} className="emailTable">Correo</th>
+                    <th style={{textAlign:"center"}}>Direccion</th>
+                    <th style={{textAlign:"center"}}>Eliminar</th>
+                    <th style={{textAlign:"center"}}>Editar</th>
                     
                 </tr>
 

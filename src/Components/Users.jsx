@@ -50,10 +50,10 @@ export default function Admin(){
             <input type="text" id="filtro" onChange={(e)=>{getUsersByName(e)}}/>
             <table id="customers">
                 <tr>
-                    <th>Nombre y Apellido</th>
-                    <th>Email</th>
-                    <th>Direccion</th>
-                    <th>Cedula</th>
+                    <th style={{textAlign:"center"}}>Nombre y Apellido</th>
+                    <th style={{textAlign:"center"}}>Email</th>
+                    <th style={{textAlign:"center"}}>Direccion</th>
+                    <th style={{textAlign:"center"}}>Cedula</th>
                 </tr>
 
                 { users.map((user) => (

@@ -11,6 +11,7 @@ import {
 export default function NavBar(){
 
     const [open, setOpen] = useState(false)
+    const proveedor_id = localStorage.getItem('user_id')
 
     let isProveedor;
     let isAdmin;
@@ -33,7 +34,8 @@ export default function NavBar(){
             <ul className={`menu ${open? "menu-toggle":""}`} id="menu">
                 <li><Link to="/">Home</Link></li>
                 {isUser && <li className="crear-evento"><Link to="/CrearEvento">Crea tu E-Vent</Link></li>}
-                <li><Link to="/recomendations">Recomendaciones</Link></li>
+                {isUser && <li className="crear-evento"><Link to="/Recomendations">Recomendaciones</Link></li>}
+                {isProveedor &&<li><Link to={`/HiredServices/${proveedor_id}`}>Eventos</Link></li>}
                 {isAdmin && <li><Link to="/Admin">Admin</Link></li>}
                 {isProveedor &&<li><Link to="/ServiciosProveedor">Mis Servicios</Link></li>}
                 <li><Link to="/Catalogo">Locales</Link></li>

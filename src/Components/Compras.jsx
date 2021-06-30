@@ -31,11 +31,11 @@ export default function Compras(){
             <input type="text" id="filtroS" onChange={(e)=>{setServiceByName(e.target.value)}}/>
             <table id="customers">
                 <tr>
-                    <th>User_id</th>
-                    <th>Factura_id</th>
-                    <th>Nombre Cliente</th>
-                    <th>Nombre Evento</th>
-                    <th>Monto Total ($)</th>
+                    <th style={{textAlign:"center"}}>User_id</th>
+                    <th style={{textAlign:"center"}}>Factura_id</th>
+                    <th style={{textAlign:"center"}}>Nombre Cliente</th>
+                    <th style={{textAlign:"center"}}>Nombre Evento</th>
+                    <th style={{textAlign:"center"}}>Monto Total ($)</th>
                     
                 </tr>
 

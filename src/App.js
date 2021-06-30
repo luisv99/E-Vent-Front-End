@@ -91,7 +91,7 @@ console.log(localStorage.getItem('roles'));
           <UserEvents></UserEvents>
         </Route>*/}
 
-        <PrivateRoutes path="/UserEvents" availableForRole={["ROLE_ADMIN" , "ROLE_USER"]} component={UserEvents}/>
+        <PrivateRoutes path="/UserEvents" availableForRole={["ROLE_USER"]} component={UserEvents}/>
         
         {/*<Route path="/Provedores">
             <Provedores></Provedores>
@@ -165,21 +165,30 @@ console.log(localStorage.getItem('roles'));
         <PrivateRoutes path="/ServiciosProveedor" availableForRole={["ROLE_PROVEEDOR", "ROLE_ADMIN"]} component={ServiciosProveedor}/>
 
 
-        <Route path="/Factura/:event_id">
+        {/* <Route path="/Factura/:event_id">
           <Facturacion/>
-        </Route>
+        </Route> */}
 
-        <Route path="/PagoExitoso">
+        <PrivateRoutes path="/Factura/:event_id" availableForRole={["ROLE_USER"]} component={Facturacion}/>
+
+
+        {/* <Route path="/PagoExitoso">
           <PagoExitoso/>
-        </Route>
+        </Route> */}
 
-        <Route path="/Compras">
+        <PrivateRoutes path="/PagoExitoso" availableForRole={["ROLE_USER"]} component={PagoExitoso}/>
+
+        {/* <Route path="/Compras">
           <Compras/>
-        </Route>
+        </Route> */}
 
-        <Route path="/HiredServices/:proveedor_id">
+      <PrivateRoutes path="/Compras" availableForRole={["ROLE_ADMIN"]} component={Compras}/>
+
+        {/* <Route path="/HiredServices/:proveedor_id">
           <HiredServices/>
-        </Route>
+        </Route> */}
+
+      <PrivateRoutes path="/HiredServices/:proveedor_id" availableForRole={["ROLE_PROVEEDOR"]} component={HiredServices}/>
       
       </Switch>
 

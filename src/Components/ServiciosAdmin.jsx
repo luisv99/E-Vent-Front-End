@@ -48,12 +48,12 @@ export default function ServiciosAdmin(){
             <Link to="/AddServices" className="boton-crear-usuario">Agregar Servicio</Link>
             <table id="customers">
                 <tr>
-                    <th>User_id</th>
-                    <th>Nombre</th>
-                    <th>Precio ($)</th>
-                    <th>Descripcion</th>
-                    <th>Eliminar</th>
-                    <th>Editar</th>
+                    <th style={{textAlign:"center"}}>User_id</th>
+                    <th style={{textAlign:"center"}}>Nombre</th>
+                    <th style={{textAlign:"center"}}>Precio ($)</th>
+                    <th style={{textAlign:"center"}}>Descripcion</th>
+                    <th style={{textAlign:"center"}}>Eliminar</th>
+                    <th style={{textAlign:"center"}}>Editar</th>
                     
                 </tr>
 

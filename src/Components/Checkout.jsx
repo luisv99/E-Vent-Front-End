@@ -56,6 +56,8 @@ export default function Checkout(){
                 </form>
             </div>}
 
+            
+
             {tdc && <div className="contCredito">
             <div className="signupSectionCredito">
                 <div className="infoCredito">
@@ -72,7 +74,7 @@ export default function Checkout(){
                         </li>
                     
                         <li>
-                            <input type="cardNumber" className="inputFieldsCredito" id="location" required name="numTarjeta" placeholder="Número De Tarjeta"  />
+                            <input type="cardNumber" className="inputFieldsCredito" id="location" maxLength="16" required name="numTarjeta" placeholder="Número De Tarjeta"  />
                         </li>
                         <li>
                             <input type="cc-csc" maxLength="3"  className="inputFieldsCredito" required id="number" name="number" placeholder="CVV"   />
@@ -83,7 +85,7 @@ export default function Checkout(){
                         </li>
 
                         <li id="center-btn">
-                            <Link to={`/Factura/${event_id}`} id="join-btn-checkout" name="join" alt="Join">Pagar E-Vent</Link>
+                            <Link to={`/Factura/${event_id}`} id="join-btn-checkout" name="join" alt="Join">Continuar</Link>
                         </li>
                     </ul>
                 
