@@ -9472,7 +9472,7 @@ react-chatbot-kit@^1.1.20:
     css-loader "^3.5.1"
     react-util-kit "0.0.14"
 
-react-circle-modal@^0.0.2:
+react-circle-modal@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/react-circle-modal/-/react-circle-modal-0.0.2.tgz#fb98bcb6f24f296bdc9be6767c2934f210fcbbb0"
   integrity sha512-a+6ggm5RAQbx02/xQWX9EoXjizIvVzglDyFl7lEb8MQIum7y0sp7no5vqZXn/aymUv2eEJnR3/Wegrhi6hs0Iw==

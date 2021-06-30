@@ -86,7 +86,6 @@ export default function Facturacion(){
                                     <li className="services-li" key = {service.id} >{service.name}: ${service.price}</li>
                                 ))}
                             </ul>
-                            {/*<input className="inputFields-factura" type="text"  />*/}
                         </li>
                         <li>
                             <label className="labels-factura" htmlFor="">Monto total</label>

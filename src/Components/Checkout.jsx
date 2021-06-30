@@ -27,7 +27,10 @@ export default function Checkout(){
         };
 
         const successCreditCardPay = () => {
-
+            redirect.push(`/Factura/${event_id}`)
+        };
+        
+        const successZellePay = () => {
             redirect.push(`/Factura/${event_id}`)
         };
         
@@ -48,7 +51,7 @@ export default function Checkout(){
             </div>
 
             {zelle && <div className="pagoZelle">
-                <form>
+                <form onSubmit={successZellePay}> 
                 <h2 className="tituloZelle">Usted ha seleccionado su pago por zelle</h2>
                 <div className="correoZelle">
                     <label className="labelZelle" htmlFor="correoZelle">Nombre y apellido del Titular</label>
@@ -56,7 +59,7 @@ export default function Checkout(){
                     <label className="labelRef" htmlFor="ref">Comprobante de Pago</label>
                     <input className="inputRef" type="file" id="ref" required />
                     <br />
-                    <Link to={`/Factura/${event_id}`} value="Enviar" className="btnZelle" id="ref">Enviar Comprobante</Link>
+                    <input type="submit" id="join-btn-checkout" name="join" alt="Join"/>
                 </div>
                 </form>
             </div>}
