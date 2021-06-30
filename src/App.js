@@ -26,6 +26,7 @@ import PrivateRoutes from './Components/PrivateRoutes';
 import Facturacion from './Components/Facturacion';
 import PagoExitoso from './Components/PagoExitoso';
 import Compras from './Components/Compras';
+import Estadisticas from './Components/Estadisticas';
 
 import HiredServices from './Components/HiredServices';
 
@@ -183,6 +184,10 @@ console.log(localStorage.getItem('roles'));
         </Route> */}
 
       <PrivateRoutes path="/Compras" availableForRole={["ROLE_ADMIN"]} component={Compras}/>
+
+        <Route path="/Estadisticas">
+          <Estadisticas/>
+        </Route>
 
         {/* <Route path="/HiredServices/:proveedor_id">
           <HiredServices/>
