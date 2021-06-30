@@ -15,10 +15,13 @@ export default function Facturacion(){
     const { event_id } = useParams();
     const redirect = useHistory();
 
+    const metodo_pago = localStorage.getItem('metodo_pago')
+
     useEffect (() => {
         getInfo()
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
 
     const getInfo = () =>{
 
@@ -80,16 +83,21 @@ export default function Facturacion(){
                             <input className="inputFields-factura"  type="text" value={location} readOnly= {true}  onChange = {(e)=>{setLocation(e.target.value)}}/>
                         </li>
                         <li>
+                            <label className="labels-factura" htmlFor="">Metodo de Pago</label>
+                            <input className="inputFields-factura"  type="text" value={metodo_pago} readOnly= {true}  onChange = {(e)=>{setLocation(e.target.value)}}/>
+                        </li>
+                        <li>
+                            <label className="labels-factura" htmlFor="">Monto total</label>
+                            <input className="inputFields-factura" type="text" value = {montoTotal + " $"} readOnly= {true}/>
+                        </li>
+
+                        <li>
                             <label className="labels-factura" htmlFor="">Servicios</label>
                             <ul className="services-list">
                                 {services.map((service) => (
                                     <li className="services-li" key = {service.id} >{service.name}: ${service.price}</li>
                                 ))}
                             </ul>
-                        </li>
-                        <li>
-                            <label className="labels-factura" htmlFor="">Monto total</label>
-                            <input className="inputFields-factura" type="text" value = {montoTotal + " $"} readOnly= {true}/>
                         </li>
                         
                     </ul>
