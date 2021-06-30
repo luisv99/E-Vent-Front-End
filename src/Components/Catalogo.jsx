@@ -9,7 +9,7 @@ export default function Catalogo(){
     const [proveedores, setProveedores] = useState([])
     const [proveedorByName, setProveedorByName] = useState('')
 
- 
+
     useEffect (() => {
         searchProveedores();
         //eslint-disable-next-line react-hooks/exhaustive-deps
@@ -37,9 +37,9 @@ export default function Catalogo(){
 
                     {proveedores.map((proveedor,index)=>(
                     <div className="carta">
-                        <h4 className="cardTitle">{proveedor.name}</h4>
+                            <h4 className="proveedor-name">{proveedor.name}</h4>
                         <img src={proveedor.image} alt=""/>
-                        <p>ID: {proveedor.id}</p>
+                        <p>{proveedor.telefono}</p>
                         <Link Link to={`/Services/ ${proveedor.id}`} className="button">Ver Servicios</Link>
                     </div>
                     ))}

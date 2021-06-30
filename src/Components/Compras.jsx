@@ -22,13 +22,12 @@ export default function Compras(){
     }
 
 
-
     return(
         <>
             <div className="contenedorP" style={{marginTop: "10rem"}}>
             
             <h1 className="titulo">Historial de Facturas</h1>
-            <label htmlFor="filtroS">Nombre</label>
+            <label htmlFor="filtroS">Nombre del cliente</label>
             <input type="text" id="filtroS" onChange={(e)=>{setServiceByName(e.target.value)}}/>
             <table id="customers">
                 <tr>

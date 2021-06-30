@@ -120,7 +120,6 @@ export default function UserProfile(){
                     <div className="boton">
                             <input type="submit" id="join-btn-delete" name="join" alt="Join" value="Guardar Cambios"/>
                     </div>
-                
                             <input onClick={e => {deleteUser(e)}} className="join-btn-delete" name="join" alt="Join" value="Eliminar Cuenta"/>
                 </form>
                             

@@ -53,7 +53,7 @@
     margin-left: auto;
     margin-right: auto;
     grid-column: 1 / 25;
-    grid-row: 11 / 28;
+    grid-row: 15 / 28;
     width: 350px;
     overflow: hidden;
   }
@@ -123,7 +123,7 @@
 }
 
   .hero2{
-    margin-top: -20rem;
+    margin-top: -3rem;
   }
 
   .hero2 .content1{
@@ -258,7 +258,7 @@
       margin-left: auto;
       margin-right: auto;
       grid-column: 1 / 25;
-      grid-row: 10 / 28;
+      grid-row: 12 / 28;
       width: 570px;
       overflow: hidden;
     }
@@ -331,7 +331,7 @@
   }
   
     .hero2{
-      margin-top: -10rem;
+      margin-top: -3rem;
     }
   
     .hero2 .content1{
@@ -626,6 +626,8 @@
   }
 
 }
+
+/*--------------------------RESPONSIVE----------------------------------------------------------------------------*/
 
 @media only screen and (min-width: 992px) {
   

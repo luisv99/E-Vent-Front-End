@@ -33,10 +33,6 @@ export default function Services(){
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-{  /*  const setModalIsOpenToTrue =()=>{
-        setModalIsOpen(true)
-    }*/}
-
     const setModalIsOpenToFalse =()=>{
         setModalIsOpen(false)
     }
