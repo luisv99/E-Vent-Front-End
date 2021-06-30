@@ -3,14 +3,14 @@ import './CheckoutStyles.scss'
 import './PagoTDC.scss';
 import './PagoPorZelleStyles.css'
 import { useState } from 'react';
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import { useParams } from "react-router-dom"
 
 
 export default function Checkout(){
 
         const { event_id } = useParams();
-
+        const redirect = useHistory();
         const [zelle, setZelle] = useState(false);
         const [tdc, setTDC] = useState(false);
 
@@ -24,6 +24,11 @@ export default function Checkout(){
             setTDC(true)
             setZelle(false)
             localStorage.setItem("metodo_pago", "TDC");
+        };
+
+        const successCreditCardPay = () => {
+
+            redirect.push(`/Factura/${event_id}`)
         };
         
 
@@ -66,18 +71,18 @@ export default function Checkout(){
                     <h1>LOGO</h1>
                 </div>
                 
-                <form action="#"   className="signupFormCredito" name="signupform">
+                <form onSubmit={successCreditCardPay} className="signupFormCredito" name="signupform">
                     <h2>Tarjeta De Credito</h2>
                     <ul className="noBulletCredito">
                         <li>
-                            <input type="cc-given-name" className="inputFieldsCredito" id="nombre" name="nombre" required placeholder="Titular"  />
+                            <input type="cc-given-name" className="inputFieldsCredito" id="nombre" name="nombre" required placeholder="Titular de la Tarjeta"  />
                         </li>
                     
                         <li>
-                            <input type="cardNumber" className="inputFieldsCredito" id="location" maxLength="16" required name="numTarjeta" placeholder="Número De Tarjeta"  />
+                            <input type="cardNumber" className="inputFieldsCredito" id="location" minLength="16" maxLength="16" required name="numTarjeta" placeholder="Número De Tarjeta"  />
                         </li>
                         <li>
-                            <input type="cc-csc" maxLength="3"  className="inputFieldsCredito" required id="number" name="number" placeholder="CVV"   />
+                            <input type="cc-csc" minLength="3" maxLength="3"  className="inputFieldsCredito" required id="number" name="number" placeholder="CVV"   />
                         </li>
 
                         <li>
@@ -85,10 +90,9 @@ export default function Checkout(){
                         </li>
 
                         <li id="center-btn">
-                            <Link to={`/Factura/${event_id}`} id="join-btn-checkout" name="join" alt="Join">Continuar</Link>
+                            <input type="submit" id="join-btn-checkout" name="join" alt="Join"/>
                         </li>
                     </ul>
-                
                 </form>
                 
             </div>
