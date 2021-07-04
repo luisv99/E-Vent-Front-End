@@ -10,6 +10,87 @@
 
 @media only screen and (min-width: 1200px){
 
+  .comtenedor{
+    background-color: rgb(21, 20, 20);
+    height: 70vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-continuar{
+    background-color: rgb(21, 20, 20);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 5rem;
+}
+.btn-continuar a{
+    text-decoration: none;
+    color: blanchedalmond;
+    background-color: crimson;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    padding: 10px 10px;
+    font-size: 1.5rem;
+}
+
+#linksPagos{
+    border-radius: 10px;
+}
+
+#linksPagos:hover{
+    text-decoration: none;
+    color: blanchedalmond;
+}
+
+.button1{
+    background: #AB2626;
+    color: #fff;
+    font-weight: 900;
+    display: block;
+    margin: 20px;
+    padding: 10px 0px;
+    text-align:center;
+    width: 200px;
+    text-decoration: none;
+    box-shadow: 0px 3px 0px #590808;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button4{
+    background: #6c1dd4;
+    color: #fff;
+    font-weight: 900;
+    display: block;
+    margin: 20px;
+    padding: 10px 0px;
+    text-align:center;
+    width: 200px;
+    text-decoration: none;
+    box-shadow: 0px 3px 0px #742077;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#join-btn-checkout {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin-top: 5px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: .4s;
+    text-align: center;
+}
+
+.btnZelle{
+    text-align: center;
+}
+
     .signupSectionCredito {
         margin-top: 25rem;
         background-repeat: no-repeat;
