@@ -19,7 +19,7 @@ export default function ServiciosProveedor(){
         
         console.log("User Id: " + localStorage.getItem('user_id'))
 
-        Axios.get("http://localhost:5000/api/services/proveedores/" + localStorage.getItem('user_id')).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/services/proveedores/" + localStorage.getItem('user_id')).then((res)=>{
             setServices(res.data)
             console.log('Servicios' + res.data)
             console.log('Servicios')

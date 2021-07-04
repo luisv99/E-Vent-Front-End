@@ -12,7 +12,7 @@ export default function Compras(){
     }, [serviceByName]);
 
     const getFacturas = () =>{
-        Axios.get("http://localhost:5000/api/facturas").then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/facturas").then((res)=>{
             setFacturas(res.data)
             console.log('Facturas' + JSON.stringify(res.data))
             

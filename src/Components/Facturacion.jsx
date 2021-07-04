@@ -29,7 +29,7 @@ export default function Facturacion(){
 
         console.log('Id: ' + event_id)
 
-        Axios.get("http://localhost:5000/api/event/full/" + event_id).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/event/full/" + event_id).then((res)=>{
             setName(res.data.name)
             setLocation(res.data.location)
             setServices(res.data.services)
@@ -51,7 +51,7 @@ export default function Facturacion(){
 
     const handleSubmit =  e => {
 
-        Axios.put("http://localhost:5000/api/event/completar/" + event_id, {
+        Axios.put("https://dry-shelf-94984.herokuapp.com/api/event/completar/" + event_id, {
             user_id: localStorage.getItem('user_id'),
             montoTotal: montoTotal,
             metodo_pago: localStorage.getItem('metodo_pago')

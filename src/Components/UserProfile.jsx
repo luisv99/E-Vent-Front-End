@@ -27,14 +27,13 @@ export default function UserProfile(){
 
         console.log('Id del usuario:' + user_id)
 
-        Axios.get("http://localhost:5000/api/user/" + user_id).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/user/" + user_id).then((res)=>{
             setName(res.data.name)
             setLastName(res.data.lastName)
             setEmail(res.data.email)
             setDireccion(res.data.direccion)
             setTelefono(res.data.telefono)
             setCedula(res.data.cedula)
-            
             
             console.log('usuario: ' + res.data)
             console.log(name)

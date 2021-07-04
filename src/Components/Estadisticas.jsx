@@ -21,25 +21,25 @@ export default function Estadisticas(){
 
     const getEstadisticas = () =>{
         
-        Axios.get("http://localhost:5000/eventosPorAnio").then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/eventosPorAnio").then((res)=>{
             setEventosPorAnio(res.data)
         });
         
-        Axios.get("http://localhost:5000/serviciosMasContratados").then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/serviciosMasContratados").then((res)=>{
             setServiciosMasContratados(res.data)
             console.log('Mas contratados' + JSON.stringify(res.data));
             });
         
-        Axios.get("http://localhost:5000/serviciosMenosContratados").then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/serviciosMenosContratados").then((res)=>{
             setServiciosMenosContratados(res.data)
         })
-        Axios.get("http://localhost:5000/cantidadDeEventosPorMes").then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/cantidadDeEventosPorMes").then((res)=>{
             setCantidadDeEventosPorMes(res.data)
             
             
         }
         )
-        Axios.get("http://localhost:5000/clientesQueHanGastadoMas").then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/clientesQueHanGastadoMas").then((res)=>{
             setClientesQueHanGastadoMas(res.data)
             console.log("Data: " + JSON.stringify(res.data))
             

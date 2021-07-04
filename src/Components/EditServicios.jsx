@@ -29,7 +29,7 @@ export default function EditProveedores(){
         
         console.log('Id del servicio:' + servicio_id)
 
-        Axios.get("http://localhost:5000/api/servicesById/" + servicio_id).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/servicesById/" + servicio_id).then((res)=>{
             setName(res.data.name)
             setPrice(res.data.price)
             setDescription(res.data.description)

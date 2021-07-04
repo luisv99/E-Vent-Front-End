@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import {
-    Link, useParams
+     useParams
   } from "react-router-dom";
 
 
@@ -19,7 +19,7 @@ export default function HiredServices(){
     const getServices = () =>{
         console.log("Proveedor Id: " + proveedor_id)
         
-        Axios.get("http://localhost:5000/api/services/hired/" + proveedor_id).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/services/hired/" + proveedor_id).then((res)=>{
             setServices(res.data)
             console.log("Data: " + res.data['events'])
             

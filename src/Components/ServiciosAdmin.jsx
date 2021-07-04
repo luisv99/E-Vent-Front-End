@@ -15,7 +15,7 @@ export default function ServiciosAdmin(){
     }, [serviceByName]);
 
     const getServices = () =>{
-        Axios.get("http://localhost:5000/api/services/" + serviceByName).then((res)=>{
+        Axios.get("https://dry-shelf-94984.herokuapp.com/api/services/" + serviceByName).then((res)=>{
             setServices(res.data)
             console.log('Servicios' + res.data)
             console.log('Servicios')
