@@ -62,7 +62,7 @@ export default function Services(){
             <div className="contenedorA" style={{marginTop: "10rem"}}>
             
             <h1 className="titulo">Servicios de su evento</h1>
-            {!comp &&<li><Link className="pay-link" to={`/Checkout/${event_id}`}><button className="pay-btn">Pagar</button></Link></li>}
+            {(!comp) &&<li><Link className="pay-link" to={`/Checkout/${event_id}`}><button className="pay-btn">Pagar</button></Link></li>}
             <table id="customers"> 
                 <tr>
                     <th>Nombre</th>

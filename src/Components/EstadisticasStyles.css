@@ -1,0 +1,51 @@
+.contEstadisticas{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    background-color: rgb(21, 20, 20);
+}
+
+.contEstadisticas h2{
+    font-size: 1.5rem;
+    text-align: center;
+    color: rgb(250, 249, 249);
+    font-weight: bold;
+}
+
+#customersE td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+#customersE{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customersE th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #9c0525;
+    color: white;
+  }
+
+  #customersE tr{background-color: #f2f2f2;}
+
+.contEstadisticas table{
+    margin: auto auto;
+}
+
+.contenedorE1 td{
+    font-weight: bold;
+}
+.contenedorE1 {
+    margin-bottom: 3rem;
+}
+
+
+
+.div-de-h2{
+    width: 30vw;
+}

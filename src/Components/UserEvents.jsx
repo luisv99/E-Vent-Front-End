@@ -25,15 +25,14 @@ export default function Admin(){
             setEvents(res.data)
             console.log('Eventos: ' + res.data)
             
-        }
-        )
-    } 
+        })
+    };
 
     return(
         <>
             <div className="contenedorP2">
 
-        <ul class="tilesWrap">
+        <ul className="tilesWrap">
             
             {events.map((event)=>(
                 /* console.log("Completado " + event.completado), */

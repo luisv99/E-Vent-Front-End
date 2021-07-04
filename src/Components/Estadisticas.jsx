@@ -1,8 +1,8 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import {
-    Link, useParams
-  } from "react-router-dom";
+import './EstadisticasStyles.css'
+
+
 
 
 export default function Estadisticas(){
@@ -12,7 +12,6 @@ export default function Estadisticas(){
     const [cantidadDeEventosPorMes, setCantidadDeEventosPorMes] = useState([])
     const [clientesQueHanGastadoMas, setClientesQueHanGastadoMas] = useState([])
 
-    const {proveedor_id} = useParams()
 
     
     useEffect (() => {
@@ -24,22 +23,16 @@ export default function Estadisticas(){
         
         Axios.get("http://localhost:5000/eventosPorAnio").then((res)=>{
             setEventosPorAnio(res.data)
-            
-            
-        }
-        )
+        });
+        
         Axios.get("http://localhost:5000/serviciosMasContratados").then((res)=>{
             setServiciosMasContratados(res.data)
-            
-            
-        }
-        )
+            console.log('Mas contratados' + JSON.stringify(res.data));
+            });
+        
         Axios.get("http://localhost:5000/serviciosMenosContratados").then((res)=>{
             setServiciosMenosContratados(res.data)
-            
-            
-        }
-        )
+        })
         Axios.get("http://localhost:5000/cantidadDeEventosPorMes").then((res)=>{
             setCantidadDeEventosPorMes(res.data)
             
@@ -57,32 +50,22 @@ export default function Estadisticas(){
     }
 
 
-    const deleteServices = (e, id) => {
-        e.preventDefault();
-        console.log("Delete")
-
-        Axios.delete("https://dry-shelf-94984.herokuapp.com/api/services/"+ id).then((res) => {
-            alert(res.data.message)
-
-        }).catch(err => {
-            alert(err.data.message)
-            alert("error")
-        })
-    }
-
     return(
         <>
-            <div className="contenedorP">
+
+        <div className="contEstadisticas">
+
+        
+            <div className="contenedorE1" style={{marginTop:"5rem"}}>
             
-            <h1 className="titulo">Estadisticas</h1>
                 
-                <table id="customers">
                     <div>
                         <h2>Servicios Mas Contratados</h2>
                     </div>
+                <table style={{width:"400px"}} id="customersE">
                     <tr>
-                        <th>Servicio</th>
-                        <th>Contratos</th> 
+                        <th style={{width:"200px" , textAlign:"center"}}>Servicio</th>
+                        <th style={{width:"100px" , textAlign:"center"}}>Contratos</th> 
                     </tr>
                 { serviciosMasContratados.map((servicio) => (
                 
@@ -93,12 +76,18 @@ export default function Estadisticas(){
                 </tr>
                 )) }
                         
-                    
                 </table>
-                <table id="customers">
+
+                </div>
+                
+
+
+                <div className="contenedorE1" style={{marginTop:"5rem"}}>
+
                     <div>
                         <h2>Servicios Menos Contratados</h2>
                     </div>
+                <table style={{width:"400px"}} id="customersE">
                     <tr>
                         <th>Servicio</th>
                         <th>Contratos</th> 
@@ -110,19 +99,15 @@ export default function Estadisticas(){
                     <td>{servicio.cant}</td>
 
                 </tr>
-                )) }
-                        
-                    
+                )) } 
                 </table>
-           
-            </div>
-            <div className="contenedorP">
-            
+                </div>
                 
-                <table id="customers">
+                <div className="contenedorE1" style={{marginTop:"5rem"}}>
                     <div>
                         <h2>Promedio de monto total de evento por Ano</h2>
                     </div>
+                <table style={{width:"300px"}} id="customersE" >
                     <tr>
                         <th>Ano</th>
                         <th>Promedio</th> 
@@ -135,14 +120,17 @@ export default function Estadisticas(){
 
                 </tr>
                 )) }
-                        
-                    
+        
                 </table>
+                </div>
 
-                <table id="customers">
+
+
+                <div className="contenedorE1" style={{marginTop:"5rem"}}>
                     <div>
                         <h2>Eventos Por Mes</h2>
                     </div>
+                <table style={{width:"300px"}} id="customersE" >
                     <tr>
                         <th>Ano</th>
                         <th>Mes</th>
@@ -157,14 +145,14 @@ export default function Estadisticas(){
 
                 </tr>
                 )) }
-                        
-                    
                 </table>
+                </div>
 
-                <table id="customers">
+                <div className="contenedorE1" style={{marginTop:"5rem"}}>
                     <div>
-                        <h2>Mejores Clientes</h2>
+                        <h2 >Mejores Clientes</h2>
                     </div>
+                <table style={{width:"500px"}} id="customersE">
                     <tr>
                         <th>Nombre</th>
                         <th>Apellido</th>
@@ -182,10 +170,12 @@ export default function Estadisticas(){
                         
                     
                 </table>
-                
-           
-            </div>
 
+                </div>
+
+            </div>
+           
+                
         </>
     )
 }

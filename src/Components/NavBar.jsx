@@ -37,6 +37,7 @@ export default function NavBar(){
                 {isUser && <li className="crear-evento"><Link to="/Recomendations">Recomendaciones</Link></li>}
                 {isProveedor &&<li><Link to={`/HiredServices/${proveedor_id}`}>Eventos</Link></li>}
                 {isAdmin && <li><Link to="/Admin">Admin</Link></li>}
+                {isAdmin && <li><Link to="/Estadisticas">Estadisticas</Link></li>}
                 {isProveedor &&<li><Link to="/ServiciosProveedor">Mis Servicios</Link></li>}
                 <li><Link to="/Catalogo">Locales</Link></li>
             </ul>
