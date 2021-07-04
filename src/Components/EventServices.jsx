@@ -10,7 +10,6 @@ import {
 export default function Services(){
     const [services, setServices] = useState([])
     const [montoTotal, setMontoTotal] = useState("")
-
     const [comp, setComp] = useState(false)
     
 
@@ -25,22 +24,22 @@ export default function Services(){
         
         Axios.get("https://dry-shelf-94984.herokuapp.com/api/event/full/" + event_id).then((res)=>{
             setServices(res.data.services);
-            
-            console.log('res data: ' + res.data.completado);
+            console.log("services: " + services);
+            console.log('res dataa: ' + res.data.completado);
             
             
             var aux = 0
-            res.data.services.map(service => {
+            res.data.services.map(service => (
                 aux = aux + service.price
-                console.log(aux)
-                
-            })
+                ));
+            console.log("Monto Total: " + aux) 
+
             setComp(res.data.completado);
             console.log('comp: ' + comp);
             setMontoTotal(aux)
         }
         )
-    }
+    };
     
     const deleteService = (e, id) => {
         console.log("Delete Service " + id)

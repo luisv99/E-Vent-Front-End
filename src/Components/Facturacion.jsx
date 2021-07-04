@@ -35,10 +35,11 @@ export default function Facturacion(){
             setServices(res.data.services)
             
             var aux = 0
-            res.data.services.map(service => {
+            res.data.services.map(service => (
                 aux = aux + service.price
-                console.log(aux)
-            })
+            ))
+            
+            console.log(aux)
             setMontoTotal(aux)
             console.log('evento: ' + res.data)
         }
