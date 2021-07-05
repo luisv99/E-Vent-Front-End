@@ -93,26 +93,26 @@ export default function UserProfile(){
                     <h1>LOGO</h1>
                 </div>
                 
-                <form action="#" onSubmit= {editUser} method="POST" className="signupForm-registro" name="signupform">
+                <form action="#" onSubmit= {editUser} method="POST" data-testid = "editProfileForm" className="signupForm-registro" name="signupform">
                     <h2>Mi cuenta</h2>
                     <ul className="noBullet-registro">
                         <li>
-                            <input type="text" className="inputFields-registro" id="nombre" name="nombre" placeholder="Nombre" value={name}  required onChange = {(e)=>{setName(e.target.value)}}/>
+                            <input type="text" className="inputFields-registro" id="nombre" data-testid='nombre' name="nombre" placeholder="Nombre" value={name}  required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="text" className="inputFields-registro" id="apellido" name="apellido" placeholder="Apellido" value={lastName} onChange = {(e)=>{setLastName(e.target.value)}}/>
+                            <input type="text" className="inputFields-registro" id="apellido" data-testid="apellido" name="apellido" placeholder="Apellido" value={lastName} onChange = {(e)=>{setLastName(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="number" className="inputFields-registro" id="cedula" name="cedula" placeholder="Cedula" value={cedula}  onChange = {(e)=>{setCedula(e.target.value)}}/>
+                            <input type="number" className="inputFields-registro" id="cedula" data-testid="cedula" name="cedula" placeholder="Cedula" value={cedula}  onChange = {(e)=>{setCedula(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="number" className="inputFields-registro" id="telefono" name="telefono" placeholder="Telefono" value={telefono}  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
+                            <input type="number" className="inputFields-registro" id="telefono" data-testid="telefono" name="telefono" placeholder="Telefono" value={telefono}  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="text" className="inputFields-registro" id="direccion" name="direccion" placeholder="Direccion" value={direccion}  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
+                            <input type="text" className="inputFields-registro" id="direccion" data-testid="direccion" name="direccion" placeholder="Direccion" value={direccion}  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="email" className="inputFields-registro" id="email" name="email" placeholder="Email" value={email}  required onChange = {(e)=>{setEmail(e.target.value)}}/>
+                            <input type="email" className="inputFields-registro" id="email" data-testid="email" name="email" placeholder="Email" value={email}  required onChange = {(e)=>{setEmail(e.target.value)}}/>
                         </li>
 
                     </ul>

@@ -49,7 +49,7 @@ export default function Login(){
 
     return(
         <>
-            <div className="cont-login">
+            <div className="cont-login" data-testid = 'loginComponent'>
                 <div className="signupSection-login">
                     <div className="info">
                         <h1>E-Vent</h1>
@@ -57,19 +57,19 @@ export default function Login(){
                         <h1>LOGO</h1>
                     </div>
                     
-                    <form onSubmit={handleSubmit} method="POST" className="signupForm" name="signupform">
+                    <form onSubmit={handleSubmit} method="POST" data-testid = 'loginForm' className="signupForm" name="signupform">
                         <h2>Iniciar Sesion</h2>
                         <ul className="noBullet2">
                             <li>
                                 <label htmlFor="email"></label>
-                                <input type="email" className="inputFields" id="email" name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}} />
+                                <input type="email" className="inputFields" id="email" data-testid ='email' name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}} />
                             </li>
                             <li>
                                 <label htmlFor="password"></label>
-                                <input type="password" className="inputFields" id="password" name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}} />
+                                <input type="password" className="inputFields" id="password" data-testid = 'password' name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}} />
                             </li>
                             <li id="center-btn">
-                                <input type="submit" id="join-btn-login" name="join" alt="Join" value="Entrar a E-Vent"/>
+                                <input type="submit" id="join-btn-login" data-testid="join-btn-login" name="join" alt="Join" value="Entrar a E-Vent"/>
                             </li>
                         </ul>
                     

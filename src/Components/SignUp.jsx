@@ -48,33 +48,33 @@ export default function SignUp(){
                     <h1>LOGO</h1>
                 </div>
                 
-                <form action="#" onSubmit= {handleSubmit} method="POST" className="signupForm-registro" name="signupform">
+                <form action="#" onSubmit= {handleSubmit} method="POST" data-testid = 'signupForm' className="signupForm-registro" name="signupform">
                     <h2>Crear una cuenta</h2>
                     <ul className="noBullet-registro">
                         <li>
-                            <input type="text" className="inputFields-registro" id="nombre" name="nombre" placeholder="Nombre"  required onChange = {(e)=>{setName(e.target.value)}}/>
+                            <input type="text" className="inputFields-registro" id="nombre" data-testid = 'nombre' name="nombre" placeholder="Nombre"  required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="text" className="inputFields-registro" id="apellido" name="apellido" placeholder="Apellido"  required onChange = {(e)=>{setLastName(e.target.value)}}/>
+                            <input type="text" className="inputFields-registro" id="apellido" data-testid = 'apellido' name="apellido" placeholder="Apellido"  required onChange = {(e)=>{setLastName(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="number" className="inputFields-registro" id="cedula" name="cedula" placeholder="Cedula"  required onChange = {(e)=>{setCedula(e.target.value)}}/>
+                            <input type="number" className="inputFields-registro" id="cedula" data-testid = 'cedula' name="cedula" placeholder="Cedula"  required onChange = {(e)=>{setCedula(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="number" className="inputFields-registro" id="telefono" name="telefono" placeholder="Telefono"  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
+                            <input type="number" className="inputFields-registro" id="telefono" data-testid = 'telefono' name="telefono" placeholder="Telefono"  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="text" className="inputFields-registro" id="direccion" name="direccion" placeholder="Direccion"  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
+                            <input type="text" className="inputFields-registro" id="direccion" data-testid = 'direccion' name="direccion" placeholder="Direccion"  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="email" className="inputFields-registro" id="email" name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}}/>
+                            <input type="email" className="inputFields-registro" id="email" data-testid = 'email' name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="password" className="inputFields-registro" id="password" name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}}/>
+                            <input type="password" className="inputFields-registro" id="password" data-testid = 'password' name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}}/>
                         </li>
                     <div className="boton">
 
-                            <input type="submit" id="join-btn-registro" name="join" alt="Join" value="Registrarme"/>
+                            <input type="submit" id="join-btn-registro" data-testid="join-btn-registro" name="join" alt="Join" value="Registrarme"/>
                     </div>
                     </ul>
                 
