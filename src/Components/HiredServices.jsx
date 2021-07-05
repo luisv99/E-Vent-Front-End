@@ -37,8 +37,8 @@ export default function HiredServices(){
                         <h2 style={{textAlign:"center"}}>Eventos que me han contratado</h2>
                     </div>
                         
-            {services.map((service) => (
 
+            {services.map((service) => (
                 <table id="customers">
                     
                     <tr>
@@ -59,10 +59,10 @@ export default function HiredServices(){
 
                     </tr>
                     ))}
+
                 </table>
-            ))
-                
-            }
+                    ))}
+
             </div>
 
         </>

@@ -45,7 +45,6 @@ export default function AddServices(){
             alert("Funcionó!")
             alert(res.data.message)
             //redirect.push("/ServiciosAdmin")
-            window.location.reload();
         },
         console.log("no se que pasa"),
         //alert(response.data.message),
@@ -99,7 +98,7 @@ export default function AddServices(){
                     </ul>
                             <input type="submit" id="join-btn-services" name="join" alt="Join" value="Agregar"/>
                 
-                            <Link to="/ServiciosAdmin" id="join-btn-2" >Listado de servicios</Link>
+                            <Link to="/ServiciosProveedor" id="join-btn-2" >Listado de servicios</Link>
                             
                 </form>
                 

@@ -15,7 +15,6 @@ export default function Login(){
     useEffect (() => {
         if (role === "ROLE_PROVEEDOR"){
             redirect.push("/ServiciosProveedor");
-            window.location.reload();
         }else if (role === "ROLE_USER") {
             redirect.push("/");
             window.location.reload();

@@ -60,12 +60,12 @@ export default function ServiciosAdmin(){
                 { services.map((service) => (
                 
                 <tr>
-                    <td>{service.user_id}</td>
-                    <td>{service.name}</td>
-                    <td>{service.price}</td>
-                    <td>{service.description}</td>
-                    <td><button className="deleteBtn" onClick = {(e) => {deleteServices(e, service.id)}}>Delete</button></td>
-                    <td><Link to={`/EditServicios/ ${service.id}`} >Editar</Link></td>
+                    <td key={service}>{service.user_id}</td>
+                    <td key={service}>{service.name}</td>
+                    <td key={service}>{service.price}</td>
+                    <td key={service}>{service.description}</td>
+                    <td key={service}><button className="deleteBtn" onClick = {(e) => {deleteServices(e, service.id)}}>Delete</button></td>
+                    <td key={service}><Link to={`/EditServicios/ ${service.id}`} >Editar</Link></td>
 
                 </tr>
                 )) }

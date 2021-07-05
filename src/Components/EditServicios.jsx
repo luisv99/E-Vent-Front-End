@@ -107,7 +107,7 @@ export default function EditProveedores(){
                             <input type="checkbox" className="inputFields-services" id="direccion" name="Promocion" placeholder="Promocion" value={available} onChange = {(e)=>{setAvailable(e.target.value); console.log(e.target.value);}}/>
                         </li>
                     </ul>
-                            <input type="submit" id="join-btn-services" name="join" alt="Join" value="Crear"/>
+                            <input type="submit" id="join-btn-services" name="join" alt="Join" value="Aceptar"/>
 
                             <Link to="/ServiciosAdmin" id="join-btn-2" >Listado de servicios</Link>
                 

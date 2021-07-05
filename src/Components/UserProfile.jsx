@@ -23,9 +23,18 @@ export default function UserProfile(){
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
+    let role = true
+
+    if (localStorage.getItem('roles') === "ROLE_PROVEEDOR"){
+        role = true;
+    }else{
+        role = false;
+    };
+
     const getInfo = () =>{
 
         console.log('Id del usuario:' + user_id)
+
 
         Axios.get("https://dry-shelf-94984.herokuapp.com/api/user/" + user_id).then((res)=>{
             setName(res.data.name)
@@ -45,7 +54,6 @@ export default function UserProfile(){
 
     const editUser = () =>{
         //event.preventDefault();
-        console.log(lastName)
         Axios.put("https://dry-shelf-94984.herokuapp.com/api/proveedor/" + user_id, {
             id: user_id,
             name: name,
@@ -55,15 +63,12 @@ export default function UserProfile(){
             telefono: telefono,
             cedula: cedula
         }).then((response) =>{
-            localStorage.clear();
             alert("Funciona")
             redirect.push("/UserProfile/" + user_id)
         }).catch(err => {
             alert(err.response.data.message)
         })
-        
-        
-    }
+    };
 
     const deleteUser = (e) => {
         console.log("Delete")
@@ -92,20 +97,31 @@ export default function UserProfile(){
                     <h1>LOGO</h1>
                 </div>
                 
-                <form action="#" onSubmit= {editUser} method="POST" className="signupForm-registro" name="signupform">
+                <form onSubmit= {editUser} method="PUT" className="signupForm-registro" name="signupform">
                     <h2>Mi cuenta</h2>
                     <ul className="noBullet-registro">
                         <li>
                             <input type="text" className="inputFields-registro" id="nombre" name="nombre" placeholder="Nombre" value={name}  required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
-                        <li>
+
+                        {role &&<li>
+                            <input type="text" className="inputFields-registro" id="apellido" name="apellido" placeholder="Apellido (No Valido para proveedores)" readOnly onChange = {(e)=>{setLastName(e.target.value)}}/>
+                        </li>}
+
+                        {!role &&<li>
                             <input type="text" className="inputFields-registro" id="apellido" name="apellido" placeholder="Apellido" value={lastName} onChange = {(e)=>{setLastName(e.target.value)}}/>
-                        </li>
-                        <li>
+                        </li>}
+                        
+                        {role &&<li>
+                            <input type="number" className="inputFields-registro" id="cedula" name="cedula" placeholder="Cedula (No Valido para proveedores)" readOnly  onChange = {(e)=>{setCedula(e.target.value)}}/>
+                        </li>}
+
+                        {!role &&<li>
                             <input type="number" className="inputFields-registro" id="cedula" name="cedula" placeholder="Cedula" value={cedula}  onChange = {(e)=>{setCedula(e.target.value)}}/>
-                        </li>
+                        </li>}
+
                         <li>
-                            <input type="number" className="inputFields-registro" id="telefono" name="telefono" placeholder="Telefono" value={telefono}  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
+                            <input type="tel" className="inputFields-registro" id="telefono" name="telefono" placeholder="Telefono" minLength="11" maxLength="11" value={telefono}  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
                         </li>
                         <li>
                             <input type="text" className="inputFields-registro" id="direccion" name="direccion" placeholder="Direccion" value={direccion}  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
