@@ -2,7 +2,7 @@ import './UserProfileStyles.scss'
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { useHistory, useParams } from "react-router-dom"
-  
+import {Link}from "react-router-dom";
 
 export default function UserProfile(){
 
@@ -15,6 +15,7 @@ export default function UserProfile(){
     const [direccion, setDireccion] = useState("")
     const [telefono, setTelefono] = useState("")
     const [cedula, setCedula] = useState("")
+    const [password, setPassword] = useState("")
     //const redirect = useHistory();
     const { user_id } = useParams();
 
@@ -79,7 +80,20 @@ export default function UserProfile(){
         });
     };
 
-    
+    const changePassword = event => {
+        event.preventDefault();
+        
+        Axios.post("http://localhost:5000/api/auth/changePassword", {
+            id: user_id,
+            password: password
+        }).then((res) =>{
+            alert(res.data.message);
+        
+        },
+        (error) =>{
+            alert(error.response.data.message);
+        });
+    }
 
 
 
@@ -121,6 +135,10 @@ export default function UserProfile(){
                             <input type="submit" id="join-btn-delete" name="join" alt="Join" value="Guardar Cambios"/>
                     </div>
                             <input onClick={e => {deleteUser(e)}} className="join-btn-delete" name="join" alt="Join" value="Eliminar Cuenta"/>
+                            <li>
+                                <input type="password" className="inputFields-registro" id="password" data-testid="password" name="password" placeholder="New Password" value={password}  onChange = {(e)=>{setPassword(e.target.value)}}/>
+                            </li>
+                            <button onClick = {(e) => {changePassword(e)}}>Reset Password</button>
                 </form>
                             
                 

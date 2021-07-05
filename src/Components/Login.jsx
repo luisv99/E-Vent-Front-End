@@ -4,6 +4,8 @@ import Axios from 'axios';
 import { useHistory } from "react-router-dom"
 import { RolesContext } from './RolesContextProvider';
 
+import {Link}from "react-router-dom";
+
 
 export default function Login(){
 
@@ -47,6 +49,19 @@ export default function Login(){
         });
     }
 
+    const resetPassword = event => {
+        event.preventDefault();
+        console.log("Email: " + email)
+        Axios.post("http://localhost:5000/api/auth/resetPassword", {
+            email: email,
+        }).then((res) =>{
+            alert(res.data.message);
+        
+        },
+        (error) =>{
+            alert(error.response.data.message);
+        });
+    }
     return(
         <>
             <div className="cont-login" data-testid = 'loginComponent'>
@@ -72,7 +87,7 @@ export default function Login(){
                                 <input type="submit" id="join-btn-login" data-testid="join-btn-login" name="join" alt="Join" value="Entrar a E-Vent"/>
                             </li>
                         </ul>
-                    
+                        <Link onClick = {(e) => {resetPassword(e)}}>Reset Password</Link>
                     </form>
                     
                 </div>
