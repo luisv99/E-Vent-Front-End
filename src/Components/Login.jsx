@@ -14,12 +14,13 @@ export default function Login(){
 
     useEffect (() => {
         if (role === "ROLE_PROVEEDOR"){
-            redirect.push("/ServiciosProveedor");
+            redirect.push("/");
+            window.location.reload();
         }else if (role === "ROLE_USER") {
             redirect.push("/");
             window.location.reload();
         }else if (role === 'ROLE_ADMIN'){
-            redirect.push("/Admin");
+            redirect.push("/");
             window.location.reload();
         };
 

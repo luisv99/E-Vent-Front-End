@@ -43,8 +43,6 @@ export default function AddServices(){
             token: localStorage.getItem('SavedToken')
         }).then((res) =>{
             alert("Funcionó!")
-            alert(res.data.message)
-            //redirect.push("/ServiciosAdmin")
         },
         console.log("no se que pasa"),
         //alert(response.data.message),
