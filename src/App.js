@@ -184,7 +184,7 @@ console.log(localStorage.getItem('roles'));
         </Route> */}
 
       <PrivateRoutes path="/Compras" availableForRole={["ROLE_ADMIN"]} component={Compras}/>
-
+     
         <Route path="/Estadisticas">
           <Estadisticas/>
         </Route>

@@ -2,7 +2,7 @@ import './UserProfileStyles.scss'
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { useHistory, useParams } from "react-router-dom"
-  
+import {Link}from "react-router-dom";
 
 export default function UserProfile(){
 
@@ -15,6 +15,7 @@ export default function UserProfile(){
     const [direccion, setDireccion] = useState("")
     const [telefono, setTelefono] = useState("")
     const [cedula, setCedula] = useState("")
+    const [password, setPassword] = useState("")
     //const redirect = useHistory();
     const { user_id } = useParams();
 
@@ -83,7 +84,19 @@ export default function UserProfile(){
         });
     };
 
-    
+    const changePassword = event => {
+        event.preventDefault();
+        
+        Axios.post("http://localhost:5000/api/auth/changePassword", {
+            id: user_id,
+            password: password
+        }).then((res) =>{
+            alert(res.data.message);
+        },
+        (error) =>{
+            alert(error.response.data.message);
+        });
+    }
 
 
 
@@ -101,7 +114,7 @@ export default function UserProfile(){
                     <h2>Mi cuenta</h2>
                     <ul className="noBullet-registro">
                         <li>
-                            <input type="text" className="inputFields-registro" id="nombre" name="nombre" placeholder="Nombre" value={name}  required onChange = {(e)=>{setName(e.target.value)}}/>
+                            <input type="text" className="inputFields-registro" id="nombre" data-testid='nombre' name="nombre" placeholder="Nombre" value={name}  required onChange = {(e)=>{setName(e.target.value)}}/>
                         </li>
 
                         {role &&<li>
@@ -123,18 +136,23 @@ export default function UserProfile(){
                         <li>
                             <input type="tel" className="inputFields-registro" id="telefono" name="telefono" placeholder="Telefono" minLength="11" maxLength="11" value={telefono}  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
                         </li>
+
                         <li>
-                            <input type="text" className="inputFields-registro" id="direccion" name="direccion" placeholder="Direccion" value={direccion}  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
+                            <input type="text" className="inputFields-registro" id="direccion" data-testid="direccion" name="direccion" placeholder="Direccion" value={direccion}  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="email" className="inputFields-registro" id="email" name="email" placeholder="Email" value={email}  required onChange = {(e)=>{setEmail(e.target.value)}}/>
+                            <input type="email" className="inputFields-registro" id="email" data-testid="email" name="email" placeholder="Email" value={email}  required onChange = {(e)=>{setEmail(e.target.value)}}/>
                         </li>
 
+                            <li>
+                                <input type="password" className="inputFields-registro" id="password" data-testid="password" name="password" placeholder="New Password" value={password}  onChange = {(e)=>{setPassword(e.target.value)}}/>
+                            </li>
                     </ul>
                     
                     <div className="boton">
                             <input type="submit" id="join-btn-delete" name="join" alt="Join" value="Guardar Cambios"/>
                     </div>
+                            <button id="join-btn-delete" onClick = {(e) => {changePassword(e)}}>Reset Password</button>
                             <input onClick={e => {deleteUser(e)}} className="join-btn-delete" name="join" alt="Join" value="Eliminar Cuenta"/>
                 </form>
                             
