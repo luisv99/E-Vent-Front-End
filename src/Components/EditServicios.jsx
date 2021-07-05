@@ -46,8 +46,23 @@ export default function EditProveedores(){
         })
     }
 
-    const editServicio = () =>{
-        //event.preventDefault();
+    const editServicio = async event =>{
+        event.preventDefault();
+        const data = new FormData()
+        data.append('file', image)
+        data.append('upload_preset', 'servicios')
+        const res = await fetch("https://api.cloudinary.com/v1_1/gtoro98/image/upload",
+        {
+            method: "POST",
+            body: data,
+        })
+
+        const file = await res.json()
+        console.log('File:');
+        console.log(file)
+        console.log('File.Secure_URL:')
+        
+        console.log(file.secure_url)
         
         Axios.put("https://dry-shelf-94984.herokuapp.com/api/services/" + servicio_id, {
             id: servicio_id,
@@ -56,7 +71,7 @@ export default function EditProveedores(){
             description: description,
             promotion: promotion,
             available: available,
-            image: image
+            image: file.secure_url,
         }).then((response) =>{
             alert("Funciona")
             redirect.push("/ServiciosAdmin")
@@ -86,7 +101,7 @@ export default function EditProveedores(){
                         </li>
 
                         <li>
-                            <input type="text" className="inputFields-services" id="name" name="name" placeholder="Foto" required value={image} onChange = {(e)=>{setImage(e.target.value)}}/>
+                            <input type="file" className="inputFields-services" id="name" name="name" placeholder="Foto" onChange = {(e)=>{setImage(e.target.files[0])}}/>
                         </li>
 
                         <li>
