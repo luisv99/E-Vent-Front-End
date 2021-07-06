@@ -2,7 +2,6 @@ import './UserProfileStyles.scss'
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { useHistory, useParams } from "react-router-dom"
-import {Link}from "react-router-dom";
 
 export default function UserProfile(){
 
@@ -53,8 +52,8 @@ export default function UserProfile(){
         })
     }
 
-    const editUser = () =>{
-        //event.preventDefault();
+    const editUser = (event) =>{
+        event.preventDefault();
         Axios.put("https://dry-shelf-94984.herokuapp.com/api/proveedor/" + user_id, {
             id: user_id,
             name: name,
@@ -64,9 +63,10 @@ export default function UserProfile(){
             telefono: telefono,
             cedula: cedula
         }).then((response) =>{
-            alert("Funciona")
+            alert("Se ha editado el perfil correctamente")
             redirect.push("/UserProfile/" + user_id)
         }).catch(err => {
+            alert("Ha ocurrido un error")
             alert(err.response.data.message)
         })
     };
@@ -110,7 +110,7 @@ export default function UserProfile(){
                     <h1>LOGO</h1>
                 </div>
                 
-                <form onSubmit= {editUser} method="PUT" className="signupForm-registro" name="signupform">
+                <form onSubmit= {event => editUser(event)} className="signupForm-registro" name="signupform">
                     <h2>Mi cuenta</h2>
                     <ul className="noBullet-registro">
                         <li>

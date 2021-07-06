@@ -3,6 +3,8 @@ import './LoginStyles.scss'
 import Axios from 'axios';
 import { useHistory } from "react-router-dom"
 import { RolesContext } from './RolesContextProvider';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIcons } from '@fortawesome/free-solid-svg-icons'
 
 import {Link}from "react-router-dom";
 
@@ -48,7 +50,8 @@ export default function Login(){
 
         },
         (error) =>{
-            alert(error.response.data.message);
+            alert('Ha ocurrido al iniciar la sesion')
+            //alert(error.response.data.message);
         });
     }
 
@@ -62,6 +65,7 @@ export default function Login(){
         
         },
         (error) =>{
+            
             alert(error.response.data.message);
         });
     }
@@ -70,9 +74,10 @@ export default function Login(){
             <div className="cont-login" data-testid = 'loginComponent'>
                 <div className="signupSection-login">
                     <div className="info">
-                        <h1>E-Vent</h1>
-                        <br></br>
-                        <h1>LOGO</h1>
+                            <h1>E-Vent</h1>
+                        <div className="shop-login">
+                            <FontAwesomeIcon icon={faIcons}  className="fas" />
+                        </div>
                     </div>
                     
                     <form onSubmit={handleSubmit} method="POST" data-testid = 'loginForm' className="signupForm" name="signupform">
@@ -80,11 +85,11 @@ export default function Login(){
                         <ul className="noBullet2">
                             <li>
                                 <label htmlFor="email"></label>
-                                <input type="email" className="inputFields" id="email" data-testid ='email' name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}} />
+                                <input type="email" className="inputFields-login" id="email" data-testid ='email' name="email" placeholder="Email"  required onChange = {(e)=>{setEmail(e.target.value)}} />
                             </li>
                             <li>
                                 <label htmlFor="password"></label>
-                                <input type="password" className="inputFields" id="password" data-testid = 'password' name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}} />
+                                <input type="password" className="inputFields-login" id="password" data-testid = 'password' name="password" placeholder="Contraseña"  required onChange = {(e)=>{setPassword(e.target.value)}} />
                             </li>
                             <li id="center-btn">
                                 <input type="submit" id="join-btn-login" data-testid="join-btn-login" name="join" alt="Join" value="Entrar a E-Vent"/>

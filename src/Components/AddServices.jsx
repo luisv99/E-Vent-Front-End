@@ -42,7 +42,7 @@ export default function AddServices(){
             roles: localStorage.getItem('roles'),
             token: localStorage.getItem('SavedToken')
         }).then((res) =>{
-            alert("Funcionó!")
+            alert("Servicio agregado correctamente!")
         },
         console.log("no se que pasa"),
         //alert(response.data.message),

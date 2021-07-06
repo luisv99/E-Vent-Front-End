@@ -1,3 +1,4 @@
+import './editProveedoresStyles.css'
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from "react-router-dom"
@@ -61,17 +62,17 @@ export default function EditProveedores(){
 
     return(
         <>
-            <div className="cont">
-            <div className="signupSectionServices">
+            <div className="cont-edit-proveedores">
+            <div className="signupSection-edit-proveedores">
                 <div className="infoServices">
                     <h1>E-Vent</h1>
                     <br></br>
                     <h1>LOGO</h1>
                 </div>
                 
-                <form action="#" onSubmit= {editProveedor} method="POST" className="addServiceForm" name="signupform">
+                <form action="#" onSubmit= {editProveedor} method="POST" className="addServiceForm-edit-proveedores" name="signupform">
                     <h2>Editar a "{name}"</h2>
-                    <ul className="noBullet">
+                    <ul className="noBullet-edit-proveedores">
                         
                         <li>
                             <input type="text" className="inputFields" id="nombre" name="nombre" value = {name} onChange = {(e)=>{setName(e.target.value)}} required />
