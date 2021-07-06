@@ -61,7 +61,7 @@ export default function SignUp(){
                             <input type="number" className="inputFields-registro" id="cedula" data-testid = 'cedula' name="cedula" placeholder="Cedula"  required onChange = {(e)=>{setCedula(e.target.value)}}/>
                         </li>
                         <li>
-                            <input type="tel" className="inputFields-registro" id="telefono" name="telefono" min="11" max="11" placeholder="Telefono"  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
+                            <input type="tel" className="inputFields-registro" id="telefono" data-testid = 'telefono' name="telefono" min="11" max="11" placeholder="Telefono"  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
                         </li>
                         <li>
                             <input type="text" className="inputFields-registro" id="direccion" data-testid = 'direccion' name="direccion" placeholder="Direccion"  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
