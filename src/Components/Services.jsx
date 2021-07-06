@@ -86,8 +86,7 @@ export default function Services(){
                     <div className="card1">
                         <h3 >{service.name}</h3>
                         <img src={service.image} className="service-img" alt="service-pic"/>
-                        <p>{service.description}
-                        </p>
+                        <p>{service.description}</p>
                         {role && <button value = {service.id} className="button" onClick = {e => getUserEvents(e.target.value)}>
                             Lo quiero en mi Evento 
                         </button>}
