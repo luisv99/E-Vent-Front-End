@@ -97,12 +97,14 @@ export default function Services(){
                             <button className="close-modal" onClick={setModalIsOpenToFalse}>x</button>
                             <h2 className="titulo-servicios">Seleccione a cual de sus eventos desea agregar "{service.name}"</h2>
                             <div className="select">
+
                             <select value={eventId}  onChange = {(e) => {setEventId(e.target.value)}}>
                                 <option> Seleccione un Evento </option>
                                 {events.map((event => (
                                     <option value = {event.id}> {event.name} </option>
                                 )))};
                             </select>
+                            
                             <button id="btn-btn-success" className="btn btn-success" onClick={e => agregarServicio()}>Agregar Servicio</button>
                             <button id="btn-btn-danger"  className="btn btn-danger" onClick={setModalIsOpenToFalse}>Cancelar</button>
                             </div>

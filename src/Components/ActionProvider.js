@@ -10,7 +10,7 @@ class ActionProvider {
     }
 
     greet2(){
-        const greeting2Message = this.createChatBotMessage("Luis@gmail.com")
+        const greeting2Message = this.createChatBotMessage("eventvzla@gmail.com")
         this.updateChatbotState(greeting2Message)
     }
 
