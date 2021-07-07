@@ -17,9 +17,7 @@ export default function Compras(){
             console.log('Facturas' + JSON.stringify(res.data))
             
         }
-        )
-        
-    }
+        )};
 
 
     return(

@@ -12,6 +12,10 @@
 //--------------------------------------RESPONSIVE----------------------------------------------------------
 
 @media only screen and (max-width: 600px){
+
+  .cont-registro{
+    height: 150vh;
+  }
   .noBullet-registro {
     display: flex;
     flex-direction: column;
@@ -25,20 +29,15 @@
   width: 170px;
 }
   .signupSection-registro {
-    margin-top: 10rem;
+    margin-top: 15rem;
     width: 350px;
-    height: 750px;
+    height: 900px;
     text-align: center;
     display: flex;
     color: white;
     box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
   }
 
-  #join-btn-delete {
-    width: 200px;
-    padding: 5px 30px;
-    color: wheat;
-  }
 
 
   .info-registro{
@@ -54,8 +53,8 @@
     background: rgba(20, 20, 20, .6);
     font-size: 18px;
     color: white;
-    margin: 0px 5px;
-    padding: 10px 50px;
+    margin: 5px 5px;
+    padding: 10px 40px;
     cursor: pointer;
     transition: .4s;
     text-align: center;
@@ -86,14 +85,14 @@
 
 @media only screen and (min-width: 600px){
   .signupSection-registro {
-    margin-top: 3rem;
+    margin-top: 8rem;
     background-repeat: no-repeat;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 570px;
-    height: 500px;
+    height: 650px;
     text-align: center;
     display: flex;
     color: white;
@@ -149,16 +148,12 @@
     padding: 0;
   }
   
-  .pay-btn{
-    
-  }
-  
   #join-btn-delete {
     border: 1px solid rgba(10, 180, 180, 1);
     background: rgba(20, 20, 20, .6);
     font-size: 18px;
     color: white;
-    margin: 0px 5px;
+    margin: 5px 5px;
     padding: 10px 55px;
     cursor: pointer;
     transition: .4s;
@@ -196,14 +191,14 @@
 
 @media only screen and (min-width: 768px){
   .signupSection-registro {
-    margin-top: 3rem;
+    margin-top: 9rem;
     background-repeat: no-repeat;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 730px;
-    height: 500px;
+    height: 650px;
     text-align: center;
     display: flex;
     color: white;
@@ -265,7 +260,7 @@
     background: rgba(20, 20, 20, .6);
     font-size: 18px;
     color: white;
-    margin: 0px 5px;
+    margin: 5px 5px;
     padding: 10px 95px;
     cursor: pointer;
     transition: .4s;
@@ -303,14 +298,14 @@
 
 @media only screen and (min-width: 992px){
   .signupSection-registro {
-    margin-top: 3rem;
+    margin-top: 8rem;
     background-repeat: no-repeat;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 920px;
-    height: 500px;
+    height: 570px;
     text-align: center;
     display: flex;
     color: white;
@@ -411,7 +406,7 @@
 @media only screen and (min-width: 1200px){
 
   .signupSection-registro {
-    margin-top: 3rem;
+    margin-top: 7rem;
     background-repeat: no-repeat;
     position: absolute;
     top: 50%;
