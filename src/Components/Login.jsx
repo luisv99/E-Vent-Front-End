@@ -50,7 +50,7 @@ export default function Login(){
 
         },
         (error) =>{
-            alert('Ha ocurrido al iniciar la sesion')
+            alert('Ha ocurrido al iniciar la sesion o quizas no se encuentra registrado')
             //alert(error.response.data.message);
         });
     }

@@ -2,6 +2,8 @@ import './CrearEvento.scss';
 import React, { useState } from 'react';
 import Axios from 'axios';
 import { useHistory } from "react-router-dom"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIcons } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function CrearEvento (){
@@ -42,7 +44,9 @@ export default function CrearEvento (){
                 <div className="info">
                     <h1>E-Vent</h1>
                     <br></br>
-                    <h1>LOGO</h1>
+                    <div className="shop-login">
+                        <FontAwesomeIcon icon={faIcons}  className="fas" />
+                    </div>
                 </div>
                 
                 <form action="#" onSubmit= {handleSubmit} method="POST" className="signupForm-crear-eventos" name="signupform">

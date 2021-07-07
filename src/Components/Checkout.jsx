@@ -4,7 +4,9 @@ import './PagoTDC.scss';
 import './PagoPorZelleStyles.css'
 import { useState } from 'react';
 import {Link, useHistory} from "react-router-dom";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faIcons } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function Checkout(){
@@ -71,7 +73,9 @@ export default function Checkout(){
                 <div className="infoCredito">
                     <h1>E-Vent</h1>
                     <br></br>
-                    <h1>LOGO</h1>
+                    <div className="shop-login">
+                        <FontAwesomeIcon icon={faIcons}  className="fas" />
+                    </div>
                 </div>
                 
                 <form onSubmit={successCreditCardPay} className="signupFormCredito" name="signupform">

@@ -218,6 +218,10 @@
   #logout{
     margin-top: -10px;
   }
+
+  .robot{
+    display: none;
+  }
 }
 
 /*--------------------------RESPONSIVE----------------------------------------------------------------------------*/
@@ -426,6 +430,10 @@
     #logout{
       margin-top: -10px;
     }
+
+    .robot{
+      display: none;
+    }
   }
 
 
@@ -625,6 +633,10 @@
     margin-top: -10px;
   }
 
+  .robot{
+    display: none;
+  }
+
 }
 
 /*--------------------------RESPONSIVE----------------------------------------------------------------------------*/
@@ -822,6 +834,10 @@
   
     #logout{
       margin-top: -10px;
+    }
+
+    .robot{
+      display: none;
     }
   
   }
@@ -1046,6 +1062,8 @@
     color: blanchedalmond;
   }
   .robot{
+    display: flex;
+    flex-direction: column;
     margin-top: 30rem;
     margin-left: 76rem;
     z-index: 999; 
