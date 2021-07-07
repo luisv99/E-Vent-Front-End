@@ -1040,5 +1040,26 @@
     margin-top: 10rem;
     margin-right: 5rem;
   }
+
+  #robot{
+    font-size: 3rem;
+    color: blanchedalmond;
+  }
+  .robot{
+    margin-top: 30rem;
+    margin-left: 76rem;
+    z-index: 999; 
+    position: fixed;
+    text-align: center;
+  }
+  .robot p{
+    color: blanchedalmond;
+    font-size: .9rem;
+    text-align: center;
+  }
+
+  .modalBot{
+    margin:5rem 35rem;
+  }
   
   }

@@ -27,8 +27,10 @@ import Facturacion from './Components/Facturacion';
 import PagoExitoso from './Components/PagoExitoso';
 import Compras from './Components/Compras';
 import Estadisticas from './Components/Estadisticas';
-
 import HiredServices from './Components/HiredServices';
+
+import Bot from './Components/Bot'
+
 
 import {
   BrowserRouter as Router,
@@ -195,6 +197,10 @@ console.log(localStorage.getItem('roles'));
 
       <PrivateRoutes path="/HiredServices/:proveedor_id" availableForRole={["ROLE_PROVEEDOR"]} component={HiredServices}/>
       
+        <Route path="/ChatBot">
+          <Bot />
+        </Route>
+
       </Switch>
 
       <Footer/>
