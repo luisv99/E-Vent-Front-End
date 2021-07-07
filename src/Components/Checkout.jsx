@@ -55,7 +55,7 @@ export default function Checkout(){
                 <h2 className="tituloZelle">Usted ha seleccionado su pago por zelle</h2>
                 <div className="correoZelle">
                     <label className="labelZelle" htmlFor="correoZelle">Nombre y apellido del Titular</label>
-                    <input className="inputZelle" type="email" id="correoZelle" required /> <br />
+                    <input className="inputZelle" type="text" id="correoZelle" required /> <br />
                     <label className="labelRef" htmlFor="ref">Comprobante de Pago</label>
                     <input className="inputRef" type="file" id="ref" required />
                     <br />
@@ -89,7 +89,7 @@ export default function Checkout(){
                         </li>
 
                         <li>
-                            <input type="month" className="inputFieldsCredito" id="date" required name="date" placeholder="número de Personas"  />
+                            <input type="month" className="inputFieldsCredito" id="date" required name="date"  />
                         </li>
 
                         <li id="center-btn">

@@ -70,7 +70,7 @@ export default function Services(){
             event_id: 5,
             service_id: serviceId
         }).then(() => {
-            alert("Event added successfully")
+            alert("Servicio agregado correctamente")
         }).catch(err => {
             alert('Seleccione un evento')
         })
