@@ -1,0 +1,81 @@
+.cont-edit-proveedores{
+    background-color: rgb(21, 20, 20);
+    z-index: 999;
+    height: 130vh;
+}
+
+
+.addServiceForm-edit-proveedores{
+    width: 70%;
+    padding: 30px 0;
+    background: rgba(20, 40, 40, .8);
+    transition: .2s;
+    height: 88vh;
+    margin-top: 0rem;
+}
+
+.noBullet-edit-proveedores{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.inputFields-services{
+    margin: 15px 0;
+    font-size: 16px;
+    padding: 10px;
+    width: 230px;
+    border: 1px solid rgba(10, 180, 180, 1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, .2);
+    color: white;
+    outline: none;
+}
+
+.infoServices{
+    width: 45%;
+    background: rgba(20, 20, 20, .8);
+    padding: 30px 0;
+    border-right: 5px solid rgba(30, 30, 30, .8);
+    height: 80vh;
+    margin-top: 3rem;
+
+}
+
+.signupSection-edit-proveedores{
+    margin-top: 5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1100px;
+    height: 550px;
+    text-align: center;
+    display: flex;
+    color: white;
+    box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+}
+
+#join-btn-services {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: white;
+    margin-top: 5px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+#join-btn-2{
+    border: 1px solid rgba(10, 180, 180, 1);
+  background: rgba(20, 20, 20, .6);
+  font-size: 18px;
+  color: white;
+  margin-top: 5px;
+  padding: 10px 50px;
+  cursor: pointer;
+  transition: .4s;
+  margin-left: 2rem;
+}

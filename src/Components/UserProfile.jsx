@@ -2,7 +2,6 @@ import './UserProfileStyles.scss'
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { useHistory, useParams } from "react-router-dom"
-import {Link}from "react-router-dom";
 
 export default function UserProfile(){
 
@@ -53,8 +52,8 @@ export default function UserProfile(){
         })
     }
 
-    const editUser = () =>{
-        //event.preventDefault();
+    const editUser = (event) =>{
+        event.preventDefault();
         Axios.put("https://dry-shelf-94984.herokuapp.com/api/proveedor/" + user_id, {
             id: user_id,
             name: name,
@@ -64,9 +63,10 @@ export default function UserProfile(){
             telefono: telefono,
             cedula: cedula
         }).then((response) =>{
-            alert("Funciona")
+            alert("Se ha editado el perfil correctamente")
             redirect.push("/UserProfile/" + user_id)
         }).catch(err => {
+            alert("Ha ocurrido un error")
             alert(err.response.data.message)
         })
     };
@@ -92,7 +92,6 @@ export default function UserProfile(){
             password: password
         }).then((res) =>{
             alert(res.data.message);
-        
         },
         (error) =>{
             alert(error.response.data.message);
@@ -111,7 +110,7 @@ export default function UserProfile(){
                     <h1>LOGO</h1>
                 </div>
                 
-                <form onSubmit= {editUser} method="PUT" className="signupForm-registro" name="signupform">
+                <form onSubmit= {event => editUser(event)} className="signupForm-registro" name="signupform">
                     <h2>Mi cuenta</h2>
                     <ul className="noBullet-registro">
                         <li>
@@ -137,6 +136,7 @@ export default function UserProfile(){
                         <li>
                             <input type="tel" className="inputFields-registro" id="telefono" name="telefono" placeholder="Telefono" minLength="11" maxLength="11" value={telefono}  required onChange = {(e)=>{setTelefono(e.target.value)}}/>
                         </li>
+
                         <li>
                             <input type="text" className="inputFields-registro" id="direccion" data-testid="direccion" name="direccion" placeholder="Direccion" value={direccion}  required onChange = {(e)=>{setDireccion(e.target.value)}}/>
                         </li>
@@ -144,16 +144,16 @@ export default function UserProfile(){
                             <input type="email" className="inputFields-registro" id="email" data-testid="email" name="email" placeholder="Email" value={email}  required onChange = {(e)=>{setEmail(e.target.value)}}/>
                         </li>
 
+                            <li>
+                                <input type="password" className="inputFields-registro" id="password" data-testid="password" name="password" placeholder="New Password" value={password}  onChange = {(e)=>{setPassword(e.target.value)}}/>
+                            </li>
                     </ul>
                     
                     <div className="boton">
                             <input type="submit" id="join-btn-delete" name="join" alt="Join" value="Guardar Cambios"/>
                     </div>
+                            <button id="join-btn-delete" onClick = {(e) => {changePassword(e)}}>Reset Password</button>
                             <input onClick={e => {deleteUser(e)}} className="join-btn-delete" name="join" alt="Join" value="Eliminar Cuenta"/>
-                            <li>
-                                <input type="password" className="inputFields-registro" id="password" data-testid="password" name="password" placeholder="New Password" value={password}  onChange = {(e)=>{setPassword(e.target.value)}}/>
-                            </li>
-                            <button onClick = {(e) => {changePassword(e)}}>Reset Password</button>
                 </form>
                             
                 

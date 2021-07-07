@@ -33,9 +33,10 @@ export default function HiredServices(){
     return(
         <>
             <div className="contenedorP" style={{marginTop:"5rem"}}>
+
             <div>
-                        <h2 style={{textAlign:"center"}}>Eventos que me han contratado</h2>
-                    </div>
+                <h2 style={{textAlign:"center"}}>Eventos que me han contratado</h2>
+            </div>
                         
 
             {services.map((service) => (
@@ -55,13 +56,13 @@ export default function HiredServices(){
                         <td>{service.name}</td>
                         <td>{event.name}</td>
                         <td>{event.date}</td>
-
-
                     </tr>
+
                     ))}
+
 
                 </table>
-                    ))}
+                ))}
 
             </div>
 

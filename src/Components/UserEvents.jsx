@@ -34,9 +34,7 @@ export default function Admin(){
 
         <ul className="tilesWrap">
             
-            {events.map((event)=>(
-                /* console.log("Completado " + event.completado), */
-                
+            {events.map((event)=>(                
                 <li>
             <h3>{event.name}</h3>
             <p>

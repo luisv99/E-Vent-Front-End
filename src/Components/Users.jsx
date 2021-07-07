@@ -46,7 +46,7 @@ export default function Admin(){
             <div className="contenedorU" style={{marginTop: "10rem"}}>
             
             <h1 className="titulo">Lista de usuarios</h1>
-            <label htmlFor="filtro">Cedula</label>
+            <label htmlFor="filtro">Nombre del cliente</label>
             <input type="text" id="filtro" onChange={(e)=>{getUsersByName(e)}}/>
             <table id="customers">
                 <tr>

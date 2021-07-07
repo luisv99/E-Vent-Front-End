@@ -4,9 +4,7 @@ import userEvent from '@testing-library/user-event';
 import SignUp from './SignUp'
 
 
-
-
-describe('SignUp Component', ()=>{
+describe('Login Component', ()=>{
     
     const value = "HolaMundo"
     const numberValue = 8

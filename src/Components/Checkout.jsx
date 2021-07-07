@@ -4,7 +4,9 @@ import './PagoTDC.scss';
 import './PagoPorZelleStyles.css'
 import { useState } from 'react';
 import {Link, useHistory} from "react-router-dom";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faIcons } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function Checkout(){
@@ -55,7 +57,7 @@ export default function Checkout(){
                 <h2 className="tituloZelle">Usted ha seleccionado su pago por zelle</h2>
                 <div className="correoZelle">
                     <label className="labelZelle" htmlFor="correoZelle">Nombre y apellido del Titular</label>
-                    <input className="inputZelle" type="email" id="correoZelle" required /> <br />
+                    <input className="inputZelle" type="text" id="correoZelle" required /> <br />
                     <label className="labelRef" htmlFor="ref">Comprobante de Pago</label>
                     <input className="inputRef" type="file" id="ref" required />
                     <br />
@@ -71,7 +73,9 @@ export default function Checkout(){
                 <div className="infoCredito">
                     <h1>E-Vent</h1>
                     <br></br>
-                    <h1>LOGO</h1>
+                    <div className="shop-login">
+                        <FontAwesomeIcon icon={faIcons}  className="fas" />
+                    </div>
                 </div>
                 
                 <form onSubmit={successCreditCardPay} className="signupFormCredito" name="signupform">
@@ -89,7 +93,7 @@ export default function Checkout(){
                         </li>
 
                         <li>
-                            <input type="month" className="inputFieldsCredito" id="date" required name="date" placeholder="número de Personas"  />
+                            <input type="month" className="inputFieldsCredito" id="date" required name="date"  />
                         </li>
 
                         <li id="center-btn">

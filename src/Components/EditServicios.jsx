@@ -4,6 +4,8 @@ import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from "react-router-dom"
 import {Link}from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIcons } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function EditProveedores(){
@@ -89,7 +91,9 @@ export default function EditProveedores(){
                 <div className="infoServices">
                     <h1>E-Vent</h1>
                     <br></br>
-                    <h1>LOGO</h1>
+                    <div className="shop-login">
+                        <FontAwesomeIcon icon={faIcons}  className="fas" />
+                    </div>
                 </div>
                 
                 <form action="#" onSubmit= {editServicio} method="POST" className="addServiceForm" name="signupform">

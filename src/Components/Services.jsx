@@ -70,7 +70,7 @@ export default function Services(){
             event_id: 5,
             service_id: serviceId
         }).then(() => {
-            alert("Event added successfully")
+            alert("Servicio agregado correctamente")
         }).catch(err => {
             alert('Seleccione un evento')
         })
@@ -86,8 +86,7 @@ export default function Services(){
                     <div className="card1">
                         <h3 >{service.name}</h3>
                         <img src={service.image} className="service-img" alt="service-pic"/>
-                        <p>{service.description}
-                        </p>
+                        <p>{service.description}</p>
                         {role && <button value = {service.id} className="button" onClick = {e => getUserEvents(e.target.value)}>
                             Lo quiero en mi Evento 
                         </button>}
@@ -98,12 +97,14 @@ export default function Services(){
                             <button className="close-modal" onClick={setModalIsOpenToFalse}>x</button>
                             <h2 className="titulo-servicios">Seleccione a cual de sus eventos desea agregar "{service.name}"</h2>
                             <div className="select">
+
                             <select value={eventId}  onChange = {(e) => {setEventId(e.target.value)}}>
                                 <option> Seleccione un Evento </option>
                                 {events.map((event => (
                                     <option value = {event.id}> {event.name} </option>
                                 )))};
                             </select>
+                            
                             <button id="btn-btn-success" className="btn btn-success" onClick={e => agregarServicio()}>Agregar Servicio</button>
                             <button id="btn-btn-danger"  className="btn btn-danger" onClick={setModalIsOpenToFalse}>Cancelar</button>
                             </div>

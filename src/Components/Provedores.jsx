@@ -2,6 +2,8 @@ import './ProvedoresStyles.scss'
 import React, { useState } from 'react';
 import Axios from 'axios';
 import {Link}from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIcons } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function Provedores (){
@@ -61,9 +63,11 @@ export default function Provedores (){
             <div className="cont-add-proveedores">
             <div className="signupSection-add-proveedores">
                 <div className="info-add-proveedores">
-                    <h1>E-Vent</h1>
+                    <h1 className="info-add-proveedores-h1">E-Vent</h1>
                     <br></br>
-                    <h1>LOGO</h1>
+                    <div className="shop-login">
+                        <FontAwesomeIcon icon={faIcons}  className="fas" />
+                    </div>
                 </div>
                 
                 <form action="#" onSubmit= {handleSubmit} method="POST" className="signupForm-add-proveedores" name="signupform">
@@ -87,11 +91,11 @@ export default function Provedores (){
                         <li>
                             <input type="file" className="inputFields-add-proveedores" id="image" name="image" placeholder="Imagen"  required onChange = {(e)=>{setImage(e.target.files[0])}}/>
                         </li>
+                            <input type="submit" id="join-btn-add-proveedores" name="join" alt="Join" value="Agregar"/>
                     </ul>
+                            <Link to="/ProveedoresAdmin" id="join-btn-2-add-proveedores" >Ver Proveedores</Link>
                     
-                            <input type="submit" id="join-btn" name="join" alt="Join" value="Agregar"/>
 
-                            <Link to="/ProveedoresAdmin" id="join-btn-2" >Ver Proveedores</Link>
                 
                 </form>
                 

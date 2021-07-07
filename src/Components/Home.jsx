@@ -4,13 +4,16 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'
 import {useEffect} from 'react'
 import React, { useState } from 'react';
-
-
 import {Link} from "react-router-dom";
 import Slideshow from './Slideshow';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRobot } from '@fortawesome/free-solid-svg-icons'
+import Modal from 'react-modal';
+import Bot from './Bot'
 
 export default function Home(){
 
+  const [robotModal, setRobotModal] = useState(false);
   const [user_id, setUser_id] = useState("");
 
   const logOut = event =>{
@@ -52,7 +55,15 @@ export default function Home(){
             <Link to="/login" className="iniciar-sesion">Iniciar Sesion</Link>
             <Link to="/SignUp" className="registro">Registrarme</Link>   
           </div>
+
+      <div className="robot">
+            <Link onClick={()=>setRobotModal(true)}><FontAwesomeIcon icon= {faRobot} id="robot"/></Link>
+            <p>Habla Conmigo</p>
+      </div>
+
       </main>
+
+
 
       <div className="hero2" >
         <div className="content1">
@@ -88,6 +99,12 @@ export default function Home(){
         </div>
       </div>
       </div>
+      
+    <Modal className="modalBot" isOpen={robotModal} >
+          <button className="close-Bot-modal" onClick={()=>setRobotModal(false)}>X</button>
+          <Bot/>
+    </Modal>
+    
       </>
     )
   }
@@ -108,7 +125,15 @@ export default function Home(){
         <button onClick={logOut} id="logout">Terminar Sesion</button>
         {<Link to={`/UserProfile/ ${user_id}`} id="perfil" className="perfil">Mi Perfil</Link>}
       </div>
+
+      <div className="robot">
+            <Link onClick={()=>setRobotModal(true)}><FontAwesomeIcon icon= {faRobot} id="robot"/></Link>
+            <p>Habla Conmigo</p>
+      </div>
+
   </main>
+
+
     <div className="hero2" >
     <div className="content1">
       <h2 className="title1" data-aos="fade-up-right" data-aos-duration="2000">Unica agencia de festejos <span style={{color: "#9c0525" ,fontWeight:"900"}}>VIRTUAL</span> <br/>en el pais</h2>
@@ -144,6 +169,11 @@ export default function Home(){
   </div>
 
   </div>
+
+  <Modal className="modalBot" isOpen={robotModal} >
+          <button className="close-Bot-modal" onClick={()=>setRobotModal(false)}>X</button>
+          <Bot/>
+    </Modal>
   </>
     
     )

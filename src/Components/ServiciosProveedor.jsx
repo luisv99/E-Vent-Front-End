@@ -7,13 +7,12 @@ import {
 
 export default function ServiciosProveedor(){
     const [services, setServices] = useState([])
-    const [serviceByName, setServiceByName] = useState('')
     
 
     useEffect (() => {
         getServices();
         //eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [serviceByName]);
+    }, []);
 
     const getServices = () =>{
         
@@ -47,8 +46,6 @@ export default function ServiciosProveedor(){
             <div style={{marginTop: "10rem"}} className="contened">
             
             <h1 className="titulo">Lista de Servicios</h1>
-            <label htmlFor="filtroS">Nombre</label>
-            <input type="text" id="filtroS" onChange={(e)=>{setServiceByName(e.target.value)}}/>
             <Link to="/AddServices" className="boton-crear-usuario">Agregar Servicio</Link>
             <table id="customers">
                 <tr>

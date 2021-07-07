@@ -2,6 +2,8 @@ import './AddServicesStyles.css'
 import React, { useState } from 'react';
 import Axios from 'axios';
 import {Link}from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIcons } from '@fortawesome/free-solid-svg-icons'
 
 export default function AddServices(){
 
@@ -42,7 +44,7 @@ export default function AddServices(){
             roles: localStorage.getItem('roles'),
             token: localStorage.getItem('SavedToken')
         }).then((res) =>{
-            alert("Funcionó!")
+            alert("Servicio agregado correctamente!")
         },
         console.log("no se que pasa"),
         //alert(response.data.message),
@@ -61,7 +63,9 @@ export default function AddServices(){
                 <div className="infoServices">
                     <h1>E-Vent</h1>
                     <br></br>
-                    <h1>LOGO</h1>
+                    <div className="shop-login">
+                        <FontAwesomeIcon icon={faIcons}  className="fas" />
+                    </div>
                 </div>
                 
                 <form action="#" onSubmit= {handleSubmit} method="POST" className="addServiceForm" name="signupform">
