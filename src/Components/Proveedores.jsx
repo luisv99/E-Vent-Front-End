@@ -29,6 +29,7 @@ export default function Admin(){
             console.log('Proveedor By Name' + proveedorByName);
     }).catch(err => {
         console.log(err)
+        
     })};
 
 
