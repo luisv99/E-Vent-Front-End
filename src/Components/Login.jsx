@@ -90,7 +90,7 @@ export default function Login(){
                                 <input type="submit" id="join-btn-login" data-testid="join-btn-login" name="join" alt="Join" value="Entrar a E-Vent"/>
                             </li>
                         </ul>
-                        <Link onClick = {(e) => {resetPassword(e)}}>Reset Password</Link>
+                        <Link to ="#"onClick = {(e) => {resetPassword(e)}}>Reset Password</Link>
                     </form>
                     
                 </div>

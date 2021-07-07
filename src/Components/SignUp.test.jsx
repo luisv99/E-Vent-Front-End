@@ -6,7 +6,7 @@ import SignUp from './SignUp'
 
 
 
-describe('Login Component', ()=>{
+describe('SignUp Component', ()=>{
     
     const value = "HolaMundo"
     const numberValue = 8
@@ -56,18 +56,10 @@ describe('Login Component', ()=>{
         const cedulaInput = screen.getByTestId('telefono')
         userEvent.type(cedulaInput, "10")
 
-        expect(cedulaInput.type).toBe('number');
+        expect(cedulaInput.type).toBe('tel');
         expect(cedulaInput.value).toBe('10');
     })
 
-    test('Should excecute Telefono onChange', ()=>{
-        
-        const telefonoInput = screen.getByTestId('telefono')
-        userEvent.type(telefonoInput, "10")
-
-        expect(telefonoInput.type).toBe('number');
-        expect(telefonoInput.value).toBe('10');
-    })
 
     test('Should excecute Direccion onChange', ()=>{
 

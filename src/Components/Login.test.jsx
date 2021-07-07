@@ -2,8 +2,11 @@ import React from 'react';
 import { render, screen, fireEvents } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Login from './Login'
+import {
+    BrowserRouter as Router,
+  } from "react-router-dom";
 
-import setEmail from './Login'
+
 
 
 
@@ -14,7 +17,7 @@ describe('Login Component', ()=>{
     
 
     beforeEach(() => {
-        render(<Login data-testid = 'loginComponent'></Login>)
+        render(<Router><Login></Login></Router>)
     })
 
     it('Should render withour crashing', ()=> {
@@ -51,6 +54,7 @@ describe('Login Component', ()=>{
         const value = "HolaMundo"
 
         const formSubmit = screen.getByTestId('join-btn-login')
+        userEvent.click(formSubmit)
 
         expect(formSubmit.type).toBe("submit");
     })
