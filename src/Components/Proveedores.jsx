@@ -29,7 +29,7 @@ export default function Admin(){
             console.log('Proveedor By Name' + proveedorByName);
     }).catch(err => {
         console.log(err)
-        
+
     })};
 
 
@@ -66,7 +66,7 @@ export default function Admin(){
                     
                 </tr>
 
-                { proveedores.map((proveedor) => (
+                { proveedores?.map((proveedor) => (
                 
                 <tr>
                     <td>{proveedor.name}</td>
